@@ -22,11 +22,18 @@ namespace SpiderU {
 
 		private void scanToolStripMenuItem_Click(object sender, EventArgs e) {
 			if (DeviceList == null) {
-				DeviceList = new DeviceListClass();
+				try {
+					DeviceList = new DeviceListClass();
+				}
+				catch (System.Exception Ex) {
+					ErrorDialog Dialog = new ErrorDialog(Ex.ToString());
+				}
 			}
+		}
 
-
-
+		private void acquisitionToolStripMenuItem_Click(object sender, EventArgs e)
+		{
+			ScopeManager.GetWaveform();
 		}
 	}
 }

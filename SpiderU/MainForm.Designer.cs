@@ -108,6 +108,7 @@
 			// 
 			this.acquisitionToolStripMenuItem.Name = "acquisitionToolStripMenuItem";
 			resources.ApplyResources(this.acquisitionToolStripMenuItem, "acquisitionToolStripMenuItem");
+			this.acquisitionToolStripMenuItem.Click += new System.EventHandler(this.acquisitionToolStripMenuItem_Click);
 			// 
 			// helpToolStripMenuItem2
 			// 
