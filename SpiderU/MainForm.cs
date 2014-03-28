@@ -17,7 +17,7 @@ namespace SpiderU {
 		}
 
 		private void exitXToolStripMenuItem_Click(object sender, EventArgs e) {
-
+			Close();
 		}
 
 		private void scanToolStripMenuItem_Click(object sender, EventArgs e) {
