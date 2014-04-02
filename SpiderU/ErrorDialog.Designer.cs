@@ -25,7 +25,7 @@
 		private void InitializeComponent() {
 			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ErrorDialog));
 			this.messageTextBox = new System.Windows.Forms.TextBox();
-			this.button1 = new System.Windows.Forms.Button();
+			this.OKButton = new System.Windows.Forms.Button();
 			this.SuspendLayout();
 			// 
 			// messageTextBox
@@ -33,20 +33,25 @@
 			resources.ApplyResources(this.messageTextBox, "messageTextBox");
 			this.messageTextBox.Name = "messageTextBox";
 			// 
-			// button1
+			// OKButton
 			// 
-			this.button1.DialogResult = System.Windows.Forms.DialogResult.OK;
-			resources.ApplyResources(this.button1, "button1");
-			this.button1.Name = "button1";
-			this.button1.UseVisualStyleBackColor = true;
+			resources.ApplyResources(this.OKButton, "OKButton");
+			this.OKButton.DialogResult = System.Windows.Forms.DialogResult.OK;
+			this.OKButton.Name = "OKButton";
+			this.OKButton.UseVisualStyleBackColor = true;
 			// 
 			// ErrorDialog
 			// 
+			this.AcceptButton = this.OKButton;
 			resources.ApplyResources(this, "$this");
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.Controls.Add(this.button1);
+			this.ControlBox = false;
+			this.Controls.Add(this.OKButton);
 			this.Controls.Add(this.messageTextBox);
+			this.MaximizeBox = false;
+			this.MinimizeBox = false;
 			this.Name = "ErrorDialog";
+			this.TopMost = true;
 			this.ResumeLayout(false);
 			this.PerformLayout();
 
@@ -55,6 +60,6 @@
 		#endregion
 
 		private System.Windows.Forms.TextBox messageTextBox;
-		private System.Windows.Forms.Button button1;
+		private System.Windows.Forms.Button OKButton;
 	}
 }
