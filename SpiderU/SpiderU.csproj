@@ -113,6 +113,9 @@
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="NewScope.ja-JP.resx">
+      <DependentUpon>NewScope.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="NewScope.resx">
       <DependentUpon>NewScope.cs</DependentUpon>
     </EmbeddedResource>

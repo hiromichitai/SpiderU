@@ -56,8 +56,10 @@
 			// 
 			// NewScope
 			// 
+			this.AcceptButton = this.OKButton;
 			resources.ApplyResources(this, "$this");
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+			this.CancelButton = this.cancelButton;
 			this.Controls.Add(this.cancelButton);
 			this.Controls.Add(this.OKButton);
 			this.Controls.Add(this.deviceListBox);

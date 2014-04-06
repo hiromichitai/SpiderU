@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace SpiderU {
-	public partial class ScopeSetting : Form {
+	public partial class ScopeSettingForm : Form {
 
 		private int NumChannel;
 		private int[] ChannelNumber;
@@ -19,8 +19,10 @@ namespace SpiderU {
 		private double[] MultiplyValue;
 		private int CurrentChannelIndex;
 
-		public ScopeSetting() {
+		public ScopeSettingForm() {
 			InitializeComponent();
 		}
+
+
 	}
 }
