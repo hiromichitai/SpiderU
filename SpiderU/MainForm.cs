@@ -24,6 +24,11 @@ namespace SpiderU {
 			if (DeviceList == null) {
 				try {
 					DeviceList = new DeviceListClass();
+					NewScope NScope = new NewScope(DeviceList);
+					if (NScope.ShowDialog() == DialogResult.OK) {
+						 ScopeManager.CreateNewScope(NScope.CreatedDevice());
+					}
+
 				}
 				catch (System.Exception Ex) {
 					ErrorDialog Dialog = new ErrorDialog(Ex.ToString());

@@ -24,23 +24,24 @@
 		/// </summary>
 		private void InitializeComponent() {
 			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ScopeSettingForm));
-			this.comboBox1 = new System.Windows.Forms.ComboBox();
+			this.chComboBox = new System.Windows.Forms.ComboBox();
 			this.label2 = new System.Windows.Forms.Label();
 			this.c = new System.Windows.Forms.Label();
 			this.labelTextBox = new System.Windows.Forms.TextBox();
 			this.label1 = new System.Windows.Forms.Label();
 			this.unitTextBox = new System.Windows.Forms.TextBox();
 			this.label3 = new System.Windows.Forms.Label();
-			this.textBox1 = new System.Windows.Forms.TextBox();
+			this.multiplierTextBox = new System.Windows.Forms.TextBox();
 			this.OKButton = new System.Windows.Forms.Button();
 			this.cancelButton = new System.Windows.Forms.Button();
 			this.SuspendLayout();
 			// 
-			// comboBox1
+			// chComboBox
 			// 
-			this.comboBox1.FormattingEnabled = true;
-			resources.ApplyResources(this.comboBox1, "comboBox1");
-			this.comboBox1.Name = "comboBox1";
+			this.chComboBox.FormattingEnabled = true;
+			resources.ApplyResources(this.chComboBox, "chComboBox");
+			this.chComboBox.Name = "chComboBox";
+			this.chComboBox.SelectionChangeCommitted += new System.EventHandler(this.chComboBox_SelectionChangeCommitted);
 			// 
 			// label2
 			// 
@@ -72,37 +73,43 @@
 			resources.ApplyResources(this.label3, "label3");
 			this.label3.Name = "label3";
 			// 
-			// textBox1
+			// multiplierTextBox
 			// 
-			resources.ApplyResources(this.textBox1, "textBox1");
-			this.textBox1.Name = "textBox1";
+			resources.ApplyResources(this.multiplierTextBox, "multiplierTextBox");
+			this.multiplierTextBox.Name = "multiplierTextBox";
 			// 
 			// OKButton
 			// 
+			this.OKButton.DialogResult = System.Windows.Forms.DialogResult.OK;
 			resources.ApplyResources(this.OKButton, "OKButton");
 			this.OKButton.Name = "OKButton";
 			this.OKButton.UseVisualStyleBackColor = true;
+			this.OKButton.Click += new System.EventHandler(this.OKButton_Click);
 			// 
 			// cancelButton
 			// 
+			this.cancelButton.DialogResult = System.Windows.Forms.DialogResult.Cancel;
 			resources.ApplyResources(this.cancelButton, "cancelButton");
 			this.cancelButton.Name = "cancelButton";
 			this.cancelButton.UseVisualStyleBackColor = true;
+			this.cancelButton.Click += new System.EventHandler(this.cancelButton_Click);
 			// 
 			// ScopeSettingForm
 			// 
+			this.AcceptButton = this.OKButton;
 			resources.ApplyResources(this, "$this");
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+			this.CancelButton = this.cancelButton;
 			this.Controls.Add(this.cancelButton);
 			this.Controls.Add(this.OKButton);
-			this.Controls.Add(this.textBox1);
+			this.Controls.Add(this.multiplierTextBox);
 			this.Controls.Add(this.label3);
 			this.Controls.Add(this.unitTextBox);
 			this.Controls.Add(this.label1);
 			this.Controls.Add(this.labelTextBox);
 			this.Controls.Add(this.c);
 			this.Controls.Add(this.label2);
-			this.Controls.Add(this.comboBox1);
+			this.Controls.Add(this.chComboBox);
 			this.Name = "ScopeSettingForm";
 			this.ResumeLayout(false);
 			this.PerformLayout();
@@ -111,14 +118,14 @@
 
 		#endregion
 
-		private System.Windows.Forms.ComboBox comboBox1;
+		private System.Windows.Forms.ComboBox chComboBox;
 		private System.Windows.Forms.Label label2;
 		private System.Windows.Forms.Label c;
 		private System.Windows.Forms.TextBox labelTextBox;
 		private System.Windows.Forms.Label label1;
 		private System.Windows.Forms.TextBox unitTextBox;
 		private System.Windows.Forms.Label label3;
-		private System.Windows.Forms.TextBox textBox1;
+		private System.Windows.Forms.TextBox multiplierTextBox;
 		private System.Windows.Forms.Button OKButton;
 		private System.Windows.Forms.Button cancelButton;
 	}

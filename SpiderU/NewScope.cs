@@ -21,6 +21,7 @@ namespace SpiderU {
 		}
 
 		public NewScope(DeviceListClass GPIBDeviceList) {
+			InitializeComponent();
 			PrimaryAddressArray = new byte[GPIBDeviceList.NumFreeDevice()];
 			SecondaryAddressArray = new byte[GPIBDeviceList.NumFreeDevice()];
 

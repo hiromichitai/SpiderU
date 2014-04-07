@@ -133,6 +133,18 @@ namespace SpiderU {
 			return null;
 		}
 
+		public int NthOnChannelNumber(int Index) {
+			int OnChannelCount = 0;
+			for (int TraceIndex = 0; TraceIndex < TraceList.Count; TraceIndex++) {
+				if (TraceList[TraceIndex].IsOn) {
+					if (Index == OnChannelCount) {
+						return TraceIndex;
+					}
+					OnChannelCount++;
+				}
+			}
+			return -1;
+		}
 
 		abstract public int NumChannel();	// returns number of channel
 		abstract public void GetSettings();	// Get current status
