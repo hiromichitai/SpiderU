@@ -117,4 +117,13 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="UIMSGDATAINCONSIST" xml:space="preserve">
+    <value>Internal data consisitency error</value>
+  </data>
+  <data name="UIMSGEXCELRANGEOVER" xml:space="preserve">
+    <value>Record length exceeds Excel row count limit. Can't make Excel file.</value>
+  </data>
+  <data name="UIMSGUNKNOWN" xml:space="preserve">
+    <value>Unknown error occured.</value>
+  </data>
 </root>

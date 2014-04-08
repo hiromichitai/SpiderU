@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Resources;
 
 namespace SpiderU {
 	public partial class ErrorDialog : Form {
@@ -19,6 +20,17 @@ namespace SpiderU {
 			messageTextBox.Text = messageString;
 			ShowDialog();
 		}
+
+		public ErrorDialog(string messageString, Boolean doConvert) {
+			InitializeComponent();
+			if (doConvert) {
+				ResourceManager rm = new ResourceManager("SpiderU.UIMessageResource",typeof(WarningDialog).Assembly);
+				messageString = rm.GetString(messageString);
+			}
+			messageTextBox.Text = messageString;
+			ShowDialog();
+		}
+
 
 	}
 }

@@ -1,5 +1,5 @@
 ﻿namespace SpiderU {
-	partial class NewScope {
+	partial class NewScopeForm {
 		/// <summary>
 		/// Required designer variable.
 		/// </summary>
@@ -23,7 +23,7 @@
 		/// the contents of this method with the code editor.
 		/// </summary>
 		private void InitializeComponent() {
-			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(NewScope));
+			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(NewScopeForm));
 			this.deviceListBox = new System.Windows.Forms.ListBox();
 			this.OKButton = new System.Windows.Forms.Button();
 			this.cancelButton = new System.Windows.Forms.Button();

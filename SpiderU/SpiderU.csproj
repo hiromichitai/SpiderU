@@ -66,6 +66,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ConfigurationForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ConfigurationForm.Designer.cs">
+      <DependentUpon>ConfigurationForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="DeviceListClass.cs" />
     <Compile Include="DLM2000.cs" />
     <Compile Include="ErrorDialog.cs">
@@ -74,19 +80,21 @@
     <Compile Include="ErrorDialog.Designer.cs">
       <DependentUpon>ErrorDialog.cs</DependentUpon>
     </Compile>
+    <Compile Include="ExcelFileWriter.cs" />
     <Compile Include="FileWriterClass.cs" />
     <Compile Include="HDF5Writer.cs" />
+    <Compile Include="LD1FileWriter.cs" />
     <Compile Include="MainForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="MainForm.Designer.cs">
       <DependentUpon>MainForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="NewScope.cs">
+    <Compile Include="NewScopeForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="NewScope.Designer.cs">
-      <DependentUpon>NewScope.cs</DependentUpon>
+    <Compile Include="NewScopeForm.Designer.cs">
+      <DependentUpon>NewScopeForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -98,41 +106,69 @@
     <Compile Include="ScopeSettingForm.Designer.cs">
       <DependentUpon>ScopeSettingForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="UIMessageResource.ja-JP.Designer.cs">
+      <DependentUpon>UIMessageResource.ja-JP.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="UIMessageResource.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>UIMessageResource.resx</DependentUpon>
+    </Compile>
     <Compile Include="WarningDialog.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="WarningDialog.Designer.cs">
       <DependentUpon>WarningDialog.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="ConfigurationForm.ja-JP.resx">
+      <DependentUpon>ConfigurationForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ConfigurationForm.resx">
+      <DependentUpon>ConfigurationForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ErrorDialog.ja-JP.resx">
       <DependentUpon>ErrorDialog.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ErrorDialog.resx">
       <DependentUpon>ErrorDialog.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="MainForm.ja-JP.resx">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="NewScope.ja-JP.resx">
-      <DependentUpon>NewScope.cs</DependentUpon>
+    <EmbeddedResource Include="NewScopeForm.ja-JP.resx">
+      <DependentUpon>NewScopeForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="NewScope.resx">
-      <DependentUpon>NewScope.cs</DependentUpon>
+    <EmbeddedResource Include="NewScopeForm.resx">
+      <DependentUpon>NewScopeForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
+      <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </EmbeddedResource>
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <EmbeddedResource Include="ScopeSettingForm.ja-JP.resx">
       <DependentUpon>ScopeSettingForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ScopeSettingForm.resx">
       <DependentUpon>ScopeSettingForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UIMessageResource.ja-JP.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>UIMessageResource.ja-JP.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UIMessageResource.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>UIMessageResource.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="WarningDialog.ja-JP.resx">
       <DependentUpon>WarningDialog.cs</DependentUpon>
@@ -186,6 +222,38 @@
     <Content Include="zlib.dll">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <COMReference Include="Microsoft.Office.Core">
+      <Guid>{2DF8D04C-5BFA-101B-BDE5-00AA0044DE52}</Guid>
+      <VersionMajor>2</VersionMajor>
+      <VersionMinor>5</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="Microsoft.Office.Interop.Excel">
+      <Guid>{00020813-0000-0000-C000-000000000046}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>7</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="VBIDE">
+      <Guid>{0002E157-0000-0000-C000-000000000046}</Guid>
+      <VersionMajor>5</VersionMajor>
+      <VersionMinor>3</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

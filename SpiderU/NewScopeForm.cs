@@ -10,17 +10,17 @@ using System.Windows.Forms;
 using NationalInstruments.NI4882;
 
 namespace SpiderU {
-	public partial class NewScope : Form {
+	public partial class NewScopeForm : Form {
 
 		private byte[] PrimaryAddressArray;
 		private byte[] SecondaryAddressArray;
 		private Device NewDevice;
 
-		public NewScope() {
+		public NewScopeForm() {
 			InitializeComponent();
 		}
 
-		public NewScope(DeviceListClass GPIBDeviceList) {
+		public NewScopeForm(DeviceListClass GPIBDeviceList) {
 			InitializeComponent();
 			PrimaryAddressArray = new byte[GPIBDeviceList.NumFreeDevice()];
 			SecondaryAddressArray = new byte[GPIBDeviceList.NumFreeDevice()];

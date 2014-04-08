@@ -49,7 +49,6 @@ namespace SpiderU {
 		public double[] Data() {
 			return TraceDataArray;
 		}
-
 	}
 
 
@@ -87,6 +86,25 @@ namespace SpiderU {
 		public List<TraceClass> Channel {
 			get { return TraceList;}
 		}
+
+		public int DataLength {
+			get {
+				int DLength = 0;
+				for (int TraceIndex = 0; TraceIndex < TraceList.Count; TraceIndex++) {
+					if (TraceList[TraceIndex].IsOn) {
+						if(DLength == 0){
+							DLength = TraceList[TraceIndex].DataLength;
+						} else {
+							if(DLength != TraceList[TraceIndex].DataLength){ // something went wrong
+								ErrorDialog EDialog = new ErrorDialog("UIMSGDATAINCONSIST",true);
+							}
+						}
+					}
+				}
+				return DLength;
+			}
+		}
+
 
 		public double[] ChannelData(int Channel){
 			return TraceList[Channel].Data();

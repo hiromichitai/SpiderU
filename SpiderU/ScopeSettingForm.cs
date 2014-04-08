@@ -54,7 +54,7 @@ namespace SpiderU {
 				LabelString[chIndex] = Scope.ChannelLabel(ChannelNumber[chIndex]);
 				UnitString[chIndex] = Scope.ChannelUnit(ChannelNumber[chIndex]);
 				Multiplier[chIndex] = Scope.ChannelMultiplier(ChannelNumber[chIndex]);
-				chComboBox.Items.Add(string.Format("Ch{0:D1}",ChannelNumber[chIndex]));
+				chComboBox.Items.Add(string.Format("Ch{0:D1}",ChannelNumber[chIndex]+1));
 			}
 			chComboBox.SelectedIndex = 0;
 			comboBoxPreSelectionIndex = 0;
@@ -67,6 +67,8 @@ namespace SpiderU {
 		private void chComboBox_SelectionChangeCommitted(object sender, EventArgs e)
 		{
 			storeChangedValue();
+			comboBoxPreSelectionIndex = chComboBox.SelectedIndex;
+
 			refreshForm();
 		}
 
