@@ -33,24 +33,16 @@ namespace SpiderU {
 				sheet.Name = Scope.ScopeID;
 				int Row = 1;
 
-				if(CForm.)
-				for(int ChIndex = 0; ChIndex < Scope.NumOnChannel; ChIndex++){
-					sheet.Cells()
+//				for(int ChIndex = 0; ChIndex < Scope.NumOnChannel; ChIndex++){
+//					sheet.Cells()
 				for (int RIndex = 0; RIndex < Scope.DataLength; RIndex++) {
 					for(int ChIndex = 0; ChIndex < Scope.NumOnChannel; ChIndex++){
-						if(Scope.ChannelOn(Channel)){
-							sheet.Cells(RIndex+1,ChIndex) = Scope.ChannelData(Channel)[RIndex]
-						
-						}
-						
+						sheet.Cells(RIndex+1,ChIndex) = Scope.NthOnChannel(ChIndex).Data()[RIndex];
 					}
-
 				}
-
 			}
-	
 		}
-  
-
+ 	
 	}
+
 }

@@ -66,6 +66,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AppConfigurationClass.cs" />
     <Compile Include="ConfigurationForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -176,6 +177,7 @@
     <EmbeddedResource Include="WarningDialog.resx">
       <DependentUpon>WarningDialog.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="Properties\DataSources\SpiderU.Properties.Settings.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -185,6 +187,7 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <None Include="SpiderU.config" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

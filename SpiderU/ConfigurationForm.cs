@@ -10,7 +10,7 @@ using System.Windows.Forms;
 
 namespace SpiderU {
 	public partial class ConfigurationForm : Form {
-		public static ConfigurationForm() {
+		public ConfigurationForm() {
 			InitializeComponent();
 			outputFileFormatComboBox.SelectedIndex = 0;
 			autoFileNamePrefixTextBox.Text = DateTime.Now.ToString("yyMMdd-");
