@@ -25,7 +25,7 @@ namespace SpiderU {
 	        wkbk = excelApp.Workbooks.Add();
 		}
 
-		public void WriteFile(){
+		public override void WriteFile(){
 			List<ScopeClass> SList = ScopeManager.ScopeList;
 			for (int SIndex = 0; SIndex < SList.Count; SIndex++) {
 				ScopeClass Scope = SList[SIndex];
@@ -37,7 +37,7 @@ namespace SpiderU {
 //					sheet.Cells()
 				for (int RIndex = 0; RIndex < Scope.DataLength; RIndex++) {
 					for(int ChIndex = 0; ChIndex < Scope.NumOnChannel; ChIndex++){
-						sheet.Cells(RIndex+1,ChIndex) = Scope.NthOnChannel(ChIndex).Data()[RIndex];
+						((Excel.Range)sheet.Cells[RIndex+1,ChIndex]).Value = Scope.NthOnChannel(ChIndex).Data()[RIndex];
 					}
 				}
 			}
