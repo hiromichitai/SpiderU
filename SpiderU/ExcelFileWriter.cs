@@ -23,6 +23,7 @@ namespace SpiderU {
 			}		
 			excelApp = new Excel.Application();
 	        wkbk = excelApp.Workbooks.Add();
+			wkbk.SaveAs(FileName);
 		}
 
 		public override void WriteFile(){
@@ -32,15 +33,27 @@ namespace SpiderU {
 				sheet = wkbk.Sheets.Add() as Excel.Worksheet;
 				sheet.Name = Scope.ScopeID;
 				int Row = 1;
+				if (SpiderU.Properties.Settings.Default.addComment) {
+					for (int ChIndex = 0; ChIndex < Scope.NumOnChannel; ChIndex++) {
+						((Excel.Range)sheet.Cells[Row, 1]).Value = Scope.ScopeTitle;
+					}
+					Row++;
+				}
 
-//				for(int ChIndex = 0; ChIndex < Scope.NumOnChannel; ChIndex++){
-//					sheet.Cells()
+				if (SpiderU.Properties.Settings.Default.addHeader) {
+					for (int ChIndex = 0; ChIndex < Scope.NumOnChannel; ChIndex++) {
+						((Excel.Range)sheet.Cells[Row, ChIndex]).Value = Scope.NthOnChannel(ChIndex).TraceLabel + "(" + Scope.NthOnChannel(ChIndex).TraceUnit + ")";
+					}
+					Row++;
+				}
+
 				for (int RIndex = 0; RIndex < Scope.DataLength; RIndex++) {
 					for(int ChIndex = 0; ChIndex < Scope.NumOnChannel; ChIndex++){
-						((Excel.Range)sheet.Cells[RIndex+1,ChIndex]).Value = Scope.NthOnChannel(ChIndex).Data()[RIndex];
+						((Excel.Range)sheet.Cells[RIndex+Row,ChIndex]).Value = Scope.NthOnChannel(ChIndex).Data()[RIndex];
 					}
 				}
 			}
+			wkbk.Save();
 		}
  	
 	}

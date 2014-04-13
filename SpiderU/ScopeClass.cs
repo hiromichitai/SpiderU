@@ -61,6 +61,7 @@ namespace SpiderU {
 		protected double SamplingTime;
 		protected string ModelNameString;
 		protected string ScopeIDString;
+		protected string ScopeTitleString;
 		protected List<TraceClass> TraceList;
 
 		public ScopeClass(Device MyDevice,string ModelName,int NumChannel){
@@ -81,6 +82,11 @@ namespace SpiderU {
 		public string ScopeID {
 			get { return this.ScopeIDString; }
 			set { this.ScopeIDString = value; }
+		}
+
+		public string ScopeTitle {
+			get { return this.ScopeTitleString; }
+			set { this.ScopeTitleString = value; }
 		}
 
 		public List<TraceClass> Channel {
