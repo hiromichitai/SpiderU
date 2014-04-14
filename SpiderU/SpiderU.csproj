@@ -102,6 +102,7 @@
     </Compile>
     <Compile Include="ExcelFileWriter.cs" />
     <Compile Include="FileWriterClass.cs" />
+    <Compile Include="FileWriterCreator.cs" />
     <Compile Include="HDF5Writer.cs" />
     <Compile Include="LD1FileWriter.cs" />
     <Compile Include="MainForm.cs">
@@ -196,7 +197,6 @@
     <EmbeddedResource Include="WarningDialog.resx">
       <DependentUpon>WarningDialog.cs</DependentUpon>
     </EmbeddedResource>
-    <None Include="Properties\DataSources\SpiderU.Properties.Settings.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

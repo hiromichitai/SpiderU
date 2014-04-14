@@ -38,5 +38,9 @@ namespace SpiderU {
 
 		}
 
+		public override void Close() {
+
+		}
+
 	}
 }

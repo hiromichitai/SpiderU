@@ -174,6 +174,27 @@
   <data name="&gt;&gt;cancelButton.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
+  <data name="outputFileFormatComboBox.Items" xml:space="preserve">
+    <value>CSV file</value>
+  </data>
+  <data name="outputFileFormatComboBox.Items1" xml:space="preserve">
+    <value>XLS file</value>
+  </data>
+  <data name="outputFileFormatComboBox.Items2" xml:space="preserve">
+    <value>HDF5 file</value>
+  </data>
+  <data name="outputFileFormatComboBox.Items3" xml:space="preserve">
+    <value>LD1 file</value>
+  </data>
+  <data name="outputFileFormatComboBox.Location" type="System.Drawing.Point, System.Drawing">
+    <value>178, 23</value>
+  </data>
+  <data name="outputFileFormatComboBox.Size" type="System.Drawing.Size, System.Drawing">
+    <value>140, 20</value>
+  </data>
+  <data name="outputFileFormatComboBox.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
   <data name="&gt;&gt;outputFileFormatComboBox.Name" xml:space="preserve">
     <value>outputFileFormatComboBox</value>
   </data>
@@ -185,6 +206,24 @@
   </data>
   <data name="&gt;&gt;outputFileFormatComboBox.ZOrder" xml:space="preserve">
     <value>0</value>
+  </data>
+  <data name="label1.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="label1.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="label1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>19, 26</value>
+  </data>
+  <data name="label1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>96, 12</value>
+  </data>
+  <data name="label1.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="label1.Text" xml:space="preserve">
+    <value>Output file format</value>
   </data>
   <data name="&gt;&gt;label1.Name" xml:space="preserve">
     <value>label1</value>
@@ -744,69 +783,6 @@
   <data name="&gt;&gt;tabControl1.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
-  <data name="outputFileFormatComboBox.Items" xml:space="preserve">
-    <value>CSV file</value>
-  </data>
-  <data name="outputFileFormatComboBox.Items1" xml:space="preserve">
-    <value>XLS file</value>
-  </data>
-  <data name="outputFileFormatComboBox.Items2" xml:space="preserve">
-    <value>HDF5 file</value>
-  </data>
-  <data name="outputFileFormatComboBox.Items3" xml:space="preserve">
-    <value>LD1 file</value>
-  </data>
-  <data name="outputFileFormatComboBox.Location" type="System.Drawing.Point, System.Drawing">
-    <value>178, 23</value>
-  </data>
-  <data name="outputFileFormatComboBox.Size" type="System.Drawing.Size, System.Drawing">
-    <value>140, 20</value>
-  </data>
-  <data name="outputFileFormatComboBox.TabIndex" type="System.Int32, mscorlib">
-    <value>3</value>
-  </data>
-  <data name="&gt;&gt;outputFileFormatComboBox.Name" xml:space="preserve">
-    <value>outputFileFormatComboBox</value>
-  </data>
-  <data name="&gt;&gt;outputFileFormatComboBox.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;outputFileFormatComboBox.Parent" xml:space="preserve">
-    <value>tabPage1</value>
-  </data>
-  <data name="&gt;&gt;outputFileFormatComboBox.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="label1.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="label1.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="label1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>19, 26</value>
-  </data>
-  <data name="label1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>96, 12</value>
-  </data>
-  <data name="label1.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
-  </data>
-  <data name="label1.Text" xml:space="preserve">
-    <value>Output file format</value>
-  </data>
-  <data name="&gt;&gt;label1.Name" xml:space="preserve">
-    <value>label1</value>
-  </data>
-  <data name="&gt;&gt;label1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;label1.Parent" xml:space="preserve">
-    <value>tabPage1</value>
-  </data>
-  <data name="&gt;&gt;label1.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
@@ -815,9 +791,6 @@
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
     <value>450, 355</value>
-  </data>
-  <data name="$this.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>Configuration</value>

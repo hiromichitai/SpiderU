@@ -170,6 +170,10 @@ namespace SpiderU {
 			return -1;
 		}
 
+		public double STime(int Index) {
+			return SamplingTime*Index;
+		}
+
 		abstract public int NumChannel();	// returns number of channel
 		abstract public void GetSettings();	// Get current status
 		abstract public void GetData();	// Get channel data

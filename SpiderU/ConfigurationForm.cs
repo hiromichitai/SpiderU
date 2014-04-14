@@ -12,8 +12,6 @@ namespace SpiderU {
 	public partial class ConfigurationForm : Form {
 		public ConfigurationForm() {
 			InitializeComponent();
-			outputFileFormatComboBox.SelectedIndex = 0;
-			autoFileNamePrefixTextBox.Text = DateTime.Now.ToString("yyMMdd-");
 		}
 
 		public FileWriterClass.FileFormatEnum FileFormat() {
@@ -46,6 +44,10 @@ namespace SpiderU {
 			get {
 				return headerLineCheckBox.Checked;
 			}
+		}
+
+		private void OKButton_Click(object sender, EventArgs e) {
+
 		}
 
 	}

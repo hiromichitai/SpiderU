@@ -15,5 +15,10 @@ namespace SpiderU {
 		public override void WriteFile() {
 			
 		}
+
+		public override void Close() {
+
+		}
+
 	}
 }
