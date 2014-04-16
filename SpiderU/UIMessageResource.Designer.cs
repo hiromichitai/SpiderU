@@ -61,6 +61,15 @@ namespace SpiderU {
         }
         
         /// <summary>
+        ///   Null or invalid argument  に類似しているローカライズされた文字列を検索します。
+        /// </summary>
+        public static string UIMSGARGEXCEPTION {
+            get {
+                return ResourceManager.GetString("UIMSGARGEXCEPTION", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Internal data consisitency error に類似しているローカライズされた文字列を検索します。
         /// </summary>
         public static string UIMSGDATAINCONSIST {
@@ -75,6 +84,33 @@ namespace SpiderU {
         public static string UIMSGEXCELRANGEOVER {
             get {
                 return ResourceManager.GetString("UIMSGEXCELRANGEOVER", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   IO error occured に類似しているローカライズされた文字列を検索します。
+        /// </summary>
+        public static string UIMSGIOEXCEPTION {
+            get {
+                return ResourceManager.GetString("UIMSGIOEXCEPTION", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Path too long に類似しているローカライズされた文字列を検索します。
+        /// </summary>
+        public static string UIMSGPATHTOOLONG {
+            get {
+                return ResourceManager.GetString("UIMSGPATHTOOLONG", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Security exception occured に類似しているローカライズされた文字列を検索します。
+        /// </summary>
+        public static string UIMSGSECURITYEXCEPTION {
+            get {
+                return ResourceManager.GetString("UIMSGSECURITYEXCEPTION", resourceCulture);
             }
         }
         

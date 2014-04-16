@@ -21,7 +21,7 @@ namespace SpiderU {
 		public static FileWriterClass CreateFileWriter(string FileName){
 			switch (System.IO.Path.GetExtension(FileName).ToLower()) {
 				case(".xls"):
-					return new ExcelFileWriter(FileName);
+					return new ExcelFileWriterClass(FileName);
 				default:
 					return null;
 					

@@ -14,6 +14,10 @@ namespace SpiderU
 			INVALID = -1, CSVFILE = 0, XLSFILE = 1, HDF5FILE = 2, LD1FILE = 3
 		}
 
+		public enum EncodingEnum {
+			INVALID = -1, ASCII = 0, UTF8 = 1, UNICODE = 2
+		}
+
 		public static string DefaultExtention(int FileFormatID) {
 			switch(FileFormatID){
 				case -1:
@@ -31,31 +35,43 @@ namespace SpiderU
 			}
 		}
 
+		public static string EncodingString(int EncodingID) {
+			switch(EncodingID){
+				case 0:
+					return "ASCII";
+				case 1:
+					return "UTF-8";
+				case 2:
+					return "Unicode";
+				default:
+					return "";
+
+			}
+		}
+
+		public System.Text.Encoding GetEncoding() {
+			switch (Properties.Settings.Default.outputEncodingID) {
+				case((int)EncodingEnum.ASCII):
+					return new System.Text.ASCIIEncoding();
+				case((int)EncodingEnum.UTF8):
+					return new System.Text.UTF8Encoding();
+				case((int)EncodingEnum.UNICODE):
+					return new System.Text.UnicodeEncoding();
+				default:
+					return null;
+			}
+		}
+
 		public static string ExtFilter() {
-			return "csv files (*.csv)|*.csv|Excel files (*.xlsx)|*.xlsx|HDF5 files (*.h5)|*.h5|LD1 file (*.ld1)|*.ld1| All files (*.*)|*.* ";
+			return "csv files (*.csv)|*.csv|Excel files (*.xls;*.xlsx)|*.xls;*.xlsx|HDF5 files (*.h5)|*.h5|LD1 file (*.ld1)|*.ld1| All files (*.*)|*.* ";
 		}
 
-		protected FileStream FStream;
-		private static UTF8Encoding UTF8Encoder = new UTF8Encoding();
-
-		protected static byte[] GetUTF8Bytes(string OriginalString) {
-			try {
-				return UTF8Encoder.GetBytes(OriginalString);
-			}
-			catch (Exception e) {
-				WarningDialog WDialog = new WarningDialog("UIMessageUTF8ConvError");
-				return null;
-			}
-
-		}
 
 		public FileWriterClass(string FileName) {
 			if(File.Exists(FileName)){
 				WarningDialog WDialog = new WarningDialog("UIMessageUTF8ConvError");
 				if (WDialog.DialogResult != DialogResult.OK) { 
 					throw(new System.Exception("User abort"));
-				} else {
-					FStream = new FileStream(FileName,FileMode.CreateNew);
 				}
 			}
 		}

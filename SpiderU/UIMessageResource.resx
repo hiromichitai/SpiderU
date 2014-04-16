@@ -117,11 +117,23 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="UIMSGARGEXCEPTION" xml:space="preserve">
+    <value>Null or invalid argument </value>
+  </data>
   <data name="UIMSGDATAINCONSIST" xml:space="preserve">
     <value>Internal data consisitency error</value>
   </data>
   <data name="UIMSGEXCELRANGEOVER" xml:space="preserve">
     <value>Record length exceeds Excel row count limit. Can't make Excel file.</value>
+  </data>
+  <data name="UIMSGIOEXCEPTION" xml:space="preserve">
+    <value>IO error occured</value>
+  </data>
+  <data name="UIMSGPATHTOOLONG" xml:space="preserve">
+    <value>Path too long</value>
+  </data>
+  <data name="UIMSGSECURITYEXCEPTION" xml:space="preserve">
+    <value>Security exception occured</value>
   </data>
   <data name="UIMSGUNKNOWN" xml:space="preserve">
     <value>Unknown error occured.</value>

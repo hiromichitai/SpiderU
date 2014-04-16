@@ -92,6 +92,7 @@
     <Compile Include="ConfigurationForm.Designer.cs">
       <DependentUpon>ConfigurationForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="CSVFileWriterClass.cs" />
     <Compile Include="DeviceListClass.cs" />
     <Compile Include="DLM2000.cs" />
     <Compile Include="ErrorDialog.cs">
@@ -100,10 +101,10 @@
     <Compile Include="ErrorDialog.Designer.cs">
       <DependentUpon>ErrorDialog.cs</DependentUpon>
     </Compile>
-    <Compile Include="ExcelFileWriter.cs" />
+    <Compile Include="ExcelFileWriterClass.cs" />
     <Compile Include="FileWriterClass.cs" />
     <Compile Include="FileWriterCreator.cs" />
-    <Compile Include="HDF5Writer.cs" />
+    <Compile Include="HDF5FileWriterClass.cs" />
     <Compile Include="LD1FileWriter.cs" />
     <Compile Include="MainForm.cs">
       <SubType>Form</SubType>
@@ -199,7 +200,7 @@
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
-      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+      <LastGenOutput>Settings1.Designer.cs</LastGenOutput>
     </None>
     <Compile Include="Properties\Settings.Designer.cs">
       <AutoGen>True</AutoGen>

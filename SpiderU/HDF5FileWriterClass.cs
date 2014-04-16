@@ -6,10 +6,10 @@ using System.Threading.Tasks;
 using HDF5DotNet;
 
 namespace SpiderU {
-	class HDF5WriterClass: FileWriterClass {
+	class HDF5FileWriterClass: FileWriterClass {
 
 
-		HDF5WriterClass(string FileName) : base(FileName) {
+		HDF5FileWriterClass(string FileName) : base(FileName) {
 
 		}
 

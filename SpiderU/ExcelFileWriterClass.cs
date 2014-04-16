@@ -7,12 +7,12 @@ using Excel = Microsoft.Office.Interop.Excel;
 
 
 namespace SpiderU {
-	public class ExcelFileWriter : FileWriterClass {
+	public class ExcelFileWriterClass : FileWriterClass {
 		private Excel.Workbook wkbk;
 		private Excel.Worksheet sheet;
 		private Excel.Application excelApp;
 		
-		public ExcelFileWriter(string FileName) : base(FileName){
+		public ExcelFileWriterClass(string FileName) : base(FileName){
 			List<ScopeClass> SList = ScopeManager.ScopeList;
 			for (int SIndex = 0; SIndex < SList.Count; SIndex++) {
 				ScopeClass Scope = SList[SIndex];
