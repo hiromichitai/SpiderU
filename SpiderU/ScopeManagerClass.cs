@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using NationalInstruments.NI4882;
 
 
+
 namespace SpiderU {
 	class ScopeManager {
 		private static readonly ScopeManager instance = new ScopeManager();
@@ -131,6 +132,19 @@ namespace SpiderU {
 			return true;
 		}
 
+		public static bool AllScopeSyncable() {
+			int RecordLength = SList[0].DataLength;
+			double SampleTime = SList[0].SampleTime;
+			for (int ScopeIndex = 1; ScopeIndex < SList.Count; ScopeIndex++) {
+				if (RecordLength != SList[ScopeIndex].DataLength) {
+					return false;
+				}
+				if((Math.Abs(SampleTime - SList[ScopeIndex].SampleTime)/SampleTime) > 1.0E-6){
+					return false;
+				} 
+			}
+			return true;
+		}
 
 	}
 

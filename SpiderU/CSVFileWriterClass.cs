@@ -32,6 +32,10 @@ namespace SpiderU {
 		}
 
 		public override void WriteFile(){
+
+			if (Properties.Settings.Default.addComment) {
+
+			}
 /*
 			try {
 				List<ScopeClass> SList = ScopeManager.ScopeList;

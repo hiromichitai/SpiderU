@@ -97,6 +97,15 @@ namespace SpiderU {
         }
         
         /// <summary>
+        ///   Sync all scope option is checked, but not all osilloscope record length and sampling time is identical. に類似しているローカライズされた文字列を検索します。
+        /// </summary>
+        public static string UIMSGNOTSYNCABLE {
+            get {
+                return ResourceManager.GetString("UIMSGNOTSYNCABLE", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Path too long に類似しているローカライズされた文字列を検索します。
         /// </summary>
         public static string UIMSGPATHTOOLONG {

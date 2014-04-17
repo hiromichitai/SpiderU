@@ -74,6 +74,14 @@ namespace SpiderU
 					throw(new System.Exception("User abort"));
 				}
 			}
+			if (Properties.Settings.Default.syncAllScope) {
+				if (!ScopeManager.AllScopeSyncable()) {
+					WarningDialog WDialog = new WarningDialog("UIMSGNOTSYNCABLE", true);
+					return;
+				}
+
+			}
+
 		}
 
 		public abstract void WriteFile();

@@ -124,10 +124,34 @@ namespace SpiderU.Properties {
         [global::System.Configuration.DefaultSettingValueAttribute("0")]
         public int outputEncodingID {
             get {
-                return ((int)(this["outputEncodingCodePage"]));
+                return ((int)(this["outputEncodingID"]));
             }
             set {
-                this["outputEncodingCodePage"] = value;
+                this["outputEncodingID"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("True")]
+        public bool syncAllScope {
+            get {
+                return ((bool)(this["syncAllScope"]));
+            }
+            set {
+                this["syncAllScope"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string defaultAutoFileNameSuffixFormat {
+            get {
+                return ((string)(this["defaultAutoFileNameSuffixFormat"]));
+            }
+            set {
+                this["defaultAutoFileNameSuffixFormat"] = value;
             }
         }
     }
