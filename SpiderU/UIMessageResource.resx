@@ -129,6 +129,9 @@
   <data name="UIMSGIOEXCEPTION" xml:space="preserve">
     <value>IO error occured</value>
   </data>
+  <data name="UIMSGNOTSYNCABLE" xml:space="preserve">
+    <value>Sync all scope option is checked, but not all osilloscope record length and sampling time is identical.</value>
+  </data>
   <data name="UIMSGPATHTOOLONG" xml:space="preserve">
     <value>Path too long</value>
   </data>

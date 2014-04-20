@@ -33,11 +33,11 @@ namespace SpiderU {
 			for (int SIndex = 0; SIndex < SList.Count; SIndex++) {
 				ScopeClass Scope = SList[SIndex];
 				sheet = wkbk.Sheets.Add() as Excel.Worksheet;
-				sheet.Name = Scope.ScopeID;
+				sheet.Name = Scope.ID;
 				int Row = 1;
 				if (SpiderU.Properties.Settings.Default.addComment) {
 					for (int ChIndex = 0; ChIndex < Scope.NumOnChannel; ChIndex++) {
-						((Excel.Range)sheet.Cells[Row, 1]).Value = Scope.ScopeTitle;
+						((Excel.Range)sheet.Cells[Row, 1]).Value = Scope.Comment;
 					}
 					Row++;
 				}

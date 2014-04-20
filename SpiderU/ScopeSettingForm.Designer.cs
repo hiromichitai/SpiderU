@@ -34,6 +34,8 @@
 			this.multiplierTextBox = new System.Windows.Forms.TextBox();
 			this.OKButton = new System.Windows.Forms.Button();
 			this.cancelButton = new System.Windows.Forms.Button();
+			this.label4 = new System.Windows.Forms.Label();
+			this.commentTextBox = new System.Windows.Forms.TextBox();
 			this.SuspendLayout();
 			// 
 			// chComboBox
@@ -94,12 +96,24 @@
 			this.cancelButton.UseVisualStyleBackColor = true;
 			this.cancelButton.Click += new System.EventHandler(this.cancelButton_Click);
 			// 
+			// label4
+			// 
+			resources.ApplyResources(this.label4, "label4");
+			this.label4.Name = "label4";
+			// 
+			// commentTextBox
+			// 
+			resources.ApplyResources(this.commentTextBox, "commentTextBox");
+			this.commentTextBox.Name = "commentTextBox";
+			// 
 			// ScopeSettingForm
 			// 
 			this.AcceptButton = this.OKButton;
 			resources.ApplyResources(this, "$this");
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.CancelButton = this.cancelButton;
+			this.Controls.Add(this.commentTextBox);
+			this.Controls.Add(this.label4);
 			this.Controls.Add(this.cancelButton);
 			this.Controls.Add(this.OKButton);
 			this.Controls.Add(this.multiplierTextBox);
@@ -128,5 +142,7 @@
 		private System.Windows.Forms.TextBox multiplierTextBox;
 		private System.Windows.Forms.Button OKButton;
 		private System.Windows.Forms.Button cancelButton;
+		private System.Windows.Forms.Label label4;
+		private System.Windows.Forms.TextBox commentTextBox;
 	}
 }

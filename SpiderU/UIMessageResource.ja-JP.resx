@@ -129,6 +129,9 @@
   <data name="UIMSGIOEXCEPTION" xml:space="preserve">
     <value>入出力エラーが発生しました</value>
   </data>
+  <data name="UIMSGNOTSYNCABLE" xml:space="preserve">
+    <value>全オシロスコープ同期オプションが選択されていますが、オシロのレコード長とサンプリング時間が同一ではありません。</value>
+  </data>
   <data name="UIMSGPATHTOOLONG" xml:space="preserve">
     <value>ファイルパスが長すぎます</value>
   </data>

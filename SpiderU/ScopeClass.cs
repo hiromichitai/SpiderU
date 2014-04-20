@@ -61,7 +61,8 @@ namespace SpiderU {
 		protected double SamplingTime;
 		protected string ModelNameString;
 		protected string ScopeIDString;
-		protected string ScopeTitleString;
+		protected string ScopeCommentString;
+		protected string AcquisitionDateTimeString;
 		protected List<TraceClass> TraceList;
 
 		public ScopeClass(Device MyDevice,string ModelName,int NumChannel){
@@ -79,14 +80,23 @@ namespace SpiderU {
 			get { return this.ModelNameString; }
 		}
 
-		public string ScopeID {
+		public string ID {
 			get { return this.ScopeIDString; }
 			set { this.ScopeIDString = value; }
 		}
 
-		public string ScopeTitle {
-			get { return this.ScopeTitleString; }
-			set { this.ScopeTitleString = value; }
+		public string Comment {
+			get {
+ 				string CommentString = this.ScopeCommentString;
+				if(Properties.Settings.Default.includeDateTime){
+					CommentString += " " + AcquisitionDateTimeString;
+				}
+				if(Properties.Settings.Default.includeDateTime){
+					CommentString += " " + this.ModelName;
+				}
+				return CommentString; 
+			}
+			set { this.ScopeCommentString = value; }
 		}
 
 		public List<TraceClass> Channel {
@@ -174,10 +184,15 @@ namespace SpiderU {
 			return SamplingTime*Index;
 		}
 
+		public double SampleTime {
+			get { return SamplingTime; }
+		}
+
 		abstract public int NumChannel();	// returns number of channel
 		abstract public void GetSettings();	// Get current status
-		abstract public void GetData();	// Get channel data
 
+		public abstract void GetData() ;			// Get channel data base method
+//			AcquisitionDateTimeString = Convert.ToString(DateTime.Now);
 
 	}
 }

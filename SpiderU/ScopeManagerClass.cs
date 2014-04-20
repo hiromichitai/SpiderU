@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using NationalInstruments.NI4882;
 
 
+
 namespace SpiderU {
 	class ScopeManager {
 		private static readonly ScopeManager instance = new ScopeManager();
@@ -24,7 +25,7 @@ namespace SpiderU {
 
 		public static ScopeClass GetScopeFromID(string ScopeID){
 			for(int ScopeIndex=0; ScopeIndex < SList.Count; ScopeIndex++){
-				if(SList[ScopeIndex].ScopeID == ScopeID){
+				if(SList[ScopeIndex].ID == ScopeID){
 					return SList[ScopeIndex];
 				}
 			}
@@ -116,7 +117,7 @@ namespace SpiderU {
 			}
 			if (NewScope != null) {
 				NewScope.GetSettings();
-				NewScope.ScopeID = string.Format("{0:s}({1:G})",NewScope.ModelName,NewDevice.PrimaryAddress);
+				NewScope.ID = string.Format("{0:s}({1:G})",NewScope.ModelName,NewDevice.PrimaryAddress);
 				SList.Add(NewScope);
 				return NewScope;
 			} else {
@@ -131,6 +132,19 @@ namespace SpiderU {
 			return true;
 		}
 
+		public static bool AllScopeSyncable() {
+			int RecordLength = SList[0].DataLength;
+			double SampleTime = SList[0].SampleTime;
+			for (int ScopeIndex = 1; ScopeIndex < SList.Count; ScopeIndex++) {
+				if (RecordLength != SList[ScopeIndex].DataLength) {
+					return false;
+				}
+				if((Math.Abs(SampleTime - SList[ScopeIndex].SampleTime)/SampleTime) > 1.0E-6){
+					return false;
+				} 
+			}
+			return true;
+		}
 
 	}
 
