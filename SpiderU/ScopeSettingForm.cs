@@ -14,6 +14,7 @@ namespace SpiderU {
 		private int NumChannel;
 		private int[] ChannelNumber;
 		private ScopeClass TargetScope;
+		private string commentString;
 		private string[] UnitString;
 		private string[] LabelString;
 		private double[] Multiplier;
@@ -25,6 +26,7 @@ namespace SpiderU {
 		}
 
 		private void refreshForm(){
+			commentTextBox.Text = commentString;
 			if (chComboBox.SelectedIndex != -1) {
 				int chIndex = chComboBox.SelectedIndex;
 				labelTextBox.Text = LabelString[chIndex];
@@ -34,6 +36,7 @@ namespace SpiderU {
 		}
 
 		private void storeChangedValue(){
+			commentString = commentTextBox.Text;
 			LabelString[comboBoxPreSelectionIndex] = labelTextBox.Text;
 			UnitString[comboBoxPreSelectionIndex] = unitTextBox.Text;
 			Multiplier[comboBoxPreSelectionIndex] = Convert.ToDouble(multiplierTextBox.Text);
@@ -75,6 +78,7 @@ namespace SpiderU {
 		private void OKButton_Click(object sender, EventArgs e)
 		{
 			storeChangedValue();
+			TargetScope.Comment = commentString;
 			for(int chIndex = 0; chIndex < NumChannel; chIndex++ ){
 				TraceClass trace = TargetScope.Channel[ChannelNumber[chIndex]];
 				trace.TraceLabel = LabelString[chIndex];
@@ -87,7 +91,6 @@ namespace SpiderU {
 		private void cancelButton_Click(object sender, EventArgs e)
 		{
 			DialogResult = DialogResult.Cancel;
-		
 		}
 	}
 }

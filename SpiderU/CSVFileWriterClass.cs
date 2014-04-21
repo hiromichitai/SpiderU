@@ -33,45 +33,77 @@ namespace SpiderU {
 
 		public override void WriteFile(){
 
-			if (Properties.Settings.Default.addComment) {
+			List<ScopeClass> SList = ScopeManager.ScopeList;
 
-			}
-/*
-			try {
-				List<ScopeClass> SList = ScopeManager.ScopeList;
-				for (int SIndex = 0; SIndex < SList.Count; SIndex++) {
-					ScopeClass Scope = SList[SIndex];
-					sheet.Name = Scope.ScopeID;
-					int Row = 1;
-					if (SpiderU.Properties.Settings.Default.addComment) {
-					for (int ChIndex = 0; ChIndex < Scope.NumOnChannel; ChIndex++) {
-						((Excel.Range)sheet.Cells[Row, 1]).Value = Scope.ScopeTitle;
+			try { 
+				if (Properties.Settings.Default.syncAllScope) {
+
+					if (Properties.Settings.Default.addComment) {
+						SWriter.Write(SList[0].Comment);
+						for (int SIndex = 1; SIndex < SList.Count; SIndex++) {
+							SWriter.Write("," + SList[SIndex].Comment);
+						}
+						SWriter.WriteLine();
 					}
-					Row++;
-				}
 
-				if (SpiderU.Properties.Settings.Default.addHeader) {
-					((Excel.Range)sheet.Cells[Row, 1]).Value = "Time(s)";
+					if (Properties.Settings.Default.addHeader) {
+						SWriter.Write("Time(s),");
+						for (int SIndex = 0; SIndex < SList.Count; SIndex++) {
+							ScopeClass Scope = SList[SIndex];
+							for (int TIndex = 0; TIndex < Scope.NumOnChannel; TIndex++) {
+								SWriter.Write(Scope.NthOnChannel(TIndex).TraceLabel + "(" + Scope.NthOnChannel(TIndex).TraceUnit + ")");
 
-					for (int ChIndex = 0; ChIndex < Scope.NumOnChannel; ChIndex++) {
-						((Excel.Range)sheet.Cells[Row, ChIndex+2]).Value = Scope.NthOnChannel(ChIndex).TraceLabel + "(" + Scope.NthOnChannel(ChIndex).TraceUnit + ")";
+							}
+						}
+						SWriter.WriteLine();
 					}
-					Row++;
-				}
+					for (int DIndex = 0; DIndex < SList[0].DataLength; DIndex++) {
+						for (int SIndex = 0; SIndex < SList.Count; SIndex++) {
+							ScopeClass Scope = SList[SIndex];
+							for (int TIndex = 0; TIndex < Scope.NumOnChannel; TIndex++) {
+								if ((SIndex != 0) || (TIndex != 0)) {	// then not the first column
+									SWriter.Write(",");
+								}
+								SWriter.Write(string.Format("%f", Scope.NthOnChannel(TIndex).Data()[DIndex]));
+							}
+						}
+						SWriter.WriteLine();
+					}
+				} else {
+					for (int SIndex = 1; SIndex < SList.Count; SIndex++) {
+						ScopeClass Scope = SList[SIndex];
 
-				for (int RIndex = 0; RIndex < Scope.DataLength; RIndex++) {
-					((Excel.Range)sheet.Cells[RIndex+Row,1]).Value = Scope.STime(RIndex);
-					for(int ChIndex = 0; ChIndex < Scope.NumOnChannel; ChIndex++){
-						((Excel.Range)sheet.Cells[RIndex+Row,ChIndex+2]).Value = Scope.NthOnChannel(ChIndex).Data()[RIndex];
+						if (Properties.Settings.Default.addComment) {
+							SWriter.WriteLine(Scope.Comment);
+						}
+
+						if (Properties.Settings.Default.addHeader) {
+							SWriter.Write("Time(s),");
+							for (int TIndex = 0; TIndex < Scope.NumOnChannel; TIndex++) {
+								SWriter.Write(Scope.NthOnChannel(TIndex).TraceLabel + "(" + Scope.NthOnChannel(TIndex).TraceUnit + ")");
+							}
+						}
+						SWriter.WriteLine();
+
+						for (int DIndex = 0; DIndex < SList[0].DataLength; DIndex++) {
+							for (int TIndex = 0; TIndex < Scope.NumOnChannel; TIndex++) {
+								if (TIndex != 0) {	// then not the first column
+									SWriter.Write(",");
+								}
+								SWriter.Write(string.Format("%f", Scope.NthOnChannel(TIndex).Data()[DIndex]));
+							}
+						}
+						SWriter.WriteLine();
 					}
 				}
 			}
-			wkbk.Save();
+			catch (IOException) {
+				WarningDialog WDialog = new WarningDialog("UIMSGIOEXCEPTION", " in CSVFileWriteClass.WriteFile");
 			}
-*/
 		}
 
 		public override void Close(){
+			SWriter.Close();
 		}
 
 	}

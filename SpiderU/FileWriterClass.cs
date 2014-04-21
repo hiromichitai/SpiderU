@@ -79,9 +79,7 @@ namespace SpiderU
 					WarningDialog WDialog = new WarningDialog("UIMSGNOTSYNCABLE", true);
 					return;
 				}
-
 			}
-
 		}
 
 		public abstract void WriteFile();

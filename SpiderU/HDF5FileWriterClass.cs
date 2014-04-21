@@ -10,9 +10,80 @@ namespace SpiderU {
 
 
 		HDF5FileWriterClass(string FileName) : base(FileName) {
+			try {
+				H5FileId fileId = H5F.create(FileName,H5F.CreateMode.ACC_CREAT);
+
+			}
+			catch (ArgumentException) {
+				WarningDialog WDialog = new WarningDialog("UIMSGARGEXCEPTION", "in CSVFileWriter");
+			}
+			catch (System.Security.SecurityException) {
+				WarningDialog WDialog = new WarningDialog("UIMSGSECURITYEXCEPTION", "in CSVFileWriter");
+			}
 
 		}
 
+/*
+            // Rank is the number of dimensions of the data array.
+            const int RANK = 1;
+
+
+            // Create a HDF5 group.  
+            H5GroupId groupId = H5G.create(fileId, "/cSharpGroup");
+            H5GroupId subGroup = H5G.create(groupId, "mySubGroup");
+
+            // Close the subgroup.
+            H5G.close(subGroup);
+
+            // Prepare to create a data space for writing a 1-dimensional 
+            // signed integer array.
+            long[] dims = new long[RANK];
+            dims[0] = DATA_ARRAY_LENGTH;
+
+            H5DataSpaceId spaceId = H5S.create_simple(RANK, dims);
+
+            H5DataTypeId typeId = H5T.copy(H5T.H5Type.NATIVE_INT);
+
+            // Find the size of the type
+            int typeSize = H5T.getSize(typeId);
+
+            // Set the order to big endian
+            H5T.setOrder(typeId, H5T.Order.BE);
+
+            // Set the order to little endian
+            H5T.setOrder(typeId, H5T.Order.LE);
+
+            // Create the data set.
+            H5DataSetId dataSetId = H5D.create(fileId, "/csharpExample",
+                                               typeId, spaceId);
+
+            // Write the integer data to the data set.
+            H5D.write(dataSetId, new H5DataTypeId(H5T.H5Type.NATIVE_INT),
+                              new H5Array<int>(dset_data));
+
+            // If we were writing a single value it might look like this.
+            //  int singleValue = 100;
+            //  H5D.writeScalar(dataSetId, 
+            //                 new H5DataTypeId(H5T.H5Type.NATIVE_INT),
+            //                 ref singleValue);
+
+            // Create an integer array to receive the read data.
+            int[] readDataBack = new int[DATA_ARRAY_LENGTH];
+
+            // Read the integer data back from the data set
+            H5D.read(dataSetId, new H5DataTypeId(H5T.H5Type.NATIVE_INT),
+                new H5Array<int>(readDataBack));
+
+            // Echo the data
+            for (int i = 0; i < DATA_ARRAY_LENGTH; i++)
+            {
+               Console.WriteLine(readDataBack[i]);
+            }
+
+            // Close all the open resources.
+            H5D.close(dataSetId);
+
+	
 		// Function used with H5L.iterate
 		static H5IterationResult MyH5LFunction(H5GroupId id,
 											   string objectName,
@@ -33,6 +104,7 @@ namespace SpiderU {
 
 			return H5IterationResult.SUCCESS;
 		}
+*/
 
 		public override void WriteFile() {
 

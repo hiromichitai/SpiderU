@@ -44,7 +44,7 @@ namespace SpiderU {
 					if (NScopeForm.ShowDialog() == DialogResult.OK) {
 						 ScopeClass NewScope = ScopeManager.CreateNewScope(NScopeForm.CreatedDevice());
 						 ToolStripItem newScopeSettingItem = new ToolStripMenuItem();
-						 newScopeSettingItem.Text = NewScope.ScopeID;
+						 newScopeSettingItem.Text = NewScope.ID;
 						 newScopeSettingItem.Click +=  scopeSettingToolStripMenuItem_Click;
 						 scopeToolStripMenuItem.DropDownItems.Add((newScopeSettingItem));
 					}

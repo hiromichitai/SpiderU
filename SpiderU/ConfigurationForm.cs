@@ -34,12 +34,6 @@ namespace SpiderU {
 			}
 		}
 
-		public string CommentLine {
-			get {
-				return commentLineTextBox.Text;
-			}
-		}
-
 		public bool AddHeader {
 			get {
 				return headerLineCheckBox.Checked;
