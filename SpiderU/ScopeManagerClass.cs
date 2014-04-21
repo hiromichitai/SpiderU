@@ -127,7 +127,7 @@ namespace SpiderU {
 
 		public static bool GetWaveform() {
 			for (int ScopeIndex = 0; ScopeIndex < SList.Count; ScopeIndex++) {
-				SList[ScopeIndex].GetData();
+				SList[ScopeIndex].AcquireData();
 			}
 			return true;
 		}

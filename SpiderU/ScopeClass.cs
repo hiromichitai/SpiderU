@@ -191,8 +191,13 @@ namespace SpiderU {
 		abstract public int NumChannel();	// returns number of channel
 		abstract public void GetSettings();	// Get current status
 
-		public abstract void GetData() ;			// Get channel data base method
-//			AcquisitionDateTimeString = Convert.ToString(DateTime.Now);
+		protected abstract void GetData() ;			// Get  data base method
+
+		public void AcquireData() { // this is the public interface for other class
+			GetData();
+			AcquisitionDateTimeString = Convert.ToString(DateTime.Now);
+		}
+
 
 	}
 }

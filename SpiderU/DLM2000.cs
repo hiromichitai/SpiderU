@@ -60,7 +60,7 @@ namespace SpiderU {
 			}
 		}
 
-		public override void GetData(){
+		protected override void GetData(){
 			const int BUFFERLENGTH = 10000;		// maximu block length of DLM2000 is 20000
 
 		  	GPIBDevice.Write(":STOP");
