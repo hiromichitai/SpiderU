@@ -67,20 +67,49 @@ namespace SpiderU {
 						NumTotalOnChannel += SList[SIndex].NumOnChannel;
 					}
 					PutInt(NumTotalOnChannel+1);	// +1 for time axis
+					PutString("time");
+					PutString("s");
+					for (int SIndex = 0; SIndex < SList.Count; SIndex++) {
+						for(int TIndex = 0; TIndex < SList[SIndex].NumOnChannel; TIndex++){
+							PutString(SList[SIndex].NthOnChannel(TIndex).TraceLabel);
+							PutString(SList[SIndex].NthOnChannel(TIndex).TraceUnit);
+						}
+					}
 
 	
 					for (int DIndex = 0; DIndex < SList[0].DataLength; DIndex++) {
 						for (int SIndex = 0; SIndex < SList.Count; SIndex++) {
 							ScopeClass Scope = SList[SIndex];
 							for (int TIndex = 0; TIndex < Scope.NumOnChannel; TIndex++) {
-								if ((SIndex != 0) || (TIndex != 0)) {	// then not the first column
-									PutString(",");
-								}
-								PutString(string.Format("%f", Scope.NthOnChannel(TIndex).Data()[DIndex]));
+								PutFloat(Scope.NthOnChannel(TIndex).Data()[DIndex]);
 							}
 						}
 					}
-					} else {
+				} else {
+					PutString(" ");
+
+					PutInt(SList.Count);
+
+					for (int SIndex = 0; SIndex < SList.Count; SIndex++) {
+						ScopeClass Scope = SList[SIndex];
+						PutInt(Scope.DataLength);
+
+						PutInt(Scope.NumOnChannel + 1);	// +1 for time axis
+						PutString("time");
+						PutString("s");
+						for (int TIndex = 0; TIndex < SList[SIndex].NumOnChannel; TIndex++) {
+							PutString(Scope.NthOnChannel(TIndex).TraceLabel);
+							PutString(Scope.NthOnChannel(TIndex).TraceUnit);
+						}
+
+
+						for (int DIndex = 0; DIndex < SList[0].DataLength; DIndex++) {
+							for (int TIndex = 0; TIndex < Scope.NumOnChannel; TIndex++) {
+								PutFloat(Scope.NthOnChannel(TIndex).Data()[DIndex]);
+							}
+						}
+					}
+
 				}
 			}
 			catch (IOException) {
@@ -96,21 +125,8 @@ namespace SpiderU {
 		/*
 		 * 
 
-				for SIndex := 0 to ScopeList.Count - 1 do begin
-					Scope := ScopeList.Items[SIndex];
-					Scope.PutData(DFile);
-				end;
-				DFile.Close;
 
-	DFile.PutInt(RecordLength);
-	DFile.PutInt(NumActiveTrace+1);
-	DFile.PutString(TraceProperty[0].XLabel);
-	DFile.PutString(TraceProperty[0].XUnit);
-	for ch := 0 to NumActiveTrace-1 do begin
-		DFile.PutString(TraceProperty[ch].YLabel);
-		DFile.PutString(TraceProperty[ch].YUnit);
-	end;
-	for ln := 0 to RecordLength-1 do begin
+for ln := 0 to RecordLength-1 do begin
 		DFile.PutFloat(XData[0,ln]);
 		for ch := 0 to NumActiveTrace-1 do begin
 			DFile.PutFloat(YData[ch,ln]);
