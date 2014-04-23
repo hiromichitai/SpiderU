@@ -55,28 +55,22 @@ namespace SpiderU {
 			}
 		}
 
-		private string getAutoFileName() {
-			string FileName = Properties.Settings.Default.autoFileNamePrefix;
-			FileName += Properties.Settings.Default.autoFileNameSerialNumber.ToString("D"+Properties.Settings.Default.autoFileNameSerialDigits.ToString("D"));
-			FileName += Properties.Settings.Default.autoFileNameSuffix;
-			return FileName;
-		}
 
 		private void acquisitionToolStripMenuItem_Click(object sender, EventArgs e)
 		{
 			ScopeManager.GetWaveform();
 			string FileName = "";
 			if (Properties.Settings.Default.useAutoFileName) {
-				FileName =getAutoFileName();
+				FileName = FileWriterCreator.autoFileName;
 			}
 			saveFileDialog1.DefaultExt = FileWriterClass.DefaultExtention(Properties.Settings.Default.outputFileFormatID);
 			saveFileDialog1.FileName = FileName;
 			if (saveFileDialog1.ShowDialog() == DialogResult.OK) {
 				FileWriterClass fWriter = FileWriterCreator.CreateFileWriter(saveFileDialog1.FileName);
 				fWriter.WriteFile();
-				
+				fWriter.Close();
+				FileWriterCreator.incAutoFileNameNumber();
 			}
-
 		}
 
 		private void settingToolStripMenuItem_Click(object sender, EventArgs e) {

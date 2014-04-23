@@ -7,12 +7,11 @@ using HDF5DotNet;
 
 namespace SpiderU {
 	class HDF5FileWriterClass: FileWriterClass {
-
+		private H5FileId fileID;
 
 		HDF5FileWriterClass(string FileName) : base(FileName) {
 			try {
-				H5FileId fileId = H5F.create(FileName,H5F.CreateMode.ACC_CREAT);
-
+				fileID = H5F.create(FileName, H5F.CreateMode.ACC_CREAT);
 			}
 			catch (ArgumentException) {
 				WarningDialog WDialog = new WarningDialog("UIMSGARGEXCEPTION", "in CSVFileWriter");
@@ -24,15 +23,8 @@ namespace SpiderU {
 		}
 
 /*
-            // Rank is the number of dimensions of the data array.
-            const int RANK = 1;
-
-
-            // Create a HDF5 group.  
             H5GroupId groupId = H5G.create(fileId, "/cSharpGroup");
             H5GroupId subGroup = H5G.create(groupId, "mySubGroup");
-
-            // Close the subgroup.
             H5G.close(subGroup);
 
             // Prepare to create a data space for writing a 1-dimensional 
@@ -41,7 +33,6 @@ namespace SpiderU {
             dims[0] = DATA_ARRAY_LENGTH;
 
             H5DataSpaceId spaceId = H5S.create_simple(RANK, dims);
-
             H5DataTypeId typeId = H5T.copy(H5T.H5Type.NATIVE_INT);
 
             // Find the size of the type
@@ -107,6 +98,15 @@ namespace SpiderU {
 */
 
 		public override void WriteFile() {
+			H5GroupId groupID = H5G.create(fileID, "/cSharpGroup");
+			H5GroupId subGroup = H5G.create(groupID, "mySubGroup");
+			H5G.close(subGroup);
+
+//			long[] dims = new long[RANK];
+//			dims[0] = DATA_ARRAY_LENGTH;
+
+//			H5DataSpaceId spaceId = H5S.create_simple(RANK, dims);
+			H5DataTypeId typeId = H5T.copy(H5T.H5Type.NATIVE_INT);
 
 		}
 

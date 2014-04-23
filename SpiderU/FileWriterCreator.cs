@@ -18,6 +18,20 @@ namespace SpiderU {
 			}
 		}
 
+		public static string autoFileName {
+			get {
+				string FileName = Properties.Settings.Default.autoFileNamePrefix;
+				FileName += Properties.Settings.Default.autoFileNameSerialNumber.ToString("D" + Properties.Settings.Default.autoFileNameSerialDigits.ToString("D"));
+				FileName += Properties.Settings.Default.autoFileNameSuffix;
+				return FileName;
+			}
+		}
+
+		public static void incAutoFileNameNumber() {
+			Properties.Settings.Default.autoFileNameSerialNumber++;
+		}
+
+
 		public static FileWriterClass CreateFileWriter(string FileName){
 			switch (System.IO.Path.GetExtension(FileName).ToLower()) {
 				case(".xls"):

@@ -28,20 +28,15 @@ namespace SpiderU {
 			return FileWriterClass.FileFormatEnum.INVALID;
 		}
 
-		public bool AddComment {
-			get {
-				return commentLineCheckBox.Checked;
-			}
-		}
-
-		public bool AddHeader {
-			get {
-				return headerLineCheckBox.Checked;
-			}
-		}
 
 		private void OKButton_Click(object sender, EventArgs e) {
+			Properties.Settings.Default.Save();
+		}
 
+		private void useAutoFileNameCheckBox_CheckedChanged(object sender, EventArgs e) {
+			if (useAutoFileNameCheckBox.Checked) {
+
+			}
 		}
 
 	}
