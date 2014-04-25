@@ -112,7 +112,12 @@ namespace SpiderU {
 							break;
 					}
 					break;
-				case("LECROY"):
+				case (" *IDN LECROY"):
+					switch(IDSubStrings[1]){
+						case ("WR6050A"):		// WaveRunner 6050
+							NewScope = new WaveRunner6050(NewDevice,"WaveRunner6050", 4);
+							break;
+					}
 					 break;
 			}
 			if (NewScope != null) {

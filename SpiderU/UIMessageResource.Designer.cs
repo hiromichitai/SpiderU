@@ -88,6 +88,15 @@ namespace SpiderU {
         }
         
         /// <summary>
+        ///   Oscilloscope ID string is illegal に類似しているローカライズされた文字列を検索します。
+        /// </summary>
+        public static string UIMSGILLEGALID {
+            get {
+                return ResourceManager.GetString("UIMSGILLEGALID", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   IO error occured に類似しているローカライズされた文字列を検索します。
         /// </summary>
         public static string UIMSGIOEXCEPTION {

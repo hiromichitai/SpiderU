@@ -94,6 +94,7 @@
     </Compile>
     <Compile Include="CSVFileWriterClass.cs" />
     <Compile Include="DeviceListClass.cs" />
+    <Compile Include="WaveRunner6050.cs" />
     <Compile Include="DLM2000.cs" />
     <Compile Include="ErrorDialog.cs">
       <SubType>Form</SubType>

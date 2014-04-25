@@ -126,6 +126,9 @@
   <data name="UIMSGEXCELRANGEOVER" xml:space="preserve">
     <value>Excelの最大行数を超えるので、Excelファイルは作成できません</value>
   </data>
+  <data name="UIMSGILLEGALID" xml:space="preserve">
+    <value>オシロスコープのID文字列が異常です</value>
+  </data>
   <data name="UIMSGIOEXCEPTION" xml:space="preserve">
     <value>入出力エラーが発生しました</value>
   </data>
