@@ -14,10 +14,10 @@ namespace SpiderU {
 				fileID = H5F.create(FileName, H5F.CreateMode.ACC_CREAT);
 			}
 			catch (ArgumentException) {
-				WarningDialog WDialog = new WarningDialog("UIMSGARGEXCEPTION", "in CSVFileWriter");
+				WarningDialog WDialog = new WarningDialog("UIMSGARGEXCEPTION", "in HDF5FileWriter");
 			}
 			catch (System.Security.SecurityException) {
-				WarningDialog WDialog = new WarningDialog("UIMSGSECURITYEXCEPTION", "in CSVFileWriter");
+				WarningDialog WDialog = new WarningDialog("UIMSGSECURITYEXCEPTION", "in HDF5FileWriter");
 			}
 
 		}
@@ -98,7 +98,20 @@ namespace SpiderU {
 */
 
 		public override void WriteFile() {
-			H5GroupId groupID = H5G.create(fileID, "/cSharpGroup");
+			List<ScopeClass> SList = ScopeManager.ScopeList;
+			if (Properties.Settings.Default.syncAllScope) {
+				if (Properties.Settings.Default.addComment) {
+					string GrooupComment = SList[0].Comment;
+					for (int SIndex = 1; SIndex < SList.Count; SIndex++) {
+						GrooupComment = GrooupComment + SList[SIndex].Comment;
+					}
+				}
+
+
+			} else {
+
+			}
+			H5GroupId groupID = H5G.create(fileID, "/");
 			H5GroupId subGroup = H5G.create(groupID, "mySubGroup");
 			H5G.close(subGroup);
 

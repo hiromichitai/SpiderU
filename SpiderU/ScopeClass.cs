@@ -49,6 +49,15 @@ namespace SpiderU {
 		public double[] Data() {
 			return TraceDataArray;
 		}
+
+		public double this[int DIndex] {
+			get {
+				return TraceDataArray[DIndex];
+			}
+			set {
+				TraceDataArray[DIndex] = value;
+			}
+		}
 	}
 
 
