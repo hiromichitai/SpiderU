@@ -120,6 +120,9 @@
   <data name="UIMSGARGEXCEPTION" xml:space="preserve">
     <value>Null or invalid argument </value>
   </data>
+  <data name="UIMSGCANTOPENUSBPHY" xml:space="preserve">
+    <value>Can't open Oscilloscope as USB PHY device.</value>
+  </data>
   <data name="UIMSGDATAINCONSIST" xml:space="preserve">
     <value>Internal data consisitency error</value>
   </data>
@@ -129,11 +132,17 @@
   <data name="UIMSGILLEGALID" xml:space="preserve">
     <value>Oscilloscope ID string is illegal</value>
   </data>
+  <data name="UIMSGINTILLEGALARG" xml:space="preserve">
+    <value>Internal illegal function call</value>
+  </data>
   <data name="UIMSGIOEXCEPTION" xml:space="preserve">
     <value>IO error occured</value>
   </data>
+  <data name="UIMSGNOSCOPE" xml:space="preserve">
+    <value>No oscilloscope found</value>
+  </data>
   <data name="UIMSGNOTSYNCABLE" xml:space="preserve">
-    <value>Sync all scope option is checked, but not all osilloscope record length and sampling time is identical.</value>
+    <value>Sync all oscilloscope option is checked, but not all osilloscope record length and sampling time is identical.</value>
   </data>
   <data name="UIMSGPATHTOOLONG" xml:space="preserve">
     <value>Path too long</value>
@@ -143,5 +152,8 @@
   </data>
   <data name="UIMSGUNKNOWN" xml:space="preserve">
     <value>Unknown error occured.</value>
+  </data>
+  <data name="UIMSGUSBREADERROR" xml:space="preserve">
+    <value>USB read error occured.</value>
   </data>
 </root>

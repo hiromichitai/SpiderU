@@ -10,11 +10,9 @@ namespace SpiderU {
 
 		private double[] VperDiv;
 
-		public DLM2000(Device MyDevice,string ModelName,int NumChannel)	: base(MyDevice,ModelName,NumChannel) {
+		public DLM2000(ComDeviceClass MyDevice,string ModelName,int NumChannel)	: base(MyDevice,ModelName,NumChannel) {
 
-			GPIBDevice.Write("*IDN?");	// to make sure what am I?
-			string IDString = GPIBDevice.ReadString();
-			if (IDString.Substring(0,8) != "YOKOGAWA") { // check manufacturer 
+			if (ComDevice.IDString.Substring(0,8) != "YOKOGAWA") { // check manufacturer 
 				WarningDialog DialogForm = new WarningDialog("Internal Error in DLM2000 constructor");
 				Exception Ex = new Exception("Internal Error");
 				throw(Ex);
@@ -37,23 +35,23 @@ namespace SpiderU {
 
 		public override void GetSettings(){
 
-			GPIBDevice.Write(":COMMUNICATE:HEADER OFF");
-			GPIBDevice.Write(":ACQUIRE:RLENGTH?");
-			string RecordLengthStr = GPIBDevice.ReadString();
+			ComDevice.Write(":COMMUNICATE:HEADER OFF");
+			ComDevice.Write(":ACQUIRE:RLENGTH?");
+			string RecordLengthStr = ComDevice.ReadString();
 			RecordLength = Convert.ToInt32(RecordLengthStr);
-			GPIBDevice.Write(":TIMEBASE:SRATE?");
-			string SamplingRateStr = GPIBDevice.ReadString();
+			ComDevice.Write(":TIMEBASE:SRATE?");
+			string SamplingRateStr = ComDevice.ReadString();
 			SamplingTime = 1.0 / Convert.ToDouble(SamplingRateStr);
 			for (int TraceIndex = 0; TraceIndex < NumberOfChannel; TraceIndex++) {
 				int Channel = TraceIndex+1;
 				string CommandString = String.Format(":CHANNEL{0:D}:DISPLAY?",Channel);
-				GPIBDevice.Write(CommandString);
-				string ResultString = GPIBDevice.ReadString();
+				ComDevice.Write(CommandString);
+				string ResultString = ComDevice.ReadString();
 				TraceList[TraceIndex].IsOn = (ResultString.Substring(0,1) == "1");
 
 				CommandString = String.Format(":CHANNEL{0:D}:VDIV?", Channel);
-				GPIBDevice.Write(CommandString);
-				ResultString = GPIBDevice.ReadString();
+				ComDevice.Write(CommandString);
+				ResultString = ComDevice.ReadString();
 				
 				VperDiv[TraceIndex] = Convert.ToDouble(ResultString);
 
@@ -63,7 +61,7 @@ namespace SpiderU {
 		protected override void GetData(){
 			const int BUFFERLENGTH = 10000;		// maximu block length of DLM2000 is 20000
 
-		  	GPIBDevice.Write(":STOP");
+		  	ComDevice.Write(":STOP");
 			for(int TraceIndex = 0; TraceIndex < NumberOfChannel; TraceIndex++){
 				if(TraceList[TraceIndex].IsOn) {
 					if(TraceList[TraceIndex].DataLength != RecordLength) {
@@ -71,26 +69,26 @@ namespace SpiderU {
 					}
 
 					string CommandString = string.Format(":WAVEFORM:TRACE {0:D}", TraceIndex + 1);
-					GPIBDevice.Write(CommandString);
-					GPIBDevice.Write(":WAVEFORM:FORMAT BYTE");
-					GPIBDevice.Write(":WAVEFORM:BYTEORDER LSBFIRST");
+					ComDevice.Write(CommandString);
+					ComDevice.Write(":WAVEFORM:FORMAT BYTE");
+					ComDevice.Write(":WAVEFORM:BYTEORDER LSBFIRST");
 		
-					GPIBDevice.Write(":WAVEFORM:START 0");
+					ComDevice.Write(":WAVEFORM:START 0");
 					CommandString = string.Format(":WAVEFORM:END {0:D}", RecordLength - 1);
-					GPIBDevice.Write(CommandString);
-					GPIBDevice.Write(":WAVEFORM:OFFSET?");
-					string Response = GPIBDevice.ReadString();
+					ComDevice.Write(CommandString);
+					ComDevice.Write(":WAVEFORM:OFFSET?");
+					string Response = ComDevice.ReadString();
 					double Offset = Convert.ToDouble(Response);
 
-					GPIBDevice.Write(":WAVEFORM:RANGE?");
-					Response = GPIBDevice.ReadString();
+					ComDevice.Write(":WAVEFORM:RANGE?");
+					Response = ComDevice.ReadString();
 					double Range = Convert.ToDouble(Response);
 
-					GPIBDevice.Write(":WAVEFORM:SEND?");
-					byte[] HeaderLengthByte = GPIBDevice.ReadByteArray(2);
+					ComDevice.Write(":WAVEFORM:SEND?");
+					byte[] HeaderLengthByte = ComDevice.ReadByteArray(2);
 					int HeaderLength = HeaderLengthByte[1] - '0';
 					
-					byte[] BlockLengthStrByte = GPIBDevice.ReadByteArray(HeaderLength);
+					byte[] BlockLengthStrByte = ComDevice.ReadByteArray(HeaderLength);
 					string BlockLengthStr = System.Text.Encoding.ASCII.GetString(BlockLengthStrByte);
 					int BlockLength = Convert.ToInt32(BlockLengthStr);
 					int BytesLeft = BlockLength;
@@ -104,14 +102,14 @@ namespace SpiderU {
 						} else {
 							BytesToRead = BytesLeft;
 						}
-						InputBuffer = GPIBDevice.ReadByteArray(BytesToRead);
+						InputBuffer = ComDevice.ReadByteArray(BytesToRead);
 						for (int BIndex = 0; BIndex < BytesToRead; BIndex++) {
 							RawData[BIndex+BOffset] = InputBuffer[BIndex];
 						}
 						BOffset += BytesToRead;
 						BytesLeft -= BytesToRead;
 					}
-					byte[] Garbage = GPIBDevice.ReadByteArray(1);	// read one byte of EOS
+					byte[] Garbage = ComDevice.ReadByteArray(1);	// read one byte of EOS
 
 					double[] TraceData = TraceList[TraceIndex].Data();
 					for (int Index = 0; Index < RecordLength; Index++) {
@@ -120,9 +118,9 @@ namespace SpiderU {
 				}
 			}
 //			if AqOptionForm.TrigSingleCheckBox.Checked then begin
-//				GPIBDevice.Write(":START");
+//				ComDevice.Write(":START");
 //			end;
-			GPIBDevice.GoToLocal();
+			ComDevice.GoToLocal();
 		}
 
 	}

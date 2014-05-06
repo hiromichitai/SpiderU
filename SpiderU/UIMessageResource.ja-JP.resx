@@ -120,6 +120,9 @@
   <data name="UIMSGARGEXCEPTION" xml:space="preserve">
     <value>引数が空か、不正な文字を含んでいます</value>
   </data>
+  <data name="UIMSGCANTOPENUSBPHY" xml:space="preserve">
+    <value>USB PHYデバイsとしてオシロスコープに接続できません</value>
+  </data>
   <data name="UIMSGDATAINCONSIST" xml:space="preserve">
     <value>内部データの整合性に問題が発生しました</value>
   </data>
@@ -129,8 +132,14 @@
   <data name="UIMSGILLEGALID" xml:space="preserve">
     <value>オシロスコープのID文字列が異常です</value>
   </data>
+  <data name="UIMSGINTILLEGALARG" xml:space="preserve">
+    <value>内部で不適切な関数呼び出しが行われました</value>
+  </data>
   <data name="UIMSGIOEXCEPTION" xml:space="preserve">
     <value>入出力エラーが発生しました</value>
+  </data>
+  <data name="UIMSGNOSCOPE" xml:space="preserve">
+    <value>オシロスコープを検出できません</value>
   </data>
   <data name="UIMSGNOTSYNCABLE" xml:space="preserve">
     <value>全オシロスコープ同期オプションが選択されていますが、オシロのレコード長とサンプリング時間が同一ではありません。</value>
@@ -143,5 +152,8 @@
   </data>
   <data name="UIMSGUNKNOWN" xml:space="preserve">
     <value>不明なエラーが発生しました</value>
+  </data>
+  <data name="UIMSGUSBREADERROR" xml:space="preserve">
+    <value>USB読み込み時にエラーが発生しました</value>
   </data>
 </root>

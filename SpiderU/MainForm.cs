@@ -11,7 +11,7 @@ using System.Resources;
 
 namespace SpiderU {
 	public partial class MainForm : Form {
-		DeviceListClass DeviceList;
+		ComDeviceListClass DeviceList;
 		ResourceManager rm;
 
 		public MainForm() {
@@ -39,14 +39,19 @@ namespace SpiderU {
 		private void scanToolStripMenuItem_Click(object sender, EventArgs e) {
 			if (DeviceList == null) {
 				try {
-					DeviceList = new DeviceListClass();
+					DeviceList = new ComDeviceListClass();
+					if (DeviceList == null) {
+						ErrorDialog EDialog = new ErrorDialog("UIMSGNOSCOPE");
+						return;
+					}
 					NewScopeForm NScopeForm = new NewScopeForm(DeviceList);
 					if (NScopeForm.ShowDialog() == DialogResult.OK) {
-						 ScopeClass NewScope = ScopeManager.CreateNewScope(NScopeForm.CreatedDevice());
-						 ToolStripItem newScopeSettingItem = new ToolStripMenuItem();
-						 newScopeSettingItem.Text = NewScope.ID;
-						 newScopeSettingItem.Click +=  scopeSettingToolStripMenuItem_Click;
-						 scopeToolStripMenuItem.DropDownItems.Add((newScopeSettingItem));
+						DeviceList.UseDevice(NScopeForm.CreatedDevice());
+						ScopeClass NewScope = ScopeManager.CreateNewScope(NScopeForm.CreatedDevice());
+						ToolStripItem newScopeSettingItem = new ToolStripMenuItem();
+						newScopeSettingItem.Text = NewScope.ID;
+						newScopeSettingItem.Click +=  scopeSettingToolStripMenuItem_Click;
+						scopeToolStripMenuItem.DropDownItems.Add((newScopeSettingItem));
 					}
 				}
 				catch (System.Exception Ex) {

@@ -55,6 +55,7 @@
     <ErrorReport>prompt</ErrorReport>
     <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
     <Prefer32Bit>true</Prefer32Bit>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
     <OutputPath>bin\x86\Release\</OutputPath>
@@ -71,11 +72,15 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\DLL\HDF5DotNet-Net4.0-x86_64\HDF5DotNet.dll</HintPath>
     </Reference>
+    <Reference Include="LibUsbDotNet">
+      <HintPath>.\LibUsbDotNet.dll</HintPath>
+    </Reference>
     <Reference Include="NationalInstruments.Common, Version=12.0.40.253, Culture=neutral, PublicKeyToken=dc6ad606294fc298, processorArchitecture=MSIL" />
     <Reference Include="NationalInstruments.Common.Native, Version=12.0.40.253, Culture=neutral, PublicKeyToken=dc6ad606294fc298, processorArchitecture=x86" />
     <Reference Include="NationalInstruments.NI4882, Version=9.0.40.157, Culture=neutral, PublicKeyToken=dc6ad606294fc298, processorArchitecture=MSIL" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Management" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -84,8 +89,12 @@
     <Reference Include="System.Drawing" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
+    <Reference Include="TmctlAPINet">
+      <HintPath>.\TmctlAPINet.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ComDeviceClass.cs" />
     <Compile Include="ConfigurationForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -93,7 +102,13 @@
       <DependentUpon>ConfigurationForm.cs</DependentUpon>
     </Compile>
     <Compile Include="CSVFileWriterClass.cs" />
-    <Compile Include="DeviceListClass.cs" />
+    <Compile Include="ComDeviceListClass.cs" />
+    <Compile Include="PDS5022.cs" />
+    <Compile Include="UIMessageResource1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>UIMessageResource.resx</DependentUpon>
+    </Compile>
     <Compile Include="WaveRunner6050.cs" />
     <Compile Include="DLM2000.cs" />
     <Compile Include="ErrorDialog.cs">
@@ -138,11 +153,6 @@
       <DependentUpon>UIMessageResource.ja-JP.resx</DependentUpon>
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-    </Compile>
-    <Compile Include="UIMessageResource.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>UIMessageResource.resx</DependentUpon>
     </Compile>
     <Compile Include="WarningDialog.cs">
       <SubType>Form</SubType>
@@ -196,7 +206,7 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UIMessageResource.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
-      <LastGenOutput>UIMessageResource.Designer.cs</LastGenOutput>
+      <LastGenOutput>UIMessageResource1.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="WarningDialog.ja-JP.resx">
       <DependentUpon>WarningDialog.cs</DependentUpon>

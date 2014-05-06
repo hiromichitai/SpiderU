@@ -64,7 +64,7 @@ namespace SpiderU {
 	public abstract class ScopeClass {
 // ScopeClass is the abstract base class of all scope
 
-		protected Device GPIBDevice;
+		protected ComDeviceClass ComDevice;
 		protected int NumberOfChannel;
 		protected int RecordLength;
 		protected double SamplingTime;
@@ -74,8 +74,8 @@ namespace SpiderU {
 		protected string AcquisitionDateTimeString;
 		protected List<TraceClass> TraceList;
 
-		public ScopeClass(Device MyDevice,string ModelName,int NumChannel){
-			GPIBDevice = MyDevice;
+		public ScopeClass(ComDeviceClass MyDevice,string ModelName,int NumChannel){
+			ComDevice = MyDevice;
 			ModelNameString = ModelName;
 			NumberOfChannel = NumChannel;
 			TraceList = new List<TraceClass>(NumberOfChannel);

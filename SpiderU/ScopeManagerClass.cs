@@ -37,92 +37,83 @@ namespace SpiderU {
 		}
 
 
-		public static ScopeClass CreateNewScope(Device NewDevice) {
+		public static ScopeClass CreateNewScope(ComDeviceClass NewDevice) {
 			ScopeClass NewScope = null;
-			NewDevice.Write("*IDN?");
-			string IDString = NewDevice.ReadString();
-			char [] Separators = {','};
-			string [] IDSubStrings = IDString.Split(Separators);
-			switch(IDSubStrings[0]){
+			NewDevice.InitializeComDevice();
+			switch(NewDevice.VendorString){
 				case("YOKOGAWA"):
-					switch(IDSubStrings[1]){
-						case("701510"):		// DL1540
-						case("701520"):		// DL1540L
-						case("701530"):		// DL1540C
-						case("701540"):		// DL1540CL
+					switch(NewDevice.ModelString){
+						case("DL1540"):
 							NewScope = new DLM2000(NewDevice,"DL1540", 4);
 							break;
-						case("701505"):		// DL1520
-						case("701515"):		// DL1520L
+						case("DL1520"):
 							NewScope = new DLM2000(NewDevice, "DL1520", 2);
 							break;
-						case("701605"):		// DL1620
+						case("DL1620"):
 							NewScope = new DLM2000(NewDevice, "DL1620", 2);
 							break;
-						case("701610"):		// DL1640
-						case("701620"):		// DL1640L
+						case("DL1640"):
 							NewScope = new DLM2000(NewDevice, "DL1640", 4);
 							break;
-						case("701705"):		// DL1720
-						case("701715"):		// DL1720E
-						case("701725"):		// DL1735E
+						case("DL1720"):
 							NewScope = new DLM2000(NewDevice, "DL1720", 2);
 							break;
-						case("701710"):		// DL1740
-						case("701730"):		// DL1740E
-						case("701740"):		// DL1740EL
-						case("701680"):		// DL1740EL?
+						case("DL1740"):
 							NewScope = new DLM2000(NewDevice, "DL1740", 4);
 							break;
-						case("700410"):		// DL4080?
+						case("DL4080"):
 							NewScope = new DLM2000(NewDevice, "DL4080", 4);
 							break;
-						case("701210"):		// DL750
-						case("701230"):		// DL750P
+						case("DL750"):
 							NewScope = new DLM2000(NewDevice, "DL750", 4);
 							break;
-						case("DL850"):		// DL850
-						case("DL850V"):		// DL850
+						case("DL850"):
 							NewScope = new DLM2000(NewDevice, "DL850", 4);
 							break;
-						case("701820"):		// DL708E
+						case("DL708"):
 							NewScope = new DLM2000(NewDevice, "DL708", 8);
 							break;
-						case("701830"):		// DL716
-						case("701831"):		// DL716
+						case("DL716"):
 							NewScope = new DLM2000(NewDevice, "DL716", 16);
 							break;
-						case("710105"):		// DLM2022
+						case("DLM2022"):		// DLM2022
 							NewScope = new DLM2000(NewDevice, "DLM2022", 2);
 							break;
-						case ("710115"):		// DLM2032
+						case ("DLM2038"):		// DLM2032
 							NewScope = new DLM2000(NewDevice, "DLM2032", 2);
 							break;
-						case ("710125"):		// DLM2052
+						case ("DLM2052"):		// DLM2052
 							NewScope = new DLM2000(NewDevice, "DLM2052", 2);
 							break;
-						case("710110"):		// DLM2024
+						case("DLM2024"):		// DLM2024
 							NewScope = new DLM2000(NewDevice, "DLM2024", 4);
 							break;
-						case ("710120"):		// DLM2034
+						case ("DLM2034"):		// DLM2034
 							NewScope = new DLM2000(NewDevice, "DLM2034", 4);
 							break;
-						case ("710130"): 	// DLM2054	
+						case ("DLM2054"): 	// DLM2054	
 							NewScope = new DLM2000(NewDevice, "DLM2054", 4);
 							break;
 					}
 					break;
 				case (" *IDN LECROY"):
-					switch(IDSubStrings[1]){
+					switch(NewDevice.ModelString){
 						case ("WR6050A"):		// WaveRunner 6050
 							NewScope = new WaveRunner6050(NewDevice,"WaveRunner6050", 4);
 							break;
 					}
-					 break;
+					break;
+				case("OWON"):
+					switch (NewDevice.ModelString) {
+						case("PDS5022"):
+							NewScope = new PDS5022(NewDevice, "PDS5022", 2);
+							break;
+					}
+					break;
 			}
 			if (NewScope != null) {
 				NewScope.GetSettings();
-				NewScope.ID = string.Format("{0:s}({1:G})",NewScope.ModelName,NewDevice.PrimaryAddress);
+				NewScope.ID = NewDevice.IDString;
 				SList.Add(NewScope);
 				return NewScope;
 			} else {
