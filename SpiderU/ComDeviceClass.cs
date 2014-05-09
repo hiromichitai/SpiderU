@@ -237,8 +237,8 @@ namespace SpiderU {
 			switch(DeviceTypeValue){
 				case(DeviceTypeEnum.GPIB):
 					GPIBDevice.Write("*IDN?");
-					string IDStringRaw = GPIBDevice.ReadString();
-					MakeIDString(IDStringValue);
+					string IDNString = GPIBDevice.ReadString();
+					MakeIDString(IDNString);
 					IDStringValue = IDStringValue + "(" + GPIBDevice.PrimaryAddress.ToString() + ")";
 					break;
 				case(DeviceTypeEnum.USBTMC):
@@ -246,7 +246,7 @@ namespace SpiderU {
 					string RBuffer = "";
 					int RLength = 0;
 					TMCTLDevice.Receive(TMCTLDeviceID, ref RBuffer, ref RLength);
-					MakeIDString(IDStringValue);
+					MakeIDString(RBuffer);
 					IDStringValue = IDStringValue + "(" + TMCTLDeviceID.ToString() + ")";
 					break;
 				case (DeviceTypeEnum.USBPHY):

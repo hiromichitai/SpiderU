@@ -70,7 +70,7 @@ namespace SpiderU {
 				if (result == 0) {
 					if (NumUSBScope > 0) {
 						for (int UOIndex = 0; UOIndex < NumUSBScope; UOIndex++) {
-							string EncodedSerial = USBTMCDeviceList[UOIndex].ToString();
+							string EncodedSerial = USBTMCDeviceList[UOIndex].adr;
 							ComDeviceClass NewComDevice =
 								new ComDeviceClass(ComDeviceClass.DeviceTypeEnum.USBTMC,EncodedSerial);
 							FreeDeviceList.Add(NewComDevice);
