@@ -37,9 +37,9 @@ namespace SpiderU {
 		}
 
 
-		public static ScopeClass CreateNewScope(ComDeviceClass NewDevice) {
+		public static ScopeClass CreateNewScope(ComPortClass NewDevice) {
 			ScopeClass NewScope = null;
-			NewDevice.InitializeComDevice();
+			NewDevice.InitializeComPort();
 			switch(NewDevice.VendorString){
 				case("YOKOGAWA"):
 					switch(NewDevice.ModelString){

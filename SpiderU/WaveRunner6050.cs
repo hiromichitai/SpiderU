@@ -8,7 +8,7 @@ using NationalInstruments.NI4882;
 namespace SpiderU {
 	class WaveRunner6050 : ScopeClass {
 
-		public WaveRunner6050(ComDeviceClass MyDevice, string ModelName, int NumChannel)
+		public WaveRunner6050(ComPortClass MyDevice, string ModelName, int NumChannel)
 			: base(MyDevice, ModelName, NumChannel) {
 
 			ComDevice.Write("*IDN?");	// to make sure what am I?

@@ -13,11 +13,10 @@ using LibUsbDotNet.Main;
 
 namespace SpiderU {
 
-	public class ComDeviceListClass {
+	public class ComPortListClass {
 		const byte PRIMARYADDRESSLOWEST = 1;
 		const byte PRIMARYADDRESSHIGHEST = 16;
 		
-
 		private Board GPIBBoard;
         private AddressCollection FreeGPIBDeviceAddressList;
 		private bool HasGPIB;
@@ -26,11 +25,11 @@ namespace SpiderU {
 		private const int MaxNumUSBScope = 10;
 		private int NumUSBScope;
 		private TMCTL TMCTLInstance;
-		private List<ComDeviceClass> FreeDeviceList;
+		private List<ComPortClass> FreeDeviceList;
 
-        public ComDeviceListClass() {
+        public ComPortListClass() {
 			try {
-				FreeDeviceList = new List<ComDeviceClass>();
+				FreeDeviceList = new List<ComPortClass>();
 				GPIBBoard = new Board();
 				GPIBBoard.SendInterfaceClear();
 				FreeGPIBDeviceAddressList = new AddressCollection();
@@ -40,8 +39,8 @@ namespace SpiderU {
 				FreeGPIBDeviceAddressList = GPIBBoard.FindListeners(FreeGPIBDeviceAddressList);
 				GPIBBoard.Dispose();
 				for (int GIndex = 0; GIndex < FreeGPIBDeviceAddressList.Count; GIndex++) {
-					ComDeviceClass NewComDevice =
-						new ComDeviceClass(ComDeviceClass.DeviceTypeEnum.GPIB, 
+					ComPortClass NewComDevice =
+						new ComPortClass(ComPortClass.DeviceTypeEnum.GPIB, 
 							FreeGPIBDeviceAddressList[GIndex].PrimaryAddress,FreeGPIBDeviceAddressList[GIndex].SecondaryAddress);
 					FreeDeviceList.Add(NewComDevice);
 				}
@@ -71,8 +70,8 @@ namespace SpiderU {
 					if (NumUSBScope > 0) {
 						for (int UOIndex = 0; UOIndex < NumUSBScope; UOIndex++) {
 							string EncodedSerial = USBTMCDeviceList[UOIndex].adr;
-							ComDeviceClass NewComDevice =
-								new ComDeviceClass(ComDeviceClass.DeviceTypeEnum.USBTMC,EncodedSerial);
+							ComPortClass NewComDevice =
+								new ComPortClass(ComPortClass.DeviceTypeEnum.USBTMC,EncodedSerial);
 							FreeDeviceList.Add(NewComDevice);
 						}
 					}
@@ -95,12 +94,18 @@ namespace SpiderU {
 					UsbDeviceFinder UsbFinder = new UsbDeviceFinder(OscilloUSBPhy.VendorID,OscilloUSBPhy.ProductID);
 					UsbDevice OscilloUsbDevice = UsbDevice.OpenUsbDevice(UsbFinder);
 					if (OscilloUsbDevice != null) {
-						ComDeviceClass NewComDevice =
-							new ComDeviceClass(ComDeviceClass.DeviceTypeEnum.USBPHY, OscilloUSBPhy.VendorID, OscilloUSBPhy.ProductID,OscilloUSBPhy.VendorString,OscilloUSBPhy.ModelString);
+						ComPortClass NewComDevice =
+							new ComPortClass(ComPortClass.DeviceTypeEnum.USBPHY, OscilloUSBPhy.VendorID, OscilloUSBPhy.ProductID,OscilloUSBPhy.VendorString,OscilloUSBPhy.ModelString);
 						FreeDeviceList.Add(NewComDevice);
 						OscilloUsbDevice.Close();
 					}
 				}
+			}
+			catch (System.NullReferenceException) {
+				;
+			}
+			catch (System.DllNotFoundException) {
+				;
 			}
 			catch (System.Exception Ex) {
 				throw (Ex);
@@ -108,7 +113,7 @@ namespace SpiderU {
 
         }
 
-		public ComDeviceClass this[int Index] {
+		public ComPortClass this[int Index] {
 			get{
 				return FreeDeviceList[Index];
 			}
@@ -125,7 +130,7 @@ namespace SpiderU {
         public void GetGPIBDeviceList() {
         }
 
-		public void UseDevice(ComDeviceClass ComDevice) {
+		public void UseDevice(ComPortClass ComDevice) {
 			if (FreeDeviceList.Count > 0) {
 				for (int Index = 0; Index < FreeDeviceList.Count; Index++) {
 					if(ComDevice == FreeDeviceList[Index]){

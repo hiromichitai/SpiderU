@@ -12,24 +12,24 @@ using NationalInstruments.NI4882;
 namespace SpiderU {
 	public partial class NewScopeForm : Form {
 
-		private ComDeviceListClass ComDeviceList;
-		private ComDeviceClass NewDevice;
+		private ComPortListClass ComPortList;
+		private ComPortClass NewDevice;
 
 		public NewScopeForm() {
 			InitializeComponent();
 		}
 
-		public NewScopeForm(ComDeviceListClass MyComDeviceList) {
+		public NewScopeForm(ComPortListClass MyComPortList) {
 			InitializeComponent();
-			ComDeviceList = MyComDeviceList;
+			ComPortList = MyComPortList;
 
 			try {
 				deviceListBox.Items.Clear();
-				for (int Index = 0; Index < ComDeviceList.NumFreeDevice(); Index++) {
-					ComDeviceClass ComDevice = ComDeviceList[Index];
-					ComDevice.InitializeComDevice();
-					deviceListBox.Items.Add(ComDevice.IDString);
-					ComDevice.GoToLocal();
+				for (int Index = 0; Index < ComPortList.NumFreeDevice(); Index++) {
+					ComPortClass ComPort = ComPortList[Index];
+					ComPort.InitializeComPort();
+					deviceListBox.Items.Add(ComPort.IDString);
+					ComPort.Close();
 				}
 			}
 			catch (NationalInstruments.NI4882.GpibException Ex) {
@@ -40,7 +40,7 @@ namespace SpiderU {
 			}
 		}
 
-		public ComDeviceClass CreatedDevice() {
+		public ComPortClass CreatedDevice() {
 			return (NewDevice);
 		}
 
@@ -48,7 +48,7 @@ namespace SpiderU {
 		private void OKButton_Click(object sender, EventArgs e) {
 			if (deviceListBox.SelectedIndex != -1) {
 				int SelectedIndex = deviceListBox.SelectedIndex;
-				NewDevice = ComDeviceList[SelectedIndex];
+				NewDevice = ComPortList[SelectedIndex];
 				DialogResult = DialogResult.OK;
 			} else {
 				DialogResult = DialogResult.Cancel;

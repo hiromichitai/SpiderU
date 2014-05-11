@@ -50,7 +50,7 @@ struct channelHeader {
 
 	*/
 		
-		public PDS5022(ComDeviceClass MyDevice, string ModelName, int NumChannel)
+		public PDS5022(ComPortClass MyDevice, string ModelName, int NumChannel)
 			: base(MyDevice, ModelName, NumChannel) {
 			if (ComDevice.IDString.Substring(0, 4) != "OWON") { // check manufacturer 
 				ErrorDialog EDialog = new ErrorDialog("PDS5022 constructor");

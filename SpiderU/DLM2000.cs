@@ -10,7 +10,7 @@ namespace SpiderU {
 
 		private double[] VperDiv;
 
-		public DLM2000(ComDeviceClass MyDevice,string ModelName,int NumChannel)	: base(MyDevice,ModelName,NumChannel) {
+		public DLM2000(ComPortClass MyDevice,string ModelName,int NumChannel)	: base(MyDevice,ModelName,NumChannel) {
 
 			if (ComDevice.IDString.Substring(0,8) != "YOKOGAWA") { // check manufacturer 
 				WarningDialog DialogForm = new WarningDialog("Internal Error in DLM2000 constructor");

@@ -77,7 +77,7 @@ namespace SpiderU {
 
 
  
-	public class ComDeviceClass { // ComDeviceClass is a base class of communication by GPIB or USB
+	public class ComPortClass { // ComDeviceClass is a base class of communication by GPIB or USB
 		public enum DeviceTypeEnum  { GPIB = 0, USBTMC = 1, USBPHY = 2}
 		private DeviceTypeEnum DeviceTypeValue;
 		private Device GPIBDevice;
@@ -97,16 +97,16 @@ namespace SpiderU {
 		private UsbEndpointReader USBEPReader;
 		private UsbEndpointWriter USBEPWriter;
 
-		public ComDeviceClass(DeviceTypeEnum DeviceType, string Serial) {
+		public ComPortClass(DeviceTypeEnum DeviceType, string Serial) {
 			if (DeviceType != DeviceTypeEnum.USBTMC) {
-				ErrorDialog EDialog = new ErrorDialog("UIMSGINTILLEGALARG", " in ComDeviceClass");
+				ErrorDialog EDialog = new ErrorDialog("UIMSGINTILLEGALARG", " in ComPortClass");
 				return;
 			}
 			DeviceTypeValue = DeviceType;
 			TMCTLDeviceSerial = Serial;
 		}
 
-		public ComDeviceClass(DeviceTypeEnum DeviceType, byte PrimaryAddress, byte SecondaryAddress) {
+		public ComPortClass(DeviceTypeEnum DeviceType, byte PrimaryAddress, byte SecondaryAddress) {
 			if (DeviceType != DeviceTypeEnum.GPIB) {
 				ErrorDialog EDialog = new ErrorDialog("UIMSGINTILLEGALARG", " in ComDeviceClass");
 				return;
@@ -116,7 +116,7 @@ namespace SpiderU {
 			GPIBSecondaryAddress = SecondaryAddress;
 		}
 
-		public ComDeviceClass(DeviceTypeEnum DeviceType, Int16 VendorID, Int16 ProductID, string VendorString, string ModelString) {
+		public ComPortClass(DeviceTypeEnum DeviceType, Int16 VendorID, Int16 ProductID, string VendorString, string ModelString) {
 			if (DeviceType != DeviceTypeEnum.USBPHY) {
 				ErrorDialog EDialog = new ErrorDialog("UIMSGINTILLEGALARG", " in ComDeviceClass");
 				return;
@@ -259,7 +259,7 @@ namespace SpiderU {
 		}
 
 
-		public void InitializeComDevice() {	// initialize communication device
+		public void InitializeComPort() {	// initialize communication device
 			switch (DeviceTypeValue) {
 				case (DeviceTypeEnum.GPIB):
 					GPIBDevice = new Device(0, GPIBPrimaryAddress, GPIBSecondaryAddress);
@@ -276,6 +276,25 @@ namespace SpiderU {
 						ErrorDialog EDialog = new ErrorDialog("UIMSGCANTOPENUSBPHY", OscilloUSBPhy.VendorString);
 						return;
 					}
+					const int DescriptorLength = 1024;
+					int ReceiveLength = 0;
+					byte[] DeviceDesciptor = new byte[DescriptorLength];
+					byte[] EPDesciptor = new byte[DescriptorLength];
+					byte[] ConfigDesciptor = new byte[DescriptorLength];
+
+					GCHandle DescritprArray = GCHandle.Alloc(DescriptorLength, GCHandleType.Pinned);
+					IntPtr DescriptorPtr = DescritprArray.AddrOfPinnedObject();
+
+					USBDevice.GetDescriptor((byte)LibUsbDotNet.Descriptors.DescriptorType.Device,0,0,DescriptorPtr,DescriptorLength,out ReceiveLength);
+					Marshal.Copy(DescriptorPtr, DeviceDesciptor, 0, ReceiveLength);
+					USBDevice.GetDescriptor((byte)LibUsbDotNet.Descriptors.DescriptorType.Endpoint,0,0,DescriptorPtr,DescriptorLength,out ReceiveLength);
+					Marshal.Copy(DescriptorPtr, EPDesciptor, 0, ReceiveLength);
+					USBDevice.GetDescriptor((byte)LibUsbDotNet.Descriptors.DescriptorType.Configuration,0,0,DescriptorPtr,DescriptorLength,out ReceiveLength);
+					Marshal.Copy(DescriptorPtr, ConfigDesciptor, 0, ReceiveLength);
+
+		
+					DescritprArray.Free();
+
 					IUsbDevice wholeUsbDevice = USBDevice as IUsbDevice;
 					if (!ReferenceEquals(wholeUsbDevice, null)) {
 						wholeUsbDevice.SetConfiguration(1);
@@ -290,6 +309,36 @@ namespace SpiderU {
 			}
 			GetIDString();
 		}
+
+		public void Close() {	// close communication port
+			switch (DeviceTypeValue) {
+				case (DeviceTypeEnum.GPIB):
+					if (GPIBDevice != null) {
+						GPIBDevice.GoToLocal();
+						GPIBDevice.Dispose();
+					}
+					break;
+				case (DeviceTypeEnum.USBTMC):
+					if (TMCTLDevice != null) {
+						if (TMCTLDeviceID >= 0) {
+							TMCTLDevice.Finish(TMCTLDeviceID);
+						}
+					}
+					break;
+				case (DeviceTypeEnum.USBPHY):
+					if (USBEPReader != null) {
+						USBEPReader.Dispose();
+					}
+					if (USBEPWriter != null) {
+						USBEPWriter.Dispose();
+					}
+					if (USBDevice != null) {
+						USBDevice.Close();
+					}
+					break;
+			}
+		}
+
 
 		public string VendorString {
 			get {

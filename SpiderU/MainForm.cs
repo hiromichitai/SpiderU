@@ -11,7 +11,7 @@ using System.Resources;
 
 namespace SpiderU {
 	public partial class MainForm : Form {
-		ComDeviceListClass DeviceList;
+		ComPortListClass DeviceList;
 		ResourceManager rm;
 
 		public MainForm() {
@@ -39,7 +39,7 @@ namespace SpiderU {
 		private void scanToolStripMenuItem_Click(object sender, EventArgs e) {
 			if (DeviceList == null) {
 				try {
-					DeviceList = new ComDeviceListClass();
+					DeviceList = new ComPortListClass();
 					if (DeviceList == null) {
 						ErrorDialog EDialog = new ErrorDialog("UIMSGNOSCOPE");
 						return;
