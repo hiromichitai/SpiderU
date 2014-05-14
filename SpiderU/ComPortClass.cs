@@ -276,22 +276,37 @@ namespace SpiderU {
 						ErrorDialog EDialog = new ErrorDialog("UIMSGCANTOPENUSBPHY", OscilloUSBPhy.VendorString);
 						return;
 					}
-					const int DescriptorLength = 1024;
+					const int DescriptorLength = 512;
 					int ReceiveLength = 0;
 					byte[] DeviceDesciptor = new byte[DescriptorLength];
 					byte[] EPDesciptor = new byte[DescriptorLength];
 					byte[] ConfigDesciptor = new byte[DescriptorLength];
+					byte[] InterfaceDesciptor = new byte[DescriptorLength];
 
 					GCHandle DescritprArray = GCHandle.Alloc(DescriptorLength, GCHandleType.Pinned);
 					IntPtr DescriptorPtr = DescritprArray.AddrOfPinnedObject();
 
 					USBDevice.GetDescriptor((byte)LibUsbDotNet.Descriptors.DescriptorType.Device,0,0,DescriptorPtr,DescriptorLength,out ReceiveLength);
 					Marshal.Copy(DescriptorPtr, DeviceDesciptor, 0, ReceiveLength);
-					USBDevice.GetDescriptor((byte)LibUsbDotNet.Descriptors.DescriptorType.Endpoint,0,0,DescriptorPtr,DescriptorLength,out ReceiveLength);
-					Marshal.Copy(DescriptorPtr, EPDesciptor, 0, ReceiveLength);
 					USBDevice.GetDescriptor((byte)LibUsbDotNet.Descriptors.DescriptorType.Configuration,0,0,DescriptorPtr,DescriptorLength,out ReceiveLength);
 					Marshal.Copy(DescriptorPtr, ConfigDesciptor, 0, ReceiveLength);
-
+					int DescriptorIndex = 0;
+					byte[] EPAddress = null;
+					int EPIndex = 0;
+					while (DescriptorIndex < ReceiveLength) {
+						byte DTSize = ConfigDesciptor[DescriptorIndex];
+						byte DType = ConfigDesciptor[DescriptorIndex+1];
+						if (DType == 0x04) {  // Interface descriptor 
+							byte NumEndpoint = ConfigDesciptor[DescriptorIndex + 4];
+							EPAddress = new byte[NumEndpoint];
+							EPIndex = 0;
+						}
+						if (DType == 0x05) { // Endpoint descriptor
+							EPAddress[EPIndex] = ConfigDesciptor[DescriptorIndex + 2];
+							EPIndex++;
+						}
+						DescriptorIndex += DTSize;
+					}
 		
 					DescritprArray.Free();
 
@@ -300,8 +315,21 @@ namespace SpiderU {
 						wholeUsbDevice.SetConfiguration(1);
 						wholeUsbDevice.ClaimInterface(0);
 					}
-					USBEPReader = USBDevice.OpenEndpointReader(ReadEndpointID.Ep01);
-					USBEPWriter = USBDevice.OpenEndpointWriter(WriteEndpointID.Ep01);
+					if (EPAddress.Length != 2) { // PDS series should have two Endpoint
+						ErrorDialog EDialog = new ErrorDialog("UIMSGILLEGALNUMEP", " in InitializeComPort");
+					}
+					if (EPAddress[0] > 0x80) { // IN EP
+						USBEPReader = USBDevice.OpenEndpointReader((ReadEndpointID)EPAddress[0]);
+					} else {
+						USBEPWriter = USBDevice.OpenEndpointWriter((WriteEndpointID)EPAddress[0]);
+
+					}
+					if (EPAddress[1] > 0x80) { // IN EP
+						USBEPReader = USBDevice.OpenEndpointReader((ReadEndpointID)EPAddress[1]);
+					} else {
+						USBEPWriter = USBDevice.OpenEndpointWriter((WriteEndpointID)EPAddress[1]);
+
+					}
 					USBEPReader.Reset();
 					USBEPWriter.Reset();
 

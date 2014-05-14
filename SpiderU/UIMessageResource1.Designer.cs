@@ -106,6 +106,15 @@ namespace SpiderU {
         }
         
         /// <summary>
+        ///   Number of USB Endpoint is illegal. に類似しているローカライズされた文字列を検索します。
+        /// </summary>
+        public static string UIMSGILLEGALNUMEP {
+            get {
+                return ResourceManager.GetString("UIMSGILLEGALNUMEP", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Internal illegal function call に類似しているローカライズされた文字列を検索します。
         /// </summary>
         public static string UIMSGINTILLEGALARG {

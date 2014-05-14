@@ -132,6 +132,9 @@
   <data name="UIMSGILLEGALID" xml:space="preserve">
     <value>オシロスコープのID文字列が異常です</value>
   </data>
+  <data name="UIMSGILLEGALNUMEP" xml:space="preserve">
+    <value>USBのエンドポイントの数が異常です</value>
+  </data>
   <data name="UIMSGINTILLEGALARG" xml:space="preserve">
     <value>内部で不適切な関数呼び出しが行われました</value>
   </data>

@@ -132,6 +132,9 @@
   <data name="UIMSGILLEGALID" xml:space="preserve">
     <value>Oscilloscope ID string is illegal</value>
   </data>
+  <data name="UIMSGILLEGALNUMEP" xml:space="preserve">
+    <value>Number of USB Endpoint is illegal.</value>
+  </data>
   <data name="UIMSGINTILLEGALARG" xml:space="preserve">
     <value>Internal illegal function call</value>
   </data>
