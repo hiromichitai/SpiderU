@@ -50,9 +50,9 @@ struct channelHeader {
 
 	*/
 		
-		public PDS5022(ComPortClass MyDevice, string ModelName, int NumChannel)
-			: base(MyDevice, ModelName, NumChannel) {
-			if (ComDevice.IDString.Substring(0, 4) != "OWON") { // check manufacturer 
+		public PDS5022(ComPortClass MyComPort, string ModelName, int NumChannel)
+			: base(MyComPort, ModelName, NumChannel) {
+			if (ComPort.IDString.Substring(0, 4) != "OWON") { // check manufacturer 
 				ErrorDialog EDialog = new ErrorDialog("PDS5022 constructor");
 				return;
 			}
@@ -68,11 +68,11 @@ struct channelHeader {
 		public override void GetSettings() {
 			const int BlockHeaderLength = 12;
 
-			ComDevice.Write("START");
+			ComPort.Write("START");
 
-			byte[] BHeaderBuffer = ComDevice.ReadByteArray(BlockHeaderLength);
+			byte[] BHeaderBuffer = ComPort.ReadByteArray(BlockHeaderLength);
 			int BlockLength = BitConverter.ToInt32(BHeaderBuffer,0);
-			byte[] BlockBuffer = ComDevice.ReadByteArray(BlockLength);
+			byte[] BlockBuffer = ComPort.ReadByteArray(BlockLength);
 		}
 
 		protected override void GetData() {

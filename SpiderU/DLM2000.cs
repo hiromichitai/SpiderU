@@ -12,7 +12,7 @@ namespace SpiderU {
 
 		public DLM2000(ComPortClass MyDevice,string ModelName,int NumChannel)	: base(MyDevice,ModelName,NumChannel) {
 
-			if (ComDevice.IDString.Substring(0,8) != "YOKOGAWA") { // check manufacturer 
+			if (ComPort.IDString.Substring(0,8) != "YOKOGAWA") { // check manufacturer 
 				WarningDialog DialogForm = new WarningDialog("Internal Error in DLM2000 constructor");
 				Exception Ex = new Exception("Internal Error");
 				throw(Ex);
@@ -35,23 +35,23 @@ namespace SpiderU {
 
 		public override void GetSettings(){
 
-			ComDevice.Write(":COMMUNICATE:HEADER OFF");
-			ComDevice.Write(":ACQUIRE:RLENGTH?");
-			string RecordLengthStr = ComDevice.ReadString();
+			ComPort.Write(":COMMUNICATE:HEADER OFF");
+			ComPort.Write(":ACQUIRE:RLENGTH?");
+			string RecordLengthStr = ComPort.ReadString();
 			RecordLength = Convert.ToInt32(RecordLengthStr);
-			ComDevice.Write(":TIMEBASE:SRATE?");
-			string SamplingRateStr = ComDevice.ReadString();
+			ComPort.Write(":TIMEBASE:SRATE?");
+			string SamplingRateStr = ComPort.ReadString();
 			SamplingTime = 1.0 / Convert.ToDouble(SamplingRateStr);
 			for (int TraceIndex = 0; TraceIndex < NumberOfChannel; TraceIndex++) {
 				int Channel = TraceIndex+1;
 				string CommandString = String.Format(":CHANNEL{0:D}:DISPLAY?",Channel);
-				ComDevice.Write(CommandString);
-				string ResultString = ComDevice.ReadString();
+				ComPort.Write(CommandString);
+				string ResultString = ComPort.ReadString();
 				TraceList[TraceIndex].IsOn = (ResultString.Substring(0,1) == "1");
 
 				CommandString = String.Format(":CHANNEL{0:D}:VDIV?", Channel);
-				ComDevice.Write(CommandString);
-				ResultString = ComDevice.ReadString();
+				ComPort.Write(CommandString);
+				ResultString = ComPort.ReadString();
 				
 				VperDiv[TraceIndex] = Convert.ToDouble(ResultString);
 
@@ -61,7 +61,7 @@ namespace SpiderU {
 		protected override void GetData(){
 			const int BUFFERLENGTH = 10000;		// maximu block length of DLM2000 is 20000
 
-		  	ComDevice.Write(":STOP");
+		  	ComPort.Write(":STOP");
 			for(int TraceIndex = 0; TraceIndex < NumberOfChannel; TraceIndex++){
 				if(TraceList[TraceIndex].IsOn) {
 					if(TraceList[TraceIndex].DataLength != RecordLength) {
@@ -69,26 +69,26 @@ namespace SpiderU {
 					}
 
 					string CommandString = string.Format(":WAVEFORM:TRACE {0:D}", TraceIndex + 1);
-					ComDevice.Write(CommandString);
-					ComDevice.Write(":WAVEFORM:FORMAT BYTE");
-					ComDevice.Write(":WAVEFORM:BYTEORDER LSBFIRST");
+					ComPort.Write(CommandString);
+					ComPort.Write(":WAVEFORM:FORMAT BYTE");
+					ComPort.Write(":WAVEFORM:BYTEORDER LSBFIRST");
 		
-					ComDevice.Write(":WAVEFORM:START 0");
+					ComPort.Write(":WAVEFORM:START 0");
 					CommandString = string.Format(":WAVEFORM:END {0:D}", RecordLength - 1);
-					ComDevice.Write(CommandString);
-					ComDevice.Write(":WAVEFORM:OFFSET?");
-					string Response = ComDevice.ReadString();
+					ComPort.Write(CommandString);
+					ComPort.Write(":WAVEFORM:OFFSET?");
+					string Response = ComPort.ReadString();
 					double Offset = Convert.ToDouble(Response);
 
-					ComDevice.Write(":WAVEFORM:RANGE?");
-					Response = ComDevice.ReadString();
+					ComPort.Write(":WAVEFORM:RANGE?");
+					Response = ComPort.ReadString();
 					double Range = Convert.ToDouble(Response);
 
-					ComDevice.Write(":WAVEFORM:SEND?");
-					byte[] HeaderLengthByte = ComDevice.ReadByteArray(2);
+					ComPort.Write(":WAVEFORM:SEND?");
+					byte[] HeaderLengthByte = ComPort.ReadByteArray(2);
 					int HeaderLength = HeaderLengthByte[1] - '0';
 					
-					byte[] BlockLengthStrByte = ComDevice.ReadByteArray(HeaderLength);
+					byte[] BlockLengthStrByte = ComPort.ReadByteArray(HeaderLength);
 					string BlockLengthStr = System.Text.Encoding.ASCII.GetString(BlockLengthStrByte);
 					int BlockLength = Convert.ToInt32(BlockLengthStr);
 					int BytesLeft = BlockLength;
@@ -102,14 +102,14 @@ namespace SpiderU {
 						} else {
 							BytesToRead = BytesLeft;
 						}
-						InputBuffer = ComDevice.ReadByteArray(BytesToRead);
+						InputBuffer = ComPort.ReadByteArray(BytesToRead);
 						for (int BIndex = 0; BIndex < BytesToRead; BIndex++) {
 							RawData[BIndex+BOffset] = InputBuffer[BIndex];
 						}
 						BOffset += BytesToRead;
 						BytesLeft -= BytesToRead;
 					}
-					byte[] Garbage = ComDevice.ReadByteArray(1);	// read one byte of EOS
+					byte[] Garbage = ComPort.ReadByteArray(1);	// read one byte of EOS
 
 					double[] TraceData = TraceList[TraceIndex].Data();
 					for (int Index = 0; Index < RecordLength; Index++) {
@@ -120,7 +120,7 @@ namespace SpiderU {
 //			if AqOptionForm.TrigSingleCheckBox.Checked then begin
 //				ComDevice.Write(":START");
 //			end;
-			ComDevice.GoToLocal();
+			ComPort.GoToLocal();
 		}
 
 	}

@@ -64,7 +64,7 @@ namespace SpiderU {
 	public abstract class ScopeClass {
 // ScopeClass is the abstract base class of all scope
 
-		protected ComPortClass ComDevice;
+		protected ComPortClass ComPort;
 		protected int NumberOfChannel;
 		protected int RecordLength;
 		protected double SamplingTime;
@@ -75,7 +75,7 @@ namespace SpiderU {
 		protected List<TraceClass> TraceList;
 
 		public ScopeClass(ComPortClass MyDevice,string ModelName,int NumChannel){
-			ComDevice = MyDevice;
+			ComPort = MyDevice;
 			ModelNameString = ModelName;
 			NumberOfChannel = NumChannel;
 			TraceList = new List<TraceClass>(NumberOfChannel);

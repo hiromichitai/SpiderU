@@ -34,6 +34,8 @@ namespace SpiderU {
 
 		public static FileWriterClass CreateFileWriter(string FileName){
 			switch (System.IO.Path.GetExtension(FileName).ToLower()) {
+				case(".csv"):
+					return new CSVFileWriterClass(FileName);
 				case(".xls"):
 					return new ExcelFileWriterClass(FileName);
 				default:
