@@ -327,13 +327,11 @@ namespace SpiderU {
 						USBEPReader = USBDevice.OpenEndpointReader((ReadEndpointID)EPAddress[0]);
 					} else {
 						USBEPWriter = USBDevice.OpenEndpointWriter((WriteEndpointID)EPAddress[0]);
-
 					}
 					if (EPAddress[1] > 0x80) { // IN EP
 						USBEPReader = USBDevice.OpenEndpointReader((ReadEndpointID)EPAddress[1]);
 					} else {
 						USBEPWriter = USBDevice.OpenEndpointWriter((WriteEndpointID)EPAddress[1]);
-
 					}
 					USBEPReader.Reset();
 					USBEPWriter.Reset();
@@ -440,7 +438,6 @@ namespace SpiderU {
 
 
 		public unsafe byte[] ReadByteArray(int NumByte) {
-			const int BufferLength = 1000;
 			switch (DeviceTypeValue) {
 				case (DeviceTypeEnum.GPIB):
 					return GPIBDevice.ReadByteArray(NumByte);
@@ -456,12 +453,12 @@ namespace SpiderU {
 				case (DeviceTypeEnum.USBPHY):
 					byte[] ReadBuffer = new byte[NumByte];
 					int ReadLength = 0;
-					ErrorCode ecode = USBEPReader.Read(ReadBuffer, 3000, out ReadLength);
+					ErrorCode ecode = USBEPReader.Read(ReadBuffer, 0, NumByte, 3000, out ReadLength);
 					if (ecode != ErrorCode.None) {
 						WarningDialog WDialog = new WarningDialog("UIMSGUSBREADERROR", "ReadString");
 						return null;
 					}
-					break;
+					return ReadBuffer;
 			}
 			return null;
 		}

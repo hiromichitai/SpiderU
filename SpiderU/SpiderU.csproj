@@ -68,6 +68,7 @@
     <ErrorReport>prompt</ErrorReport>
     <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
     <Prefer32Bit>true</Prefer32Bit>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
   </PropertyGroup>
   <PropertyGroup>
     <SignAssembly>false</SignAssembly>
@@ -107,6 +108,7 @@
     </Compile>
     <Compile Include="CSVFileWriterClass.cs" />
     <Compile Include="ComPortListClass.cs" />
+    <Compile Include="DL750.cs" />
     <Compile Include="PDS5022.cs" />
     <Compile Include="UIMessageResource1.Designer.cs">
       <AutoGen>True</AutoGen>
