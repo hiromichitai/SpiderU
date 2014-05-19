@@ -6,14 +6,14 @@ using System.Threading.Tasks;
 using NationalInstruments.NI4882;
 
 namespace SpiderU {
-	class DLM2000 : ScopeClass {
+	class DL750 : ScopeClass {
 
 		private double[] VperDiv;
 
-		public DLM2000(ComPortClass MyDevice,string ModelName,int NumChannel)	: base(MyDevice,ModelName,NumChannel) {
+		public DL750(ComPortClass MyDevice,string ModelName,int NumChannel)	: base(MyDevice,ModelName,NumChannel) {
 
 			if (ComPort.IDString.Substring(0,8) != "YOKOGAWA") { // check manufacturer 
-				WarningDialog DialogForm = new WarningDialog("Internal Error in DLM2000 constructor");
+				WarningDialog DialogForm = new WarningDialog("Internal Error in DL750 constructor");
 				Exception Ex = new Exception("Internal Error");
 				throw(Ex);
 			}
@@ -59,7 +59,7 @@ namespace SpiderU {
 		}
 
 		protected override void GetData(){
-			const int BUFFERLENGTH = 10000;		// maximu block length of DLM2000 is 20000
+			const int BUFFERLENGTH = 10000;		// maximu block length of DL750 is 20000
 
 		  	ComPort.Write(":STOP");
 			for(int TraceIndex = 0; TraceIndex < NumberOfChannel; TraceIndex++){
@@ -83,10 +83,6 @@ namespace SpiderU {
 					ComPort.Write(":WAVEFORM:RANGE?");
 					Response = ComPort.ReadString();
 					double Range = Convert.ToDouble(Response);
-
-					ComPort.Write(":WAVEFORM:SIGN?");
-					Response = ComPort.ReadString();
-					Boolean HasSign = true;       // (Response[0] == '1');		 strangely enough, DLM2000 sends ALWAYS signed byte data
 
 					ComPort.Write(":WAVEFORM:SEND?");
 					byte[] HeaderLengthByte = ComPort.ReadByteArray(2);
@@ -116,16 +112,8 @@ namespace SpiderU {
 					byte[] Garbage = ComPort.ReadByteArray(1);	// read one byte of EOS
 
 					double[] TraceData = TraceList[TraceIndex].Data();
-					if (HasSign) {
-						for (int Index = 0; Index < RecordLength; Index++) {
-							TraceData[Index] = TraceList[TraceIndex].Multiplier * (Range * (sbyte)RawData[Index] / 12.5 + Offset);
-						}
-
-					} else {
-						for (int Index = 0; Index < RecordLength; Index++) {
-							TraceData[Index] = TraceList[TraceIndex].Multiplier * (Range * RawData[Index] / 12.5 + Offset);
-						}
-
+					for (int Index = 0; Index < RecordLength; Index++) {
+						TraceData[Index] = TraceList[TraceIndex].Multiplier*(Range*RawData[Index]/12.5+Offset);
 					}
 				}
 			}

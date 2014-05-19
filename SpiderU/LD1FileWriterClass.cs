@@ -7,11 +7,11 @@ using System.IO;
 
 namespace SpiderU {
 
-	class LD1FileWriter: FileWriterClass {
+	class LD1FileWriterClass: FileWriterClass {
 		private FileStream FStream;
 		private System.Text.Encoding FEncoding;
 
-		public LD1FileWriter(string FileName) : base(FileName) {
+		public LD1FileWriterClass(string FileName) : base(FileName) {
 			try {
 				FStream = new FileStream(FileName, FileMode.Create);
 				FEncoding = GetEncoding();
@@ -42,7 +42,7 @@ namespace SpiderU {
 		}
 
 		private void PutString(string stringData) {
-			byte[] stringBuffer = Encoding.Unicode.GetBytes(stringData);
+			byte[] stringBuffer = Encoding.ASCII.GetBytes(stringData);
 			PutInt(stringBuffer.Length);
 			FStream.Write(stringBuffer, 0, stringBuffer.Length);
 		}
@@ -76,8 +76,10 @@ namespace SpiderU {
 						}
 					}
 
-	
+					double STime = 0.0;
 					for (int DIndex = 0; DIndex < SList[0].DataLength; DIndex++) {
+						PutFloat(STime);
+						STime += SList[0].SampleTime;
 						for (int SIndex = 0; SIndex < SList.Count; SIndex++) {
 							ScopeClass Scope = SList[SIndex];
 							for (int TIndex = 0; TIndex < Scope.NumOnChannel; TIndex++) {
@@ -97,13 +99,15 @@ namespace SpiderU {
 						PutInt(Scope.NumOnChannel + 1);	// +1 for time axis
 						PutString("time");
 						PutString("s");
-						for (int TIndex = 0; TIndex < SList[SIndex].NumOnChannel; TIndex++) {
+						for (int TIndex = 0; TIndex < Scope.NumOnChannel; TIndex++) {
 							PutString(Scope.NthOnChannel(TIndex).TraceLabel);
 							PutString(Scope.NthOnChannel(TIndex).TraceUnit);
 						}
 
-
-						for (int DIndex = 0; DIndex < SList[0].DataLength; DIndex++) {
+						double STime = 0.0;
+						for (int DIndex = 0; DIndex < Scope.DataLength; DIndex++) {
+							PutFloat(STime);
+							STime += Scope.SampleTime;
 							for (int TIndex = 0; TIndex < Scope.NumOnChannel; TIndex++) {
 								PutFloat(Scope.NthOnChannel(TIndex).Data()[DIndex]);
 							}

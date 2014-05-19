@@ -128,102 +128,111 @@ namespace SpiderU {
 			ModelStringValue = ModelString;
 		}
 
-		private void MakeIDString(string IDNString) {
-			if (IDNString.Contains("YOKOGAWA")) {
-				string ModelID = IDNString.Substring(9,IDNString.Length-9);
-				VendorStringValue = "YOKOGAWA";
+		private void MakeIDString(string IDNString) { // split vendor and model string from *IDN? query
+			string[] IDStrings = IDNString.Split(',');
+			switch (IDStrings[0]) {
 
-				switch(ModelID){
-					case("701500"):		// DL1540
-					case("701520"):		// DL1540L
-					case("701530"):		// DL1540C
-					case("701540"):		// DL1540CL
-						ModelStringValue = "DL1540";
-						NumChannel = 4;
-						break;
-					case("701505"):		// DL1520
-					case("701515"):		// DL1520L
-						ModelStringValue = "DL1520";
-						NumChannel = 2;
-						break;
-					case("701605"):		// DL1620
-						ModelStringValue = "DL1620";
-						NumChannel = 2;
-						break;
-					case("701610"):		// DL1640
-					case("701620"):		// DL1640L
-						ModelStringValue = "DL1640";
-						NumChannel = 4;
-						break;
-					case("701705"):		// DL1720
-					case("701715"):		// DL1720E
-					case("701725"):		// DL1735E
-						ModelStringValue = "DL1720";
-						NumChannel = 2;
-						break;
-					case("701710"):		// DL1740
-					case("701730"):		// DL1740E
-					case("701740"):		// DL1740EL
-					case("701680"):		// DL1740EL?
-						ModelStringValue = "DL1740";
-						NumChannel = 4;
-						break;
-					case("700410"):		// DL4080?
-						ModelStringValue = "DL4080";
-						NumChannel = 4;
-						break;
-					case("701210"):		// DL750
-					case("701230"):		// DL750P
-						ModelStringValue = "DL750";
-						NumChannel = 4;
-						break;
-					case("DL850"):		// DL850
-					case("DL850V"):		// DL850
-						ModelStringValue = "DL850";
-						NumChannel = 4;
-						break;
-					case("701820"):		// DL708E
-						ModelStringValue = "DL708";
-						NumChannel = 8;
-						break;
-					case("701830"):		// DL716
-					case("701831"):		// DL716
-						ModelStringValue = "DL716";
-						NumChannel = 16;
-						break;
-					case("710105"):		// DLM2022
-						ModelStringValue = "DLM2022";
-						NumChannel = 2;
-						break;
-					case ("710115"):		// DLM2032
-						ModelStringValue =  "DLM2032";
-						NumChannel = 2;
-						break;
-					case ("710125"):		// DLM2052
-						ModelStringValue = "DLM2052";
-						NumChannel = 2;
-						break;
-					case("710110"):		// DLM2024
-						ModelStringValue = "DLM2024";
-						NumChannel = 4;
-						break;
-					case ("710120"):		// DLM2034
-						ModelStringValue = "DLM2034";
-						NumChannel = 4;
-						break;
-					case ("710130"): 	// DLM2054	
-						ModelStringValue = "DLM2054";
-						NumChannel = 4;
-						break;
-				}
-				IDStringValue = VendorStringValue + " " + ModelStringValue;
-				return;
+				case ("YOKOGAWA"):
+					VendorStringValue = "YOKOGAWA";
+					switch (IDStrings[1]) {
+						case ("701500"):		// DL1540
+						case ("701520"):		// DL1540L
+						case ("701530"):		// DL1540C
+						case ("701540"):		// DL1540CL
+							ModelStringValue = "DL1540";
+							NumChannel = 4;
+							break;
+						case ("701505"):		// DL1520
+						case ("701515"):		// DL1520L
+							ModelStringValue = "DL1520";
+							NumChannel = 2;
+							break;
+						case ("701605"):		// DL1620
+							ModelStringValue = "DL1620";
+							NumChannel = 2;
+							break;
+						case ("701610"):		// DL1640
+						case ("701620"):		// DL1640L
+							ModelStringValue = "DL1640";
+							NumChannel = 4;
+							break;
+						case ("701705"):		// DL1720
+						case ("701715"):		// DL1720E
+						case ("701725"):		// DL1735E
+							ModelStringValue = "DL1720";
+							NumChannel = 2;
+							break;
+						case ("701710"):		// DL1740
+						case ("701730"):		// DL1740E
+						case ("701740"):		// DL1740EL
+						case ("701680"):		// DL1740EL?
+							ModelStringValue = "DL1740";
+							NumChannel = 4;
+							break;
+						case ("700410"):		// DL4080?
+							ModelStringValue = "DL4080";
+							NumChannel = 4;
+							break;
+						case ("701210"):		// DL750
+						case ("701230"):		// DL750P
+							ModelStringValue = "DL750";
+							NumChannel = 4;
+							break;
+						case ("DL850"):		// DL850
+						case ("DL850V"):		// DL850
+							ModelStringValue = "DL850";
+							NumChannel = 4;
+							break;
+						case ("701820"):		// DL708E
+							ModelStringValue = "DL708";
+							NumChannel = 8;
+							break;
+						case ("701830"):		// DL716
+						case ("701831"):		// DL716
+							ModelStringValue = "DL716";
+							NumChannel = 16;
+							break;
+						case ("710105"):		// DLM2022
+							ModelStringValue = "DLM2022";
+							NumChannel = 2;
+							break;
+						case ("710115"):		// DLM2032
+							ModelStringValue = "DLM2032";
+							NumChannel = 2;
+							break;
+						case ("710125"):		// DLM2052
+							ModelStringValue = "DLM2052";
+							NumChannel = 2;
+							break;
+						case ("710110"):		// DLM2024
+							ModelStringValue = "DLM2024";
+							NumChannel = 4;
+							break;
+						case ("710120"):		// DLM2034
+							ModelStringValue = "DLM2034";
+							NumChannel = 4;
+							break;
+						case ("710130"): 	// DLM2054	
+							ModelStringValue = "DLM2054";
+							NumChannel = 4;
+							break;
+					}
+					break;
+				case ("*IDN LECROY"):
+					VendorStringValue = "LECROY";
+					switch (IDStrings[1]) {
+						case (""):
+							break;
+
+					}
+					break;
+				default:
+					VendorStringValue = "Unknown";
+					ModelStringValue = "Unknown";
+					break;
+
 			}
-			if (IDNString.Contains("LECROY")) {
-				IDStringValue = "LECROY";
-				return;
-			}
-			IDStringValue = "Unknown";
+			IDStringValue = VendorStringValue + " " + ModelStringValue;
 		}
 
 
@@ -278,16 +287,12 @@ namespace SpiderU {
 					}
 					const int DescriptorLength = 512;
 					int ReceiveLength = 0;
-					byte[] DeviceDesciptor = new byte[DescriptorLength];
-					byte[] EPDesciptor = new byte[DescriptorLength];
 					byte[] ConfigDesciptor = new byte[DescriptorLength];
-					byte[] InterfaceDesciptor = new byte[DescriptorLength];
 
 					GCHandle DescritprArray = GCHandle.Alloc(DescriptorLength, GCHandleType.Pinned);
 					IntPtr DescriptorPtr = DescritprArray.AddrOfPinnedObject();
 
 					USBDevice.GetDescriptor((byte)LibUsbDotNet.Descriptors.DescriptorType.Device,0,0,DescriptorPtr,DescriptorLength,out ReceiveLength);
-					Marshal.Copy(DescriptorPtr, DeviceDesciptor, 0, ReceiveLength);
 					USBDevice.GetDescriptor((byte)LibUsbDotNet.Descriptors.DescriptorType.Configuration,0,0,DescriptorPtr,DescriptorLength,out ReceiveLength);
 					Marshal.Copy(DescriptorPtr, ConfigDesciptor, 0, ReceiveLength);
 					int DescriptorIndex = 0;
@@ -322,13 +327,11 @@ namespace SpiderU {
 						USBEPReader = USBDevice.OpenEndpointReader((ReadEndpointID)EPAddress[0]);
 					} else {
 						USBEPWriter = USBDevice.OpenEndpointWriter((WriteEndpointID)EPAddress[0]);
-
 					}
 					if (EPAddress[1] > 0x80) { // IN EP
 						USBEPReader = USBDevice.OpenEndpointReader((ReadEndpointID)EPAddress[1]);
 					} else {
 						USBEPWriter = USBDevice.OpenEndpointWriter((WriteEndpointID)EPAddress[1]);
-
 					}
 					USBEPReader.Reset();
 					USBEPWriter.Reset();
@@ -435,7 +438,6 @@ namespace SpiderU {
 
 
 		public unsafe byte[] ReadByteArray(int NumByte) {
-			const int BufferLength = 1000;
 			switch (DeviceTypeValue) {
 				case (DeviceTypeEnum.GPIB):
 					return GPIBDevice.ReadByteArray(NumByte);
@@ -451,12 +453,12 @@ namespace SpiderU {
 				case (DeviceTypeEnum.USBPHY):
 					byte[] ReadBuffer = new byte[NumByte];
 					int ReadLength = 0;
-					ErrorCode ecode = USBEPReader.Read(ReadBuffer, 3000, out ReadLength);
+					ErrorCode ecode = USBEPReader.Read(ReadBuffer, 0, NumByte, 3000, out ReadLength);
 					if (ecode != ErrorCode.None) {
 						WarningDialog WDialog = new WarningDialog("UIMSGUSBREADERROR", "ReadString");
 						return null;
 					}
-					break;
+					return ReadBuffer;
 			}
 			return null;
 		}

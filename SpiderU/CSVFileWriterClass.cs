@@ -39,32 +39,34 @@ namespace SpiderU {
 				if (Properties.Settings.Default.syncAllScope) {
 
 					if (Properties.Settings.Default.addComment) {
+						SWriter.Write("# ");
 						SWriter.Write(SList[0].Comment);
 						for (int SIndex = 1; SIndex < SList.Count; SIndex++) {
-							SWriter.Write("," + SList[SIndex].Comment);
+							SWriter.Write(" " + SList[SIndex].Comment);
 						}
 						SWriter.WriteLine();
 					}
 
 					if (Properties.Settings.Default.addHeader) {
-						SWriter.Write("Time(s),");
+						SWriter.Write("Time(s)");
 						for (int SIndex = 0; SIndex < SList.Count; SIndex++) {
 							ScopeClass Scope = SList[SIndex];
 							for (int TIndex = 0; TIndex < Scope.NumOnChannel; TIndex++) {
-								SWriter.Write(Scope.NthOnChannel(TIndex).TraceLabel + "(" + Scope.NthOnChannel(TIndex).TraceUnit + ")");
+								SWriter.Write("," + Scope.NthOnChannel(TIndex).TraceLabel + "(" + Scope.NthOnChannel(TIndex).TraceUnit + ")");
 
 							}
 						}
 						SWriter.WriteLine();
 					}
+					double STime = 0.0;
 					for (int DIndex = 0; DIndex < SList[0].DataLength; DIndex++) {
+						SWriter.Write(string.Format("{0:G}", STime));
+						STime += SList[0].SampleTime;
 						for (int SIndex = 0; SIndex < SList.Count; SIndex++) {
 							ScopeClass Scope = SList[SIndex];
 							for (int TIndex = 0; TIndex < Scope.NumOnChannel; TIndex++) {
-								if ((SIndex != 0) || (TIndex != 0)) {	// then not the first column
-									SWriter.Write(",");
-								}
-								SWriter.Write(string.Format("%f", Scope.NthOnChannel(TIndex).Data()[DIndex]));
+								SWriter.Write(",");
+								SWriter.Write(string.Format("{0:G}", Scope.NthOnChannel(TIndex).Data()[DIndex]));
 							}
 						}
 						SWriter.WriteLine();
@@ -74,23 +76,24 @@ namespace SpiderU {
 						ScopeClass Scope = SList[SIndex];
 
 						if (Properties.Settings.Default.addComment) {
-							SWriter.WriteLine(Scope.Comment);
+							SWriter.WriteLine("# " + Scope.Comment);
 						}
 
 						if (Properties.Settings.Default.addHeader) {
-							SWriter.Write("Time(s),");
+							SWriter.Write("Time(s)");
 							for (int TIndex = 0; TIndex < Scope.NumOnChannel; TIndex++) {
-								SWriter.Write(Scope.NthOnChannel(TIndex).TraceLabel + "(" + Scope.NthOnChannel(TIndex).TraceUnit + ")");
+								SWriter.Write("," + Scope.NthOnChannel(TIndex).TraceLabel + "(" + Scope.NthOnChannel(TIndex).TraceUnit + ")");
 							}
 						}
 						SWriter.WriteLine();
 
-						for (int DIndex = 0; DIndex < SList[0].DataLength; DIndex++) {
+						double STime = 0.0;
+						for (int DIndex = 0; DIndex < Scope.DataLength; DIndex++) {
+							SWriter.Write(string.Format("{0:G}",STime));
+							STime += Scope.SampleTime;
 							for (int TIndex = 0; TIndex < Scope.NumOnChannel; TIndex++) {
-								if (TIndex != 0) {	// then not the first column
-									SWriter.Write(",");
-								}
-								SWriter.Write(string.Format("%f", Scope.NthOnChannel(TIndex).Data()[DIndex]));
+								SWriter.Write(",");
+								SWriter.Write(string.Format("{0:G}", Scope.NthOnChannel(TIndex).Data()[DIndex]));
 							}
 						}
 						SWriter.WriteLine();
