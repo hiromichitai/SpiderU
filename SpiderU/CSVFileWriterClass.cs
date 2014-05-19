@@ -39,19 +39,20 @@ namespace SpiderU {
 				if (Properties.Settings.Default.syncAllScope) {
 
 					if (Properties.Settings.Default.addComment) {
+						SWriter.Write("# ");
 						SWriter.Write(SList[0].Comment);
 						for (int SIndex = 1; SIndex < SList.Count; SIndex++) {
-							SWriter.Write("," + SList[SIndex].Comment);
+							SWriter.Write(" " + SList[SIndex].Comment);
 						}
 						SWriter.WriteLine();
 					}
 
 					if (Properties.Settings.Default.addHeader) {
-						SWriter.Write("Time(s),");
+						SWriter.Write("Time(s)");
 						for (int SIndex = 0; SIndex < SList.Count; SIndex++) {
 							ScopeClass Scope = SList[SIndex];
 							for (int TIndex = 0; TIndex < Scope.NumOnChannel; TIndex++) {
-								SWriter.Write(Scope.NthOnChannel(TIndex).TraceLabel + "(" + Scope.NthOnChannel(TIndex).TraceUnit + ")");
+								SWriter.Write("," + Scope.NthOnChannel(TIndex).TraceLabel + "(" + Scope.NthOnChannel(TIndex).TraceUnit + ")");
 
 							}
 						}
@@ -75,13 +76,13 @@ namespace SpiderU {
 						ScopeClass Scope = SList[SIndex];
 
 						if (Properties.Settings.Default.addComment) {
-							SWriter.WriteLine(Scope.Comment);
+							SWriter.WriteLine("# " + Scope.Comment);
 						}
 
 						if (Properties.Settings.Default.addHeader) {
-							SWriter.Write("Time(s),");
+							SWriter.Write("Time(s)");
 							for (int TIndex = 0; TIndex < Scope.NumOnChannel; TIndex++) {
-								SWriter.Write(Scope.NthOnChannel(TIndex).TraceLabel + "(" + Scope.NthOnChannel(TIndex).TraceUnit + ")");
+								SWriter.Write("," + Scope.NthOnChannel(TIndex).TraceLabel + "(" + Scope.NthOnChannel(TIndex).TraceUnit + ")");
 							}
 						}
 						SWriter.WriteLine();

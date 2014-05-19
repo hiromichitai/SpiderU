@@ -127,7 +127,7 @@
     <Compile Include="FileWriterClass.cs" />
     <Compile Include="FileWriterCreator.cs" />
     <Compile Include="HDF5FileWriterClass.cs" />
-    <Compile Include="LD1FileWriter.cs" />
+    <Compile Include="LD1FileWriterClass.cs" />
     <Compile Include="MainForm.cs">
       <SubType>Form</SubType>
     </Compile>

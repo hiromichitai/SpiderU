@@ -84,6 +84,10 @@ namespace SpiderU {
 					Response = ComPort.ReadString();
 					double Range = Convert.ToDouble(Response);
 
+					ComPort.Write(":WAVEFORM:SIGN?");
+					Response = ComPort.ReadString();
+					Boolean HasSign = true;       // (Response[0] == '1');		 strangely enough, DLM2000 sends ALWAYS signed byte data
+
 					ComPort.Write(":WAVEFORM:SEND?");
 					byte[] HeaderLengthByte = ComPort.ReadByteArray(2);
 					int HeaderLength = HeaderLengthByte[1] - '0';
@@ -112,8 +116,16 @@ namespace SpiderU {
 					byte[] Garbage = ComPort.ReadByteArray(1);	// read one byte of EOS
 
 					double[] TraceData = TraceList[TraceIndex].Data();
-					for (int Index = 0; Index < RecordLength; Index++) {
-						TraceData[Index] = TraceList[TraceIndex].Multiplier*(Range*RawData[Index]/12.5+Offset);
+					if (HasSign) {
+						for (int Index = 0; Index < RecordLength; Index++) {
+							TraceData[Index] = TraceList[TraceIndex].Multiplier * (Range * (sbyte)RawData[Index] / 12.5 + Offset);
+						}
+
+					} else {
+						for (int Index = 0; Index < RecordLength; Index++) {
+							TraceData[Index] = TraceList[TraceIndex].Multiplier * (Range * RawData[Index] / 12.5 + Offset);
+						}
+
 					}
 				}
 			}

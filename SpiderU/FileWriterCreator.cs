@@ -38,6 +38,8 @@ namespace SpiderU {
 					return new CSVFileWriterClass(FileName);
 				case(".xls"):
 					return new ExcelFileWriterClass(FileName);
+				case (".ld1"):
+					return new LD1FileWriterClass(FileName);
 				default:
 					return null;
 					
