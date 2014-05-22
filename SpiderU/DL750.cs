@@ -48,13 +48,6 @@ namespace SpiderU {
 				ComPort.Write(CommandString);
 				string ResultString = ComPort.ReadString();
 				TraceList[TraceIndex].IsOn = (ResultString.Substring(0,1) == "1");
-
-				CommandString = String.Format(":CHANNEL{0:D}:VDIV?", Channel);
-				ComPort.Write(CommandString);
-				ResultString = ComPort.ReadString();
-				
-				VperDiv[TraceIndex] = Convert.ToDouble(ResultString);
-
 			}
 		}
 
@@ -70,7 +63,7 @@ namespace SpiderU {
 
 					string CommandString = string.Format(":WAVEFORM:TRACE {0:D}", TraceIndex + 1);
 					ComPort.Write(CommandString);
-					ComPort.Write(":WAVEFORM:FORMAT BYTE");
+					ComPort.Write(":WAVEFORM:FORMAT WORD");
 					ComPort.Write(":WAVEFORM:BYTEORDER LSBFIRST");
 		
 					ComPort.Write(":WAVEFORM:START 0");
@@ -93,7 +86,7 @@ namespace SpiderU {
 					int BlockLength = Convert.ToInt32(BlockLengthStr);
 					int BytesLeft = BlockLength;
 					int BytesToRead = 0;
-					byte[] RawData = new byte[BlockLength];
+					Int16[] RawData = new Int16[BlockLength];
 					byte[] InputBuffer = new byte[BUFFERLENGTH];
 					int BOffset = 0;
 					while (BytesLeft > 0) {
