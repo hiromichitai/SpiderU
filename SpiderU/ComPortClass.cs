@@ -218,10 +218,12 @@ namespace SpiderU {
 							break;
 					}
 					break;
-				case ("*IDN LECROY"):
+				case ("LECROY"):
 					VendorStringValue = "LECROY";
 					switch (IDStrings[1]) {
-						case (""):
+						case ("WR6050A"):
+							ModelStringValue = "WR6050A";
+							NumChannel = 4;
 							break;
 
 					}
@@ -247,6 +249,10 @@ namespace SpiderU {
 				case(DeviceTypeEnum.GPIB):
 					GPIBDevice.Write("*IDN?");
 					string IDNString = GPIBDevice.ReadString();
+					if (IDNString.Contains("*IDN")) {
+						IDNString = IDNString.Replace("*IDN","");
+						IDNString = IDNString.Trim();
+					}
 					MakeIDString(IDNString);
 					IDStringValue = IDStringValue + "(" + GPIBDevice.PrimaryAddress.ToString() + ")";
 					break;

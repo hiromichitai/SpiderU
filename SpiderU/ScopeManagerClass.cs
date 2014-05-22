@@ -96,7 +96,7 @@ namespace SpiderU {
 							break;
 					}
 					break;
-				case (" *IDN LECROY"):
+				case ("LECROY"):
 					switch(NewComPort.ModelString){
 						case ("WR6050A"):		// WaveRunner 6050
 							NewScope = new WaveRunner6050(NewComPort,"WaveRunner6050", 4);

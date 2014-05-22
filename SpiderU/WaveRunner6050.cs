@@ -13,7 +13,11 @@ namespace SpiderU {
 
 			ComPort.Write("*IDN?");	// to make sure what am I?
 			string IDString = ComPort.ReadString();
-			if (IDString.Substring(0, 19) != "*IDN LECROY,WR6050A") { // check model name 
+			if (IDString.Contains("*IDN")) {
+				IDString = IDString.Replace("*IDN","");
+				IDString = IDString.Trim();
+			}
+			if (!IDString.Contains("LECROY,WR6050A")) { // check vendor and model name 
 				WarningDialog DialogForm = new WarningDialog("UIMSGILLEGALID", IDString);
 				Exception Ex = new Exception("Internal Error");
 				throw (Ex);
@@ -43,11 +47,12 @@ namespace SpiderU {
 				string ResultString = ComPort.ReadString();
 				TraceList[TraceIndex].IsOn = (ResultString.Substring(0, 2) == "ON");
 			}
-			string CommString = String.Format("C%1d:WAVEFORM? DESC", 1);	// use channel 1
+			string CommString = String.Format("C{0:D}:WAVEFORM? DESC", 1);	// use channel 1
 			ComPort.Write(CommString);
 			ComPort.ReadByteArray(5);
-			byte[] BlockLenStr = ComPort.ReadByteArray(11);
-			int BlockLength = Convert.ToInt32(Convert.ToString(BlockLenStr).Substring(2, 9));
+			byte[] BlockLenBytes = ComPort.ReadByteArray(11);
+			string BlockLenStr = System.Text.Encoding.ASCII.GetString(BlockLenBytes);
+			int BlockLength = Convert.ToInt32(BlockLenStr.Substring(2, 9));
 			byte[] BlockData = ComPort.ReadByteArray(BlockLength);
 			double VGain = System.BitConverter.ToSingle(BlockData, 156);
 			double VOffset = System.BitConverter.ToSingle(BlockData, 160);
@@ -62,21 +67,23 @@ namespace SpiderU {
 				if (TraceList[TraceIndex].IsOn) {
 					int Channel = TraceIndex + 1;
 					TraceClass Trace = TraceList[TraceIndex];
-					string CommString = String.Format("C%1d:WAVEFORM? DESC", Channel);
+					string CommString = String.Format("C{0:D}:WAVEFORM? DESC", Channel);
 					ComPort.Write(CommString);
 					ComPort.ReadByteArray(5);
-					byte[] BlockLenStr = ComPort.ReadByteArray(11);
-					int BlockLength = Convert.ToInt32(Convert.ToString(BlockLenStr).Substring(2, 9));
+					byte[] BlockLenBytes = ComPort.ReadByteArray(11);
+					string BlockLenStr = System.Text.Encoding.ASCII.GetString(BlockLenBytes);
+					int BlockLength = Convert.ToInt32(BlockLenStr.Substring(2, 9));
 					byte[] BlockData = ComPort.ReadByteArray(BlockLength);
 					double VGain = System.BitConverter.ToSingle(BlockData, 156);
 					double VOffset = System.BitConverter.ToSingle(BlockData, 160);
 					SamplingTime = System.BitConverter.ToSingle(BlockData, 176);
 
-					CommString = String.Format("C%1d:WAVEFORM? DAT1", Channel);
+					CommString = String.Format("C{0:D}:WAVEFORM? DAT1", Channel);
 					ComPort.Write(CommString);
 					ComPort.ReadByteArray(5);
-					BlockLenStr = ComPort.ReadByteArray(11);
-					BlockLength = Convert.ToInt32(Convert.ToString(BlockLenStr).Substring(2, 9));
+					BlockLenBytes = ComPort.ReadByteArray(11);
+					BlockLenStr = System.Text.Encoding.ASCII.GetString(BlockLenBytes);
+					BlockLength = Convert.ToInt32(BlockLenStr.Substring(2, 9));
 					Trace.DataLength = BlockLength;
 					int BytesLeft = BlockLength;
 					int ReadLength = 0;
@@ -94,7 +101,7 @@ namespace SpiderU {
 						BytesLeft -= ReadLength;
 					}
 				}
-				ComPort.ReadByteArray(1);
+//				ComPort.ReadByteArray(1);
 			}
 			ComPort.GoToLocal();
 		}
