@@ -96,12 +96,11 @@ namespace SpiderU {
 						byte[] RawData = ComPort.ReadByteArray(ReadLength);
 						for (int BIndex = 0; BIndex < ReadLength; BIndex++) {
 							Trace[BlockLength - BytesLeft + BIndex] =
-								(VGain * RawData[BIndex] - VOffset) * Trace.Multiplier;
+								(VGain * (sbyte)RawData[BIndex] - VOffset) * Trace.Multiplier;
 						}
 						BytesLeft -= ReadLength;
 					}
 				}
-//				ComPort.ReadByteArray(1);
 			}
 			ComPort.GoToLocal();
 		}
