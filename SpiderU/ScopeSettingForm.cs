@@ -18,7 +18,6 @@ namespace SpiderU {
 		private string[] UnitString;
 		private string[] LabelString;
 		private double[] Multiplier;
-		private int CurrentChannelIndex;
 		private int comboBoxPreSelectionIndex;
 
 		public ScopeSettingForm() {

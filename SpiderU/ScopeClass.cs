@@ -207,6 +207,10 @@ namespace SpiderU {
 			AcquisitionDateTimeString = Convert.ToString(DateTime.Now);
 		}
 
+		public List<TraceClass> OnTrace {
+			get { return TraceList.FindAll((a) => (a.IsOn)); }
+		}
+
 
 	}
 }

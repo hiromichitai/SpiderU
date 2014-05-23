@@ -19,8 +19,6 @@ namespace SpiderU {
 		
 		private Board GPIBBoard;
         private AddressCollection FreeGPIBDeviceAddressList;
-		private bool HasGPIB;
-		private bool HasUSBTMC;
 		private TmctlAPINet.DEVICELIST [] USBTMCDeviceList;
 		private const int MaxNumUSBScope = 10;
 		private int NumUSBScope;
@@ -44,19 +42,14 @@ namespace SpiderU {
 							FreeGPIBDeviceAddressList[GIndex].PrimaryAddress,FreeGPIBDeviceAddressList[GIndex].SecondaryAddress);
 					FreeDeviceList.Add(NewComDevice);
 				}
-				HasGPIB = true;
 			}
 			catch (System.DllNotFoundException) {
-				HasGPIB = false;
 			}
 			catch (System.EntryPointNotFoundException) {
-				HasGPIB = false;
 			}
 			catch (NationalInstruments.NI4882.GpibException) {
-				HasGPIB = false;
 			}
 			catch (System.ArgumentException) {
-				HasGPIB = false;
 			}
 			catch (System.Exception Ex) {
 				throw (Ex);
@@ -75,14 +68,11 @@ namespace SpiderU {
 							FreeDeviceList.Add(NewComDevice);
 						}
 					}
-					HasUSBTMC = true;
 				}
 			}
 			catch (System.NullReferenceException) {
-				HasUSBTMC = false;
 			}
 			catch (System.DllNotFoundException) {
-				HasUSBTMC = false;
 			}
 			catch (System.Exception Ex) {
 				throw (Ex);
@@ -102,10 +92,8 @@ namespace SpiderU {
 				}
 			}
 			catch (System.NullReferenceException) {
-				;
 			}
 			catch (System.DllNotFoundException) {
-				;
 			}
 			catch (System.Exception Ex) {
 				throw (Ex);
