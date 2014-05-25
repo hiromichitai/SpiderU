@@ -15,13 +15,11 @@ namespace SpiderU {
 	public class OscilloUSBPhyClass {
 		private Int16 VendorIDValue;
 		private Int16 ProductIDValue;
-		private int NumberofChannel;
 		private string VendorStringValue;
 		private string ModelStringValue;
-		public OscilloUSBPhyClass(Int16 VID, Int16 PID, int NChannel, string VString, string MString) {
+		public OscilloUSBPhyClass(Int16 VID, Int16 PID, string VString, string MString) {
 			VendorIDValue = VID;
 			ProductIDValue = PID;
-			NumberofChannel = NChannel;
 			VendorStringValue = VString;
 			ModelStringValue = MString;
 		}
@@ -35,12 +33,6 @@ namespace SpiderU {
 		public Int16 ProductID {
 			get {
 				return ProductIDValue;
-			}
-		}
-
-		public int NumChannel {
-			get {
-				return NumberofChannel;
 			}
 		}
 
@@ -64,7 +56,7 @@ namespace SpiderU {
 
 		private OscilloUSBPhyListClass() {
 			OscilloUSBPhyList = new List<OscilloUSBPhyClass>();
-			OscilloUSBPhyList.Add(new OscilloUSBPhyClass(0x5345, 0x1234,2,"OWON","PDS5022"));
+			OscilloUSBPhyList.Add(new OscilloUSBPhyClass(0x5345, 0x1234,"OWON","PDS5022"));
 		}
 
 		public static List<OscilloUSBPhyClass> OscilloscopeList {
@@ -72,9 +64,7 @@ namespace SpiderU {
 				return OscilloUSBPhyList;
 			}
 		}
-	
 	} 
-
 
  
 	public class ComPortClass { // ComDeviceClass is a base class of communication by GPIB or USB
@@ -284,7 +274,7 @@ namespace SpiderU {
 					TMCTLDevice.Initialize(TMCTL.TM_CTL_USBTMC2, TMCTLDeviceSerial, ref TMCTLDeviceID);
 					break;
 				case (DeviceTypeEnum.USBPHY):
-					OscilloUSBPhy = new OscilloUSBPhyClass(VendorIDValue, ProductIDValue, NumChannel, VendorStringValue, ModelStringValue);
+					OscilloUSBPhy = new OscilloUSBPhyClass(VendorIDValue, ProductIDValue, VendorStringValue, ModelStringValue);
 					UsbDeviceFinder UsbFinder = new UsbDeviceFinder(OscilloUSBPhy.VendorID,OscilloUSBPhy.ProductID);
 					USBDevice = UsbDevice.OpenUsbDevice(UsbFinder);
 					if (USBDevice == null) {

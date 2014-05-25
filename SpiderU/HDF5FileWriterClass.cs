@@ -22,40 +22,6 @@ namespace SpiderU {
 
 		}
 
-/*
-            // Create the data set.
-            H5DataSetId dataSetId = H5D.create(fileId, "/csharpExample",
-                                               typeId, spaceId);
-
-            H5D.write(dataSetId, new H5DataTypeId(H5T.H5Type.NATIVE_INT),
-                              new H5Array<int>(dset_data));
-
-
-            // Close all the open resources.
-            H5D.close(dataSetId);
-
-	
-		// Function used with H5L.iterate
-		static H5IterationResult MyH5LFunction(H5GroupId id,
-											   string objectName,
-											   H5LinkInfo info, Object param) {
-			Console.WriteLine("The object name is {0}", objectName);
-			Console.WriteLine("The linkType is {0}", info.linkType);
-			Console.WriteLine("The object parameter is {0}", param);
-			return H5IterationResult.SUCCESS;
-		}
-
-		// Function used with H5A.iterate
-		static H5IterationResult MyH5AFunction(
-		   H5AttributeId attributeId,
-		   String attributeName,
-		   H5AttributeInfo info,
-		   Object attributeNames) {
-			Console.WriteLine("Iteration attribute is {0}", attributeName);
-
-			return H5IterationResult.SUCCESS;
-		}
-*/
 
 		public override void WriteFile() {
 			List<ScopeClass> SList = ScopeManager.ScopeList;
@@ -75,24 +41,25 @@ namespace SpiderU {
 					long[] dimension = new long[2];
 					dimension[0] = Scope.NumOnChannel+1;
 					dimension[1] = Scope.DataLength;
-					H5DataSpaceId spaceId = H5S.create_simple(2, dimension);
+					H5DataSpaceId spaceId = H5S.create_simple(1, dimension);
 					H5DataTypeId typeId = H5T.copy(H5T.H5Type.NATIVE_DOUBLE);
 
-					int typeSize = H5T.getSize(typeId);
 					H5T.setOrder(typeId, H5T.Order.LE);
+					H5DataTypeId UCharTypeID = H5T.copy(H5T.H5Type.NATIVE_UCHAR);
 
-					H5DataSetId dataSetId = H5D.create(fileID, "/"+groupIDString, typeId, spaceId);
-	
-					// H5Array<double>
+					for (int TIndex = 0; TIndex < Scope.OnTrace.Count; TIndex++) {
+						H5DataSpaceId labelSpaceID = H5S.create_simple(1, dimension);
 
-					// Write the integer data to the data set.
-					/*
-					H5D.write(dataSetId, new H5DataTypeId(H5T.H5Type.NATIVE_INT),
-									  new H5Array<int>(dset_data));
+						H5DataSetId dataSetID = H5D.create(fileID, "/" + Scope.ChannelLabel(TIndex) , typeId, spaceId);
+/*
+						H5A.create(dataSetID, "label", typeId, H5S.create_simple(1,{(long)Scope.ChannelLabel(TIndex).Length});
 
-					H5D.close(dataSetId);
-					H5G.close(groupId);
-					 */
+						H5D.write(dataSetID, new H5Array<double>(Scope.OnTrace[TIndex].Data));
+
+						H5D.close(dataSetID);
+*/
+					}
+					H5G.close(groupID);
 				}
 
 			}
@@ -100,7 +67,7 @@ namespace SpiderU {
 		}
 
 		public override void Close() {
-
+			H5F.close(fileID);
 		}
 
 	}

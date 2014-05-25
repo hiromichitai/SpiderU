@@ -32,7 +32,6 @@ namespace SpiderU {
 		}
 
 		public override void WriteFile(){
-
 			List<ScopeClass> SList = ScopeManager.ScopeList;
 
 			try { 
@@ -51,9 +50,8 @@ namespace SpiderU {
 						SWriter.Write("Time(s)");
 						for (int SIndex = 0; SIndex < SList.Count; SIndex++) {
 							ScopeClass Scope = SList[SIndex];
-							for (int TIndex = 0; TIndex < Scope.NumOnChannel; TIndex++) {
-								SWriter.Write("," + Scope.NthOnChannel(TIndex).TraceLabel + "(" + Scope.NthOnChannel(TIndex).TraceUnit + ")");
-
+							for (int TIndex = 0; TIndex < Scope.OnTrace.Count; TIndex++) {
+								SWriter.Write("," + Scope.OnTrace[TIndex].TraceLabel + "(" + Scope.OnTrace[TIndex].TraceUnit + ")");
 							}
 						}
 						SWriter.WriteLine();
@@ -64,9 +62,9 @@ namespace SpiderU {
 						STime += SList[0].SampleTime;
 						for (int SIndex = 0; SIndex < SList.Count; SIndex++) {
 							ScopeClass Scope = SList[SIndex];
-							for (int TIndex = 0; TIndex < Scope.NumOnChannel; TIndex++) {
+							for (int TIndex = 0; TIndex < Scope.OnTrace.Count; TIndex++) {
 								SWriter.Write(",");
-								SWriter.Write(string.Format("{0:G}", Scope.NthOnChannel(TIndex).Data()[DIndex]));
+								SWriter.Write(string.Format("{0:G}", Scope.OnTrace[TIndex][DIndex]));
 							}
 						}
 						SWriter.WriteLine();
@@ -81,8 +79,8 @@ namespace SpiderU {
 
 						if (Properties.Settings.Default.addHeader) {
 							SWriter.Write("Time(s)");
-							for (int TIndex = 0; TIndex < Scope.NumOnChannel; TIndex++) {
-								SWriter.Write("," + Scope.NthOnChannel(TIndex).TraceLabel + "(" + Scope.NthOnChannel(TIndex).TraceUnit + ")");
+							for (int TIndex = 0; TIndex < Scope.OnTrace.Count; TIndex++) {
+								SWriter.Write("," + Scope.OnTrace[TIndex].TraceLabel + "(" + Scope.OnTrace[TIndex].TraceUnit + ")");
 							}
 						}
 						SWriter.WriteLine();
@@ -91,9 +89,9 @@ namespace SpiderU {
 						for (int DIndex = 0; DIndex < Scope.DataLength; DIndex++) {
 							SWriter.Write(string.Format("{0:G}",STime));
 							STime += Scope.SampleTime;
-							for (int TIndex = 0; TIndex < Scope.NumOnChannel; TIndex++) {
+							for (int TIndex = 0; TIndex < Scope.OnTrace.Count; TIndex++) {
 								SWriter.Write(",");
-								SWriter.Write(string.Format("{0:G}", Scope.NthOnChannel(TIndex).Data()[DIndex]));
+								SWriter.Write(string.Format("{0:G}", Scope.OnTrace[TIndex][DIndex]));
 							}
 						}
 						SWriter.WriteLine();

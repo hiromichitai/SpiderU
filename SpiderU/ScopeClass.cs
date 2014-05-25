@@ -46,9 +46,6 @@ namespace SpiderU {
 			set { this.TraceOn = value; }
 		}
 
-		public double[] Data() {
-			return TraceDataArray;
-		}
 
 		public double this[int DIndex] {
 			get {
@@ -56,6 +53,12 @@ namespace SpiderU {
 			}
 			set {
 				TraceDataArray[DIndex] = value;
+			}
+		}
+
+		public double[] Data {
+			get {
+				return TraceDataArray;
 			}
 		}
 	}
@@ -130,11 +133,6 @@ namespace SpiderU {
 			}
 		}
 
-
-		public double[] ChannelData(int Channel){
-			return TraceList[Channel].Data();
-		}
-
 		public bool ChannelOn(int Channel) {
 			return TraceList[Channel].IsOn;
 		}
@@ -152,28 +150,7 @@ namespace SpiderU {
 		}
 
 		public int NumOnChannel {
-			get { 
-				int OnChannelCount = 0;
-				for (int TraceIndex = 0; TraceIndex < TraceList.Count; TraceIndex++) {
-					if (TraceList[TraceIndex].IsOn) {
-						OnChannelCount++;
-					}
-				}
-				return OnChannelCount;
-			 }
-		}
-
-		public TraceClass NthOnChannel(int Index) {
-			int OnChannelCount = 0;
-			for (int TraceIndex = 0; TraceIndex < TraceList.Count; TraceIndex++) {
-				if (TraceList[TraceIndex].IsOn) {
-					if(Index == OnChannelCount){
-						return TraceList[TraceIndex];
-					}
-					OnChannelCount++;
-				}
-			}
-			return null;
+			get { return TraceList.Count((trace) => (trace.IsOn)); }
 		}
 
 		public int NthOnChannelNumber(int Index) {
@@ -208,7 +185,7 @@ namespace SpiderU {
 		}
 
 		public List<TraceClass> OnTrace {
-			get { return TraceList.FindAll((a) => (a.IsOn)); }
+			get { return TraceList.FindAll((trace) => (trace.IsOn)); }
 		}
 
 

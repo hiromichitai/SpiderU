@@ -104,9 +104,8 @@ namespace SpiderU {
 					}
 					byte[] Garbage = ComPort.ReadByteArray(1);	// read one byte of EOS
 
-					double[] TraceData = TraceList[TraceIndex].Data();
 					for (int Index = 0; Index < RecordLength; Index++) {
-						TraceData[Index] = TraceList[TraceIndex].Multiplier*(Range*RawData[Index]/12.5+Offset);
+						TraceList[TraceIndex][Index] = TraceList[TraceIndex].Multiplier*(Range*RawData[Index]/12.5+Offset);
 					}
 				}
 			}

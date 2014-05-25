@@ -64,15 +64,15 @@ namespace SpiderU {
 
 					int NumTotalOnChannel = 0;
 					for (int SIndex = 0; SIndex < SList.Count; SIndex++) {
-						NumTotalOnChannel += SList[SIndex].NumOnChannel;
+						NumTotalOnChannel += SList[SIndex].OnTrace.Count;
 					}
 					PutInt(NumTotalOnChannel+1);	// +1 for time axis
 					PutString("time");
 					PutString("s");
 					for (int SIndex = 0; SIndex < SList.Count; SIndex++) {
-						for(int TIndex = 0; TIndex < SList[SIndex].NumOnChannel; TIndex++){
-							PutString(SList[SIndex].NthOnChannel(TIndex).TraceLabel);
-							PutString(SList[SIndex].NthOnChannel(TIndex).TraceUnit);
+						for(int TIndex = 0; TIndex < SList[SIndex].OnTrace.Count; TIndex++){
+							PutString(SList[SIndex].OnTrace[TIndex].TraceLabel);
+							PutString(SList[SIndex].OnTrace[TIndex].TraceUnit);
 						}
 					}
 
@@ -82,8 +82,8 @@ namespace SpiderU {
 						STime += SList[0].SampleTime;
 						for (int SIndex = 0; SIndex < SList.Count; SIndex++) {
 							ScopeClass Scope = SList[SIndex];
-							for (int TIndex = 0; TIndex < Scope.NumOnChannel; TIndex++) {
-								PutFloat(Scope.NthOnChannel(TIndex).Data()[DIndex]);
+							for (int TIndex = 0; TIndex < Scope.OnTrace.Count; TIndex++) {
+								PutFloat(Scope.OnTrace[TIndex][DIndex]);
 							}
 						}
 					}
@@ -96,20 +96,20 @@ namespace SpiderU {
 						ScopeClass Scope = SList[SIndex];
 						PutInt(Scope.DataLength);
 
-						PutInt(Scope.NumOnChannel + 1);	// +1 for time axis
+						PutInt(Scope.OnTrace.Count + 1);	// +1 for time axis
 						PutString("time");
 						PutString("s");
-						for (int TIndex = 0; TIndex < Scope.NumOnChannel; TIndex++) {
-							PutString(Scope.NthOnChannel(TIndex).TraceLabel);
-							PutString(Scope.NthOnChannel(TIndex).TraceUnit);
+						for (int TIndex = 0; TIndex < Scope.OnTrace.Count; TIndex++) {
+							PutString(Scope.OnTrace[TIndex].TraceLabel);
+							PutString(Scope.OnTrace[TIndex].TraceUnit);
 						}
 
 						double STime = 0.0;
 						for (int DIndex = 0; DIndex < Scope.DataLength; DIndex++) {
 							PutFloat(STime);
 							STime += Scope.SampleTime;
-							for (int TIndex = 0; TIndex < Scope.NumOnChannel; TIndex++) {
-								PutFloat(Scope.NthOnChannel(TIndex).Data()[DIndex]);
+							for (int TIndex = 0; TIndex < Scope.OnTrace.Count; TIndex++) {
+								PutFloat(Scope.OnTrace[TIndex][DIndex]);
 							}
 						}
 					}
@@ -117,28 +117,14 @@ namespace SpiderU {
 				}
 			}
 			catch (IOException) {
-				WarningDialog WDialog = new WarningDialog("UIMSGIOEXCEPTION", " in CSVFileWriteClass.WriteFile");
+				WarningDialog WDialog = new WarningDialog("UIMSGIOEXCEPTION", " in LD1FileWriteClass.WriteFile");
 			}
 						
 		}
 
 		public override void Close() {
-
+			FStream.Close();
 		}
-
-		/*
-		 * 
-
-
-for ln := 0 to RecordLength-1 do begin
-		DFile.PutFloat(XData[0,ln]);
-		for ch := 0 to NumActiveTrace-1 do begin
-			DFile.PutFloat(YData[ch,ln]);
-		end;
-	end;
-		 * 
-		 * 
-		 */
 
 	}
 }
