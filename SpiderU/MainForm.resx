@@ -133,11 +133,8 @@
   <data name="helpToolStripMenuItem2.Text" xml:space="preserve">
     <value>Help(&amp;H)</value>
   </data>
-  <data name="&gt;&gt;fileToolStripMenuItem.Name" xml:space="preserve">
-    <value>fileToolStripMenuItem</value>
-  </data>
-  <data name="&gt;&gt;statusStrip1.Name" xml:space="preserve">
-    <value>statusStrip1</value>
+  <data name="&gt;&gt;showHelpToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;exitToolStripMenuItem.Name" xml:space="preserve">
     <value>exitToolStripMenuItem</value>
@@ -148,11 +145,11 @@
   <data name="fileToolStripMenuItem.Text" xml:space="preserve">
     <value>File(&amp;F)</value>
   </data>
-  <data name="&gt;&gt;showHelpToolStripMenuItem.Name" xml:space="preserve">
-    <value>showHelpToolStripMenuItem</value>
+  <data name="toolStripProgressBar1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>100, 16</value>
   </data>
-  <data name="&gt;&gt;statusStrip1.ZOrder" xml:space="preserve">
-    <value>0</value>
+  <data name="helpToolStripMenuItem2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>65, 22</value>
   </data>
   <data name="&gt;&gt;scopeToolStripMenuItem.Name" xml:space="preserve">
     <value>scopeToolStripMenuItem</value>
@@ -166,11 +163,11 @@
   <data name="&gt;&gt;configurationToolStripMenuItem.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;scanToolStripMenuItem.Name" xml:space="preserve">
-    <value>scanToolStripMenuItem</value>
+  <data name="showHelpToolStripMenuItem.Text" xml:space="preserve">
+    <value>Show Help Menu(&amp;H)</value>
   </data>
-  <data name="&gt;&gt;statusStrip1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.StatusStrip, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="&gt;&gt;saveFileDialog1.Name" xml:space="preserve">
+    <value>saveFileDialog1</value>
   </data>
   <data name="&gt;&gt;saveFileDialog1.Type" xml:space="preserve">
     <value>System.Windows.Forms.SaveFileDialog, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
@@ -187,11 +184,11 @@
   <data name="&gt;&gt;menuStrip1.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
+  <data name="&gt;&gt;statusStrip1.Name" xml:space="preserve">
+    <value>statusStrip1</value>
+  </data>
   <data name="&gt;&gt;transfertoolStripStatusLabel.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripStatusLabel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;saveFileDialog1.Name" xml:space="preserve">
-    <value>saveFileDialog1</value>
   </data>
   <data name="showHelpToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>192, 22</value>
@@ -206,8 +203,8 @@
   <data name="statusStrip1.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
   </data>
-  <data name="&gt;&gt;showHelpToolStripMenuItem.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="&gt;&gt;toolStripStatusLabel1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripStatusLabel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="scanToolStripMenuItem.Text" xml:space="preserve">
     <value>Scan Scope(&amp;S)</value>
@@ -221,14 +218,14 @@
   <data name="&gt;&gt;menuStrip1.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
-  <data name="&gt;&gt;enumeratingToolStripStatusLabel.Name" xml:space="preserve">
-    <value>enumeratingToolStripStatusLabel</value>
-  </data>
   <data name="scopeToolStripMenuItem.Text" xml:space="preserve">
     <value>Scope(&amp;S)</value>
   </data>
   <data name="&gt;&gt;editToolStripMenuItem.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="toolStripStatusLabel1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>0, 17</value>
   </data>
   <data name="&gt;&gt;acquisitionToolStripMenuItem.Name" xml:space="preserve">
     <value>acquisitionToolStripMenuItem</value>
@@ -239,11 +236,11 @@
   <data name="&gt;&gt;initializingToolStripStatusLabel.Name" xml:space="preserve">
     <value>initializingToolStripStatusLabel</value>
   </data>
+  <data name="&gt;&gt;toolStripStatusLabel1.Name" xml:space="preserve">
+    <value>toolStripStatusLabel1</value>
+  </data>
   <data name="&gt;&gt;writingToolStripStatusLabel.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripStatusLabel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;helpToolStripMenuItem2.Name" xml:space="preserve">
-    <value>helpToolStripMenuItem2</value>
   </data>
   <data name="enumeratingToolStripStatusLabel.Text" xml:space="preserve">
     <value>enumerating oscilloscope</value>
@@ -260,14 +257,17 @@
   <data name="&gt;&gt;exitToolStripMenuItem.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
+  <data name="&gt;&gt;scanToolStripMenuItem.Name" xml:space="preserve">
+    <value>scanToolStripMenuItem</value>
+  </data>
   <data name="&gt;&gt;toolStripMenuItem2.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="statusStrip1.Location" type="System.Drawing.Point, System.Drawing">
     <value>0, 353</value>
   </data>
-  <data name="helpToolStripMenuItem2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>65, 22</value>
+  <data name="&gt;&gt;helpToolStripMenuItem2.Name" xml:space="preserve">
+    <value>helpToolStripMenuItem2</value>
   </data>
   <data name="&gt;&gt;scanToolStripMenuItem.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
@@ -287,8 +287,8 @@
   <data name="&gt;&gt;$this.Type" xml:space="preserve">
     <value>System.Windows.Forms.Form, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="showHelpToolStripMenuItem.Text" xml:space="preserve">
-    <value>Show Help Menu(&amp;H)</value>
+  <data name="&gt;&gt;showHelpToolStripMenuItem.Name" xml:space="preserve">
+    <value>showHelpToolStripMenuItem</value>
   </data>
   <data name="transfertoolStripStatusLabel.Text" xml:space="preserve">
     <value>Transferring data...</value>
@@ -296,8 +296,8 @@
   <data name="&gt;&gt;toolStripMenuItem1.Name" xml:space="preserve">
     <value>toolStripMenuItem1</value>
   </data>
-  <data name="readyToolStripStatusLabel.Text" xml:space="preserve">
-    <value>ready</value>
+  <data name="menuStrip1.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
   </data>
   <data name="writingToolStripStatusLabel.Size" type="System.Drawing.Size, System.Drawing">
     <value>83, 18</value>
@@ -320,11 +320,14 @@
   <data name="menuStrip1.Text" xml:space="preserve">
     <value>menuStrip1</value>
   </data>
+  <data name="&gt;&gt;toolStripProgressBar1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripProgressBar, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
   <data name="menuStrip1.Size" type="System.Drawing.Size, System.Drawing">
     <value>688, 26</value>
   </data>
-  <data name="configurationToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>171, 22</value>
+  <data name="&gt;&gt;enumeratingToolStripStatusLabel.Name" xml:space="preserve">
+    <value>enumeratingToolStripStatusLabel</value>
   </data>
   <data name="&gt;&gt;editToolStripMenuItem.Name" xml:space="preserve">
     <value>editToolStripMenuItem</value>
@@ -335,11 +338,20 @@
   <data name="editToolStripMenuItem.Text" xml:space="preserve">
     <value>Edit(&amp;E)</value>
   </data>
-  <data name="exitToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>116, 22</value>
+  <data name="&gt;&gt;fileToolStripMenuItem.Name" xml:space="preserve">
+    <value>fileToolStripMenuItem</value>
   </data>
   <data name="menuStrip1.Location" type="System.Drawing.Point, System.Drawing">
     <value>0, 0</value>
+  </data>
+  <data name="&gt;&gt;toolStripProgressBar1.Name" xml:space="preserve">
+    <value>toolStripProgressBar1</value>
+  </data>
+  <data name="exitToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>116, 22</value>
+  </data>
+  <data name="&gt;&gt;statusStrip1.ZOrder" xml:space="preserve">
+    <value>0</value>
   </data>
   <data name="writingToolStripStatusLabel.Text" xml:space="preserve">
     <value>Writing file...</value>
@@ -350,14 +362,17 @@
   <data name="enumeratingToolStripStatusLabel.Size" type="System.Drawing.Size, System.Drawing">
     <value>154, 18</value>
   </data>
-  <data name="menuStrip1.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
+  <data name="&gt;&gt;statusStrip1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.StatusStrip, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;aboutToolStripMenuItem.Name" xml:space="preserve">
     <value>aboutToolStripMenuItem</value>
   </data>
   <data name="&gt;&gt;readyToolStripStatusLabel.Name" xml:space="preserve">
     <value>readyToolStripStatusLabel</value>
+  </data>
+  <data name="statusStrip1.Text" xml:space="preserve">
+    <value>statusStrip1</value>
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
     <value>688, 376</value>
@@ -383,8 +398,11 @@
   <data name="editToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>59, 22</value>
   </data>
-  <data name="statusStrip1.Text" xml:space="preserve">
-    <value>statusStrip1</value>
+  <data name="readyToolStripStatusLabel.Text" xml:space="preserve">
+    <value>ready</value>
+  </data>
+  <data name="configurationToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>171, 22</value>
   </data>
   <metadata name="$this.Language" type="System.Globalization.CultureInfo, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>ja-JP</value>

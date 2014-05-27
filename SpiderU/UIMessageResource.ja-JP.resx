@@ -150,8 +150,14 @@
   <data name="UIMSGPATHTOOLONG" xml:space="preserve">
     <value>ファイルパスが長すぎます</value>
   </data>
+  <data name="UIMSGREADYSTATE" xml:space="preserve">
+    <value>準備完了</value>
+  </data>
   <data name="UIMSGSECURITYEXCEPTION" xml:space="preserve">
     <value>セキュリティ例外が発生しました</value>
+  </data>
+  <data name="UIMSGTRANSFERSTATE" xml:space="preserve">
+    <value>データ転送中</value>
   </data>
   <data name="UIMSGUNKNOWN" xml:space="preserve">
     <value>不明なエラーが発生しました</value>

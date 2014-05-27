@@ -22,7 +22,12 @@ namespace SpiderU {
 			saveFileDialog1.Filter = FileWriterClass.ExtFilter();
 
 			rm = new ResourceManager("SpiderU.UIMessageResoure", typeof(MainForm).Assembly);
+
 			
+		}
+
+		private string GetUIString(string KeyString) {
+			return rm.GetString(KeyString);
 		}
 
 		private void exitXToolStripMenuItem_Click(object sender, EventArgs e) {

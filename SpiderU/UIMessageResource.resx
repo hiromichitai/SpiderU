@@ -150,8 +150,14 @@
   <data name="UIMSGPATHTOOLONG" xml:space="preserve">
     <value>Path too long</value>
   </data>
+  <data name="UIMSGREADYSTATE" xml:space="preserve">
+    <value>Ready</value>
+  </data>
   <data name="UIMSGSECURITYEXCEPTION" xml:space="preserve">
     <value>Security exception occured</value>
+  </data>
+  <data name="UIMSGTRANSFERSTATE" xml:space="preserve">
+    <value>Transferring data</value>
   </data>
   <data name="UIMSGUNKNOWN" xml:space="preserve">
     <value>Unknown error occured.</value>
