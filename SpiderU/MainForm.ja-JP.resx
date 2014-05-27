@@ -119,10 +119,10 @@
   </resheader>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="toolStripMenuItem1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>115, 6</value>
+    <value>149, 6</value>
   </data>
   <data name="exitToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>118, 22</value>
+    <value>152, 22</value>
   </data>
   <data name="exitToolStripMenuItem.Text" xml:space="preserve">
     <value>終了(&amp;X)</value>
@@ -133,11 +133,11 @@
   <data name="fileToolStripMenuItem.Text" xml:space="preserve">
     <value>ファイル(&amp;F)</value>
   </data>
-  <data name="settingToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>118, 22</value>
+  <data name="configurationToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>152, 22</value>
   </data>
-  <data name="settingToolStripMenuItem.Text" xml:space="preserve">
-    <value>設定(&amp;S)</value>
+  <data name="configurationToolStripMenuItem.Text" xml:space="preserve">
+    <value>設定(&amp;C)</value>
   </data>
   <data name="editToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>61, 22</value>
@@ -189,17 +189,5 @@
   </data>
   <data name="initializingToolStripStatusLabel.Text" xml:space="preserve">
     <value>初期化中</value>
-  </data>
-  <data name="readyToolStripStatusLabel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>56, 18</value>
-  </data>
-  <data name="readyToolStripStatusLabel.Text" xml:space="preserve">
-    <value>準備完了</value>
-  </data>
-  <data name="ScanningToolStripStatusLabel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>92, 18</value>
-  </data>
-  <data name="ScanningToolStripStatusLabel.Text" xml:space="preserve">
-    <value>オシロを走査中</value>
   </data>
 </root>
