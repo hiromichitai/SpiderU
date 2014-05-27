@@ -38,9 +38,9 @@
 			this.showHelpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.statusStrip1 = new System.Windows.Forms.StatusStrip();
-			this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
 			this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
 			this.toolStripProgressBar1 = new System.Windows.Forms.ToolStripProgressBar();
+			this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
 			this.menuStrip1.SuspendLayout();
 			this.statusStrip1.SuspendLayout();
 			this.SuspendLayout();
@@ -140,10 +140,6 @@
             this.toolStripProgressBar1});
 			this.statusStrip1.Name = "statusStrip1";
 			// 
-			// saveFileDialog1
-			// 
-			resources.ApplyResources(this.saveFileDialog1, "saveFileDialog1");
-			// 
 			// toolStripStatusLabel1
 			// 
 			resources.ApplyResources(this.toolStripStatusLabel1, "toolStripStatusLabel1");
@@ -154,6 +150,10 @@
 			resources.ApplyResources(this.toolStripProgressBar1, "toolStripProgressBar1");
 			this.toolStripProgressBar1.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
 			this.toolStripProgressBar1.Name = "toolStripProgressBar1";
+			// 
+			// saveFileDialog1
+			// 
+			resources.ApplyResources(this.saveFileDialog1, "saveFileDialog1");
 			// 
 			// MainForm
 			// 

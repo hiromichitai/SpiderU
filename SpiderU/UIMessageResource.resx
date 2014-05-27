@@ -153,6 +153,9 @@
   <data name="UIMSGREADYSTATE" xml:space="preserve">
     <value>Ready</value>
   </data>
+  <data name="UIMSGSCANSCOPE" xml:space="preserve">
+    <value>Scanning oscilloscope</value>
+  </data>
   <data name="UIMSGSECURITYEXCEPTION" xml:space="preserve">
     <value>Security exception occured</value>
   </data>

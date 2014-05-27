@@ -12,7 +12,6 @@ using System.Resources;
 namespace SpiderU {
 	public partial class MainForm : Form {
 		ComPortListClass DeviceList;
-		ResourceManager rm;
 
 		public MainForm() {
 			InitializeComponent();
@@ -21,12 +20,12 @@ namespace SpiderU {
 			Properties.Settings.Default.Save();
 			saveFileDialog1.Filter = FileWriterClass.ExtFilter();
 
-			rm = new ResourceManager("SpiderU.UIMessageResoure", typeof(MainForm).Assembly);
 
 			
 		}
 
 		private string GetUIString(string KeyString) {
+			ResourceManager rm = new ResourceManager("SpiderU.UIMessageResoure", typeof(MainForm).Assembly);
 			return rm.GetString(KeyString);
 		}
 
@@ -44,6 +43,9 @@ namespace SpiderU {
 		private void scanToolStripMenuItem_Click(object sender, EventArgs e) {
 			if (DeviceList == null) {
 				try {
+					ResourceManager rm = new ResourceManager("SpiderU.UIMessageResoure", typeof(MainForm).Assembly);
+					string message = rm.GetString("UIMSGSCANSCOPE");
+					toolStripStatusLabel1.Text = GetUIString("UIMSGSCANSCOPE");
 					DeviceList = new ComPortListClass();
 					if (DeviceList == null) {
 						ErrorDialog EDialog = new ErrorDialog("UIMSGNOSCOPE");

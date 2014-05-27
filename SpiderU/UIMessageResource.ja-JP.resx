@@ -153,6 +153,9 @@
   <data name="UIMSGREADYSTATE" xml:space="preserve">
     <value>準備完了</value>
   </data>
+  <data name="UIMSGSCANSCOPE" xml:space="preserve">
+    <value>オシロスコープ検索中</value>
+  </data>
   <data name="UIMSGSECURITYEXCEPTION" xml:space="preserve">
     <value>セキュリティ例外が発生しました</value>
   </data>
