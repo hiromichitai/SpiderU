@@ -119,10 +119,10 @@
   </resheader>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="toolStripMenuItem1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>149, 6</value>
+    <value>115, 6</value>
   </data>
   <data name="exitToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>152, 22</value>
+    <value>118, 22</value>
   </data>
   <data name="exitToolStripMenuItem.Text" xml:space="preserve">
     <value>終了(&amp;X)</value>
@@ -134,7 +134,7 @@
     <value>ファイル(&amp;F)</value>
   </data>
   <data name="configurationToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>152, 22</value>
+    <value>118, 22</value>
   </data>
   <data name="configurationToolStripMenuItem.Text" xml:space="preserve">
     <value>設定(&amp;C)</value>
@@ -189,5 +189,29 @@
   </data>
   <data name="initializingToolStripStatusLabel.Text" xml:space="preserve">
     <value>初期化中</value>
+  </data>
+  <data name="enumeratingToolStripStatusLabel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>128, 18</value>
+  </data>
+  <data name="enumeratingToolStripStatusLabel.Text" xml:space="preserve">
+    <value>オシロスコープ検索中</value>
+  </data>
+  <data name="transfertoolStripStatusLabel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>80, 18</value>
+  </data>
+  <data name="transfertoolStripStatusLabel.Text" xml:space="preserve">
+    <value>データ転送中</value>
+  </data>
+  <data name="writingToolStripStatusLabel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>116, 18</value>
+  </data>
+  <data name="writingToolStripStatusLabel.Text" xml:space="preserve">
+    <value>ファイル書き込み中</value>
+  </data>
+  <data name="readyToolStripStatusLabel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>56, 18</value>
+  </data>
+  <data name="readyToolStripStatusLabel.Text" xml:space="preserve">
+    <value>準備完了</value>
   </data>
 </root>

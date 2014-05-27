@@ -82,5 +82,9 @@ namespace SpiderU {
 			ConfigurationForm CForm = new ConfigurationForm();
 			CForm.ShowDialog();
 		}
+
+		private void aboutToolStripMenuItem_Click(object sender, EventArgs e) {
+
+		}
 	}
 }

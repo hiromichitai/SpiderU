@@ -39,6 +39,10 @@
 			this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.statusStrip1 = new System.Windows.Forms.StatusStrip();
 			this.initializingToolStripStatusLabel = new System.Windows.Forms.ToolStripStatusLabel();
+			this.enumeratingToolStripStatusLabel = new System.Windows.Forms.ToolStripStatusLabel();
+			this.transfertoolStripStatusLabel = new System.Windows.Forms.ToolStripStatusLabel();
+			this.writingToolStripStatusLabel = new System.Windows.Forms.ToolStripStatusLabel();
+			this.readyToolStripStatusLabel = new System.Windows.Forms.ToolStripStatusLabel();
 			this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
 			this.menuStrip1.SuspendLayout();
 			this.statusStrip1.SuspendLayout();
@@ -129,18 +133,43 @@
 			// 
 			resources.ApplyResources(this.aboutToolStripMenuItem, "aboutToolStripMenuItem");
 			this.aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
+			this.aboutToolStripMenuItem.Click += new System.EventHandler(this.aboutToolStripMenuItem_Click);
 			// 
 			// statusStrip1
 			// 
 			resources.ApplyResources(this.statusStrip1, "statusStrip1");
 			this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.initializingToolStripStatusLabel});
+            this.initializingToolStripStatusLabel,
+            this.enumeratingToolStripStatusLabel,
+            this.transfertoolStripStatusLabel,
+            this.writingToolStripStatusLabel,
+            this.readyToolStripStatusLabel});
 			this.statusStrip1.Name = "statusStrip1";
 			// 
 			// initializingToolStripStatusLabel
 			// 
 			resources.ApplyResources(this.initializingToolStripStatusLabel, "initializingToolStripStatusLabel");
 			this.initializingToolStripStatusLabel.Name = "initializingToolStripStatusLabel";
+			// 
+			// enumeratingToolStripStatusLabel
+			// 
+			resources.ApplyResources(this.enumeratingToolStripStatusLabel, "enumeratingToolStripStatusLabel");
+			this.enumeratingToolStripStatusLabel.Name = "enumeratingToolStripStatusLabel";
+			// 
+			// transfertoolStripStatusLabel
+			// 
+			resources.ApplyResources(this.transfertoolStripStatusLabel, "transfertoolStripStatusLabel");
+			this.transfertoolStripStatusLabel.Name = "transfertoolStripStatusLabel";
+			// 
+			// writingToolStripStatusLabel
+			// 
+			resources.ApplyResources(this.writingToolStripStatusLabel, "writingToolStripStatusLabel");
+			this.writingToolStripStatusLabel.Name = "writingToolStripStatusLabel";
+			// 
+			// readyToolStripStatusLabel
+			// 
+			resources.ApplyResources(this.readyToolStripStatusLabel, "readyToolStripStatusLabel");
+			this.readyToolStripStatusLabel.Name = "readyToolStripStatusLabel";
 			// 
 			// saveFileDialog1
 			// 
@@ -181,6 +210,10 @@
 		private System.Windows.Forms.StatusStrip statusStrip1;
 		private System.Windows.Forms.ToolStripStatusLabel initializingToolStripStatusLabel;
 		private System.Windows.Forms.SaveFileDialog saveFileDialog1;
+		private System.Windows.Forms.ToolStripStatusLabel enumeratingToolStripStatusLabel;
+		private System.Windows.Forms.ToolStripStatusLabel transfertoolStripStatusLabel;
+		private System.Windows.Forms.ToolStripStatusLabel writingToolStripStatusLabel;
+		private System.Windows.Forms.ToolStripStatusLabel readyToolStripStatusLabel;
 	}
 }
 

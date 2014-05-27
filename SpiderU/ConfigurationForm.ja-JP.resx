@@ -130,6 +130,12 @@
   <data name="tabPage1.Text" xml:space="preserve">
     <value>ファイルフォーマット</value>
   </data>
+  <data name="label9.Size" type="System.Drawing.Size, System.Drawing">
+    <value>113, 12</value>
+  </data>
+  <data name="label9.Text" xml:space="preserve">
+    <value>自動ファイル名サンプル</value>
+  </data>
   <data name="label5.Size" type="System.Drawing.Size, System.Drawing">
     <value>124, 12</value>
   </data>
@@ -182,22 +188,25 @@
     <value>ヘッダ行</value>
   </data>
   <data name="includeDateTimeCheckBox.Size" type="System.Drawing.Size, System.Drawing">
-    <value>78, 16</value>
+    <value>102, 16</value>
   </data>
   <data name="includeDateTimeCheckBox.Text" xml:space="preserve">
-    <value>日付・時間</value>
+    <value>日付・時間追加</value>
   </data>
   <data name="includeModelNameCheckBox.Size" type="System.Drawing.Size, System.Drawing">
-    <value>65, 16</value>
+    <value>89, 16</value>
   </data>
   <data name="includeModelNameCheckBox.Text" xml:space="preserve">
-    <value>モデル名</value>
+    <value>モデル名追加</value>
   </data>
   <data name="commentLineCheckBox.Size" type="System.Drawing.Size, System.Drawing">
     <value>93, 16</value>
   </data>
   <data name="commentLineCheckBox.Text" xml:space="preserve">
     <value>コメント行追加</value>
+  </data>
+  <data name="label6.Size" type="System.Drawing.Size, System.Drawing">
+    <value>50, 12</value>
   </data>
   <data name="label6.Text" xml:space="preserve">
     <value>コメント行</value>
