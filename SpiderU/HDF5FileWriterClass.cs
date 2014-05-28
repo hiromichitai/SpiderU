@@ -39,7 +39,7 @@ namespace SpiderU {
 					H5GroupId groupID = H5G.create(fileID, groupIDString);
 
 					long[] dimension = new long[2];
-					dimension[0] = Scope.NumOnChannel+1;
+					dimension[0] = Scope.OnTrace.Count+1;
 					dimension[1] = Scope.DataLength;
 					H5DataSpaceId spaceId = H5S.create_simple(1, dimension);
 					H5DataTypeId typeId = H5T.copy(H5T.H5Type.NATIVE_DOUBLE);
@@ -47,10 +47,13 @@ namespace SpiderU {
 					H5T.setOrder(typeId, H5T.Order.LE);
 					H5DataTypeId UCharTypeID = H5T.copy(H5T.H5Type.NATIVE_UCHAR);
 					long [] labelDimension = new long[1];
+					long [] unitDimension = new long[1];
 
 					for (int TIndex = 0; TIndex < Scope.OnTrace.Count; TIndex++) {
 						labelDimension[0] = Scope.ChannelLabel(TIndex).Length;
 						H5DataSpaceId labelSpaceID = H5S.create_simple(1, labelDimension);
+						unitDimension[0] = Scope.ChannelUnit(TIndex).Length;
+						H5DataSpaceId unitSpaceID = H5S.create_simple(1, unitDimension);
 						
 						H5DataSetId dataSetID = H5D.create(fileID, "/" + Scope.ChannelLabel(TIndex) , typeId, spaceId);
 						H5AttributeId label = H5A.create(dataSetID, "label",  UCharTypeID, labelSpaceID);

@@ -45,18 +45,18 @@ namespace SpiderU {
 			InitializeComponent();
 			TargetScope = Scope;
 
-			NumChannel = Scope.NumOnChannel;
+			NumChannel = Scope.OnTrace.Count;
 			ChannelNumber = new int[NumChannel];
 			UnitString = new string[NumChannel];
 			LabelString = new string[NumChannel];
 			Multiplier = new double[NumChannel];
 
-			for(int chIndex = 0; chIndex < NumChannel; chIndex++ ){
-				ChannelNumber[chIndex] = Scope.NthOnChannelNumber(chIndex);
-				LabelString[chIndex] = Scope.ChannelLabel(ChannelNumber[chIndex]);
-				UnitString[chIndex] = Scope.ChannelUnit(ChannelNumber[chIndex]);
-				Multiplier[chIndex] = Scope.ChannelMultiplier(ChannelNumber[chIndex]);
-				chComboBox.Items.Add(string.Format("Ch{0:D1}",ChannelNumber[chIndex]+1));
+			for(int OnTraceIndex = 0; OnTraceIndex < NumChannel; OnTraceIndex++ ){
+				ChannelNumber[OnTraceIndex] = Scope.OnTrace[OnTraceIndex].ChannelNo;
+				LabelString[OnTraceIndex] = Scope.OnTrace[OnTraceIndex].TraceLabel;
+				UnitString[OnTraceIndex] = Scope.OnTrace[OnTraceIndex].TraceUnit;
+				Multiplier[OnTraceIndex] = Scope.OnTrace[OnTraceIndex].Multiplier;
+				chComboBox.Items.Add(string.Format("Ch{0:D1}",ChannelNumber[OnTraceIndex]));
 			}
 			chComboBox.SelectedIndex = 0;
 			comboBoxPreSelectionIndex = 0;

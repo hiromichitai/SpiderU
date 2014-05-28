@@ -225,7 +225,6 @@
 	<table name="AppSearch">
 		<col key="yes" def="s72">Property</col>
 		<col key="yes" def="s72">Signature_</col>
-		<row><td>DOTNETVERSION40CLIENT</td><td>DotNet40Client</td></row>
 	</table>
 
 	<table name="BBControl">
@@ -340,27 +339,25 @@
 		<col def="S0">ISDotNetInstallerArgsCommit</col>
 		<col def="S0">ISDotNetInstallerArgsUninstall</col>
 		<col def="S0">ISDotNetInstallerArgsRollback</col>
-		<row><td>HDF5DotNet.dll</td><td>{8C8D2833-1EA7-42CE-A674-E6C091210EF2}</td><td>INSTALLDIR</td><td>2</td><td/><td>hdf5dotnet.dll</td><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
+		<row><td>HDF5DotNet.dll</td><td>{97228E18-5C9D-4EB5-9342-7221F0B32749}</td><td>INSTALLDIR</td><td>2</td><td/><td>hdf5dotnet.dll</td><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
 		<row><td>ISX_DEFAULTCOMPONENT</td><td>{E92D3AB4-6C64-4963-93D0-43EB089F0209}</td><td>DOCUMENTS</td><td>2</td><td/><td/><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
 		<row><td>ISX_DEFAULTCOMPONENT1</td><td>{6139E83A-C6AD-41FC-972E-77B4EDAB0097}</td><td>HDF5</td><td>2</td><td/><td/><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
 		<row><td>ISX_DEFAULTCOMPONENT2</td><td>{6DCDFEC3-3904-4BDB-BBB7-4FEC1BC2FF0F}</td><td>SPIDERU1</td><td>2</td><td/><td/><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
 		<row><td>ISX_DEFAULTCOMPONENT3</td><td>{193476F9-A542-442B-9FEF-E4F5F624B4ED}</td><td>INSTALLDIR</td><td>2</td><td/><td/><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
 		<row><td>ISX_DEFAULTCOMPONENT4</td><td>{D40492AA-DCB8-4906-9A3B-5126B9FD6EF4}</td><td>JA_JP</td><td>2</td><td/><td/><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
-		<row><td>LibUsbDotNet.dll</td><td>{056C1FE1-330D-48AF-B3A4-FB0FBA08E82E}</td><td>INSTALLDIR</td><td>2</td><td/><td>libusbdotnet.dll</td><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
-		<row><td>SpiderU.exe</td><td>{57CBD0B7-623A-440D-8BDF-932508E55804}</td><td>INSTALLDIR</td><td>2</td><td/><td>spideru.exe</td><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
-		<row><td>SpiderU.resources.dll</td><td>{043A7E0A-07E4-4273-8E27-9A7EE9F73EAA}</td><td>JA_JP</td><td>2</td><td/><td>spideru.resources.dll</td><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
-		<row><td>TmctlAPINet.dll</td><td>{A7658ED0-03DC-4893-A595-C43FF633E3D3}</td><td>INSTALLDIR</td><td>2</td><td/><td>tmctlapinet.dll</td><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
-		<row><td>TmctlAPINet64.dll</td><td>{A8FA724A-DCA6-49CD-96F2-FABB9BFCAE5C}</td><td>INSTALLDIR</td><td>2</td><td/><td>tmctlapinet64.dll</td><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
-		<row><td>USBTMCAPI.dll</td><td>{197CEE62-2BA1-4C98-827E-6C47E7079374}</td><td>INSTALLDIR</td><td>2</td><td/><td>usbtmcapi.dll</td><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
-		<row><td>YKMUSB.dll</td><td>{9EB97C36-C71D-42A9-95CC-8FFA1A43EFFB}</td><td>INSTALLDIR</td><td>2</td><td/><td>ykmusb.dll</td><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
-		<row><td>YKMUSB64.dll</td><td>{F67C5758-80E4-4CEF-AD4D-59F2D615BE25}</td><td>INSTALLDIR</td><td>2</td><td/><td>ykmusb64.dll</td><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
-		<row><td>hdf5_hldll.dll</td><td>{F3D4A2DC-54EF-4137-B7A5-A948C4F527F1}</td><td>INSTALLDIR</td><td>2</td><td/><td>hdf5_hldll.dll</td><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
-		<row><td>hdf5dll.dll</td><td>{B27BE525-D94A-42BD-A6B9-23148A8B03F5}</td><td>INSTALLDIR</td><td>2</td><td/><td>hdf5dll.dll</td><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
-		<row><td>szip.dll</td><td>{A26877A8-7776-46C0-9C72-B8144EBB2775}</td><td>INSTALLDIR</td><td>2</td><td/><td>szip.dll</td><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
-		<row><td>tmctl.dll</td><td>{01F4A314-9449-469A-97F7-BB9577753131}</td><td>INSTALLDIR</td><td>2</td><td/><td>tmctl.dll</td><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
-		<row><td>tmctl64.dll</td><td>{A61F41CE-B305-4447-B050-0102DE6EBB9A}</td><td>INSTALLDIR</td><td>2</td><td/><td>tmctl64.dll</td><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
-		<row><td>ykusb.dll</td><td>{BCB65817-4A79-4D5D-BB11-74F08BBC5BF7}</td><td>INSTALLDIR</td><td>2</td><td/><td>ykusb.dll</td><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
-		<row><td>zlib.dll</td><td>{C88C0D18-6F5F-41C1-AF80-51737D3BA841}</td><td>INSTALLDIR</td><td>2</td><td/><td>zlib.dll</td><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
+		<row><td>LibUsbDotNet.dll</td><td>{6AC30B76-4833-469E-9685-A918ECC21FEE}</td><td>INSTALLDIR</td><td>2</td><td/><td>libusbdotnet.dll</td><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
+		<row><td>SpiderU.exe</td><td>{6900CE78-B534-47DB-B877-9BE17AE97A82}</td><td>INSTALLDIR</td><td>2</td><td/><td>spideru.exe</td><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
+		<row><td>SpiderU.resources.dll</td><td>{C75A9ED4-40C8-4C8F-8488-81A16EE0B988}</td><td>JA_JP</td><td>2</td><td/><td>spideru.resources.dll</td><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
+		<row><td>SpiderU.vshost.exe</td><td>{C73F53E1-55B4-4DAE-99DF-3E1EDA362BB7}</td><td>INSTALLDIR</td><td>2</td><td/><td>spideru.vshost.exe</td><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
+		<row><td>TmctlAPINet.dll</td><td>{FE661170-151D-4481-8228-EAA6FDA780B7}</td><td>INSTALLDIR</td><td>2</td><td/><td>tmctlapinet.dll</td><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
+		<row><td>USBTMCAPI.dll</td><td>{F36F8338-EE67-4C4C-9EF7-BC1F58B8A08C}</td><td>INSTALLDIR</td><td>2</td><td/><td>usbtmcapi.dll</td><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
+		<row><td>YKMUSB.dll</td><td>{F4264AF6-5335-4687-96CF-E3D3714603D1}</td><td>INSTALLDIR</td><td>2</td><td/><td>ykmusb.dll</td><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
+		<row><td>YKMUSB64.dll</td><td>{732D2D20-F62A-4433-94DF-6364E14EE94A}</td><td>INSTALLDIR</td><td>2</td><td/><td>ykmusb64.dll</td><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
+		<row><td>hdf5_hldll.dll</td><td>{71BB92EB-2869-474A-AFAE-49276B67CCE3}</td><td>INSTALLDIR</td><td>2</td><td/><td>hdf5_hldll.dll</td><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
+		<row><td>hdf5dll.dll</td><td>{BC950987-D9A3-4327-95DB-17C7111E68D9}</td><td>INSTALLDIR</td><td>2</td><td/><td>hdf5dll.dll</td><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
+		<row><td>tmctl.dll</td><td>{5C8F3C33-375F-469E-91C5-8CA73352088F}</td><td>INSTALLDIR</td><td>2</td><td/><td>tmctl.dll</td><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
+		<row><td>tmctl64.dll</td><td>{72501F91-0DE7-436D-88F8-F7B2616125B1}</td><td>INSTALLDIR</td><td>2</td><td/><td>tmctl64.dll</td><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
+		<row><td>ykusb.dll</td><td>{723D57BE-3226-40AE-B17B-056416F1C2F5}</td><td>INSTALLDIR</td><td>2</td><td/><td>ykusb.dll</td><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
 	</table>
 
 	<table name="Condition">
@@ -1896,18 +1893,16 @@
 		<row><td>AlwaysInstall</td><td>LibUsbDotNet.dll</td></row>
 		<row><td>AlwaysInstall</td><td>SpiderU.exe</td></row>
 		<row><td>AlwaysInstall</td><td>SpiderU.resources.dll</td></row>
+		<row><td>AlwaysInstall</td><td>SpiderU.vshost.exe</td></row>
 		<row><td>AlwaysInstall</td><td>TmctlAPINet.dll</td></row>
-		<row><td>AlwaysInstall</td><td>TmctlAPINet64.dll</td></row>
 		<row><td>AlwaysInstall</td><td>USBTMCAPI.dll</td></row>
 		<row><td>AlwaysInstall</td><td>YKMUSB.dll</td></row>
 		<row><td>AlwaysInstall</td><td>YKMUSB64.dll</td></row>
 		<row><td>AlwaysInstall</td><td>hdf5_hldll.dll</td></row>
 		<row><td>AlwaysInstall</td><td>hdf5dll.dll</td></row>
-		<row><td>AlwaysInstall</td><td>szip.dll</td></row>
 		<row><td>AlwaysInstall</td><td>tmctl.dll</td></row>
 		<row><td>AlwaysInstall</td><td>tmctl64.dll</td></row>
 		<row><td>AlwaysInstall</td><td>ykusb.dll</td></row>
-		<row><td>AlwaysInstall</td><td>zlib.dll</td></row>
 	</table>
 
 	<table name="File">
@@ -1922,28 +1917,29 @@
 		<col def="S255">ISBuildSourcePath</col>
 		<col def="I4">ISAttributes</col>
 		<col def="S72">ISComponentSubFolder_</col>
-		<row><td>acknowledgments</td><td>ISX_DEFAULTCOMPONENT1</td><td>ACKNOW~1|ACKNOWLEDGMENTS</td><td>0</td><td/><td/><td/><td>1</td><td>C:\Users\Hiromichi\Projects\Visual Studio 2013\Projects\SpiderU\Documents\HDF5\ACKNOWLEDGMENTS</td><td>1</td><td/></row>
-		<row><td>copying</td><td>ISX_DEFAULTCOMPONENT1</td><td>COPYING</td><td>0</td><td/><td/><td/><td>1</td><td>C:\Users\Hiromichi\Projects\Visual Studio 2013\Projects\SpiderU\Documents\HDF5\COPYING</td><td>1</td><td/></row>
-		<row><td>eula_spideru.ja_jp.txt</td><td>ISX_DEFAULTCOMPONENT2</td><td>EULA-S~1.TXT|EULA-SpiderU.ja-JP.txt</td><td>0</td><td/><td/><td/><td>1</td><td>C:\Users\Hiromichi\Projects\Visual Studio 2013\Projects\SpiderU\Documents\SpiderU\EULA-SpiderU.ja-JP.txt</td><td>1</td><td/></row>
-		<row><td>eula_spideru.txt</td><td>ISX_DEFAULTCOMPONENT2</td><td>EULA-S~1.TXT|EULA-SpiderU.txt</td><td>0</td><td/><td/><td/><td>1</td><td>C:\Users\Hiromichi\Projects\Visual Studio 2013\Projects\SpiderU\Documents\SpiderU\EULA-SpiderU.txt</td><td>1</td><td/></row>
-		<row><td>hdf5_hldll.dll</td><td>hdf5_hldll.dll</td><td>HDF5_H~1.DLL|hdf5_hldll.dll</td><td>0</td><td/><td/><td/><td>1</td><td>C:\Users\Hiromichi\Projects\Visual Studio 2013\Projects\SpiderU\DLL\HDF5\hdf5_hldll.dll</td><td>1</td><td/></row>
-		<row><td>hdf5dll.dll</td><td>hdf5dll.dll</td><td>hdf5dll.dll</td><td>0</td><td/><td/><td/><td>1</td><td>C:\Users\Hiromichi\Projects\Visual Studio 2013\Projects\SpiderU\DLL\HDF5\hdf5dll.dll</td><td>1</td><td/></row>
-		<row><td>hdf5dotnet.dll</td><td>HDF5DotNet.dll</td><td>HDF5DO~1.DLL|HDF5DotNet.dll</td><td>0</td><td/><td/><td/><td>1</td><td>C:\Users\Hiromichi\Projects\Visual Studio 2013\Projects\SpiderU\DLL\HDF5\HDF5DotNet.dll</td><td>1</td><td/></row>
-		<row><td>libusbdotnet.dll</td><td>LibUsbDotNet.dll</td><td>LIBUSB~1.DLL|LibUsbDotNet.dll</td><td>0</td><td/><td/><td/><td>1</td><td>C:\Users\Hiromichi\Projects\Visual Studio 2013\Projects\SpiderU\DLL\libusb\LibUsbDotNet.dll</td><td>1</td><td/></row>
-		<row><td>spideru.exe</td><td>SpiderU.exe</td><td>SpiderU.exe</td><td>0</td><td/><td/><td/><td>1</td><td>C:\Users\Hiromichi\Projects\Visual Studio 2013\Projects\SpiderU\SpiderU\bin\Release\SpiderU.exe</td><td>1</td><td/></row>
-		<row><td>spideru.exe.config</td><td>ISX_DEFAULTCOMPONENT3</td><td>SPIDER~1.CON|SpiderU.exe.config</td><td>0</td><td/><td/><td/><td>1</td><td>C:\Users\Hiromichi\Projects\Visual Studio 2013\Projects\SpiderU\SpiderU\bin\Release\SpiderU.exe.config</td><td>1</td><td/></row>
-		<row><td>spideru.pdb</td><td>ISX_DEFAULTCOMPONENT3</td><td>SpiderU.pdb</td><td>0</td><td/><td/><td/><td>1</td><td>C:\Users\Hiromichi\Projects\Visual Studio 2013\Projects\SpiderU\SpiderU\bin\Release\SpiderU.pdb</td><td>1</td><td/></row>
-		<row><td>spideru.resources.dll</td><td>SpiderU.resources.dll</td><td>SPIDER~1.DLL|SpiderU.resources.dll</td><td>0</td><td/><td/><td/><td>1</td><td>C:\Users\Hiromichi\Projects\Visual Studio 2013\Projects\SpiderU\SpiderU\bin\Release\ja-JP\SpiderU.resources.dll</td><td>1</td><td/></row>
-		<row><td>szip.dll</td><td>szip.dll</td><td>szip.dll</td><td>0</td><td/><td/><td/><td>1</td><td>C:\Users\Hiromichi\Projects\Visual Studio 2013\Projects\SpiderU\DLL\HDF5\szip.dll</td><td>1</td><td/></row>
-		<row><td>tmctl.dll</td><td>tmctl.dll</td><td>tmctl.dll</td><td>0</td><td/><td/><td/><td>1</td><td>C:\Users\Hiromichi\Projects\Visual Studio 2013\Projects\SpiderU\DLL\YKMUSB\tmctl.dll</td><td>1</td><td/></row>
-		<row><td>tmctl64.dll</td><td>tmctl64.dll</td><td>tmctl64.dll</td><td>0</td><td/><td/><td/><td>1</td><td>C:\Users\Hiromichi\Projects\Visual Studio 2013\Projects\SpiderU\DLL\YKMUSB\tmctl64.dll</td><td>1</td><td/></row>
-		<row><td>tmctlapinet.dll</td><td>TmctlAPINet.dll</td><td>TMCTLA~1.DLL|TmctlAPINet.dll</td><td>0</td><td/><td/><td/><td>1</td><td>C:\Users\Hiromichi\Projects\Visual Studio 2013\Projects\SpiderU\DLL\YKMUSB\TmctlAPINet.dll</td><td>1</td><td/></row>
-		<row><td>tmctlapinet64.dll</td><td>TmctlAPINet64.dll</td><td>TMCTLA~1.DLL|TmctlAPINet64.dll</td><td>0</td><td/><td/><td/><td>1</td><td>C:\Users\Hiromichi\Projects\Visual Studio 2013\Projects\SpiderU\DLL\YKMUSB\TmctlAPINet64.dll</td><td>1</td><td/></row>
-		<row><td>usbtmcapi.dll</td><td>USBTMCAPI.dll</td><td>USBTMC~1.DLL|USBTMCAPI.dll</td><td>0</td><td/><td/><td/><td>1</td><td>C:\Users\Hiromichi\Projects\Visual Studio 2013\Projects\SpiderU\DLL\YKMUSB\USBTMCAPI.dll</td><td>1</td><td/></row>
-		<row><td>ykmusb.dll</td><td>YKMUSB.dll</td><td>YKMUSB.dll</td><td>0</td><td/><td/><td/><td>1</td><td>C:\Users\Hiromichi\Projects\Visual Studio 2013\Projects\SpiderU\DLL\YKMUSB\YKMUSB.dll</td><td>1</td><td/></row>
-		<row><td>ykmusb64.dll</td><td>YKMUSB64.dll</td><td>YKMUSB64.dll</td><td>0</td><td/><td/><td/><td>1</td><td>C:\Users\Hiromichi\Projects\Visual Studio 2013\Projects\SpiderU\DLL\YKMUSB\YKMUSB64.dll</td><td>1</td><td/></row>
-		<row><td>ykusb.dll</td><td>ykusb.dll</td><td>ykusb.dll</td><td>0</td><td/><td/><td/><td>1</td><td>C:\Users\Hiromichi\Projects\Visual Studio 2013\Projects\SpiderU\DLL\YKMUSB\ykusb.dll</td><td>1</td><td/></row>
-		<row><td>zlib.dll</td><td>zlib.dll</td><td>zlib.dll</td><td>0</td><td/><td/><td/><td>1</td><td>C:\Users\Hiromichi\Projects\Visual Studio 2013\Projects\SpiderU\DLL\HDF5\zlib.dll</td><td>1</td><td/></row>
+		<row><td>acknowledgments</td><td>ISX_DEFAULTCOMPONENT1</td><td>ACKNOW~1|ACKNOWLEDGMENTS</td><td>0</td><td/><td/><td/><td>1</td><td>C:\Users\hiromichi\Projects\Visual Studio\Projects\SpiderU\Documents\HDF5\ACKNOWLEDGMENTS</td><td>1</td><td/></row>
+		<row><td>copying</td><td>ISX_DEFAULTCOMPONENT1</td><td>COPYING</td><td>0</td><td/><td/><td/><td>1</td><td>C:\Users\hiromichi\Projects\Visual Studio\Projects\SpiderU\Documents\HDF5\COPYING</td><td>1</td><td/></row>
+		<row><td>eula_spideru.ja_jp.txt</td><td>ISX_DEFAULTCOMPONENT2</td><td>EULA-S~1.TXT|EULA-SpiderU.ja-JP.txt</td><td>0</td><td/><td/><td/><td>1</td><td>C:\Users\hiromichi\Projects\Visual Studio\Projects\SpiderU\Documents\SpiderU\EULA-SpiderU.ja-JP.txt</td><td>1</td><td/></row>
+		<row><td>eula_spideru.txt</td><td>ISX_DEFAULTCOMPONENT2</td><td>EULA-S~1.TXT|EULA-SpiderU.txt</td><td>0</td><td/><td/><td/><td>1</td><td>C:\Users\hiromichi\Projects\Visual Studio\Projects\SpiderU\Documents\SpiderU\EULA-SpiderU.txt</td><td>1</td><td/></row>
+		<row><td>hdf5_hldll.dll</td><td>hdf5_hldll.dll</td><td>HDF5_H~1.DLL|hdf5_hldll.dll</td><td>0</td><td/><td/><td/><td>1</td><td>C:\Users\hiromichi\Projects\Visual Studio\Projects\SpiderU\DLL\HDF5\hdf5_hldll.dll</td><td>1</td><td/></row>
+		<row><td>hdf5dll.dll</td><td>hdf5dll.dll</td><td>hdf5dll.dll</td><td>0</td><td/><td/><td/><td>1</td><td>C:\Users\hiromichi\Projects\Visual Studio\Projects\SpiderU\DLL\HDF5\hdf5dll.dll</td><td>1</td><td/></row>
+		<row><td>hdf5dotnet.dll</td><td>HDF5DotNet.dll</td><td>HDF5DO~1.DLL|HDF5DotNet.dll</td><td>0</td><td/><td/><td/><td>1</td><td>C:\Users\hiromichi\Projects\Visual Studio\Projects\SpiderU\DLL\HDF5\HDF5DotNet.dll</td><td>1</td><td/></row>
+		<row><td>libusbdotnet.dll</td><td>LibUsbDotNet.dll</td><td>LIBUSB~1.DLL|LibUsbDotNet.dll</td><td>0</td><td/><td/><td/><td>1</td><td>C:\Users\hiromichi\Projects\Visual Studio\Projects\SpiderU\DLL\libusb\LibUsbDotNet.dll</td><td>1</td><td/></row>
+		<row><td>spideru.application</td><td>ISX_DEFAULTCOMPONENT3</td><td>SPIDER~1.APP|SpiderU.application</td><td>0</td><td/><td/><td/><td>1</td><td>C:\Users\hiromichi\Projects\Visual Studio\Projects\SpiderU\SpiderU\bin\x86\Release\SpiderU.application</td><td>1</td><td/></row>
+		<row><td>spideru.exe</td><td>SpiderU.exe</td><td>SpiderU.exe</td><td>0</td><td/><td/><td/><td>1</td><td>C:\Users\hiromichi\Projects\Visual Studio\Projects\SpiderU\SpiderU\bin\x86\Release\SpiderU.exe</td><td>1</td><td/></row>
+		<row><td>spideru.exe.config</td><td>ISX_DEFAULTCOMPONENT3</td><td>SPIDER~1.CON|SpiderU.exe.config</td><td>0</td><td/><td/><td/><td>1</td><td>C:\Users\hiromichi\Projects\Visual Studio\Projects\SpiderU\SpiderU\bin\x86\Release\SpiderU.exe.config</td><td>1</td><td/></row>
+		<row><td>spideru.exe.manifest</td><td>ISX_DEFAULTCOMPONENT3</td><td>SPIDER~1.MAN|SpiderU.exe.manifest</td><td>0</td><td/><td/><td/><td>1</td><td>C:\Users\hiromichi\Projects\Visual Studio\Projects\SpiderU\SpiderU\bin\x86\Release\SpiderU.exe.manifest</td><td>1</td><td/></row>
+		<row><td>spideru.pdb</td><td>ISX_DEFAULTCOMPONENT3</td><td>SpiderU.pdb</td><td>0</td><td/><td/><td/><td>1</td><td>C:\Users\hiromichi\Projects\Visual Studio\Projects\SpiderU\SpiderU\bin\x86\Release\SpiderU.pdb</td><td>1</td><td/></row>
+		<row><td>spideru.resources.dll</td><td>SpiderU.resources.dll</td><td>SPIDER~1.DLL|SpiderU.resources.dll</td><td>0</td><td/><td/><td/><td>1</td><td>C:\Users\hiromichi\Projects\Visual Studio\Projects\SpiderU\SpiderU\bin\x86\Release\ja-JP\SpiderU.resources.dll</td><td>1</td><td/></row>
+		<row><td>spideru.vshost.exe</td><td>SpiderU.vshost.exe</td><td>SPIDER~1.EXE|SpiderU.vshost.exe</td><td>0</td><td/><td/><td/><td>1</td><td>C:\Users\hiromichi\Projects\Visual Studio\Projects\SpiderU\SpiderU\bin\x86\Release\SpiderU.vshost.exe</td><td>1</td><td/></row>
+		<row><td>spideru.vshost.exe.config</td><td>ISX_DEFAULTCOMPONENT3</td><td>SPIDER~1.CON|SpiderU.vshost.exe.config</td><td>0</td><td/><td/><td/><td>1</td><td>C:\Users\hiromichi\Projects\Visual Studio\Projects\SpiderU\SpiderU\bin\x86\Release\SpiderU.vshost.exe.config</td><td>1</td><td/></row>
+		<row><td>tmctl.dll</td><td>tmctl.dll</td><td>tmctl.dll</td><td>0</td><td/><td/><td/><td>1</td><td>C:\Users\hiromichi\Projects\Visual Studio\Projects\SpiderU\DLL\YKMUSB\tmctl.dll</td><td>1</td><td/></row>
+		<row><td>tmctl64.dll</td><td>tmctl64.dll</td><td>tmctl64.dll</td><td>0</td><td/><td/><td/><td>1</td><td>C:\Users\hiromichi\Projects\Visual Studio\Projects\SpiderU\DLL\YKMUSB\tmctl64.dll</td><td>1</td><td/></row>
+		<row><td>tmctlapinet.dll</td><td>TmctlAPINet.dll</td><td>TMCTLA~1.DLL|TmctlAPINet.dll</td><td>0</td><td/><td/><td/><td>1</td><td>C:\Users\hiromichi\Projects\Visual Studio\Projects\SpiderU\DLL\YKMUSB\TmctlAPINet.dll</td><td>1</td><td/></row>
+		<row><td>usbtmcapi.dll</td><td>USBTMCAPI.dll</td><td>USBTMC~1.DLL|USBTMCAPI.dll</td><td>0</td><td/><td/><td/><td>1</td><td>C:\Users\hiromichi\Projects\Visual Studio\Projects\SpiderU\DLL\YKMUSB\USBTMCAPI.dll</td><td>1</td><td/></row>
+		<row><td>ykmusb.dll</td><td>YKMUSB.dll</td><td>YKMUSB.dll</td><td>0</td><td/><td/><td/><td>1</td><td>C:\Users\hiromichi\Projects\Visual Studio\Projects\SpiderU\DLL\YKMUSB\YKMUSB.dll</td><td>1</td><td/></row>
+		<row><td>ykmusb64.dll</td><td>YKMUSB64.dll</td><td>YKMUSB64.dll</td><td>0</td><td/><td/><td/><td>1</td><td>C:\Users\hiromichi\Projects\Visual Studio\Projects\SpiderU\DLL\YKMUSB\YKMUSB64.dll</td><td>1</td><td/></row>
+		<row><td>ykusb.dll</td><td>ykusb.dll</td><td>ykusb.dll</td><td>0</td><td/><td/><td/><td>1</td><td>C:\Users\hiromichi\Projects\Visual Studio\Projects\SpiderU\DLL\YKMUSB\ykusb.dll</td><td>1</td><td/></row>
 	</table>
 
 	<table name="FileSFPCatalog">
@@ -2087,27 +2083,25 @@
 		<col def="S0">FTPLocation</col>
 		<col def="S0">HTTPLocation</col>
 		<col def="S0">Miscellaneous</col>
-		<row><td>HDF5DotNet.dll</td><td/><td/><td>_B18128BC_03A5_427F_89C6_552952B27F57_FILTER</td><td/><td/><td/><td/></row>
+		<row><td>HDF5DotNet.dll</td><td/><td/><td>_642C8149_927D_426F_8681_C18C39C63736_FILTER</td><td/><td/><td/><td/></row>
 		<row><td>ISX_DEFAULTCOMPONENT</td><td/><td/><td>_2BE052A5_ECAE_4530_ACC1_1B36B2393124_FILTER</td><td/><td/><td/><td/></row>
 		<row><td>ISX_DEFAULTCOMPONENT1</td><td/><td/><td>_0A067028_C4AF_453E_9691_D74D0E41FC76_FILTER</td><td/><td/><td/><td/></row>
 		<row><td>ISX_DEFAULTCOMPONENT2</td><td/><td/><td>_8A90B7B3_AF9D_458A_8670_CEA41F502C4D_FILTER</td><td/><td/><td/><td/></row>
 		<row><td>ISX_DEFAULTCOMPONENT3</td><td/><td/><td>_608AD72A_F485_4AAD_9375_4E59B7E24B6E_FILTER</td><td/><td/><td/><td/></row>
 		<row><td>ISX_DEFAULTCOMPONENT4</td><td/><td/><td>_CA67C1A8_65B6_428E_B8D1_7CDE47354FF3_FILTER</td><td/><td/><td/><td/></row>
-		<row><td>LibUsbDotNet.dll</td><td/><td/><td>_0CFF801A_6EB3_4344_822D_C702DBCD27D8_FILTER</td><td/><td/><td/><td/></row>
-		<row><td>SpiderU.exe</td><td/><td/><td>_F914D7A0_FF86_4BB7_88FC_B341D53E0498_FILTER</td><td/><td/><td/><td/></row>
-		<row><td>SpiderU.resources.dll</td><td/><td/><td>_20D41EAC_4869_44B0_B828_C8C7AC8DADF8_FILTER</td><td/><td/><td/><td/></row>
-		<row><td>TmctlAPINet.dll</td><td/><td/><td>_AD65BC72_0C05_4D4C_960B_CF4D5295DFBA_FILTER</td><td/><td/><td/><td/></row>
-		<row><td>TmctlAPINet64.dll</td><td/><td/><td>_7BEB5CF3_464D_4776_920D_32E15E6DC31D_FILTER</td><td/><td/><td/><td/></row>
-		<row><td>USBTMCAPI.dll</td><td/><td/><td>_5943DB36_54E9_4A94_BFB5_FDF7CB0DDF58_FILTER</td><td/><td/><td/><td/></row>
-		<row><td>YKMUSB.dll</td><td/><td/><td>_E5486ED6_B413_4C22_BAFE_9D309A144995_FILTER</td><td/><td/><td/><td/></row>
-		<row><td>YKMUSB64.dll</td><td/><td/><td>_0C5C1816_9C9A_4698_96BF_AA8C43FB4522_FILTER</td><td/><td/><td/><td/></row>
-		<row><td>hdf5_hldll.dll</td><td/><td/><td>_783E657B_3081_46E1_93C2_840F28E95F3E_FILTER</td><td/><td/><td/><td/></row>
-		<row><td>hdf5dll.dll</td><td/><td/><td>_994BE209_65C0_43F2_8D1C_AB1625F2F3AF_FILTER</td><td/><td/><td/><td/></row>
-		<row><td>szip.dll</td><td/><td/><td>_4E649707_1DA2_4C7C_9AB2_0D9920D20907_FILTER</td><td/><td/><td/><td/></row>
-		<row><td>tmctl.dll</td><td/><td/><td>_E9A3997A_F434_4BE9_B21A_AA065A4C422B_FILTER</td><td/><td/><td/><td/></row>
-		<row><td>tmctl64.dll</td><td/><td/><td>_031754E1_B907_422A_BC92_A3C98B6E6140_FILTER</td><td/><td/><td/><td/></row>
-		<row><td>ykusb.dll</td><td/><td/><td>_8F4CDD4D_6507_4E0E_A0C3_6474D609BE0C_FILTER</td><td/><td/><td/><td/></row>
-		<row><td>zlib.dll</td><td/><td/><td>_2970FA8C_22E1_46FE_B423_6D6FF5611E50_FILTER</td><td/><td/><td/><td/></row>
+		<row><td>LibUsbDotNet.dll</td><td/><td/><td>_104E87EA_FE14_4275_802A_DEFFFCC71410_FILTER</td><td/><td/><td/><td/></row>
+		<row><td>SpiderU.exe</td><td/><td/><td>_1C4E6BC2_C2EE_4B7B_B7EC_F60E6E53F731_FILTER</td><td/><td/><td/><td/></row>
+		<row><td>SpiderU.resources.dll</td><td/><td/><td>_A50E8AF7_3070_472E_A9C9_DD22F6FA0D39_FILTER</td><td/><td/><td/><td/></row>
+		<row><td>SpiderU.vshost.exe</td><td/><td/><td>_E6E47B99_07B8_4D53_B242_37F1E8871DD6_FILTER</td><td/><td/><td/><td/></row>
+		<row><td>TmctlAPINet.dll</td><td/><td/><td>_FC64CC53_FAF8_4304_9FD2_1F6AF44103BC_FILTER</td><td/><td/><td/><td/></row>
+		<row><td>USBTMCAPI.dll</td><td/><td/><td>_18D6A5CE_D91D_49E8_91BF_F8CEED9795D5_FILTER</td><td/><td/><td/><td/></row>
+		<row><td>YKMUSB.dll</td><td/><td/><td>_7A6D7D1E_1BDA_47BB_8DB1_744A0B12A936_FILTER</td><td/><td/><td/><td/></row>
+		<row><td>YKMUSB64.dll</td><td/><td/><td>_635380A5_5462_44CA_9C81_5566E2026B10_FILTER</td><td/><td/><td/><td/></row>
+		<row><td>hdf5_hldll.dll</td><td/><td/><td>_25B61EAF_952F_462A_9C4A_6C360F1A4225_FILTER</td><td/><td/><td/><td/></row>
+		<row><td>hdf5dll.dll</td><td/><td/><td>_1C728394_A3A3_4095_A533_750370AD1657_FILTER</td><td/><td/><td/><td/></row>
+		<row><td>tmctl.dll</td><td/><td/><td>_D4768FB3_132F_4111_A91A_D9F7CE27F86D_FILTER</td><td/><td/><td/><td/></row>
+		<row><td>tmctl64.dll</td><td/><td/><td>_482A846E_F2A8_42CE_B5F4_9D5B190F51AC_FILTER</td><td/><td/><td/><td/></row>
+		<row><td>ykusb.dll</td><td/><td/><td>_E2520830_EBBF_4E09_ADD0_92AC23A7D604_FILTER</td><td/><td/><td/><td/></row>
 	</table>
 
 	<table name="ISCustomActionReference">
@@ -2725,10 +2719,9 @@
 		<col def="I2">Encoded</col>
 		<col def="S0">Comment</col>
 		<col def="I4">TimeStamp</col>
-		<row><td>COMPANY_NAME</td><td>1033</td><td>Ryuusando</td><td>0</td><td/><td>1923260558</td></row>
+		<row><td>COMPANY_NAME</td><td>1033</td><td>Ryuusando</td><td>0</td><td/><td>-492662315</td></row>
 		<row><td>DN_AlwaysInstall</td><td>1033</td><td>Always Install</td><td>0</td><td/><td>1789013077</td></row>
 		<row><td>IDPROP_EXPRESS_LAUNCH_CONDITION_COLOR</td><td>1033</td><td>The color settings of your system are not adequate for running [ProductName].</td><td>0</td><td/><td>1789013077</td></row>
-		<row><td>IDPROP_EXPRESS_LAUNCH_CONDITION_DOTNETVERSION40CLIENT</td><td>1033</td><td>Microsoft .NET Framework 4.0 Client Package or greater needs to be installed for this installation to continue.</td><td>0</td><td/><td>1789056373</td></row>
 		<row><td>IDPROP_EXPRESS_LAUNCH_CONDITION_OS</td><td>1033</td><td>The operating system is not adequate for running [ProductName].</td><td>0</td><td/><td>1789013077</td></row>
 		<row><td>IDPROP_EXPRESS_LAUNCH_CONDITION_PROCESSOR</td><td>1033</td><td>The processor is not adequate for running [ProductName].</td><td>0</td><td/><td>1789013077</td></row>
 		<row><td>IDPROP_EXPRESS_LAUNCH_CONDITION_RAM</td><td>1033</td><td>The amount of RAM is not adequate for running [ProductName].</td><td>0</td><td/><td>1789013077</td></row>
@@ -3827,8 +3820,8 @@
 		<row><td>IDS__TargetReq_DESC_PROCESSOR</td><td>1033</td><td>The processor is not adequate for running [ProductName].</td><td>0</td><td/><td>1789013077</td></row>
 		<row><td>IDS__TargetReq_DESC_RAM</td><td>1033</td><td>The amount of RAM is not adequate for running [ProductName].</td><td>0</td><td/><td>1789013077</td></row>
 		<row><td>IDS__TargetReq_DESC_RESOLUTION</td><td>1033</td><td>The screen resolution is not adequate for running [ProductName].</td><td>0</td><td/><td>1789013077</td></row>
-		<row><td>ID_STRING1</td><td>1033</td><td>http://www.Ryuusando.com</td><td>0</td><td/><td>1923260558</td></row>
-		<row><td>ID_STRING2</td><td>1033</td><td>Ryuusando</td><td>0</td><td/><td>1923260558</td></row>
+		<row><td>ID_STRING1</td><td>1033</td><td>http://www.Ryuusando.com</td><td>0</td><td/><td>-492662315</td></row>
+		<row><td>ID_STRING2</td><td>1033</td><td>Ryuusando</td><td>0</td><td/><td>-492662315</td></row>
 		<row><td>IIDS_UITEXT_FeatureUninstalled</td><td>1033</td><td>This feature will remain uninstalled.</td><td>0</td><td/><td>1789013077</td></row>
 	</table>
 
@@ -4128,7 +4121,6 @@ UwBpAG4AZwBsAGUASQBtAGEAZwBlAAEARQB4AHAAcgBlAHMAcwA=
 	<table name="LaunchCondition">
 		<col key="yes" def="s255">Condition</col>
 		<col def="l255">Description</col>
-		<row><td>DOTNETVERSION40CLIENT&gt;="#1"</td><td>##IDPROP_EXPRESS_LAUNCH_CONDITION_DOTNETVERSION40CLIENT##</td></row>
 	</table>
 
 	<table name="ListBox">
@@ -4457,7 +4449,7 @@ UwBpAG4AZwBsAGUASQBtAGEAZwBlAAEARQB4AHAAcgBlAHMAcwA=
 		<row><td>RestartManagerOption</td><td>CloseRestart</td><td/></row>
 		<row><td>SERIALNUMBER</td><td/><td/></row>
 		<row><td>SERIALNUMVALSUCCESSRETVAL</td><td>1</td><td/></row>
-		<row><td>SecureCustomProperties</td><td>ISFOUNDNEWERPRODUCTVERSION;USERNAME;COMPANYNAME;ISX_SERIALNUM;SUPPORTDIR;DOTNETVERSION40CLIENT</td><td/></row>
+		<row><td>SecureCustomProperties</td><td>ISFOUNDNEWERPRODUCTVERSION;USERNAME;COMPANYNAME;ISX_SERIALNUM;SUPPORTDIR</td><td/></row>
 		<row><td>SelectedSetupType</td><td>##IDS__DisplayName_Typical##</td><td/></row>
 		<row><td>SetupType</td><td>Typical</td><td/></row>
 		<row><td>UpgradeCode</td><td>{3C2873FC-F4C7-4BD9-9671-8E2DCFFA7C22}</td><td/></row>
@@ -4502,7 +4494,6 @@ UwBpAG4AZwBsAGUASQBtAGEAZwBlAAEARQB4AHAAcgBlAHMAcwA=
 		<col def="s255">Key</col>
 		<col def="S255">Name</col>
 		<col def="I2">Type</col>
-		<row><td>DotNet40Client</td><td>2</td><td>SOFTWARE\Microsoft\NET Framework Setup\NDP\v4\Client</td><td>Install</td><td>2</td></row>
 	</table>
 
 	<table name="Registry">
@@ -4521,9 +4512,6 @@ UwBpAG4AZwBsAGUASQBtAGEAZwBlAAEARQB4AHAAcgBlAHMAcwA=
 		<col def="L255">FileName</col>
 		<col def="s72">DirProperty</col>
 		<col def="i2">InstallMode</col>
-		<row><td>FileKey1</td><td>SpiderU.exe</td><td/><td>ryuusa_1_ryuusando</td><td>2</td></row>
-		<row><td>FileKey2</td><td>SpiderU.exe</td><td/><td>spideru</td><td>2</td></row>
-		<row><td>SpiderU.exe</td><td>SpiderU.exe</td><td/><td>spideru</td><td>2</td></row>
 	</table>
 
 	<table name="RemoveIniFile">
@@ -4609,7 +4597,6 @@ UwBpAG4AZwBsAGUASQBtAGEAZwBlAAEARQB4AHAAcgBlAHMAcwA=
 		<col def="S255">ISComments</col>
 		<col def="S255">ISShortcutName</col>
 		<col def="I4">ISAttributes</col>
-		<row><td>SpiderU.exe</td><td>spideru</td><td>##IDS_SHORTCUT_DISPLAY_NAME1##</td><td>SpiderU.exe</td><td>AlwaysInstall</td><td/><td/><td/><td>SpiderU.exe_0843B896DE8E44CBB1EB19BB9E09EC65.exe</td><td>0</td><td>1</td><td>INSTALLDIR</td><td/><td/><td/><td/><td/><td/><td/></row>
 	</table>
 
 	<table name="Signature">

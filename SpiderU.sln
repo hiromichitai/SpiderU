@@ -6,6 +6,9 @@ MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SpiderU", "SpiderU\SpiderU.csproj", "{681F0387-6846-4A77-9D9E-45C6A84F06DE}"
 EndProject
 Project("{6141683F-8A12-4E36-9623-2EB02B2C2303}") = "SetupSpiderU", "SetupSpiderU\SetupSpiderU.isproj", "{6C41DFF1-3985-42D1-9A6B-523462ED7D4F}"
+	ProjectSection(ProjectDependencies) = postProject
+		{681F0387-6846-4A77-9D9E-45C6A84F06DE} = {681F0387-6846-4A77-9D9E-45C6A84F06DE}
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

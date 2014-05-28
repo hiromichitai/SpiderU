@@ -8,6 +8,7 @@ using NationalInstruments.NI4882;
 namespace SpiderU {
 
 	public class TraceClass {	// Trace class. Each Scope has at least one trace.
+		private int ChannelNumber;
 		private double MultiplyFactor = 1.0;
 		private string TraceLabelString;
 		private string TraceUnitString;
@@ -29,14 +30,19 @@ namespace SpiderU {
 			set { this.TraceUnitString = value; }
 		}
 
+		public int ChannelNo {
+			get { return ChannelNumber; }
+			set { ChannelNumber = value; }
+		}
+
 		public int DataLength {
 			get {
-					if (TraceDataArray != null) {  
+				if (TraceDataArray != null) {  
 					return this.TraceDataArray.Length;
-					} else {
-						return 0;
-					}
+				} else {
+					return 0;
 				}
+			}
 			set { TraceDataArray = new double[value]; }
 		}
 
@@ -82,8 +88,9 @@ namespace SpiderU {
 			ModelNameString = ModelName;
 			NumberOfChannel = NumChannel;
 			TraceList = new List<TraceClass>(NumberOfChannel);
-			for (int Channel = 0; Channel < NumChannel; Channel++) {
+			for (int TIndex = 0; TIndex < NumChannel; TIndex++) {
 				TraceClass NewTrace = new TraceClass();
+				NewTrace.ChannelNo = TIndex + 1;
 				TraceList.Add(NewTrace);
 			}
 		}
@@ -145,26 +152,6 @@ namespace SpiderU {
 			return TraceList[Channel].TraceUnit;
 		}
 
-		public double ChannelMultiplier(int Channel) {
-			return TraceList[Channel].Multiplier;
-		}
-
-		public int NumOnChannel {
-			get { return TraceList.Count((trace) => (trace.IsOn)); }
-		}
-
-		public int NthOnChannelNumber(int Index) {
-			int OnChannelCount = 0;
-			for (int TraceIndex = 0; TraceIndex < TraceList.Count; TraceIndex++) {
-				if (TraceList[TraceIndex].IsOn) {
-					if (Index == OnChannelCount) {
-						return TraceIndex;
-					}
-					OnChannelCount++;
-				}
-			}
-			return -1;
-		}
 
 		public double STime(int Index) {
 			return SamplingTime*Index;
