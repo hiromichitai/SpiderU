@@ -79,6 +79,15 @@ namespace SpiderU {
         }
         
         /// <summary>
+        ///   Capturing data of oscilloscope に類似しているローカライズされた文字列を検索します。
+        /// </summary>
+        public static string UIMSGCAPTURESTATE {
+            get {
+                return ResourceManager.GetString("UIMSGCAPTURESTATE", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Internal data consisitency error に類似しているローカライズされた文字列を検索します。
         /// </summary>
         public static string UIMSGDATAINCONSIST {
@@ -219,6 +228,15 @@ namespace SpiderU {
         public static string UIMSGUSBREADERROR {
             get {
                 return ResourceManager.GetString("UIMSGUSBREADERROR", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Writing data file に類似しているローカライズされた文字列を検索します。
+        /// </summary>
+        public static string UIMSGWRITESTATE {
+            get {
+                return ResourceManager.GetString("UIMSGWRITESTATE", resourceCulture);
             }
         }
     }

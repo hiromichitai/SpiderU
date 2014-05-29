@@ -123,6 +123,9 @@
   <data name="UIMSGCANTOPENUSBPHY" xml:space="preserve">
     <value>USB PHYデバイsとしてオシロスコープに接続できません</value>
   </data>
+  <data name="UIMSGCAPTURESTATE" xml:space="preserve">
+    <value>オシロスコープのデータを取り込み中</value>
+  </data>
   <data name="UIMSGDATAINCONSIST" xml:space="preserve">
     <value>内部データの整合性に問題が発生しました</value>
   </data>
@@ -170,5 +173,8 @@
   </data>
   <data name="UIMSGUSBREADERROR" xml:space="preserve">
     <value>USB読み込み時にエラーが発生しました</value>
+  </data>
+  <data name="UIMSGWRITESTATE" xml:space="preserve">
+    <value>データファイル書き込み中</value>
   </data>
 </root>

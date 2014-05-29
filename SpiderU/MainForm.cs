@@ -11,7 +11,8 @@ using System.Resources;
 
 namespace SpiderU {
 	public partial class MainForm : Form {
-		ComPortListClass DeviceList;
+		private ComPortListClass DeviceList;
+		private ResourceManager rm;
 
 		public MainForm() {
 			InitializeComponent();
@@ -19,11 +20,10 @@ namespace SpiderU {
 			Properties.Settings.Default.autoFileNamePrefix = DateTime.Now.ToString("yyMMdd-");
 			Properties.Settings.Default.Save();
 			saveFileDialog1.Filter = FileWriterClass.ExtFilter();
-			
+			rm = new ResourceManager("SpiderU.UIMessageResource", typeof(MainForm).Assembly);
 		}
 
 		private string GetUIString(string KeyString) {
-			ResourceManager rm = new ResourceManager("SpiderU.UIMessageResource", typeof(MainForm).Assembly);
 			return rm.GetString(KeyString);
 		}
 
@@ -56,6 +56,8 @@ namespace SpiderU {
 						newScopeSettingItem.Click +=  scopeSettingToolStripMenuItem_Click;
 						scopeToolStripMenuItem.DropDownItems.Add((newScopeSettingItem));
 					}
+					toolStripStatusLabel1.Text = GetUIString("UIMSGREADYSTATE");
+
 				}
 				catch (System.Exception Ex) {
 					ErrorDialog Dialog = new ErrorDialog(Ex.ToString());
@@ -66,7 +68,9 @@ namespace SpiderU {
 
 		private void acquisitionToolStripMenuItem_Click(object sender, EventArgs e)
 		{
+			toolStripStatusLabel1.Text = GetUIString("UIMSGCAPTURESTATE");
 			if (ScopeManager.GetWaveform()) {
+				toolStripStatusLabel1.Text = GetUIString("UIMSGWRITESTATE");
 				string FileName = "";
 				if (Properties.Settings.Default.useAutoFileName) {
 					FileName = FileWriterCreator.autoFileName;
@@ -82,8 +86,8 @@ namespace SpiderU {
 
 			} else {
 				WarningDialog WDialog = new WarningDialog("UIMSGNOSCOPECONNECT"," in acquisitionToolStripMenuItem_Click");
-
 			}
+			toolStripStatusLabel1.Text = GetUIString("UIMSGREADYSTATE");
 		}
 
 		private void settingToolStripMenuItem_Click(object sender, EventArgs e) {
@@ -92,7 +96,8 @@ namespace SpiderU {
 		}
 
 		private void aboutToolStripMenuItem_Click(object sender, EventArgs e) {
-
+			AboutForm AForm = new AboutForm();
+			AForm.ShowDialog();
 		}
 	}
 }

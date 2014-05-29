@@ -123,6 +123,9 @@
   <data name="UIMSGCANTOPENUSBPHY" xml:space="preserve">
     <value>Can't open Oscilloscope as USB PHY device.</value>
   </data>
+  <data name="UIMSGCAPTURESTATE" xml:space="preserve">
+    <value>Capturing data of oscilloscope</value>
+  </data>
   <data name="UIMSGDATAINCONSIST" xml:space="preserve">
     <value>Internal data consisitency error</value>
   </data>
@@ -170,5 +173,8 @@
   </data>
   <data name="UIMSGUSBREADERROR" xml:space="preserve">
     <value>USB read error occured.</value>
+  </data>
+  <data name="UIMSGWRITESTATE" xml:space="preserve">
+    <value>Writing data file</value>
   </data>
 </root>
