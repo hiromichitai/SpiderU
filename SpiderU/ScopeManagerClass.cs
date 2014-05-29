@@ -122,10 +122,15 @@ namespace SpiderU {
 		}
 
 		public static bool GetWaveform() {
-			for (int ScopeIndex = 0; ScopeIndex < SList.Count; ScopeIndex++) {
-				SList[ScopeIndex].AcquireData();
+			if (SList.Count > 0) {
+				for (int ScopeIndex = 0; ScopeIndex < SList.Count; ScopeIndex++) {
+					SList[ScopeIndex].AcquireData();
+				}
+				return true;
+
+			} else {
+				return false;
 			}
-			return true;
 		}
 
 		public static bool AllScopeSyncable() {

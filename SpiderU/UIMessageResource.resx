@@ -144,6 +144,9 @@
   <data name="UIMSGNOSCOPE" xml:space="preserve">
     <value>No oscilloscope found</value>
   </data>
+  <data name="UIMSGNOSCOPECONNECT" xml:space="preserve">
+    <value>No oscilloscopes are connected.</value>
+  </data>
   <data name="UIMSGNOTSYNCABLE" xml:space="preserve">
     <value>Sync all oscilloscope option is checked, but not all osilloscope record length and sampling time is identical.</value>
   </data>

@@ -144,6 +144,9 @@
   <data name="UIMSGNOSCOPE" xml:space="preserve">
     <value>オシロスコープを検出できません</value>
   </data>
+  <data name="UIMSGNOSCOPECONNECT" xml:space="preserve">
+    <value>オシロスコープが接続されていません</value>
+  </data>
   <data name="UIMSGNOTSYNCABLE" xml:space="preserve">
     <value>全オシロスコープ同期オプションが選択されていますが、オシロのレコード長とサンプリング時間が同一ではありません。</value>
   </data>

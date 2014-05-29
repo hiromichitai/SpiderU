@@ -19,13 +19,11 @@ namespace SpiderU {
 			Properties.Settings.Default.autoFileNamePrefix = DateTime.Now.ToString("yyMMdd-");
 			Properties.Settings.Default.Save();
 			saveFileDialog1.Filter = FileWriterClass.ExtFilter();
-
-
 			
 		}
 
 		private string GetUIString(string KeyString) {
-			ResourceManager rm = new ResourceManager("SpiderU.UIMessageResoure", typeof(MainForm).Assembly);
+			ResourceManager rm = new ResourceManager("SpiderU.UIMessageResource", typeof(MainForm).Assembly);
 			return rm.GetString(KeyString);
 		}
 
@@ -43,8 +41,6 @@ namespace SpiderU {
 		private void scanToolStripMenuItem_Click(object sender, EventArgs e) {
 			if (DeviceList == null) {
 				try {
-					ResourceManager rm = new ResourceManager("SpiderU.UIMessageResoure", typeof(MainForm).Assembly);
-					string message = rm.GetString("UIMSGSCANSCOPE");
 					toolStripStatusLabel1.Text = GetUIString("UIMSGSCANSCOPE");
 					DeviceList = new ComPortListClass();
 					if (DeviceList == null) {
@@ -70,18 +66,23 @@ namespace SpiderU {
 
 		private void acquisitionToolStripMenuItem_Click(object sender, EventArgs e)
 		{
-			ScopeManager.GetWaveform();
-			string FileName = "";
-			if (Properties.Settings.Default.useAutoFileName) {
-				FileName = FileWriterCreator.autoFileName;
-			}
-			saveFileDialog1.DefaultExt = FileWriterClass.DefaultExtention(Properties.Settings.Default.outputFileFormatID);
-			saveFileDialog1.FileName = FileName;
-			if (saveFileDialog1.ShowDialog() == DialogResult.OK) {
-				FileWriterClass fWriter = FileWriterCreator.CreateFileWriter(saveFileDialog1.FileName);
-				fWriter.WriteFile();
-				fWriter.Close();
-				FileWriterCreator.incAutoFileNameNumber();
+			if (ScopeManager.GetWaveform()) {
+				string FileName = "";
+				if (Properties.Settings.Default.useAutoFileName) {
+					FileName = FileWriterCreator.autoFileName;
+				}
+				saveFileDialog1.DefaultExt = FileWriterClass.DefaultExtention(Properties.Settings.Default.outputFileFormatID);
+				saveFileDialog1.FileName = FileName;
+				if (saveFileDialog1.ShowDialog() == DialogResult.OK) {
+					FileWriterClass fWriter = FileWriterCreator.CreateFileWriter(saveFileDialog1.FileName);
+					fWriter.WriteFile();
+					fWriter.Close();
+					FileWriterCreator.incAutoFileNameNumber();
+				}
+
+			} else {
+				WarningDialog WDialog = new WarningDialog("UIMSGNOSCOPECONNECT"," in acquisitionToolStripMenuItem_Click");
+
 			}
 		}
 

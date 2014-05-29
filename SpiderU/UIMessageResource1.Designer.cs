@@ -142,6 +142,15 @@ namespace SpiderU {
         }
         
         /// <summary>
+        ///   No oscilloscopes are connected. に類似しているローカライズされた文字列を検索します。
+        /// </summary>
+        public static string UIMSGNOSCOPECONNECT {
+            get {
+                return ResourceManager.GetString("UIMSGNOSCOPECONNECT", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Sync all oscilloscope option is checked, but not all osilloscope record length and sampling time is identical. に類似しているローカライズされた文字列を検索します。
         /// </summary>
         public static string UIMSGNOTSYNCABLE {
