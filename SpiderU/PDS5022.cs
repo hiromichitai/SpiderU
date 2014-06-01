@@ -68,11 +68,14 @@ struct channelHeader {
 		public override void GetSettings() {
 			const int BlockHeaderLength = 12;
 
+			ComPort.ResetEPWriter();
 			ComPort.Write("START");
-
+			ComPort.ResetEPReader();
 			byte[] BHeaderBuffer = ComPort.ReadByteArray(BlockHeaderLength);
-			int BlockLength = BitConverter.ToInt32(BHeaderBuffer,0);
-			byte[] BlockBuffer = ComPort.ReadByteArray(BlockLength);
+			int BlockLength = BitConverter.ToInt32(BHeaderBuffer, 0);
+			ComPort.ResetEPReader();
+//			byte[] BlockBuffer = ComPort.ReadByteArray(BlockLength);
+			byte[] BlockBuffer = ComPort.ReadByteArray(1);
 		}
 
 		protected override void GetData() {

@@ -86,6 +86,7 @@ namespace SpiderU {
 		private UsbDevice USBDevice;
 		private UsbEndpointReader USBEPReader;
 		private UsbEndpointWriter USBEPWriter;
+		private static DateTime LastDataEventDate;
 
 		public ComPortClass(DeviceTypeEnum DeviceType, string Serial) {
 			if (DeviceType != DeviceTypeEnum.USBTMC) {
@@ -337,6 +338,24 @@ namespace SpiderU {
 			GetIDString();
 		}
 
+		public void ResetEPReader() {	// reset EPReader of ComPort
+			if (DeviceTypeValue != DeviceTypeEnum.USBPHY) {
+				ErrorDialog EDialog = new ErrorDialog("UIMSGINTILLEGALARG", " in ResetEPReader");
+				return;
+			} else {
+				USBEPReader.Reset();
+			}
+		}
+
+		public void ResetEPWriter() {	// reset EPWriter of ComPort
+			if (DeviceTypeValue != DeviceTypeEnum.USBPHY) {
+				ErrorDialog EDialog = new ErrorDialog("UIMSGINTILLEGALARG", " in ResetEPReader");
+				return;
+			} else {
+				USBEPWriter.Reset();
+			}
+		}
+
 		public void Close() {	// close communication port
 			switch (DeviceTypeValue) {
 				case (DeviceTypeEnum.GPIB):
@@ -353,15 +372,17 @@ namespace SpiderU {
 					}
 					break;
 				case (DeviceTypeEnum.USBPHY):
-					if (USBEPReader != null) {
-						USBEPReader.Dispose();
+					IUsbDevice wholeUsbDevice = USBDevice as IUsbDevice;
+					if (!ReferenceEquals(wholeUsbDevice, null)) {
+						wholeUsbDevice.ReleaseInterface(USBEPReader.EpNum);
+						wholeUsbDevice.ReleaseInterface(USBEPWriter.EpNum);
 					}
-					if (USBEPWriter != null) {
-						USBEPWriter.Dispose();
-					}
+
 					if (USBDevice != null) {
 						USBDevice.Close();
+						USBDevice = null;
 					}
+					UsbDevice.Exit();
 					break;
 			}
 		}
@@ -432,7 +453,11 @@ namespace SpiderU {
 			return null;
 		}
 
-
+		private static void OnRxEndPointData(object sender, EndpointDataEventArgs e) {
+			LastDataEventDate = DateTime.Now;
+			Console.Write(Encoding.Default.GetString(e.Buffer, 0, e.Count));
+		}
+ 
 		public unsafe byte[] ReadByteArray(int NumByte) {
 			switch (DeviceTypeValue) {
 				case (DeviceTypeEnum.GPIB):
@@ -447,6 +472,10 @@ namespace SpiderU {
 					Marshal.FreeCoTaskMem((IntPtr)BufferPointer);
 					return ByteBuffer;
 				case (DeviceTypeEnum.USBPHY):
+					USBEPReader.DataReceived += (OnRxEndPointData);
+					USBEPReader.DataReceivedEnabled = true;
+
+
 					byte[] ReadBuffer = new byte[NumByte];
 					int ReadLength = 0;
 					ErrorCode ecode = USBEPReader.Read(ReadBuffer, 0, NumByte, 3000, out ReadLength);
