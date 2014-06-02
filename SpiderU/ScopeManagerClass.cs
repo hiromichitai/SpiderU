@@ -56,10 +56,10 @@ namespace SpiderU {
 							NewScope = new DLM2000(NewComPort, "DL1640", 4);
 							break;
 						case("DL1720"):
-							NewScope = new DLM2000(NewComPort, "DL1720", 2);
+							NewScope = new DL1700(NewComPort, "DL1720", 2);
 							break;
 						case("DL1740"):
-							NewScope = new DLM2000(NewComPort, "DL1740", 4);
+							NewScope = new DL1700(NewComPort, "DL1740", 4);
 							break;
 						case("DL4080"):
 							NewScope = new DLM2000(NewComPort, "DL4080", 4);

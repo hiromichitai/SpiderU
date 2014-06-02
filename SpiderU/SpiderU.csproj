@@ -94,8 +94,8 @@
     <Reference Include="LibUsbDotNet">
       <HintPath>..\DLL\libusb\LibUsbDotNet.dll</HintPath>
     </Reference>
-    <Reference Include="NationalInstruments.Common, Version=12.0.40.253, Culture=neutral, PublicKeyToken=dc6ad606294fc298, processorArchitecture=MSIL" />
-    <Reference Include="NationalInstruments.NI4882, Version=9.0.40.157, Culture=neutral, PublicKeyToken=dc6ad606294fc298, processorArchitecture=MSIL" />
+    <Reference Include="NationalInstruments.Common, Version=13.0.40.190, Culture=neutral, PublicKeyToken=dc6ad606294fc298, processorArchitecture=MSIL" />
+    <Reference Include="NationalInstruments.NI4882, Version=13.0.45.159, Culture=neutral, PublicKeyToken=4febd62461bf11a4, processorArchitecture=MSIL" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Management" />
@@ -128,6 +128,7 @@
     <Compile Include="CSVFileWriterClass.cs" />
     <Compile Include="ComPortListClass.cs" />
     <Compile Include="DL750.cs" />
+    <Compile Include="DL1700.cs" />
     <Compile Include="PDS5022.cs" />
     <Compile Include="UIMessageResource1.Designer.cs">
       <AutoGen>True</AutoGen>
