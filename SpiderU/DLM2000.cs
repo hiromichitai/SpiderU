@@ -49,11 +49,6 @@ namespace SpiderU {
 				string ResultString = ComPort.ReadString();
 				TraceList[TraceIndex].IsOn = (ResultString.Substring(0,1) == "1");
 
-				CommandString = String.Format(":CHANNEL{0:D}:VDIV?", Channel);
-				ComPort.Write(CommandString);
-				ResultString = ComPort.ReadString();
-				
-				VperDiv[TraceIndex] = Convert.ToDouble(ResultString);
 
 			}
 		}
@@ -61,6 +56,7 @@ namespace SpiderU {
 		protected override void GetData(){
 			const int BUFFERLENGTH = 10000;		// maximu block length of DLM2000 is 20000
 
+			GetSettings();
 		  	ComPort.Write(":STOP");
 			for(int TraceIndex = 0; TraceIndex < NumberOfChannel; TraceIndex++){
 				if(TraceList[TraceIndex].IsOn) {
@@ -70,7 +66,7 @@ namespace SpiderU {
 
 					string CommandString = string.Format(":WAVEFORM:TRACE {0:D}", TraceIndex + 1);
 					ComPort.Write(CommandString);
-					ComPort.Write(":WAVEFORM:FORMAT BYTE");
+					ComPort.Write(":WAVEFORM:FORMAT WORD");
 					ComPort.Write(":WAVEFORM:BYTEORDER LSBFIRST");
 		
 					ComPort.Write(":WAVEFORM:START 0");
@@ -84,10 +80,6 @@ namespace SpiderU {
 					Response = ComPort.ReadString();
 					double Range = Convert.ToDouble(Response);
 
-					ComPort.Write(":WAVEFORM:SIGN?");
-					Response = ComPort.ReadString();
-					Boolean HasSign = true;       // (Response[0] == '1');		 strangely enough, DLM2000 sends ALWAYS signed byte data
-
 					ComPort.Write(":WAVEFORM:SEND?");
 					byte[] HeaderLengthByte = ComPort.ReadByteArray(2);
 					int HeaderLength = HeaderLengthByte[1] - '0';
@@ -95,11 +87,17 @@ namespace SpiderU {
 					byte[] BlockLengthStrByte = ComPort.ReadByteArray(HeaderLength);
 					string BlockLengthStr = System.Text.Encoding.ASCII.GetString(BlockLengthStrByte);
 					int BlockLength = Convert.ToInt32(BlockLengthStr);
+
+					if (BlockLength != 2 * RecordLength) {
+						ErrorDialog EDialog = new ErrorDialog("UIMSGDATAINCONSIST"," in GetData().");
+						return;
+					}
+
 					int BytesLeft = BlockLength;
 					int BytesToRead = 0;
-					byte[] RawData = new byte[BlockLength];
+					Int16[] RawData = new Int16[BlockLength];
 					byte[] InputBuffer = new byte[BUFFERLENGTH];
-					int BOffset = 0;
+					int WOffset = 0;
 					while (BytesLeft > 0) {
 						if(BytesLeft > BUFFERLENGTH){
 							BytesToRead = BUFFERLENGTH;
@@ -107,24 +105,16 @@ namespace SpiderU {
 							BytesToRead = BytesLeft;
 						}
 						InputBuffer = ComPort.ReadByteArray(BytesToRead);
-						for (int BIndex = 0; BIndex < BytesToRead; BIndex++) {
-							RawData[BIndex+BOffset] = InputBuffer[BIndex];
+						for (int WIndex = 0; WIndex < BytesToRead/sizeof(Int16); WIndex++) {
+							RawData[WIndex+WOffset] = BitConverter.ToInt16(InputBuffer,sizeof(Int16)*WIndex);
 						}
-						BOffset += BytesToRead;
+						WOffset += BytesToRead/sizeof(Int16);
 						BytesLeft -= BytesToRead;
 					}
 					byte[] Garbage = ComPort.ReadByteArray(1);	// read one byte of EOS
 
-					if (HasSign) {
-						for (int Index = 0; Index < RecordLength; Index++) {
-							TraceList[TraceIndex][Index] = TraceList[TraceIndex].Multiplier * (Range * (sbyte)RawData[Index] / 12.5 + Offset);
-						}
-
-					} else {
-						for (int Index = 0; Index < RecordLength; Index++) {
-							TraceList[TraceIndex][Index] = TraceList[TraceIndex].Multiplier * (Range * RawData[Index] / 12.5 + Offset);
-						}
-
+					for (int Index = 0; Index < RecordLength; Index++) {
+						TraceList[TraceIndex][Index] = TraceList[TraceIndex].Multiplier * (Range * RawData[Index] / 3200.0 + Offset);
 					}
 				}
 			}

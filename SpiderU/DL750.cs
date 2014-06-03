@@ -8,7 +8,6 @@ using NationalInstruments.NI4882;
 namespace SpiderU {
 	class DL750 : ScopeClass {
 
-		private double[] VperDiv;
 
 		public DL750(ComPortClass MyDevice,string ModelName,int NumChannel)	: base(MyDevice,ModelName,NumChannel) {
 
@@ -24,7 +23,6 @@ namespace SpiderU {
 				Trace.TraceUnit = "V";
 				Trace.Multiplier = 1.0;
 			}
-			VperDiv = new double[NumberOfChannel];
 
 		}
 

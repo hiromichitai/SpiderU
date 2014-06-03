@@ -49,7 +49,7 @@ namespace SpiderU {
 		}
 
 		protected override void GetData(){
-			const int BUFFERLENGTH = 10000;		// maximu block length of DL1700 is 20000
+			const int BUFFERLENGTH = 10000;
 
 		  	ComPort.Write(":STOP");
 			for(int TraceIndex = 0; TraceIndex < NumberOfChannel; TraceIndex++){
@@ -84,23 +84,29 @@ namespace SpiderU {
 					byte[] BlockLengthStrByte = ComPort.ReadByteArray(HeaderLength);
 					string BlockLengthStr = System.Text.Encoding.ASCII.GetString(BlockLengthStrByte);
 					int BlockLength = Convert.ToInt32(BlockLengthStr);
-					int WordsLeft = BlockLength;
-					int WordsToRead = 0;
+
+					if (BlockLength != 2 * RecordLength) {
+						ErrorDialog EDialog = new ErrorDialog("UIMSGDATAINCONSIST", " in GetData().");
+						return;
+					}
+
+					int BytesLeft = BlockLength;
+					int BytesToRead = 0;
 					Int16[] RawData = new Int16[BlockLength];
 					byte[] InputBuffer = new byte[BUFFERLENGTH*sizeof(Int16)];
 					int WOffset = 0;
-					while (WordsLeft > 0) {
-						if (WordsLeft > BUFFERLENGTH) {
-							WordsToRead = BUFFERLENGTH;
+					while (BytesLeft > 0) {
+						if (BytesLeft > BUFFERLENGTH) {
+							BytesToRead = BUFFERLENGTH;
 						} else {
-							WordsToRead = WordsLeft;
+							BytesToRead = BytesLeft;
 						}
-						InputBuffer = ComPort.ReadByteArray(WordsToRead * sizeof(Int16));
-						for (int BIndex = 0; BIndex < WordsToRead; BIndex++) {
-							RawData[BIndex+WOffset] = BitConverter.ToInt16(InputBuffer,BIndex*sizeof(Int16));
+						InputBuffer = ComPort.ReadByteArray(BytesToRead);
+						for (int WIndex = 0; WIndex < BytesToRead / sizeof(Int16); WIndex++) {
+							RawData[WIndex + WOffset] = BitConverter.ToInt16(InputBuffer, sizeof(Int16) * WIndex);
 						}
-						WOffset += WordsToRead;
-						WordsLeft -= WordsToRead;
+						WOffset += BytesToRead / sizeof(Int16);
+						BytesLeft -= BytesToRead;
 					}
 					byte[] Garbage = ComPort.ReadByteArray(1);	// read one byte of EOS
 
