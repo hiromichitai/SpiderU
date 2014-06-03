@@ -11,7 +11,7 @@ using System.Resources;
 
 namespace SpiderU {
 	public partial class MainForm : Form {
-		private ComPortListClass DeviceList;
+		private ComPortListClass ComPortList;
 		private ResourceManager rm;
 
 		public MainForm() {
@@ -21,6 +21,7 @@ namespace SpiderU {
 			Properties.Settings.Default.Save();
 			saveFileDialog1.Filter = FileWriterClass.ExtFilter();
 			rm = new ResourceManager("SpiderU.UIMessageResource", typeof(MainForm).Assembly);
+
 		}
 
 		private string GetUIString(string KeyString) {
@@ -38,38 +39,39 @@ namespace SpiderU {
 			ScopeSettingForm SettingForm = new ScopeSettingForm(Scope);
 		}
 
-		private void scanToolStripMenuItem_Click(object sender, EventArgs e) {
-			if (DeviceList == null) {
-				try {
-					toolStripStatusLabel1.Text = GetUIString("UIMSGSCANSCOPE");
-					DeviceList = new ComPortListClass();
-					if (DeviceList == null) {
-						ErrorDialog EDialog = new ErrorDialog("UIMSGNOSCOPE");
-						return;
-					}
-					NewScopeForm NScopeForm = new NewScopeForm(DeviceList);
-					if (NScopeForm.ShowDialog() == DialogResult.OK) {
-						DeviceList.UseDevice(NScopeForm.CreatedDevice());
-						ScopeClass NewScope = ScopeManager.CreateNewScope(NScopeForm.CreatedDevice());
-						ToolStripItem newScopeSettingItem = new ToolStripMenuItem();
-						newScopeSettingItem.Text = NewScope.ID;
-						newScopeSettingItem.Click +=  scopeSettingToolStripMenuItem_Click;
-						scopeToolStripMenuItem.DropDownItems.Add((newScopeSettingItem));
-					}
-					toolStripStatusLabel1.Text = GetUIString("UIMSGREADYSTATE");
+		private async void scanToolStripMenuItem_Click(object sender, EventArgs e) {
+			ComPortList = new ComPortListClass();
+			try {
+				toolStripStatusLabel1.Text = GetUIString("UIMSGSCANSCOPE");
+				await ComPortList.ScanOscilloscope();
 
+				if (ComPortList == null) {
+					ErrorDialog EDialog = new ErrorDialog("UIMSGNOSCOPE");
+					return;
 				}
-				catch (System.Exception Ex) {
-					ErrorDialog Dialog = new ErrorDialog(Ex.ToString());
+				NewScopeForm NScopeForm = new NewScopeForm(ComPortList);
+				if (NScopeForm.ShowDialog() == DialogResult.OK) {
+					ComPortList.UseDevice(NScopeForm.CreatedDevice());
+					ScopeClass NewScope = ScopeManager.CreateNewScope(NScopeForm.CreatedDevice());
+					ToolStripItem newScopeSettingItem = new ToolStripMenuItem();
+					newScopeSettingItem.Text = NewScope.ID;
+					newScopeSettingItem.Click += scopeSettingToolStripMenuItem_Click;
+					scopeToolStripMenuItem.DropDownItems.Add((newScopeSettingItem));
 				}
+				toolStripStatusLabel1.Text = GetUIString("UIMSGREADYSTATE");
+
+			}
+			catch (System.Exception Ex) {
+				ErrorDialog Dialog = new ErrorDialog(Ex.ToString());
 			}
 		}
 
 
-		private void acquisitionToolStripMenuItem_Click(object sender, EventArgs e)
+		private async void acquisitionToolStripMenuItem_Click(object sender, EventArgs e)
 		{
 			toolStripStatusLabel1.Text = GetUIString("UIMSGCAPTURESTATE");
-			if (ScopeManager.GetWaveform()) {
+			bool GWResult = await ScopeManager.GetWaveform();
+			if (GWResult) {
 				toolStripStatusLabel1.Text = GetUIString("UIMSGWRITESTATE");
 				string FileName = "";
 				if (Properties.Settings.Default.useAutoFileName) {

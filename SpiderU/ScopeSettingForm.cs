@@ -11,7 +11,7 @@ using System.Windows.Forms;
 namespace SpiderU {
 	public partial class ScopeSettingForm : Form {
 
-		private int NumChannel;
+		private int NumOnChannel;
 		private int[] ChannelNumber;
 		private ScopeClass TargetScope;
 		private string commentString;
@@ -45,13 +45,13 @@ namespace SpiderU {
 			InitializeComponent();
 			TargetScope = Scope;
 
-			NumChannel = Scope.OnTrace.Count;
-			ChannelNumber = new int[NumChannel];
-			UnitString = new string[NumChannel];
-			LabelString = new string[NumChannel];
-			Multiplier = new double[NumChannel];
+			NumOnChannel = Scope.OnTrace.Count;
+			ChannelNumber = new int[NumOnChannel];
+			UnitString = new string[NumOnChannel];
+			LabelString = new string[NumOnChannel];
+			Multiplier = new double[NumOnChannel];
 
-			for(int OnTraceIndex = 0; OnTraceIndex < NumChannel; OnTraceIndex++ ){
+			for(int OnTraceIndex = 0; OnTraceIndex < NumOnChannel; OnTraceIndex++ ){
 				ChannelNumber[OnTraceIndex] = Scope.OnTrace[OnTraceIndex].ChannelNo;
 				LabelString[OnTraceIndex] = Scope.OnTrace[OnTraceIndex].TraceLabel;
 				UnitString[OnTraceIndex] = Scope.OnTrace[OnTraceIndex].TraceUnit;
@@ -78,12 +78,12 @@ namespace SpiderU {
 		{
 			storeChangedValue();
 			TargetScope.Comment = commentString;
-			for(int chIndex = 0; chIndex < NumChannel; chIndex++ ){
-				TraceClass trace = TargetScope.Channel[ChannelNumber[chIndex]];
-				trace.TraceLabel = LabelString[chIndex];
-				trace.TraceUnit = UnitString[chIndex];
-				trace.Multiplier = Multiplier[chIndex];
+			for (int OnTraceIndex = 0; OnTraceIndex < NumOnChannel; OnTraceIndex++) {
+				TargetScope.OnTrace[OnTraceIndex].TraceLabel = LabelString[OnTraceIndex];
+				TargetScope.OnTrace[OnTraceIndex].TraceUnit = UnitString[OnTraceIndex];
+				TargetScope.OnTrace[OnTraceIndex].Multiplier = Multiplier[OnTraceIndex];
 			}
+
 			DialogResult = DialogResult.OK;
 		}
 

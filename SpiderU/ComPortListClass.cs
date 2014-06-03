@@ -25,9 +25,12 @@ namespace SpiderU {
 		private TMCTL TMCTLInstance;
 		private List<ComPortClass> FreeDeviceList;
 
-        public ComPortListClass() {
+		public ComPortListClass() {
+			FreeDeviceList = new List<ComPortClass>();
+		}
+
+		public async Task ScanOscilloscope() {
 			try {
-				FreeDeviceList = new List<ComPortClass>();
 				GPIBBoard = new Board();
 				GPIBBoard.SendInterfaceClear();
 				FreeGPIBDeviceAddressList = new AddressCollection();
