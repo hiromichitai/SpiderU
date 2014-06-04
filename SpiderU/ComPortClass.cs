@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 using System.Collections;
 using LibUsbDotNet;
 using LibUsbDotNet.Main;
+using MonoLibUsb;
 
 
 namespace SpiderU {
@@ -356,7 +357,13 @@ namespace SpiderU {
 			}
 		}
 
-		public void Close() {	// close communication port
+		public void ClearHaltEP() {	// clear halt EndPoint
+			MonoUsbApi.ClearHalt(USBDevice, USBEPReader.EpNum);
+
+		}
+
+
+			public void Close() {	// close communication port
 			switch (DeviceTypeValue) {
 				case (DeviceTypeEnum.GPIB):
 					if (GPIBDevice != null) {
