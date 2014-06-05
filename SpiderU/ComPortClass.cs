@@ -357,13 +357,9 @@ namespace SpiderU {
 			}
 		}
 
-		public void ClearHaltEP() {	// clear halt EndPoint
-			MonoUsbApi.ClearHalt(USBDevice, USBEPReader.EpNum);
-
-		}
 
 
-			public void Close() {	// close communication port
+		public void Close() {	// close communication port
 			switch (DeviceTypeValue) {
 				case (DeviceTypeEnum.GPIB):
 					if (GPIBDevice != null) {
@@ -430,8 +426,11 @@ namespace SpiderU {
 				case (DeviceTypeEnum.USBPHY):
 					Encoding enc = Encoding.GetEncoding("us-ascii");
 					byte[] WriteBuffer = enc.GetBytes(WriteString);
-					int BufferLength = WriteBuffer.Length;
+					int BufferLength;
 					USBEPWriter.Write(WriteBuffer, 3000, out BufferLength);
+					if (BufferLength != WriteBuffer.Length) {
+						ErrorDialog EDialog = new ErrorDialog("UIMSGUSBWRITEERROR", " in Wrte of ComPortClass");
+					}
 					break;
 
 			}
