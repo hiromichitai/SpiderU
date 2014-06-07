@@ -232,6 +232,15 @@ namespace SpiderU {
         }
         
         /// <summary>
+        ///   USB write error occured に類似しているローカライズされた文字列を検索します。
+        /// </summary>
+        public static string UIMSGUSBWRITEERROR {
+            get {
+                return ResourceManager.GetString("UIMSGUSBWRITEERROR", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Writing data file に類似しているローカライズされた文字列を検索します。
         /// </summary>
         public static string UIMSGWRITESTATE {
