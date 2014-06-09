@@ -57,6 +57,9 @@ namespace SpiderU {
 					newScopeSettingItem.Text = NewScope.ID;
 					newScopeSettingItem.Click += scopeSettingToolStripMenuItem_Click;
 					scopeToolStripMenuItem.DropDownItems.Add((newScopeSettingItem));
+					PictureBox NewScopePictureBox = new PictureBox();
+					flowLayoutPanel1.Controls.Add(NewScopePictureBox);
+
 				}
 				toolStripStatusLabel1.Text = GetUIString("UIMSGREADYSTATE");
 
