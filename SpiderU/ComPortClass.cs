@@ -279,10 +279,13 @@ namespace SpiderU {
 					OscilloUSBPhy = new OscilloUSBPhyClass(VendorIDValue, ProductIDValue, VendorStringValue, ModelStringValue);
 					UsbDeviceFinder UsbFinder = new UsbDeviceFinder(OscilloUSBPhy.VendorID,OscilloUSBPhy.ProductID);
 					USBDevice = UsbDevice.OpenUsbDevice(UsbFinder);
+
 					if (USBDevice == null) {
 						ErrorDialog EDialog = new ErrorDialog("UIMSGCANTOPENUSBPHY", OscilloUSBPhy.VendorString);
 						return;
 					}
+
+
 					const int DescriptorLength = 512;
 					int ReceiveLength = 0;
 					byte[] ConfigDesciptor = new byte[DescriptorLength];
@@ -312,12 +315,13 @@ namespace SpiderU {
 					}
 		
 					DescritprArray.Free();
-
+/*
 					IUsbDevice wholeUsbDevice = USBDevice as IUsbDevice;
 					if (!ReferenceEquals(wholeUsbDevice, null)) {
 						wholeUsbDevice.SetConfiguration(1);
 						wholeUsbDevice.ClaimInterface(0);
 					}
+*/
 					if (EPAddress.Length != 2) { // PDS series should have two Endpoint
 						ErrorDialog EDialog = new ErrorDialog("UIMSGILLEGALNUMEP", " in InitializeComPort");
 					}
@@ -375,11 +379,14 @@ namespace SpiderU {
 					}
 					break;
 				case (DeviceTypeEnum.USBPHY):
+
+/*		
 					IUsbDevice wholeUsbDevice = USBDevice as IUsbDevice;
 					if (!ReferenceEquals(wholeUsbDevice, null)) {
 						wholeUsbDevice.ReleaseInterface(USBEPReader.EpNum);
 						wholeUsbDevice.ReleaseInterface(USBEPWriter.EpNum);
 					}
+*/
 
 					if (USBDevice != null) {
 						USBDevice.Close();
@@ -478,10 +485,6 @@ namespace SpiderU {
 					Marshal.FreeCoTaskMem((IntPtr)BufferPointer);
 					return ByteBuffer;
 				case (DeviceTypeEnum.USBPHY):
-					USBEPReader.DataReceived += (OnRxEndPointData);
-					USBEPReader.DataReceivedEnabled = true;
-
-
 					byte[] ReadBuffer = new byte[NumByte];
 					int ReadLength = 0;
 					ErrorCode ecode = USBEPReader.Read(ReadBuffer, 0, NumByte, 3000, out ReadLength);
