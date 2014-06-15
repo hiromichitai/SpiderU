@@ -28,9 +28,6 @@ namespace SpiderU {
 
 		}
 
-		public override int NumChannel() {
-			return NumberOfChannel;
-		}
 
 
 		public override void GetSettings(){

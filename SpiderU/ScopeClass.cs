@@ -4,6 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using NationalInstruments.NI4882;
+using System.Drawing;
+using System.Windows.Forms;
+
 
 namespace SpiderU {
 
@@ -82,6 +85,7 @@ namespace SpiderU {
 		protected string ScopeCommentString;
 		protected string AcquisitionDateTimeString;
 		protected List<TraceClass> TraceList;
+		protected PictureBox PBox;
 
 		public ScopeClass(ComPortClass MyDevice,string ModelName,int NumChannel){
 			ComPort = MyDevice;
@@ -125,23 +129,17 @@ namespace SpiderU {
 		public int DataLength {
 			get {
 				int DLength = 0;
-				for (int TraceIndex = 0; TraceIndex < TraceList.Count; TraceIndex++) {
-					if (TraceList[TraceIndex].IsOn) {
-						if(DLength == 0){
-							DLength = TraceList[TraceIndex].DataLength;
-						} else {
-							if(DLength != TraceList[TraceIndex].DataLength){ // something went wrong
-								ErrorDialog EDialog = new ErrorDialog("UIMSGDATAINCONSIST",true);
-							}
+				foreach (TraceClass Trace in TraceList.FindAll((trace) => (trace.IsOn))) {
+					if (DLength == 0) {
+						DLength = Trace.DataLength;
+					} else {
+						if (DLength != Trace.DataLength) { // something went wrong
+							ErrorDialog EDialog = new ErrorDialog("UIMSGDATAINCONSIST", true);
 						}
 					}
 				}
 				return DLength;
 			}
-		}
-
-		public bool ChannelOn(int Channel) {
-			return TraceList[Channel].IsOn;
 		}
 
 		public string ChannelLabel(int Channel) {
@@ -161,7 +159,10 @@ namespace SpiderU {
 			get { return SamplingTime; }
 		}
 
-		abstract public int NumChannel();	// returns number of channel
+		public int NumChannel {	// returns number of channel
+			get { return NumberOfChannel; }
+		}
+
 		abstract public void GetSettings();	// Get current status
 
 		protected abstract void GetData() ;			// Get  data base method
@@ -175,6 +176,19 @@ namespace SpiderU {
 			get { return TraceList.FindAll((trace) => (trace.IsOn)); }
 		}
 
+		public void DrawScope(PaintEventArgs e) {
+			Graphics Graph = e.Graphics;
+			
+			int XStep = DataLength / PBox.Width;
+			if (XStep == 0) {
+				XStep = 1;
+			}
+			foreach (TraceClass Trace in TraceList.FindAll((trace) => (trace.IsOn))) {
+				for (int XIndex = XStep; XIndex < Trace.DataLength; XIndex += XStep) {
+					Graph.DrawLine(Pens.Black, 0, (int)Math.Round(Trace[XIndex]), 10, 10);
+				}
+			}
+		}
 
 	}
 }

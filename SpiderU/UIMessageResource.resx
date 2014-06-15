@@ -153,8 +153,14 @@
   <data name="UIMSGNOTSYNCABLE" xml:space="preserve">
     <value>Sync all oscilloscope option is checked, but not all osilloscope record length and sampling time is identical.</value>
   </data>
+  <data name="UIMSGOSCWRONGDATA" xml:space="preserve">
+    <value>Oscilloscope sends wrong data</value>
+  </data>
   <data name="UIMSGPATHTOOLONG" xml:space="preserve">
     <value>Path too long</value>
+  </data>
+  <data name="UIMSGPDSBMP" xml:space="preserve">
+    <value>OWON's PDS series should be in Vectors mode, not Bitmap</value>
   </data>
   <data name="UIMSGREADYSTATE" xml:space="preserve">
     <value>Ready</value>

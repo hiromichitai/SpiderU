@@ -153,8 +153,14 @@
   <data name="UIMSGNOTSYNCABLE" xml:space="preserve">
     <value>全オシロスコープ同期オプションが選択されていますが、オシロのレコード長とサンプリング時間が同一ではありません。</value>
   </data>
+  <data name="UIMSGOSCWRONGDATA" xml:space="preserve">
+    <value>オシロスコープから誤ったデータが送られてきました</value>
+  </data>
   <data name="UIMSGPATHTOOLONG" xml:space="preserve">
     <value>ファイルパスが長すぎます</value>
+  </data>
+  <data name="UIMSGPDSBMP" xml:space="preserve">
+    <value>OWONのPDSシリーズでは、ディスプレイの設定をVectorsにしてください。Bitmapには対応していませｎ</value>
   </data>
   <data name="UIMSGREADYSTATE" xml:space="preserve">
     <value>準備完了</value>

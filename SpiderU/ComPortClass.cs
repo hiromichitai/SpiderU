@@ -285,7 +285,13 @@ namespace SpiderU {
 						return;
 					}
 
+					IUsbDevice wholeUsbDevice = USBDevice as IUsbDevice;
+					if (!ReferenceEquals(wholeUsbDevice, null)) {
+						wholeUsbDevice.SetConfiguration(1);
+						wholeUsbDevice.ClaimInterface(0);
+					}
 
+	
 					const int DescriptorLength = 512;
 					int ReceiveLength = 0;
 					byte[] ConfigDesciptor = new byte[DescriptorLength];
@@ -315,14 +321,8 @@ namespace SpiderU {
 					}
 		
 					DescritprArray.Free();
-/*
-					IUsbDevice wholeUsbDevice = USBDevice as IUsbDevice;
-					if (!ReferenceEquals(wholeUsbDevice, null)) {
-						wholeUsbDevice.SetConfiguration(1);
-						wholeUsbDevice.ClaimInterface(0);
-					}
-*/
-					if (EPAddress.Length != 2) { // PDS series should have two Endpoint
+
+				if (EPAddress.Length != 2) { // PDS series should have two Endpoint
 						ErrorDialog EDialog = new ErrorDialog("UIMSGILLEGALNUMEP", " in InitializeComPort");
 					}
 					if (EPAddress[0] > 0x80) { // IN EP
@@ -335,8 +335,8 @@ namespace SpiderU {
 					} else {
 						USBEPWriter = USBDevice.OpenEndpointWriter((WriteEndpointID)EPAddress[1]);
 					}
-					USBEPReader.Reset();
-					USBEPWriter.Reset();
+//					USBEPReader.Reset();
+//					USBEPWriter.Reset();
 
 					break;
 			}
@@ -379,14 +379,12 @@ namespace SpiderU {
 					}
 					break;
 				case (DeviceTypeEnum.USBPHY):
-
-/*		
+		
 					IUsbDevice wholeUsbDevice = USBDevice as IUsbDevice;
 					if (!ReferenceEquals(wholeUsbDevice, null)) {
 						wholeUsbDevice.ReleaseInterface(USBEPReader.EpNum);
 						wholeUsbDevice.ReleaseInterface(USBEPWriter.EpNum);
 					}
-*/
 
 					if (USBDevice != null) {
 						USBDevice.Close();

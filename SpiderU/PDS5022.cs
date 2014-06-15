@@ -50,8 +50,12 @@ struct channelHeader {
 
 	*/
 		
+		private double[] VoltPerDiv;
+		private double[] ProbeAttenuation;
+
 		public PDS5022(ComPortClass MyComPort, string ModelName, int NumChannel)
 			: base(MyComPort, ModelName, NumChannel) {
+
 			if (ComPort.IDString.Substring(0, 4) != "OWON") { // check manufacturer 
 				ErrorDialog EDialog = new ErrorDialog("PDS5022 constructor");
 				return;
@@ -65,25 +69,161 @@ struct channelHeader {
 			}
 		}
 
+		private double GetTimePerDiv(int TimePerDivCode) {
+			switch (TimePerDivCode) {
+				case 0: return 5e-9;
+				case 1: return 10e-9;
+				case 2: return 25e-9;
+				case 3: return 50e-9;
+				case 4: return 100e-9;
+				case 5: return 250e-9;
+				case 6: return 500e-9;
+				case 7: return 1.0e-6;
+				case 8: return 2.5e-6;
+				case 9: return 5.0e-6;
+				case 10: return 10.0e-6;
+				case 11: return 25.0e-6;
+				case 12: return 50.0e-6;
+				case 13: return 100.0e-6;
+				case 14: return 250.0e-6;
+				case 15: return 500.0e-6;
+				case 16: return 1.0e-3;
+				case 17: return 2.5e-3;
+				case 18: return 5.0e-3;
+				case 19: return 10.0e-3;
+				case 20: return 25.0e-3;
+				case 21: return 50.0e-3;
+				case 22: return 100e-3;
+				case 23: return 250e-3;
+				case 24: return 500e-3;
+				case 25: return 1.0;
+				case 26: return 2.5;
+				case 27: return 5.0;
+				case 28: return 10.0;
+				case 29: return 25.0;
+				case 30: return 50.0;
+				case 31: return 100.0;
+			}
+			WarningDialog WDialog = new WarningDialog("UIMSGOSCWRONGDATA", "in GetTimePerDiv");
+			return 0.0;
+		}
+
+		private double GetVoltPerDiv(int VoltPerDivCode) {
+			switch (VoltPerDivCode) {
+				case 1: return 5.0e-3;
+				case 2: return 10.0e-3;
+				case 3: return 20.0e-3;
+				case 4: return 50.0e-3;
+				case 5: return 100.0e-3;
+				case 6: return 200.0e-3;
+				case 7: return 500.0e-3;
+				case 8: return 1.0;
+				case 9: return 2.0;
+				case 10: return 5.0;
+				case 11: return 10.0;
+				case 12: return 20.0;
+				case 13: return 50.0;
+			}
+			WarningDialog WDialog = new WarningDialog("UIMSGOSCWRONGDATA", "in GetVoltPerDiv");
+			return 0.0;
+		}
+
+		private double GetProbeAttenuation(int ATTCode) {
+			switch (ATTCode) {
+				case 0: return 1.0;
+				case 1: return 10.0;
+				case 2: return 100.0;
+				case 3: return 1000.0;
+			}
+			WarningDialog WDialog = new WarningDialog("UIMSGOSCWRONGDATA", "in GetProbeAttenuation");
+			return 0.0;
+		}
+
 		public override void GetSettings() {
 			const int BlockHeaderLength = 12;
+			const int SPBVHeaderLength = 10;
+			const int WaveDataStartAddress = 0x33;
 
-			ComPort.ResetEPWriter();
 			ComPort.Write("STARTBIN");
-			ComPort.ResetEPReader();
 			byte[] BHeaderBuffer = ComPort.ReadByteArray(BlockHeaderLength);
 			int BlockLength = BitConverter.ToInt32(BHeaderBuffer, 0);
-			ComPort.ResetEPReader();
 			byte[] BlockBuffer = ComPort.ReadByteArray(BlockLength);
-//			byte[] BlockBuffer = ComPort.ReadByteArray(1);
+			Encoding AsciiEnc = Encoding.GetEncoding("us-ascii");
+			string TopTwoChar = AsciiEnc.GetString(BlockBuffer, 0, 2);
+			if (TopTwoChar != "SP") {
+				WarningDialog WDialog = new WarningDialog("UIMSGPDSBMP",true);
+				return;
+			}
+			byte[] ChannelDataList = new byte[BlockLength - SPBVHeaderLength];
+			Array.Copy(BlockBuffer, SPBVHeaderLength, ChannelDataList, 0, BlockLength - SPBVHeaderLength);
+			int InfoBlockOffset = BitConverter.ToInt32(BlockBuffer, 6) - SPBVHeaderLength;
+
+			int ByteOffset = 0;
+			while (ByteOffset < InfoBlockOffset) {
+				string ChannelString = AsciiEnc.GetString(ChannelDataList, ByteOffset + 0, 3);
+				int ChannelDataBytes = BitConverter.ToInt32(ChannelDataList, ByteOffset + 0x03);
+				int DataLength = BitConverter.ToInt32(ChannelDataList, ByteOffset + 0x07);
+				int TimePerDivCode = BitConverter.ToInt32(ChannelDataList, ByteOffset + 0x13);
+				int PositionCode = BitConverter.ToInt32(ChannelDataList, ByteOffset + 0x17);
+				int VoltPerDivCode = BitConverter.ToInt32(ChannelDataList, ByteOffset + 0x1B);
+				int AttenuationCode = BitConverter.ToInt32(ChannelDataList, ByteOffset + 0x1F);
+				int ChannelNum = Convert.ToInt32(ChannelString.Substring(2));
+				double TimePerDiv = GetTimePerDiv(TimePerDivCode);
+				double VoltPerDiv = GetVoltPerDiv(VoltPerDivCode);
+				double ProbeAttenuation = GetProbeAttenuation(AttenuationCode);
+
+				if (ChannelNum < NumChannel) {
+					int TraceIndex = ChannelNum - 1;
+					TraceList[TraceIndex].IsOn = true;
+				}
+				ByteOffset += ChannelDataBytes + WaveDataStartAddress;
+
+			}
+
+
 		}
 
 		protected override void GetData() {
+			const int BlockHeaderLength = 12;
+			const int SPBVHeaderLength = 10;
+			const int WaveDataStartAddress = 0x33;
+
+			ComPort.Write("STARTBIN");
+			byte[] BHeaderBuffer = ComPort.ReadByteArray(BlockHeaderLength);
+			int BlockLength = BitConverter.ToInt32(BHeaderBuffer, 0);
+			byte[] BlockBuffer = ComPort.ReadByteArray(BlockLength);
+			Encoding AsciiEnc = Encoding.GetEncoding("us-ascii");
+			string TopTwoChar = AsciiEnc.GetString(BlockBuffer, 0, 2);
+			if (TopTwoChar != "SP") {
+				WarningDialog WDialog = new WarningDialog("UIMSGPDSBMP", true);
+				return;
+			}
+			byte[] ChannelDataList = new byte[BlockLength - SPBVHeaderLength];
+			Array.Copy(BlockBuffer, SPBVHeaderLength, ChannelDataList, 0, BlockLength - SPBVHeaderLength);
+			int InfoBlockOffset = BitConverter.ToInt32(BlockBuffer, 6) - SPBVHeaderLength;
+
+			int ByteOffset = 0;
+			while (ByteOffset < InfoBlockOffset) {
+				string ChannelString = AsciiEnc.GetString(BlockBuffer, ByteOffset + 0, 3);
+				int ChannelDataBytes = BitConverter.ToInt32(BlockBuffer, ByteOffset + 0x03);
+				int DataLength = BitConverter.ToInt32(BlockBuffer, ByteOffset + 0x07);
+				int TimePerDivCode = BitConverter.ToInt32(BlockBuffer, ByteOffset + 0x13);
+				int PositionCode = BitConverter.ToInt32(BlockBuffer, ByteOffset + 0x17);
+				int VoltPerDivCode = BitConverter.ToInt32(BlockBuffer, ByteOffset + 0x1B);
+				int AttenuationCode = BitConverter.ToInt32(BlockBuffer, ByteOffset + 0x1F);
+				int ChannelNum = Convert.ToInt32(ChannelString[2]);
+				double TimePerDiv = GetTimePerDiv(TimePerDivCode);
+				double VoltPerDiv = GetVoltPerDiv(VoltPerDivCode);
+				double ProbeAttenuation = GetProbeAttenuation(AttenuationCode);
+
+				if (ChannelNum < NumChannel) {
+					int TraceIndex = ChannelNum - 1;
+					TraceList[TraceIndex].IsOn = true;
+				}
+
+			}
 		}
 
-		public override int NumChannel() {
-			return NumberOfChannel;
-		}
 
 
 	}

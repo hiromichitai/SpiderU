@@ -35,9 +35,6 @@ namespace SpiderU {
 			ComPort.Write("WFSU SP,0,NP,0,FP,0,SN,0");
 		}
 
-		public override int NumChannel() {
-			return NumberOfChannel;
-		}
 
 		public override void GetSettings() {
 			for (int TraceIndex = 0; TraceIndex < NumberOfChannel; TraceIndex++) {
