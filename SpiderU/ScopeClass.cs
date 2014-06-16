@@ -85,10 +85,11 @@ namespace SpiderU {
 		protected string ScopeCommentString;
 		protected string AcquisitionDateTimeString;
 		protected List<TraceClass> TraceList;
-		protected PictureBox PBox;
+		protected bool DataValid;
 
 		public ScopeClass(ComPortClass MyDevice,string ModelName,int NumChannel){
 			ComPort = MyDevice;
+			DataValid = false;
 			ModelNameString = ModelName;
 			NumberOfChannel = NumChannel;
 			TraceList = new List<TraceClass>(NumberOfChannel);
@@ -170,16 +171,19 @@ namespace SpiderU {
 		public void AcquireData() { // this is the public interface for other class
 			GetData();
 			AcquisitionDateTimeString = Convert.ToString(DateTime.Now);
+			DataValid = true;
 		}
 
 		public List<TraceClass> OnTrace {
 			get { return TraceList.FindAll((trace) => (trace.IsOn)); }
 		}
 
-		public void DrawScope(PaintEventArgs e) {
+		public void DrawScope(object sender, System.Windows.Forms.PaintEventArgs e) {
 			Graphics Graph = e.Graphics;
+			Graph.Clip.
+			e.Graphics.FillRegion(Brushes.LightSalmon, e.Graphics.Clip);
+
 			
-			int XStep = DataLength / PBox.Width;
 			if (XStep == 0) {
 				XStep = 1;
 			}
