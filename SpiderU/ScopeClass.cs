@@ -180,18 +180,6 @@ namespace SpiderU {
 
 		public void DrawScope(object sender, System.Windows.Forms.PaintEventArgs e) {
 			Graphics Graph = e.Graphics;
-			Graph.Clip.
-			e.Graphics.FillRegion(Brushes.LightSalmon, e.Graphics.Clip);
-
-			
-			if (XStep == 0) {
-				XStep = 1;
-			}
-			foreach (TraceClass Trace in TraceList.FindAll((trace) => (trace.IsOn))) {
-				for (int XIndex = XStep; XIndex < Trace.DataLength; XIndex += XStep) {
-					Graph.DrawLine(Pens.Black, 0, (int)Math.Round(Trace[XIndex]), 10, 10);
-				}
-			}
 		}
 
 	}

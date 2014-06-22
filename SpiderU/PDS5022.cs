@@ -172,12 +172,11 @@ struct channelHeader {
 				double VoltPerDiv = GetVoltPerDiv(VoltPerDivCode);
 				double ProbeAttenuation = GetProbeAttenuation(AttenuationCode);
 
-				if (ChannelNum < NumChannel) {
+				if (ChannelNum <= NumChannel) {
 					int TraceIndex = ChannelNum - 1;
 					TraceList[TraceIndex].IsOn = true;
 				}
-				ByteOffset += ChannelDataBytes + WaveDataStartAddress;
-
+				ByteOffset += ChannelDataBytes + 3;	// 3 bytes for channel name "CHx"
 			}
 
 
