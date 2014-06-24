@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using NationalInstruments.NI4882;
 using System.Drawing;
 using System.Windows.Forms;
+using System.Drawing.Drawing2D;
 
 
 namespace SpiderU {
@@ -180,6 +181,24 @@ namespace SpiderU {
 
 		public void DrawScope(object sender, System.Windows.Forms.PaintEventArgs e) {
 			Graphics Graph = e.Graphics;
+			foreach (TraceClass Trace in OnTrace) {
+				double MaxY = Trace[0];
+				double MinY = Trace[0];
+				for(int Index = 0; Index < Trace.DataLength; Index++){
+					if (Trace[Index] > MaxY) {
+						MaxY = Trace[Index];
+					}
+					if (Trace[Index] < MinY) {
+						MinY = Trace[Index];
+					}
+					Graph.ResetTransform();
+					Graph.TranslateTransform(0,(float)MinY, MatrixOrder.Append);
+					Graph.ScaleTransform(1.0f, -1.0f, MatrixOrder.Append);
+				}
+
+
+			}
+
 		}
 
 	}
