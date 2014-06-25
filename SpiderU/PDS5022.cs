@@ -162,15 +162,7 @@ struct channelHeader {
 			while (ByteOffset < InfoBlockOffset) {
 				string ChannelString = AsciiEnc.GetString(ChannelDataList, ByteOffset + 0, 3);
 				int ChannelDataBytes = BitConverter.ToInt32(ChannelDataList, ByteOffset + 0x03);
-				int DataLength = BitConverter.ToInt32(ChannelDataList, ByteOffset + 0x07);
-				int TimePerDivCode = BitConverter.ToInt32(ChannelDataList, ByteOffset + 0x13);
-				int PositionCode = BitConverter.ToInt32(ChannelDataList, ByteOffset + 0x17);
-				int VoltPerDivCode = BitConverter.ToInt32(ChannelDataList, ByteOffset + 0x1B);
-				int AttenuationCode = BitConverter.ToInt32(ChannelDataList, ByteOffset + 0x1F);
 				int ChannelNum = Convert.ToInt32(ChannelString.Substring(2));
-				double TimePerDiv = GetTimePerDiv(TimePerDivCode);
-				double VoltPerDiv = GetVoltPerDiv(VoltPerDivCode);
-				double ProbeAttenuation = GetProbeAttenuation(AttenuationCode);
 
 				if (ChannelNum <= NumChannel) {
 					int TraceIndex = ChannelNum - 1;
@@ -178,14 +170,33 @@ struct channelHeader {
 				}
 				ByteOffset += ChannelDataBytes + 3;	// 3 bytes for channel name "CHx"
 			}
+		}
 
+		private void GetOneChannelData(byte[] ChannelData) {
+			const int WaveDataStartAddress = 0x33;
+
+			Encoding AsciiEnc = Encoding.GetEncoding("us-ascii");
+			string ChannelString = AsciiEnc.GetString(ChannelData, 0, 3);
+			int DataLength = BitConverter.ToInt32(ChannelData, 0x07);
+			int TimePerDivCode = BitConverter.ToInt32(ChannelData, 0x13);
+			int PositionCode = BitConverter.ToInt32(ChannelData, 0x17);
+			int VoltPerDivCode = BitConverter.ToInt32(ChannelData, 0x1B);
+			int AttenuationCode = BitConverter.ToInt32(ChannelData, 0x1F);
+			int ChannelNum = Convert.ToInt32(ChannelString[2]);
+			double TimePerDiv = GetTimePerDiv(TimePerDivCode);
+			double VoltPerDiv = GetVoltPerDiv(VoltPerDivCode);
+			double ProbeAttenuation = GetProbeAttenuation(AttenuationCode);
+
+			if (ChannelNum < NumChannel) {
+				int TraceIndex = ChannelNum - 1;
+				TraceList[TraceIndex].IsOn = true;
+			}
 
 		}
 
 		protected override void GetData() {
 			const int BlockHeaderLength = 12;
 			const int SPBVHeaderLength = 10;
-			const int WaveDataStartAddress = 0x33;
 
 			ComPort.Write("STARTBIN");
 			byte[] BHeaderBuffer = ComPort.ReadByteArray(BlockHeaderLength);
@@ -197,28 +208,16 @@ struct channelHeader {
 				WarningDialog WDialog = new WarningDialog("UIMSGPDSBMP", true);
 				return;
 			}
-			byte[] ChannelDataList = new byte[BlockLength - SPBVHeaderLength];
-			Array.Copy(BlockBuffer, SPBVHeaderLength, ChannelDataList, 0, BlockLength - SPBVHeaderLength);
-			int InfoBlockOffset = BitConverter.ToInt32(BlockBuffer, 6) - SPBVHeaderLength;
 
-			int ByteOffset = 0;
+			int ByteOffset = SPBVHeaderLength;
+			int InfoBlockOffset = BitConverter.ToInt32(BlockBuffer, 6);
+
 			while (ByteOffset < InfoBlockOffset) {
-				string ChannelString = AsciiEnc.GetString(BlockBuffer, ByteOffset + 0, 3);
-				int ChannelDataBytes = BitConverter.ToInt32(BlockBuffer, ByteOffset + 0x03);
-				int DataLength = BitConverter.ToInt32(BlockBuffer, ByteOffset + 0x07);
-				int TimePerDivCode = BitConverter.ToInt32(BlockBuffer, ByteOffset + 0x13);
-				int PositionCode = BitConverter.ToInt32(BlockBuffer, ByteOffset + 0x17);
-				int VoltPerDivCode = BitConverter.ToInt32(BlockBuffer, ByteOffset + 0x1B);
-				int AttenuationCode = BitConverter.ToInt32(BlockBuffer, ByteOffset + 0x1F);
-				int ChannelNum = Convert.ToInt32(ChannelString[2]);
-				double TimePerDiv = GetTimePerDiv(TimePerDivCode);
-				double VoltPerDiv = GetVoltPerDiv(VoltPerDivCode);
-				double ProbeAttenuation = GetProbeAttenuation(AttenuationCode);
+				int ChannelDataBytes = BitConverter.ToInt32(BlockBuffer, ByteOffset + 0x03) + 3;
+				byte[] ChannelData = new byte[ChannelDataBytes];
+				Array.Copy(BlockBuffer, ByteOffset, ChannelData, 0, ChannelDataBytes);
+				GetOneChannelData(ChannelData);
 
-				if (ChannelNum < NumChannel) {
-					int TraceIndex = ChannelNum - 1;
-					TraceList[TraceIndex].IsOn = true;
-				}
 
 			}
 		}

@@ -180,23 +180,26 @@ namespace SpiderU {
 		}
 
 		public void DrawScope(object sender, System.Windows.Forms.PaintEventArgs e) {
-			Graphics Graph = e.Graphics;
-			foreach (TraceClass Trace in OnTrace) {
-				double MaxY = Trace[0];
-				double MinY = Trace[0];
-				for(int Index = 0; Index < Trace.DataLength; Index++){
-					if (Trace[Index] > MaxY) {
-						MaxY = Trace[Index];
+			if (DataValid) {
+				Rectangle ClipRectangle = e.ClipRectangle;
+				Graphics Graph = e.Graphics;
+				foreach (TraceClass Trace in OnTrace) {
+					double MaxY = Trace[0];
+					double MinY = Trace[0];
+					for (int Index = 0; Index < Trace.DataLength; Index++) {
+						if (Trace[Index] > MaxY) {
+							MaxY = Trace[Index];
+						}
+						if (Trace[Index] < MinY) {
+							MinY = Trace[Index];
+						}
+						Graph.DrawLine(Pens.Black, ClipRectangle.Left, ClipRectangle.Top, ClipRectangle.Right, ClipRectangle.Bottom);
+
+						Graph.ResetTransform();
+						Graph.TranslateTransform(0, (float)MinY, MatrixOrder.Append);
+						Graph.ScaleTransform(1.0f, -1.0f, MatrixOrder.Append);
 					}
-					if (Trace[Index] < MinY) {
-						MinY = Trace[Index];
-					}
-					Graph.ResetTransform();
-					Graph.TranslateTransform(0,(float)MinY, MatrixOrder.Append);
-					Graph.ScaleTransform(1.0f, -1.0f, MatrixOrder.Append);
 				}
-
-
 			}
 
 		}
