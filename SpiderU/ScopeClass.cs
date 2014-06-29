@@ -193,12 +193,12 @@ namespace SpiderU {
 						if (Trace[Index] < MinY) {
 							MinY = Trace[Index];
 						}
-						Graph.DrawLine(Pens.Black, ClipRectangle.Left, ClipRectangle.Top, ClipRectangle.Right, ClipRectangle.Bottom);
-
-						Graph.ResetTransform();
-						Graph.TranslateTransform(0, (float)MinY, MatrixOrder.Append);
-						Graph.ScaleTransform(1.0f, -1.0f, MatrixOrder.Append);
 					}
+					Graph.DrawLine(Pens.Black, ClipRectangle.Left, ClipRectangle.Top, ClipRectangle.Right, ClipRectangle.Bottom);
+
+					Graph.ResetTransform();
+					Graph.TranslateTransform(0, (float)MinY, MatrixOrder.Append);
+					Graph.ScaleTransform(1.0f, -1.0f, MatrixOrder.Append);
 				}
 			}
 

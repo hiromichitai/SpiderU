@@ -31,6 +31,8 @@
 			this.outputFileFormatComboBox = new System.Windows.Forms.ComboBox();
 			this.label1 = new System.Windows.Forms.Label();
 			this.tabPage2 = new System.Windows.Forms.TabPage();
+			this.autoFileNumberValueNumericUpDown = new System.Windows.Forms.NumericUpDown();
+			this.label10 = new System.Windows.Forms.Label();
 			this.autoFileNameSampleLabel = new System.Windows.Forms.Label();
 			this.label9 = new System.Windows.Forms.Label();
 			this.autoFileNameSuffixTextBox = new System.Windows.Forms.TextBox();
@@ -43,15 +45,16 @@
 			this.useAutoFileNameCheckBox = new System.Windows.Forms.CheckBox();
 			this.tabPage3 = new System.Windows.Forms.TabPage();
 			this.label7 = new System.Windows.Forms.Label();
-			this.headerLineCheckBox = new System.Windows.Forms.CheckBox();
 			this.label8 = new System.Windows.Forms.Label();
+			this.label6 = new System.Windows.Forms.Label();
+			this.headerLineCheckBox = new System.Windows.Forms.CheckBox();
 			this.includeDateTimeCheckBox = new System.Windows.Forms.CheckBox();
 			this.includeModelNameCheckBox = new System.Windows.Forms.CheckBox();
 			this.commentLineCheckBox = new System.Windows.Forms.CheckBox();
-			this.label6 = new System.Windows.Forms.Label();
 			this.tabControl1.SuspendLayout();
 			this.tabPage1.SuspendLayout();
 			this.tabPage2.SuspendLayout();
+			((System.ComponentModel.ISupportInitialize)(this.autoFileNumberValueNumericUpDown)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.autoFileNumberDigitsNumericUpDown)).BeginInit();
 			this.tabPage3.SuspendLayout();
 			this.SuspendLayout();
@@ -108,6 +111,8 @@
 			// tabPage2
 			// 
 			resources.ApplyResources(this.tabPage2, "tabPage2");
+			this.tabPage2.Controls.Add(this.autoFileNumberValueNumericUpDown);
+			this.tabPage2.Controls.Add(this.label10);
 			this.tabPage2.Controls.Add(this.autoFileNameSampleLabel);
 			this.tabPage2.Controls.Add(this.label9);
 			this.tabPage2.Controls.Add(this.autoFileNameSuffixTextBox);
@@ -120,6 +125,32 @@
 			this.tabPage2.Controls.Add(this.useAutoFileNameCheckBox);
 			this.tabPage2.Name = "tabPage2";
 			this.tabPage2.UseVisualStyleBackColor = true;
+			// 
+			// autoFileNumberValueNumericUpDown
+			// 
+			resources.ApplyResources(this.autoFileNumberValueNumericUpDown, "autoFileNumberValueNumericUpDown");
+			this.autoFileNumberValueNumericUpDown.Maximum = new decimal(new int[] {
+            999999,
+            0,
+            0,
+            0});
+			this.autoFileNumberValueNumericUpDown.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+			this.autoFileNumberValueNumericUpDown.Name = "autoFileNumberValueNumericUpDown";
+			this.autoFileNumberValueNumericUpDown.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+			this.autoFileNumberValueNumericUpDown.ValueChanged += new System.EventHandler(this.autoFileNumberValueNumericUpDown_ValueChanged);
+			// 
+			// label10
+			// 
+			resources.ApplyResources(this.label10, "label10");
+			this.label10.Name = "label10";
 			// 
 			// autoFileNameSampleLabel
 			// 
@@ -137,6 +168,7 @@
 			this.autoFileNameSuffixTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", global::SpiderU.Properties.Settings.Default, "autoFileNameSuffix", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
 			this.autoFileNameSuffixTextBox.Name = "autoFileNameSuffixTextBox";
 			this.autoFileNameSuffixTextBox.Text = global::SpiderU.Properties.Settings.Default.autoFileNameSuffix;
+			this.autoFileNameSuffixTextBox.TextChanged += new System.EventHandler(this.autoFileNameSuffixTextBox_TextChanged);
 			// 
 			// label5
 			// 
@@ -162,6 +194,7 @@
             0,
             0,
             0});
+			this.autoFileNumberDigitsNumericUpDown.ValueChanged += new System.EventHandler(this.autoFileNumberDigitsNumericUpDown_ValueChanged);
 			// 
 			// label4
 			// 
@@ -174,6 +207,7 @@
 			this.autoFileNamePrefixTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", global::SpiderU.Properties.Settings.Default, "autoFileNamePrefix", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
 			this.autoFileNamePrefixTextBox.Name = "autoFileNamePrefixTextBox";
 			this.autoFileNamePrefixTextBox.Text = global::SpiderU.Properties.Settings.Default.autoFileNamePrefix;
+			this.autoFileNamePrefixTextBox.TextChanged += new System.EventHandler(this.autoFileNamePrefixTextBox_TextChanged);
 			// 
 			// label3
 			// 
@@ -199,12 +233,12 @@
 			// 
 			resources.ApplyResources(this.tabPage3, "tabPage3");
 			this.tabPage3.Controls.Add(this.label7);
-			this.tabPage3.Controls.Add(this.headerLineCheckBox);
 			this.tabPage3.Controls.Add(this.label8);
+			this.tabPage3.Controls.Add(this.label6);
+			this.tabPage3.Controls.Add(this.headerLineCheckBox);
 			this.tabPage3.Controls.Add(this.includeDateTimeCheckBox);
 			this.tabPage3.Controls.Add(this.includeModelNameCheckBox);
 			this.tabPage3.Controls.Add(this.commentLineCheckBox);
-			this.tabPage3.Controls.Add(this.label6);
 			this.tabPage3.Name = "tabPage3";
 			this.tabPage3.UseVisualStyleBackColor = true;
 			// 
@@ -212,6 +246,16 @@
 			// 
 			resources.ApplyResources(this.label7, "label7");
 			this.label7.Name = "label7";
+			// 
+			// label8
+			// 
+			resources.ApplyResources(this.label8, "label8");
+			this.label8.Name = "label8";
+			// 
+			// label6
+			// 
+			resources.ApplyResources(this.label6, "label6");
+			this.label6.Name = "label6";
 			// 
 			// headerLineCheckBox
 			// 
@@ -222,11 +266,6 @@
 			this.headerLineCheckBox.Name = "headerLineCheckBox";
 			this.headerLineCheckBox.UseVisualStyleBackColor = true;
 			this.headerLineCheckBox.CheckedChanged += new System.EventHandler(this.headerLineCheckBox_CheckedChanged);
-			// 
-			// label8
-			// 
-			resources.ApplyResources(this.label8, "label8");
-			this.label8.Name = "label8";
 			// 
 			// includeDateTimeCheckBox
 			// 
@@ -257,11 +296,6 @@
 			this.commentLineCheckBox.Name = "commentLineCheckBox";
 			this.commentLineCheckBox.UseVisualStyleBackColor = true;
 			// 
-			// label6
-			// 
-			resources.ApplyResources(this.label6, "label6");
-			this.label6.Name = "label6";
-			// 
 			// ConfigurationForm
 			// 
 			this.AcceptButton = this.OKButton;
@@ -277,6 +311,7 @@
 			this.tabPage1.PerformLayout();
 			this.tabPage2.ResumeLayout(false);
 			this.tabPage2.PerformLayout();
+			((System.ComponentModel.ISupportInitialize)(this.autoFileNumberValueNumericUpDown)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.autoFileNumberDigitsNumericUpDown)).EndInit();
 			this.tabPage3.ResumeLayout(false);
 			this.tabPage3.PerformLayout();
@@ -311,5 +346,7 @@
 		private System.Windows.Forms.Label label7;
 		private System.Windows.Forms.Label autoFileNameSampleLabel;
 		private System.Windows.Forms.Label label9;
+		private System.Windows.Forms.NumericUpDown autoFileNumberValueNumericUpDown;
+		private System.Windows.Forms.Label label10;
 	}
 }

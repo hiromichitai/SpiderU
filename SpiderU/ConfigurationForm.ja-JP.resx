@@ -120,6 +120,9 @@
   <data name="cancelButton.Text" xml:space="preserve">
     <value>キャンセル</value>
   </data>
+  <data name="tabPage1.Text" xml:space="preserve">
+    <value>ファイルフォーマット</value>
+  </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="label1.Size" type="System.Drawing.Size, System.Drawing">
     <value>113, 12</value>
@@ -127,8 +130,14 @@
   <data name="label1.Text" xml:space="preserve">
     <value>出力ファイルフォーマット</value>
   </data>
-  <data name="tabPage1.Text" xml:space="preserve">
-    <value>ファイルフォーマット</value>
+  <data name="tabPage2.Text" xml:space="preserve">
+    <value>ファイル名</value>
+  </data>
+  <data name="label10.Size" type="System.Drawing.Size, System.Drawing">
+    <value>99, 12</value>
+  </data>
+  <data name="label10.Text" xml:space="preserve">
+    <value>自動ファイル名番号</value>
   </data>
   <data name="label9.Size" type="System.Drawing.Size, System.Drawing">
     <value>113, 12</value>
@@ -166,8 +175,8 @@
   <data name="useAutoFileNameCheckBox.Text" xml:space="preserve">
     <value>自動ファイル名を使う</value>
   </data>
-  <data name="tabPage2.Text" xml:space="preserve">
-    <value>ファイル名</value>
+  <data name="tabPage3.Text" xml:space="preserve">
+    <value>コメント、ヘッダ</value>
   </data>
   <data name="label7.Size" type="System.Drawing.Size, System.Drawing">
     <value>84, 12</value>
@@ -175,17 +184,23 @@
   <data name="label7.Text" xml:space="preserve">
     <value>コメント行の内容</value>
   </data>
-  <data name="headerLineCheckBox.Size" type="System.Drawing.Size, System.Drawing">
-    <value>99, 16</value>
-  </data>
-  <data name="headerLineCheckBox.Text" xml:space="preserve">
-    <value>ヘッダ行をつける</value>
-  </data>
   <data name="label8.Size" type="System.Drawing.Size, System.Drawing">
     <value>43, 12</value>
   </data>
   <data name="label8.Text" xml:space="preserve">
     <value>ヘッダ行</value>
+  </data>
+  <data name="label6.Size" type="System.Drawing.Size, System.Drawing">
+    <value>50, 12</value>
+  </data>
+  <data name="label6.Text" xml:space="preserve">
+    <value>コメント行</value>
+  </data>
+  <data name="headerLineCheckBox.Size" type="System.Drawing.Size, System.Drawing">
+    <value>99, 16</value>
+  </data>
+  <data name="headerLineCheckBox.Text" xml:space="preserve">
+    <value>ヘッダ行をつける</value>
   </data>
   <data name="includeDateTimeCheckBox.Size" type="System.Drawing.Size, System.Drawing">
     <value>102, 16</value>
@@ -205,14 +220,9 @@
   <data name="commentLineCheckBox.Text" xml:space="preserve">
     <value>コメント行追加</value>
   </data>
-  <data name="label6.Size" type="System.Drawing.Size, System.Drawing">
-    <value>50, 12</value>
-  </data>
-  <data name="label6.Text" xml:space="preserve">
-    <value>コメント行</value>
-  </data>
-  <data name="tabPage3.Text" xml:space="preserve">
-    <value>コメント、ヘッダ</value>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="$this.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>Inherit</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>設定</value>

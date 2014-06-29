@@ -9,6 +9,8 @@ using System.Runtime.InteropServices;
 using System.Collections;
 using LibUsbDotNet;
 using LibUsbDotNet.Main;
+using LibUsbDotNet.Info;
+using LibUsbDotNet.Descriptors;
 using MonoLibUsb;
 
 
@@ -18,11 +20,25 @@ namespace SpiderU {
 		private Int16 ProductIDValue;
 		private string VendorStringValue;
 		private string ModelStringValue;
-		public OscilloUSBPhyClass(Int16 VID, Int16 PID, string VString, string MString) {
+		private byte WriteEPAddress;
+		private byte ReadEPAddress;
+
+		public OscilloUSBPhyClass(Int16 VID, Int16 PID) {
+			VendorIDValue = VID;
+			ProductIDValue = PID;
+			VendorStringValue = OscilloUSBPhyListClass.GetVendorString(VID,PID);
+			ModelStringValue = OscilloUSBPhyListClass.GetModelString(VID, PID);
+			WriteEPAddress = OscilloUSBPhyListClass.GetWriteEPAddress(VID, PID);
+			ReadEPAddress = OscilloUSBPhyListClass.GetReadEPAddress(VID, PID);
+		}
+
+		public OscilloUSBPhyClass(Int16 VID, Int16 PID, string VString, string MString, byte WEndpoint, byte REndpoint) {
 			VendorIDValue = VID;
 			ProductIDValue = PID;
 			VendorStringValue = VString;
 			ModelStringValue = MString;
+			WriteEPAddress = WEndpoint;
+			ReadEPAddress = REndpoint;
 		}
 
 		public Int16 VendorID {
@@ -48,6 +64,19 @@ namespace SpiderU {
 				return ModelStringValue;
 			}
 		}
+
+		public byte WriteEndpoint {
+			get {
+				return WriteEPAddress;
+			}
+		}
+
+		public byte ReadEndpoint {
+			get {
+				return ReadEPAddress;
+			}
+		}
+
 	}
 
 	public class OscilloUSBPhyListClass {
@@ -57,7 +86,7 @@ namespace SpiderU {
 
 		private OscilloUSBPhyListClass() {
 			OscilloUSBPhyList = new List<OscilloUSBPhyClass>();
-			OscilloUSBPhyList.Add(new OscilloUSBPhyClass(0x5345, 0x1234,"OWON","PDS5022"));
+			OscilloUSBPhyList.Add(new OscilloUSBPhyClass(0x5345, 0x1234,"OWON","PDS5022",0x03,0x81));
 		}
 
 		public static List<OscilloUSBPhyClass> OscilloscopeList {
@@ -65,6 +94,27 @@ namespace SpiderU {
 				return OscilloUSBPhyList;
 			}
 		}
+
+		public static string GetVendorString(Int16 VID, Int16 PID) {
+			OscilloUSBPhyClass USBOscillo = OscilloUSBPhyList.Find((Oscillo) => ((Oscillo.VendorID == VID) && (Oscillo.ProductID == PID)));
+			return USBOscillo.VendorString;
+		}
+
+		public static string GetModelString(Int16 VID, Int16 PID) {
+			OscilloUSBPhyClass USBOscillo = OscilloUSBPhyList.Find((Oscillo) => ((Oscillo.VendorID == VID) && (Oscillo.ProductID == PID)));
+			return USBOscillo.ModelString;
+		}
+
+		public static byte GetWriteEPAddress(Int16 VID, Int16 PID) {
+			OscilloUSBPhyClass USBOscillo = OscilloUSBPhyList.Find((Oscillo) => ((Oscillo.VendorID == VID) && (Oscillo.ProductID == PID)));
+			return USBOscillo.WriteEndpoint;
+		}
+
+		public static byte GetReadEPAddress(Int16 VID, Int16 PID) {
+			OscilloUSBPhyClass USBOscillo = OscilloUSBPhyList.Find((Oscillo) => ((Oscillo.VendorID == VID) && (Oscillo.ProductID == PID)));
+			return USBOscillo.ReadEndpoint;
+		}
+
 	} 
 
  
@@ -266,7 +316,7 @@ namespace SpiderU {
 		}
 
 
-		public void InitializeComPort() {	// initialize communication device
+		public unsafe void InitializeComPort() {	// initialize communication device
 			switch (DeviceTypeValue) {
 				case (DeviceTypeEnum.GPIB):
 					GPIBDevice = new Device(0, GPIBPrimaryAddress, GPIBSecondaryAddress);
@@ -276,7 +326,7 @@ namespace SpiderU {
 					TMCTLDevice.Initialize(TMCTL.TM_CTL_USBTMC2, TMCTLDeviceSerial, ref TMCTLDeviceID);
 					break;
 				case (DeviceTypeEnum.USBPHY):
-					OscilloUSBPhy = new OscilloUSBPhyClass(VendorIDValue, ProductIDValue, VendorStringValue, ModelStringValue);
+					OscilloUSBPhy = new OscilloUSBPhyClass(VendorIDValue, ProductIDValue);
 					UsbDeviceFinder UsbFinder = new UsbDeviceFinder(OscilloUSBPhy.VendorID,OscilloUSBPhy.ProductID);
 					USBDevice = UsbDevice.OpenUsbDevice(UsbFinder);
 
@@ -291,52 +341,8 @@ namespace SpiderU {
 						wholeUsbDevice.ClaimInterface(0);
 					}
 
-	
-					const int DescriptorLength = 512;
-					int ReceiveLength = 0;
-					byte[] ConfigDesciptor = new byte[DescriptorLength];
-
-					GCHandle DescritprArray = GCHandle.Alloc(DescriptorLength, GCHandleType.Pinned);
-					IntPtr DescriptorPtr = DescritprArray.AddrOfPinnedObject();
-
-					USBDevice.GetDescriptor((byte)LibUsbDotNet.Descriptors.DescriptorType.Device,0,0,DescriptorPtr,DescriptorLength,out ReceiveLength);
-					USBDevice.GetDescriptor((byte)LibUsbDotNet.Descriptors.DescriptorType.Configuration,0,0,DescriptorPtr,DescriptorLength,out ReceiveLength);
-					Marshal.Copy(DescriptorPtr, ConfigDesciptor, 0, ReceiveLength);
-					int DescriptorIndex = 0;
-					byte[] EPAddress = null;
-					int EPIndex = 0;
-					while (DescriptorIndex < ReceiveLength) {
-						byte DTSize = ConfigDesciptor[DescriptorIndex];
-						byte DType = ConfigDesciptor[DescriptorIndex+1];
-						if (DType == 0x04) {  // Interface descriptor 
-							byte NumEndpoint = ConfigDesciptor[DescriptorIndex + 4];
-							EPAddress = new byte[NumEndpoint];
-							EPIndex = 0;
-						}
-						if (DType == 0x05) { // Endpoint descriptor
-							EPAddress[EPIndex] = ConfigDesciptor[DescriptorIndex + 2];
-							EPIndex++;
-						}
-						DescriptorIndex += DTSize;
-					}
-		
-					DescritprArray.Free();
-
-				if (EPAddress.Length != 2) { // PDS series should have two Endpoint
-						ErrorDialog EDialog = new ErrorDialog("UIMSGILLEGALNUMEP", " in InitializeComPort");
-					}
-					if (EPAddress[0] > 0x80) { // IN EP
-						USBEPReader = USBDevice.OpenEndpointReader((ReadEndpointID)EPAddress[0]);
-					} else {
-						USBEPWriter = USBDevice.OpenEndpointWriter((WriteEndpointID)EPAddress[0]);
-					}
-					if (EPAddress[1] > 0x80) { // IN EP
-						USBEPReader = USBDevice.OpenEndpointReader((ReadEndpointID)EPAddress[1]);
-					} else {
-						USBEPWriter = USBDevice.OpenEndpointWriter((WriteEndpointID)EPAddress[1]);
-					}
-//					USBEPReader.Reset();
-//					USBEPWriter.Reset();
+					USBEPReader = USBDevice.OpenEndpointReader((ReadEndpointID)OscilloUSBPhy.ReadEndpoint);
+					USBEPWriter = USBDevice.OpenEndpointWriter((WriteEndpointID)OscilloUSBPhy.WriteEndpoint);
 
 					break;
 			}
