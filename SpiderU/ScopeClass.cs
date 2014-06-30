@@ -194,11 +194,18 @@ namespace SpiderU {
 							MinY = Trace[Index];
 						}
 					}
+					if (MaxY == MinY) {
+						MaxY += 1.0;
+						MinY -= 1.0;
+					}
 					Graph.DrawLine(Pens.Black, ClipRectangle.Left, ClipRectangle.Top, ClipRectangle.Right, ClipRectangle.Bottom);
 
 					Graph.ResetTransform();
 					Graph.TranslateTransform(0, (float)MinY, MatrixOrder.Append);
-					Graph.ScaleTransform(1.0f, -1.0f, MatrixOrder.Append);
+					Graph.ScaleTransform(1.0f/RecordLength, -1.0f/(float)(MaxY-MinY), MatrixOrder.Append);
+					for (int DIndex = 1; DIndex < RecordLength; DIndex++) {
+						Graph.DrawLine(Pens.Black, (float)(DIndex-1), (float)Trace[DIndex-1], (float)(DIndex), (float)Trace[DIndex]);
+					}
 				}
 			}
 
