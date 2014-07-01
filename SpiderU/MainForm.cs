@@ -75,6 +75,7 @@ namespace SpiderU {
 			toolStripStatusLabel1.Text = GetUIString("UIMSGCAPTURESTATE");
 			bool GWResult = await ScopeManager.GetWaveform();
 			if (GWResult) {
+				flowLayoutPanel1.Refresh();
 				toolStripStatusLabel1.Text = GetUIString("UIMSGWRITESTATE");
 				string FileName = "";
 				if (Properties.Settings.Default.useAutoFileName) {
