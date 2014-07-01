@@ -124,6 +124,7 @@ namespace SpiderU {
 		public  static async Task<bool> GetWaveform() {
 			if (SList.Count > 0) {
 				for (int ScopeIndex = 0; ScopeIndex < SList.Count; ScopeIndex++) {
+					SList[ScopeIndex].DataIsValid = false;
 					SList[ScopeIndex].AcquireData();
 				}
 				return true;

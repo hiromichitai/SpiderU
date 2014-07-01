@@ -58,6 +58,8 @@ namespace SpiderU {
 					newScopeSettingItem.Click += scopeSettingToolStripMenuItem_Click;
 					scopeToolStripMenuItem.DropDownItems.Add((newScopeSettingItem));
 					PictureBox NewScopePictureBox = new PictureBox();
+					NewScopePictureBox.Width = flowLayoutPanel1.Width / ScopeManager.ScopeList.Count;
+					NewScopePictureBox.Height = flowLayoutPanel1.Height;
 					flowLayoutPanel1.Controls.Add(NewScopePictureBox);
 					NewScopePictureBox.Paint += NewScope.DrawScope;
 				}
@@ -104,6 +106,13 @@ namespace SpiderU {
 		private void aboutToolStripMenuItem_Click(object sender, EventArgs e) {
 			AboutForm AForm = new AboutForm();
 			AForm.ShowDialog();
+		}
+
+		private void flowLayoutPanel1_Resize(object sender, EventArgs e) {
+			Refresh();
+		}
+
+		private void flowLayoutPanel1_Paint(object sender, PaintEventArgs e) {
 		}
 	}
 }

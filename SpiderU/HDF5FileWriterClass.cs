@@ -9,7 +9,7 @@ namespace SpiderU {
 	class HDF5FileWriterClass: FileWriterClass {
 		private H5FileId fileID;
 
-		HDF5FileWriterClass(string FileName) : base(FileName) {
+		public HDF5FileWriterClass(string FileName) : base(FileName) {
 			try {
 				fileID = H5F.create(FileName, H5F.CreateMode.ACC_CREAT);
 			}

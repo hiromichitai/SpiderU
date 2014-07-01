@@ -128,6 +128,11 @@ namespace SpiderU {
 			get { return TraceList;}
 		}
 
+		public bool DataIsValid {
+			get { return DataValid;  }
+			set { DataValid = value;  }
+		}
+
 		public int DataLength {
 			get {
 				int DLength = 0;
@@ -198,12 +203,11 @@ namespace SpiderU {
 						MaxY += 1.0;
 						MinY -= 1.0;
 					}
-					Graph.DrawLine(Pens.Black, ClipRectangle.Left, ClipRectangle.Top, ClipRectangle.Right, ClipRectangle.Bottom);
 
 					Graph.ResetTransform();
-					Graph.TranslateTransform(0, (float)MinY, MatrixOrder.Append);
-					Graph.ScaleTransform(1.0f/RecordLength, -1.0f/(float)(MaxY-MinY), MatrixOrder.Append);
-					for (int DIndex = 1; DIndex < RecordLength; DIndex++) {
+					Graph.ScaleTransform(1.0f * ClipRectangle.Width / Trace.DataLength, -1.0f * ClipRectangle.Height / (float)(MaxY - MinY), MatrixOrder.Append);
+					Graph.TranslateTransform(0, (float)ClipRectangle.Height, MatrixOrder.Append);
+					for (int DIndex = 1; DIndex < Trace.DataLength; DIndex++) {
 						Graph.DrawLine(Pens.Black, (float)(DIndex-1), (float)Trace[DIndex-1], (float)(DIndex), (float)Trace[DIndex]);
 					}
 				}

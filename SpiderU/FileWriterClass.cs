@@ -66,12 +66,7 @@ namespace SpiderU
 
 
 		public FileWriterClass(string FileName) {
-			if(File.Exists(FileName)){
-				WarningDialog WDialog = new WarningDialog("UIMessageUTF8ConvError");
-				if (WDialog.DialogResult != DialogResult.OK) { 
-					throw(new System.Exception("User abort"));
-				}
-			}
+
 			if (Properties.Settings.Default.syncAllScope) {
 				if (!ScopeManager.AllScopeSyncable()) {
 					WarningDialog WDialog = new WarningDialog("UIMSGNOTSYNCABLE", true);
