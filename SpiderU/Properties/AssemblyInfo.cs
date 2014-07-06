@@ -8,9 +8,9 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyTitle("SpiderU")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("")]
+[assembly: AssemblyCompany("Ryuusando")]
 [assembly: AssemblyProduct("SpiderU")]
-[assembly: AssemblyCopyright("Copyright ©  2014")]
+[assembly: AssemblyCopyright("Copyright (C) 2014 Ryuusando, Hiromichi Tai")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 

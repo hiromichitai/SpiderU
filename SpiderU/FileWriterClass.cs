@@ -14,6 +14,10 @@ namespace SpiderU
 			INVALID = -1, CSVFILE = 0, HDF5FILE = 1, LD1FILE = 2
 		}
 
+		public static string[] FileFormatString = {
+			"CSV file(*.csv)","HDF5 file(*.h5)","LD1 file(*.ld1)"
+		};
+
 		public enum EncodingEnum {
 			INVALID = -1, ASCII = 0, UTF8 = 1, UNICODE = 2
 		}

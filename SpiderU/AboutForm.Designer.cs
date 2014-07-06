@@ -23,6 +23,7 @@
 		/// the contents of this method with the code editor.
 		/// </summary>
 		private void InitializeComponent() {
+			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AboutForm));
 			this.OKButton = new System.Windows.Forms.Button();
 			this.pictureBox1 = new System.Windows.Forms.PictureBox();
 			((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -31,9 +32,10 @@
 			// OKButton
 			// 
 			this.OKButton.DialogResult = System.Windows.Forms.DialogResult.OK;
-			this.OKButton.Location = new System.Drawing.Point(101, 190);
+			this.OKButton.Location = new System.Drawing.Point(137, 273);
+			this.OKButton.Margin = new System.Windows.Forms.Padding(4);
 			this.OKButton.Name = "OKButton";
-			this.OKButton.Size = new System.Drawing.Size(75, 23);
+			this.OKButton.Size = new System.Drawing.Size(100, 29);
 			this.OKButton.TabIndex = 0;
 			this.OKButton.Text = "OK";
 			this.OKButton.UseCompatibleTextRendering = true;
@@ -41,20 +43,23 @@
 			// 
 			// pictureBox1
 			// 
-			this.pictureBox1.Location = new System.Drawing.Point(45, 30);
+			this.pictureBox1.Location = new System.Drawing.Point(60, 38);
+			this.pictureBox1.Margin = new System.Windows.Forms.Padding(4);
 			this.pictureBox1.Name = "pictureBox1";
-			this.pictureBox1.Size = new System.Drawing.Size(201, 120);
+			this.pictureBox1.Size = new System.Drawing.Size(268, 111);
 			this.pictureBox1.TabIndex = 1;
 			this.pictureBox1.TabStop = false;
 			// 
 			// AboutForm
 			// 
 			this.AcceptButton = this.OKButton;
-			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
-			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.ClientSize = new System.Drawing.Size(284, 262);
+			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
+			this.ClientSize = new System.Drawing.Size(379, 328);
 			this.Controls.Add(this.pictureBox1);
 			this.Controls.Add(this.OKButton);
+			this.Font = new System.Drawing.Font("MS UI Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+			this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+			this.Margin = new System.Windows.Forms.Padding(4);
 			this.Name = "AboutForm";
 			this.Text = "About SpiderU";
 			((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();

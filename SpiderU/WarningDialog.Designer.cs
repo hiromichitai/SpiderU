@@ -44,8 +44,8 @@
 			// WarningDialog
 			// 
 			this.AcceptButton = this.okButton;
+			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
 			resources.ApplyResources(this, "$this");
-			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.Controls.Add(this.okButton);
 			this.Controls.Add(this.messageTextBox);
 			this.Name = "WarningDialog";

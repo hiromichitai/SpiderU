@@ -17,6 +17,11 @@ namespace SpiderU {
 		}
 
 		private void InitializeForm(){
+			outputFileFormatComboBox.Items.Clear();
+			foreach(string outputFileFormat in FileWriterClass.FileFormatString){
+				outputFileFormatComboBox.Items.Add(outputFileFormat);
+
+			}
 			outputFileFormatComboBox.SelectedIndex = Properties.Settings.Default.outputFileFormatID;
 			useAutoFileNameCheckBox.Checked = Properties.Settings.Default.useAutoFileName;
 			autoFileNamePrefixTextBox.Text = Properties.Settings.Default.autoFileNamePrefix;

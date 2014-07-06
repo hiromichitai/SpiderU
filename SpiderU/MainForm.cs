@@ -109,7 +109,6 @@ namespace SpiderU {
 		}
 
 		private void flowLayoutPanel1_Resize(object sender, EventArgs e) {
-			Refresh();
 		}
 
 		private void flowLayoutPanel1_Paint(object sender, PaintEventArgs e) {

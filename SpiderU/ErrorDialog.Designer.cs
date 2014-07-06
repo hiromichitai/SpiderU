@@ -35,16 +35,16 @@
 			// 
 			// OKButton
 			// 
-			resources.ApplyResources(this.OKButton, "OKButton");
 			this.OKButton.DialogResult = System.Windows.Forms.DialogResult.OK;
+			resources.ApplyResources(this.OKButton, "OKButton");
 			this.OKButton.Name = "OKButton";
 			this.OKButton.UseVisualStyleBackColor = true;
 			// 
 			// ErrorDialog
 			// 
 			this.AcceptButton = this.OKButton;
+			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
 			resources.ApplyResources(this, "$this");
-			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.ControlBox = false;
 			this.Controls.Add(this.OKButton);
 			this.Controls.Add(this.messageTextBox);

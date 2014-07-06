@@ -54,16 +54,16 @@
 			this.cancelButton.UseVisualStyleBackColor = true;
 			this.cancelButton.Click += new System.EventHandler(this.cancelButton_Click);
 			// 
-			// NewScope
+			// NewScopeForm
 			// 
 			this.AcceptButton = this.OKButton;
-			resources.ApplyResources(this, "$this");
-			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
 			this.CancelButton = this.cancelButton;
+			resources.ApplyResources(this, "$this");
 			this.Controls.Add(this.cancelButton);
 			this.Controls.Add(this.OKButton);
 			this.Controls.Add(this.deviceListBox);
-			this.Name = "NewScope";
+			this.Name = "NewScopeForm";
 			this.ResumeLayout(false);
 
 		}
