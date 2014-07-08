@@ -12,6 +12,15 @@ namespace SpiderU {
 	public partial class AboutForm : Form {
 		public AboutForm() {
 			InitializeComponent();
+
+			System.Reflection.Assembly asm = System.Reflection.Assembly.GetExecutingAssembly();
+			System.Version ver = asm.GetName().Version;
+			versionLabel.Text = ver.ToString();
+
+		}
+
+		private void label1_Click(object sender, EventArgs e) {
+
 		}
 	}
 }
