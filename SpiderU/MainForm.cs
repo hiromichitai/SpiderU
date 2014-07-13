@@ -104,14 +104,14 @@ namespace SpiderU {
 		}
 
 		private void aboutToolStripMenuItem_Click(object sender, EventArgs e) {
-			AboutForm AForm = new AboutForm();
+			VersionInfoForm AForm = new VersionInfoForm();
 			AForm.ShowDialog();
 		}
 
-		private void flowLayoutPanel1_Resize(object sender, EventArgs e) {
+		private void showHelpToolStripMenuItem_Click(object sender, EventArgs e) {
+
 		}
 
-		private void flowLayoutPanel1_Paint(object sender, PaintEventArgs e) {
-		}
+
 	}
 }

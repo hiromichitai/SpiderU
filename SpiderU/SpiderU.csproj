@@ -10,7 +10,7 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>SpiderU</RootNamespace>
     <AssemblyName>SpiderU</AssemblyName>
-    <TargetFrameworkVersion>v4.5.1</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <IsWebBootstrapper>false</IsWebBootstrapper>
     <TargetFrameworkProfile />
@@ -95,26 +95,26 @@
     <ApplicationManifest>Properties\app.manifest</ApplicationManifest>
   </PropertyGroup>
   <PropertyGroup>
-    <AssemblyOriginatorKeyFile>SpiderUStrictNameKey.pfx</AssemblyOriginatorKeyFile>
+    <AssemblyOriginatorKeyFile>
+    </AssemblyOriginatorKeyFile>
   </PropertyGroup>
   <PropertyGroup>
-    <ApplicationIcon>SpiderU.ico</ApplicationIcon>
+    <ApplicationIcon>
+    </ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup>
+    <RunPostBuildEvent>Always</RunPostBuildEvent>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="HDF5DotNet, Version=1.8.9.0, Culture=neutral, PublicKeyToken=a4952c8df86d6e8c, processorArchitecture=x86">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\DLL\HDF5\HDF5DotNet.dll</HintPath>
     </Reference>
-    <Reference Include="LibUsbDotNet, Version=2.2.8.104, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
+    <Reference Include="LibUsbDotNet">
       <HintPath>..\DLL\libusb\LibUsbDotNet.dll</HintPath>
     </Reference>
-    <Reference Include="NationalInstruments.Common, Version=12.0.40.253, Culture=neutral, PublicKeyToken=dc6ad606294fc298, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-    </Reference>
-    <Reference Include="NationalInstruments.NI4882, Version=13.0.45.159, Culture=neutral, PublicKeyToken=4febd62461bf11a4, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-    </Reference>
+    <Reference Include="NationalInstruments.Common, Version=12.0.40.253, Culture=neutral, PublicKeyToken=dc6ad606294fc298, processorArchitecture=MSIL" />
+    <Reference Include="NationalInstruments.NI4882, Version=9.0.40.157, Culture=neutral, PublicKeyToken=dc6ad606294fc298, processorArchitecture=MSIL" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Management" />
@@ -131,11 +131,11 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AboutForm.cs">
+    <Compile Include="VersionInfoForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="AboutForm.Designer.cs">
-      <DependentUpon>AboutForm.cs</DependentUpon>
+    <Compile Include="VersionInfoForm.Designer.cs">
+      <DependentUpon>VersionInfoForm.cs</DependentUpon>
     </Compile>
     <Compile Include="ComPortClass.cs" />
     <Compile Include="ConfigurationForm.cs">
@@ -204,8 +204,8 @@
     <Compile Include="WarningDialog.Designer.cs">
       <DependentUpon>WarningDialog.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="AboutForm.resx">
-      <DependentUpon>AboutForm.cs</DependentUpon>
+    <EmbeddedResource Include="VersionInfoForm.resx">
+      <DependentUpon>VersionInfoForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ConfigurationForm.ja-JP.resx">
       <DependentUpon>ConfigurationForm.cs</DependentUpon>
@@ -269,8 +269,6 @@
       <LastGenOutput>Settings1.Designer.cs</LastGenOutput>
     </None>
     <None Include="SpiderU.config" />
-    <None Include="SpiderUStrictNameKey.pfx" />
-    <None Include="SpiderU_一時キー.pfx" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
@@ -307,8 +305,8 @@
     <WCFMetadata Include="Service References\" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="SpiderBig.bmp" />
-    <Content Include="SpiderU.ico" />
+    <Content Include="Spider24.bmp" />
+    <Content Include="Spider24.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

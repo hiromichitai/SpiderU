@@ -117,929 +117,216 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="OKButton.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Bottom, Left</value>
-  </data>
-  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="OKButton.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="OKButton.Font" type="System.Drawing.Font, System.Drawing">
-    <value>MS UI Gothic, 11.25pt</value>
-  </data>
-  <data name="OKButton.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="OKButton.Location" type="System.Drawing.Point, System.Drawing">
-    <value>56, 315</value>
-  </data>
-  <data name="OKButton.Size" type="System.Drawing.Size, System.Drawing">
-    <value>78, 28</value>
-  </data>
-  <data name="OKButton.TabIndex" type="System.Int32, mscorlib">
-    <value>11</value>
-  </data>
-  <data name="OKButton.Text" xml:space="preserve">
-    <value>OK</value>
-  </data>
-  <data name="&gt;&gt;OKButton.Name" xml:space="preserve">
-    <value>OKButton</value>
-  </data>
-  <data name="&gt;&gt;OKButton.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;OKButton.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;OKButton.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="cancelButton.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Bottom, Right</value>
-  </data>
-  <data name="cancelButton.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="cancelButton.Font" type="System.Drawing.Font, System.Drawing">
-    <value>MS UI Gothic, 11.25pt</value>
-  </data>
-  <data name="cancelButton.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="cancelButton.Location" type="System.Drawing.Point, System.Drawing">
-    <value>293, 314</value>
-  </data>
-  <data name="cancelButton.Size" type="System.Drawing.Size, System.Drawing">
-    <value>95, 29</value>
-  </data>
-  <data name="cancelButton.TabIndex" type="System.Int32, mscorlib">
-    <value>12</value>
-  </data>
-  <data name="cancelButton.Text" xml:space="preserve">
-    <value>Cancel</value>
-  </data>
-  <data name="&gt;&gt;cancelButton.Name" xml:space="preserve">
-    <value>cancelButton</value>
-  </data>
-  <data name="&gt;&gt;cancelButton.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;cancelButton.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;cancelButton.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="tabControl1.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Top, Bottom, Left, Right</value>
-  </data>
-  <data name="outputFileFormatComboBox.Font" type="System.Drawing.Font, System.Drawing">
-    <value>MS UI Gothic, 11.25pt</value>
-  </data>
-  <data name="outputFileFormatComboBox.Location" type="System.Drawing.Point, System.Drawing">
-    <value>178, 23</value>
-  </data>
-  <data name="outputFileFormatComboBox.Size" type="System.Drawing.Size, System.Drawing">
-    <value>140, 23</value>
-  </data>
-  <data name="outputFileFormatComboBox.TabIndex" type="System.Int32, mscorlib">
-    <value>3</value>
-  </data>
-  <data name="&gt;&gt;outputFileFormatComboBox.Name" xml:space="preserve">
-    <value>outputFileFormatComboBox</value>
-  </data>
-  <data name="&gt;&gt;outputFileFormatComboBox.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;outputFileFormatComboBox.Parent" xml:space="preserve">
-    <value>tabPage1</value>
-  </data>
-  <data name="&gt;&gt;outputFileFormatComboBox.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="label1.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="label1.Font" type="System.Drawing.Font, System.Drawing">
-    <value>MS UI Gothic, 11.25pt</value>
-  </data>
-  <data name="label1.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="label1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>19, 26</value>
-  </data>
-  <data name="label1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>121, 15</value>
-  </data>
-  <data name="label1.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
-  </data>
-  <data name="label1.Text" xml:space="preserve">
-    <value>Output file format</value>
-  </data>
-  <data name="&gt;&gt;label1.Name" xml:space="preserve">
-    <value>label1</value>
-  </data>
-  <data name="&gt;&gt;label1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;label1.Parent" xml:space="preserve">
-    <value>tabPage1</value>
-  </data>
-  <data name="&gt;&gt;label1.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="tabPage1.Font" type="System.Drawing.Font, System.Drawing">
-    <value>MS UI Gothic, 11.25pt</value>
-  </data>
-  <data name="tabPage1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 25</value>
-  </data>
-  <data name="tabPage1.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>3, 3, 3, 3</value>
-  </data>
-  <data name="tabPage1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>405, 260</value>
-  </data>
-  <data name="tabPage1.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="tabPage1.Text" xml:space="preserve">
-    <value>File Format</value>
-  </data>
-  <data name="&gt;&gt;tabPage1.Name" xml:space="preserve">
-    <value>tabPage1</value>
-  </data>
-  <data name="&gt;&gt;tabPage1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;tabPage1.Parent" xml:space="preserve">
-    <value>tabControl1</value>
-  </data>
-  <data name="&gt;&gt;tabPage1.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="tableLayoutPanel2.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Top, Bottom, Left, Right</value>
-  </data>
-  <data name="tableLayoutPanel2.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="tableLayoutPanel2.ColumnCount" type="System.Int32, mscorlib">
-    <value>2</value>
-  </data>
-  <data name="label9.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="label9.Font" type="System.Drawing.Font, System.Drawing">
-    <value>MS UI Gothic, 11.25pt</value>
-  </data>
-  <data name="label9.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="label9.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 160</value>
-  </data>
-  <data name="label9.Size" type="System.Drawing.Size, System.Drawing">
-    <value>100, 15</value>
-  </data>
-  <data name="label9.TabIndex" type="System.Int32, mscorlib">
-    <value>23</value>
-  </data>
-  <data name="label9.Text" xml:space="preserve">
-    <value>Auto file name</value>
-  </data>
-  <data name="&gt;&gt;label9.Name" xml:space="preserve">
-    <value>label9</value>
-  </data>
-  <data name="&gt;&gt;label9.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;label9.Parent" xml:space="preserve">
-    <value>tableLayoutPanel2</value>
-  </data>
-  <data name="&gt;&gt;label9.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="label2.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="label2.Font" type="System.Drawing.Font, System.Drawing">
-    <value>MS UI Gothic, 11.25pt</value>
-  </data>
-  <data name="label2.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="label2.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 0</value>
-  </data>
-  <data name="label2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>112, 15</value>
-  </data>
-  <data name="label2.TabIndex" type="System.Int32, mscorlib">
-    <value>7</value>
-  </data>
-  <data name="label2.Text" xml:space="preserve">
-    <value>File name option</value>
-  </data>
-  <data name="&gt;&gt;label2.Name" xml:space="preserve">
-    <value>label2</value>
-  </data>
-  <data name="&gt;&gt;label2.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;label2.Parent" xml:space="preserve">
-    <value>tableLayoutPanel2</value>
-  </data>
-  <data name="&gt;&gt;label2.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="useAutoFileNameCheckBox.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="useAutoFileNameCheckBox.Font" type="System.Drawing.Font, System.Drawing">
-    <value>MS UI Gothic, 11.25pt</value>
-  </data>
-  <data name="useAutoFileNameCheckBox.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="useAutoFileNameCheckBox.Location" type="System.Drawing.Point, System.Drawing">
-    <value>190, 3</value>
-  </data>
-  <data name="useAutoFileNameCheckBox.Size" type="System.Drawing.Size, System.Drawing">
-    <value>147, 19</value>
-  </data>
-  <data name="useAutoFileNameCheckBox.TabIndex" type="System.Int32, mscorlib">
-    <value>8</value>
-  </data>
-  <data name="useAutoFileNameCheckBox.Text" xml:space="preserve">
-    <value>Use auto file name</value>
-  </data>
-  <data name="&gt;&gt;useAutoFileNameCheckBox.Name" xml:space="preserve">
-    <value>useAutoFileNameCheckBox</value>
-  </data>
-  <data name="&gt;&gt;useAutoFileNameCheckBox.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;useAutoFileNameCheckBox.Parent" xml:space="preserve">
-    <value>tableLayoutPanel2</value>
-  </data>
-  <data name="&gt;&gt;useAutoFileNameCheckBox.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="label3.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="label3.Font" type="System.Drawing.Font, System.Drawing">
-    <value>MS UI Gothic, 11.25pt</value>
-  </data>
-  <data name="label3.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="label3.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 32</value>
-  </data>
-  <data name="label3.Size" type="System.Drawing.Size, System.Drawing">
-    <value>140, 15</value>
-  </data>
-  <data name="label3.TabIndex" type="System.Int32, mscorlib">
-    <value>9</value>
-  </data>
-  <data name="label3.Text" xml:space="preserve">
-    <value>Auto file name prefix</value>
-  </data>
-  <data name="&gt;&gt;label3.Name" xml:space="preserve">
-    <value>label3</value>
-  </data>
-  <data name="&gt;&gt;label3.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;label3.Parent" xml:space="preserve">
-    <value>tableLayoutPanel2</value>
-  </data>
-  <data name="&gt;&gt;label3.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
-  <data name="autoFileNamePrefixTextBox.Font" type="System.Drawing.Font, System.Drawing">
-    <value>MS UI Gothic, 11.25pt</value>
-  </data>
-  <data name="autoFileNamePrefixTextBox.Location" type="System.Drawing.Point, System.Drawing">
-    <value>190, 35</value>
-  </data>
-  <data name="autoFileNamePrefixTextBox.Size" type="System.Drawing.Size, System.Drawing">
-    <value>138, 22</value>
-  </data>
-  <data name="autoFileNamePrefixTextBox.TabIndex" type="System.Int32, mscorlib">
-    <value>10</value>
-  </data>
-  <data name="&gt;&gt;autoFileNamePrefixTextBox.Name" xml:space="preserve">
-    <value>autoFileNamePrefixTextBox</value>
-  </data>
-  <data name="&gt;&gt;autoFileNamePrefixTextBox.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;autoFileNamePrefixTextBox.Parent" xml:space="preserve">
-    <value>tableLayoutPanel2</value>
-  </data>
-  <data name="&gt;&gt;autoFileNamePrefixTextBox.ZOrder" xml:space="preserve">
-    <value>4</value>
-  </data>
-  <data name="label4.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="label4.Font" type="System.Drawing.Font, System.Drawing">
-    <value>MS UI Gothic, 11.25pt</value>
-  </data>
-  <data name="label4.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="label4.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 64</value>
-  </data>
-  <data name="label4.Size" type="System.Drawing.Size, System.Drawing">
-    <value>150, 15</value>
-  </data>
-  <data name="label4.TabIndex" type="System.Int32, mscorlib">
-    <value>11</value>
-  </data>
-  <data name="label4.Text" xml:space="preserve">
-    <value>Auto file number digits</value>
-  </data>
-  <data name="&gt;&gt;label4.Name" xml:space="preserve">
-    <value>label4</value>
-  </data>
-  <data name="&gt;&gt;label4.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;label4.Parent" xml:space="preserve">
-    <value>tableLayoutPanel2</value>
-  </data>
-  <data name="&gt;&gt;label4.ZOrder" xml:space="preserve">
-    <value>5</value>
-  </data>
-  <data name="autoFileNumberDigitsNumericUpDown.Font" type="System.Drawing.Font, System.Drawing">
-    <value>MS UI Gothic, 11.25pt</value>
-  </data>
-  <data name="autoFileNumberDigitsNumericUpDown.Location" type="System.Drawing.Point, System.Drawing">
-    <value>190, 67</value>
-  </data>
-  <data name="autoFileNumberDigitsNumericUpDown.Size" type="System.Drawing.Size, System.Drawing">
-    <value>138, 22</value>
-  </data>
-  <data name="autoFileNumberDigitsNumericUpDown.TabIndex" type="System.Int32, mscorlib">
-    <value>12</value>
-  </data>
-  <data name="&gt;&gt;autoFileNumberDigitsNumericUpDown.Name" xml:space="preserve">
-    <value>autoFileNumberDigitsNumericUpDown</value>
-  </data>
-  <data name="&gt;&gt;autoFileNumberDigitsNumericUpDown.Type" xml:space="preserve">
-    <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;autoFileNumberDigitsNumericUpDown.Parent" xml:space="preserve">
-    <value>tableLayoutPanel2</value>
-  </data>
-  <data name="&gt;&gt;autoFileNumberDigitsNumericUpDown.ZOrder" xml:space="preserve">
-    <value>6</value>
-  </data>
-  <data name="label10.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="label10.Font" type="System.Drawing.Font, System.Drawing">
-    <value>MS UI Gothic, 11.25pt</value>
-  </data>
-  <data name="label10.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="label10.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 96</value>
-  </data>
-  <data name="label10.Size" type="System.Drawing.Size, System.Drawing">
-    <value>151, 15</value>
-  </data>
-  <data name="label10.TabIndex" type="System.Int32, mscorlib">
-    <value>17</value>
-  </data>
-  <data name="label10.Text" xml:space="preserve">
-    <value>Auto file number value</value>
-  </data>
-  <data name="&gt;&gt;label10.Name" xml:space="preserve">
-    <value>label10</value>
-  </data>
-  <data name="&gt;&gt;label10.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;label10.Parent" xml:space="preserve">
-    <value>tableLayoutPanel2</value>
-  </data>
-  <data name="&gt;&gt;label10.ZOrder" xml:space="preserve">
-    <value>7</value>
-  </data>
-  <data name="autoFileNumberValueNumericUpDown.Font" type="System.Drawing.Font, System.Drawing">
-    <value>MS UI Gothic, 11.25pt</value>
-  </data>
-  <data name="autoFileNumberValueNumericUpDown.Location" type="System.Drawing.Point, System.Drawing">
-    <value>190, 99</value>
-  </data>
-  <data name="autoFileNumberValueNumericUpDown.Size" type="System.Drawing.Size, System.Drawing">
-    <value>138, 22</value>
-  </data>
-  <data name="autoFileNumberValueNumericUpDown.TabIndex" type="System.Int32, mscorlib">
-    <value>18</value>
-  </data>
-  <data name="&gt;&gt;autoFileNumberValueNumericUpDown.Name" xml:space="preserve">
-    <value>autoFileNumberValueNumericUpDown</value>
-  </data>
-  <data name="&gt;&gt;autoFileNumberValueNumericUpDown.Type" xml:space="preserve">
-    <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;autoFileNumberValueNumericUpDown.Parent" xml:space="preserve">
-    <value>tableLayoutPanel2</value>
-  </data>
-  <data name="&gt;&gt;autoFileNumberValueNumericUpDown.ZOrder" xml:space="preserve">
-    <value>8</value>
-  </data>
-  <data name="label5.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="label5.Font" type="System.Drawing.Font, System.Drawing">
-    <value>MS UI Gothic, 11.25pt</value>
-  </data>
-  <data name="label5.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="label5.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 128</value>
-  </data>
-  <data name="label5.Size" type="System.Drawing.Size, System.Drawing">
-    <value>140, 15</value>
-  </data>
-  <data name="label5.TabIndex" type="System.Int32, mscorlib">
-    <value>19</value>
-  </data>
-  <data name="label5.Text" xml:space="preserve">
-    <value>Auto file name suffix</value>
-  </data>
-  <data name="&gt;&gt;label5.Name" xml:space="preserve">
-    <value>label5</value>
-  </data>
-  <data name="&gt;&gt;label5.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;label5.Parent" xml:space="preserve">
-    <value>tableLayoutPanel2</value>
-  </data>
-  <data name="&gt;&gt;label5.ZOrder" xml:space="preserve">
-    <value>9</value>
-  </data>
-  <data name="autoFileNameSuffixTextBox.Font" type="System.Drawing.Font, System.Drawing">
-    <value>MS UI Gothic, 11.25pt</value>
-  </data>
-  <data name="autoFileNameSuffixTextBox.Location" type="System.Drawing.Point, System.Drawing">
-    <value>190, 131</value>
-  </data>
-  <data name="autoFileNameSuffixTextBox.Size" type="System.Drawing.Size, System.Drawing">
-    <value>138, 22</value>
-  </data>
-  <data name="autoFileNameSuffixTextBox.TabIndex" type="System.Int32, mscorlib">
-    <value>20</value>
-  </data>
-  <data name="&gt;&gt;autoFileNameSuffixTextBox.Name" xml:space="preserve">
-    <value>autoFileNameSuffixTextBox</value>
-  </data>
-  <data name="&gt;&gt;autoFileNameSuffixTextBox.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;autoFileNameSuffixTextBox.Parent" xml:space="preserve">
-    <value>tableLayoutPanel2</value>
-  </data>
-  <data name="&gt;&gt;autoFileNameSuffixTextBox.ZOrder" xml:space="preserve">
-    <value>10</value>
-  </data>
-  <data name="autoFileNameSampleLabel.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="autoFileNameSampleLabel.Font" type="System.Drawing.Font, System.Drawing">
-    <value>MS UI Gothic, 11.25pt</value>
-  </data>
-  <data name="autoFileNameSampleLabel.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="autoFileNameSampleLabel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>190, 160</value>
-  </data>
-  <data name="autoFileNameSampleLabel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>32, 15</value>
-  </data>
-  <data name="autoFileNameSampleLabel.TabIndex" type="System.Int32, mscorlib">
-    <value>22</value>
-  </data>
-  <data name="autoFileNameSampleLabel.Text" xml:space="preserve">
-    <value>     </value>
-  </data>
-  <data name="&gt;&gt;autoFileNameSampleLabel.Name" xml:space="preserve">
-    <value>autoFileNameSampleLabel</value>
-  </data>
-  <data name="&gt;&gt;autoFileNameSampleLabel.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;autoFileNameSampleLabel.Parent" xml:space="preserve">
-    <value>tableLayoutPanel2</value>
-  </data>
-  <data name="&gt;&gt;autoFileNameSampleLabel.ZOrder" xml:space="preserve">
-    <value>11</value>
-  </data>
-  <data name="tableLayoutPanel2.Location" type="System.Drawing.Point, System.Drawing">
-    <value>15, 23</value>
-  </data>
-  <data name="tableLayoutPanel2.RowCount" type="System.Int32, mscorlib">
-    <value>6</value>
-  </data>
-  <data name="tableLayoutPanel2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>375, 197</value>
-  </data>
-  <data name="tableLayoutPanel2.TabIndex" type="System.Int32, mscorlib">
-    <value>18</value>
-  </data>
-  <data name="&gt;&gt;tableLayoutPanel2.Name" xml:space="preserve">
-    <value>tableLayoutPanel2</value>
-  </data>
-  <data name="&gt;&gt;tableLayoutPanel2.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TableLayoutPanel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;tableLayoutPanel2.Parent" xml:space="preserve">
-    <value>tabPage2</value>
-  </data>
-  <data name="&gt;&gt;tableLayoutPanel2.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="tableLayoutPanel2.LayoutSettings" type="System.Windows.Forms.TableLayoutSettings, System.Windows.Forms">
-    <value>&lt;?xml version="1.0" encoding="utf-16"?&gt;&lt;TableLayoutSettings&gt;&lt;Controls&gt;&lt;Control Name="label9" Row="5" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="label2" Row="0" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="useAutoFileNameCheckBox" Row="0" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="label3" Row="1" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="autoFileNamePrefixTextBox" Row="1" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="label4" Row="2" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="autoFileNumberDigitsNumericUpDown" Row="2" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="label10" Row="3" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="autoFileNumberValueNumericUpDown" Row="3" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="label5" Row="4" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="autoFileNameSuffixTextBox" Row="4" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="autoFileNameSampleLabel" Row="5" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;/Controls&gt;&lt;Columns Styles="Percent,50,Percent,50" /&gt;&lt;Rows Styles="Absolute,32,Absolute,32,Absolute,32,Absolute,32,Absolute,32,Absolute,32" /&gt;&lt;/TableLayoutSettings&gt;</value>
-  </data>
-  <data name="tabPage2.Font" type="System.Drawing.Font, System.Drawing">
-    <value>MS UI Gothic, 11.25pt</value>
-  </data>
-  <data name="tabPage2.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 25</value>
-  </data>
-  <data name="tabPage2.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>3, 3, 3, 3</value>
-  </data>
-  <data name="tabPage2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>405, 260</value>
-  </data>
-  <data name="tabPage2.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="tabPage2.Text" xml:space="preserve">
-    <value>File Name</value>
-  </data>
-  <data name="&gt;&gt;tabPage2.Name" xml:space="preserve">
-    <value>tabPage2</value>
-  </data>
-  <data name="&gt;&gt;tabPage2.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;tabPage2.Parent" xml:space="preserve">
-    <value>tabControl1</value>
-  </data>
-  <data name="&gt;&gt;tabPage2.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="tableLayoutPanel1.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Top, Bottom, Left, Right</value>
-  </data>
-  <data name="tableLayoutPanel1.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="tableLayoutPanel1.ColumnCount" type="System.Int32, mscorlib">
-    <value>2</value>
-  </data>
-  <data name="commentLineCheckBox.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="commentLineCheckBox.Font" type="System.Drawing.Font, System.Drawing">
-    <value>MS UI Gothic, 11.25pt</value>
-  </data>
-  <data name="commentLineCheckBox.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="commentLineCheckBox.Location" type="System.Drawing.Point, System.Drawing">
-    <value>183, 3</value>
-  </data>
-  <data name="commentLineCheckBox.Size" type="System.Drawing.Size, System.Drawing">
-    <value>140, 19</value>
-  </data>
-  <data name="commentLineCheckBox.TabIndex" type="System.Int32, mscorlib">
-    <value>23</value>
-  </data>
-  <data name="commentLineCheckBox.Text" xml:space="preserve">
-    <value>Add comment line</value>
-  </data>
-  <data name="&gt;&gt;commentLineCheckBox.Name" xml:space="preserve">
-    <value>commentLineCheckBox</value>
-  </data>
-  <data name="&gt;&gt;commentLineCheckBox.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;commentLineCheckBox.Parent" xml:space="preserve">
-    <value>tableLayoutPanel1</value>
-  </data>
-  <data name="&gt;&gt;commentLineCheckBox.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="label7.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="label7.Font" type="System.Drawing.Font, System.Drawing">
-    <value>MS UI Gothic, 11.25pt</value>
-  </data>
-  <data name="label7.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="label7.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 48</value>
-  </data>
-  <data name="label7.Size" type="System.Drawing.Size, System.Drawing">
-    <value>125, 15</value>
-  </data>
-  <data name="label7.TabIndex" type="System.Int32, mscorlib">
-    <value>30</value>
-  </data>
-  <data name="label7.Text" xml:space="preserve">
-    <value>Comment includes</value>
-  </data>
-  <data name="&gt;&gt;label7.Name" xml:space="preserve">
-    <value>label7</value>
-  </data>
-  <data name="&gt;&gt;label7.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;label7.Parent" xml:space="preserve">
-    <value>tableLayoutPanel1</value>
-  </data>
-  <data name="&gt;&gt;label7.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="includeModelNameCheckBox.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="includeModelNameCheckBox.Font" type="System.Drawing.Font, System.Drawing">
-    <value>MS UI Gothic, 11.25pt</value>
-  </data>
-  <data name="includeModelNameCheckBox.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="includeModelNameCheckBox.Location" type="System.Drawing.Point, System.Drawing">
-    <value>183, 51</value>
-  </data>
-  <data name="includeModelNameCheckBox.Size" type="System.Drawing.Size, System.Drawing">
-    <value>102, 19</value>
-  </data>
-  <data name="includeModelNameCheckBox.TabIndex" type="System.Int32, mscorlib">
-    <value>31</value>
-  </data>
-  <data name="includeModelNameCheckBox.Text" xml:space="preserve">
-    <value>Model name</value>
-  </data>
-  <data name="&gt;&gt;includeModelNameCheckBox.Name" xml:space="preserve">
-    <value>includeModelNameCheckBox</value>
-  </data>
-  <data name="&gt;&gt;includeModelNameCheckBox.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;includeModelNameCheckBox.Parent" xml:space="preserve">
-    <value>tableLayoutPanel1</value>
-  </data>
-  <data name="&gt;&gt;includeModelNameCheckBox.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="includeDateTimeCheckBox.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="includeDateTimeCheckBox.Font" type="System.Drawing.Font, System.Drawing">
-    <value>MS UI Gothic, 11.25pt</value>
-  </data>
-  <data name="includeDateTimeCheckBox.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="includeDateTimeCheckBox.Location" type="System.Drawing.Point, System.Drawing">
-    <value>183, 88</value>
-  </data>
-  <data name="includeDateTimeCheckBox.Size" type="System.Drawing.Size, System.Drawing">
-    <value>95, 19</value>
-  </data>
-  <data name="includeDateTimeCheckBox.TabIndex" type="System.Int32, mscorlib">
-    <value>32</value>
-  </data>
-  <data name="includeDateTimeCheckBox.Text" xml:space="preserve">
-    <value>Date/Time</value>
-  </data>
-  <data name="&gt;&gt;includeDateTimeCheckBox.Name" xml:space="preserve">
-    <value>includeDateTimeCheckBox</value>
-  </data>
-  <data name="&gt;&gt;includeDateTimeCheckBox.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;includeDateTimeCheckBox.Parent" xml:space="preserve">
-    <value>tableLayoutPanel1</value>
-  </data>
-  <data name="&gt;&gt;includeDateTimeCheckBox.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
-  <data name="label8.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="label8.Font" type="System.Drawing.Font, System.Drawing">
-    <value>MS UI Gothic, 11.25pt</value>
-  </data>
-  <data name="label8.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="label8.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 149</value>
-  </data>
-  <data name="label8.Size" type="System.Drawing.Size, System.Drawing">
-    <value>79, 15</value>
-  </data>
-  <data name="label8.TabIndex" type="System.Int32, mscorlib">
-    <value>33</value>
-  </data>
-  <data name="label8.Text" xml:space="preserve">
-    <value>Header line</value>
-  </data>
-  <data name="&gt;&gt;label8.Name" xml:space="preserve">
-    <value>label8</value>
-  </data>
-  <data name="&gt;&gt;label8.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;label8.Parent" xml:space="preserve">
-    <value>tableLayoutPanel1</value>
-  </data>
-  <data name="&gt;&gt;label8.ZOrder" xml:space="preserve">
-    <value>4</value>
-  </data>
-  <data name="headerLineCheckBox.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="headerLineCheckBox.Font" type="System.Drawing.Font, System.Drawing">
-    <value>MS UI Gothic, 11.25pt</value>
-  </data>
-  <data name="headerLineCheckBox.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="headerLineCheckBox.Location" type="System.Drawing.Point, System.Drawing">
-    <value>183, 152</value>
-  </data>
-  <data name="headerLineCheckBox.Size" type="System.Drawing.Size, System.Drawing">
-    <value>124, 19</value>
-  </data>
-  <data name="headerLineCheckBox.TabIndex" type="System.Int32, mscorlib">
-    <value>34</value>
-  </data>
-  <data name="headerLineCheckBox.Text" xml:space="preserve">
-    <value>Add header line</value>
-  </data>
-  <data name="&gt;&gt;headerLineCheckBox.Name" xml:space="preserve">
-    <value>headerLineCheckBox</value>
-  </data>
-  <data name="&gt;&gt;headerLineCheckBox.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;headerLineCheckBox.Parent" xml:space="preserve">
-    <value>tableLayoutPanel1</value>
-  </data>
-  <data name="&gt;&gt;headerLineCheckBox.ZOrder" xml:space="preserve">
-    <value>5</value>
-  </data>
-  <data name="label6.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="label6.Font" type="System.Drawing.Font, System.Drawing">
-    <value>MS UI Gothic, 11.25pt</value>
-  </data>
-  <data name="label6.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="label6.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 0</value>
-  </data>
-  <data name="label6.Size" type="System.Drawing.Size, System.Drawing">
-    <value>95, 15</value>
-  </data>
-  <data name="label6.TabIndex" type="System.Int32, mscorlib">
-    <value>22</value>
-  </data>
-  <data name="label6.Text" xml:space="preserve">
-    <value>Comment line</value>
-  </data>
-  <data name="&gt;&gt;label6.Name" xml:space="preserve">
-    <value>label6</value>
-  </data>
-  <data name="&gt;&gt;label6.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;label6.Parent" xml:space="preserve">
-    <value>tableLayoutPanel1</value>
-  </data>
-  <data name="&gt;&gt;label6.ZOrder" xml:space="preserve">
-    <value>6</value>
-  </data>
-  <data name="tableLayoutPanel1.Font" type="System.Drawing.Font, System.Drawing">
-    <value>MS UI Gothic, 11.25pt</value>
-  </data>
-  <data name="tableLayoutPanel1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>22, 26</value>
-  </data>
-  <data name="tableLayoutPanel1.RowCount" type="System.Int32, mscorlib">
-    <value>4</value>
-  </data>
-  <data name="tableLayoutPanel1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>360, 203</value>
-  </data>
-  <data name="tableLayoutPanel1.TabIndex" type="System.Int32, mscorlib">
-    <value>30</value>
-  </data>
-  <data name="&gt;&gt;tableLayoutPanel1.Name" xml:space="preserve">
-    <value>tableLayoutPanel1</value>
-  </data>
-  <data name="&gt;&gt;tableLayoutPanel1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TableLayoutPanel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;tableLayoutPanel1.Parent" xml:space="preserve">
-    <value>tabPage3</value>
-  </data>
-  <data name="&gt;&gt;tableLayoutPanel1.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="tableLayoutPanel1.LayoutSettings" type="System.Windows.Forms.TableLayoutSettings, System.Windows.Forms">
-    <value>&lt;?xml version="1.0" encoding="utf-16"?&gt;&lt;TableLayoutSettings&gt;&lt;Controls&gt;&lt;Control Name="commentLineCheckBox" Row="0" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="label7" Row="1" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="includeModelNameCheckBox" Row="1" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="includeDateTimeCheckBox" Row="2" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="label8" Row="3" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="headerLineCheckBox" Row="3" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="label6" Row="0" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;/Controls&gt;&lt;Columns Styles="Percent,50,Percent,50" /&gt;&lt;Rows Styles="Percent,56.81818,Percent,43.18182,Absolute,64,Absolute,53" /&gt;&lt;/TableLayoutSettings&gt;</value>
-  </data>
-  <data name="tabPage3.Font" type="System.Drawing.Font, System.Drawing">
-    <value>MS UI Gothic, 11.25pt</value>
-  </data>
-  <data name="tabPage3.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 25</value>
-  </data>
-  <data name="tabPage3.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>3, 3, 3, 3</value>
-  </data>
-  <data name="tabPage3.Size" type="System.Drawing.Size, System.Drawing">
-    <value>405, 260</value>
-  </data>
-  <data name="tabPage3.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
-  </data>
-  <data name="tabPage3.Text" xml:space="preserve">
-    <value>Comment, Header</value>
-  </data>
-  <data name="&gt;&gt;tabPage3.Name" xml:space="preserve">
-    <value>tabPage3</value>
-  </data>
-  <data name="&gt;&gt;tabPage3.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;tabPage3.Parent" xml:space="preserve">
-    <value>tabControl1</value>
-  </data>
-  <data name="&gt;&gt;tabPage3.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="tabControl1.Font" type="System.Drawing.Font, System.Drawing">
-    <value>MS UI Gothic, 11.25pt</value>
-  </data>
-  <data name="tabControl1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>12, 12</value>
-  </data>
-  <data name="tabControl1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>413, 289</value>
-  </data>
-  <data name="tabControl1.TabIndex" type="System.Int32, mscorlib">
-    <value>21</value>
-  </data>
-  <data name="&gt;&gt;tabControl1.Name" xml:space="preserve">
-    <value>tabControl1</value>
-  </data>
-  <data name="&gt;&gt;tabControl1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TabControl, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;tabControl1.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;tabControl1.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>450, 355</value>
-  </data>
-  <data name="$this.Font" type="System.Drawing.Font, System.Drawing">
-    <value>MS UI Gothic, 9.75pt</value>
+  <data name="pictureBox1.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        Qk02MAAAAAAAADYAAAAoAAAAQAAAAEAAAAABABgAAAAAAAAAAADEDgAAxA4AAAAAAAAAAAAABAQEsrKy
+        ////9/f3/v7+/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39
+        /f39/f39/f39/f39/f39/f39+/v7+vr68PDwAAAAenp6+/v7+fn5/f39/f39/f39/f39/f39/f39/f39
+        /f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/v7+9/f3////sbGx
+        AQEBAAAAAAAABgYGs7Oz////+fn5/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39
+        /f39/f39/f39/f39/f39/f39/f39/Pz8+vr6+/v7////////////AAAAg4OD////9/f3+vr6/Pz8/f39
+        /f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39
+        +fn5////tra2BgYGBgYGqqqqhYWFBQUFBAQEtbW1////+fn5/f39/f39/f39/f39/f39/f39/f39/f39
+        /f39/f39/f39/f39/f39/f39/f39/f39/f39+vr6+vr6////////////5+fnf39/Ly8vAAAAXl5ewsLC
+        ////////////+vr6+vr6/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39
+        /f39/f39/f39+fn5////t7e3BQUFBQUFtLS0////////tLS0BgYGBQUFtbW1////+fn5/f39/f39/f39
+        /f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/Pz8+vr6+/v7////////6enptbW1QEBACgoKAAAA
+        MTExBgYGAAAAAAAANDQ0tbW15+fn////////+/v7+vr6/Pz8/f39/f39/f39/f39/f39/f39/f39/f39
+        /f39/f39/f39/f39/f39/f39+Pj4////tra2BQUFBQUFtra2////9/f39vb2////t7e3BgYGBAQEtbW1
+        ////+Pj4/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39+vr6+/v7////////////wcHBenp6CwsL
+        AAAADw8PfX19zMzM////BQUFbGxskpKSNTU1AAAACAgId3d3wMDA////////////+/v7+vr6/f39/f39
+        /f39/f39/f39/f39/f39/f39/f39/f39/v7++vr6////tra2BQUFBQUFtra2////+fn5/v7+/v7++fn5
+        ////t7e3BgYGBAQEtbW1////+fn5/f39/f39/f39/f39/f39/f39+vr6+vr6+/v7////////6enpg4OD
+        KysrAAAACwsLSUlJvr6+6urq////////9PT0AAAAgYGB////////wsLCSEhIDQ0NAAAAKioqgICA6Ojo
+        ////////+/v7+vr6/Pz8/f39/f39/f39/f39/f39/f39/f39+vr6/v7+uLi4BQUFBQUFtra2////+fn5
+        /f39/f39/f39/f39+fn5////t7e3BgYGBAQEtbW1////+fn5/f39/f39/Pz8+vr6+/v7////////////
+        v7+/P0BACgsLAAAAODg4g4OD6urq////////////+fn5/Pz89vb2AAAAenp6+/v79/f3////////6+vr
+        hoaGOTk5AAAACgoKPj4+vb29////////////+/v7+vr6/f39/f39/f39/f39/Pz8+/v7+/v7LS0tBQUF
+        t7e3////+fn5/f39/f39/f39/f39/f39/f39+fn5////t7e3BgYGBAQEtbW1////+Pj4+/v7////////
+        ////wMDAg4ODJycnAAAADgwMgHt60M3N////////////+vr6+/v7/Pz8/Pz8/v7+9vb2AAAAfHx8/v7+
+        +fn5+/v7+vr6////////////zc3NfHx8Dg4OAAAAKCgogYGB6Onp/////////Pz8+vr6+vr6/Pz8/Pz8
+        /Pz8Tk5OAwMDt7e3////+fn5/f39/f39/f39/f39/f39/f39/f39/f39+fn5////t7e3BgYGAQEBtLS0
+        ////////7Ozssa6uRTw8AAAAAAAAPDo5jby+a+bppf//7////Pz7+fr6/Pz8/f39/f39/f39/Pz8/v7+
+        9fX1AAAAe3t7/Pz89/f3/f39/f39/Pz8+vr6+/v7////////6urqv7+/Ozo6AAAAEAwMPz4+vb29////
+        /////////Pz8/Pz8Tk5OAAAAt7e3////+fn5/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39+fn5
+        ////t7e3ExMTBgYGnJ2dRUVFBgYGAAoMAHV8Sbe7v9HR////3///ov3/cPP6uPj7/v79+/39/f39/f39
+        /f39/f39+fn5/f39/f39AQEBgYGB/////////Pz8+vr6/f39/f39/f39+/v7+vr6////////wv//Qs3Q
+        Q4eICw0NAAAAJiMjgXl5v7+/+vr6TU1NAAAAubm5////+fn5/f39/f39/f39/f39/f39/f39/f39/f39
+        /f39/f39/f39/f39+Pj4////dXV1AAAAAAAAEhMTV1ZWmsbJc///jP//8v///Pz7rfb6OPL8ZPb91vv9
+        /v79/P39/f39+/v7+fn5/f39////////1NTUCgoKEhISbW1t3Nzc/////////f39+fn5+/v7/f39/f39
+        /fz89vr6yPn7q///i///0+nqwr++L0BBABYYAAAAJycnAAEBt7e3////+fn5/f39/f39/f39/f39/f39
+        /f39/f39/f39/f39/f39/f39/f39/f39+/v7/Pz8JycnHBwcFRYWFhcXyMrJ4///pvP4ePX7uff7/v79
+        tPr9MvP9eff94fz9/v39+/z8+/v7////////////rKysLS0tBAQEAQEBIiIiAAAAAgICLi4ura2t////
+        ////////+/v7+/z8/v396Pz9afX9UvP7h/T68f//8v//wf//VvH1B42UAAAAm5eX////9/f3/f39/f39
+        /f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39+/v7////Hx8fUVFRxcbGAAAAAQQEUMjN
+        Nv3/evT71vv9/v79uPr9PfP9bPb9x/j7/f38////////3t7epKSkJSUlAAAAHR0djY2NBwcHfn5+39/f
+        jIyMGxsbAAAAJiYmpaWl3t7e/////////fz83fn6UPT9O/T9wvr9/fv74/r7e/r/Ge75AYmRAwMDsrGx
+        +vr6+fn5/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39+/v7/v7+v7+/BgYGtre3
+        ////tbOzBwkJAHiAMuXsrPz/8fv7/f39xPn8PfL7JfP+4///////29zcb29vAAAAAAAASUlJlpaW9fX1
+        ////AAAAe3t7////////8/PzlZWVSUlJAAAAAAAAcHBw3N3d////6P//VfX9Y/T7rvf7+/7+4Pr7KbG4
+        ANnnduXmPTU1MzU1/////Pz8/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39+vr6
+        /v7+srKyAAAA19fX/Pz8////tL29B3R6DcHMbeTp7////v39zv7/ev//Y/j+g7a4MS4uAgIDAAAAUlJS
+        0tLS////////////8/PzAAAAe3t7/Pz89vb2////////////0dHRUVFRAAAAAgMDLy8vlra3ZPr/E/r/
+        r/7///v7Q15fAWhuHPD6mP//hn9/DQ4O4eHh/f39/Pz8/f39/f39/f39/f39/f39/f39/f39/f39/f39
+        /f39/f39/f39+/v7/v7+OTk5OTk59vb2+vr6+/r6////gtbaAMTPAbO9psrL////oOntUMPJKX+DAAwO
+        GhgYjo+P29vb////////+vr6+fn5/f399vb2AAAAfHx8/v7++fn5/Pz8+vr6+vr6////////2tvbjY2N
+        GhgYAAAAFIKIGsfQiubnUEhHAAUGOcjNZ/n96v7939zcAAAAqqqq/f39+vr6/f39/f39/f39/f39/f39
+        /f39/f39/f39/f39/f39/f39/f39+/v7////Hh4eRERE////+fn5/f39+vv70P//Xd/lC36GBS8yJSUl
+        CzM0AH+HBMfRfLa69PLy////////+vr6+/v7/f39/Pz8/v7+9vb2AAAAfHx8/v7++fn5/f39/f39/f39
+        +/v7+vr6////////8/HxfqipH5OaAU9TCj1ACwkJqLq7p///cfL5yfv85OLhGRoaQEBA/////Pz8/f39
+        /f39/f39/f39/f39/f39/f39/f39/f39/f39/f39+/v7/v7+v7+/BgYGvLy8/v7++/v7/P39/v79t/j7
+        i///UMvPAUpOAAAAHEVHeuruN/r/yv//////+Pr6/Pz8/f39/f39/f39/Pz8/v7+9vb2AAAAfHx8/v7+
+        +fn5/f39/f39/f39/f39/f39+/v7+vr6////3v//df//DsHLACAjamNj3///jPL5g/j+n/T5////UlNT
+        Dw8P39/f/f39/Pz8/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39+vr6/v7+srKyAAAA1NTU/v7+
+        +/v7/f39/v394fz9ivX7If//A5igAAIDD1BUUuXsPfv/wvX4/f38+/39/f39/f39/f39/f39/Pz8/v7+
+        9vb2AAAAfHx8/v7++fn5/f39/f39/f39/f39/f39/f39/fz8+Pz8zPT2I6uyBsbSSnl7Eg8PfNzfG/f+
+        avX82/n7/v7+v8DAAAAAtra2/v7++vr6/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39+/v7////
+        ODg4ODg49/f3+vr6/f39/f39/v399P39v/v9Y+/zAay1THFzCjY4AJKcONnh2f///Pr6+/39/f39/f39
+        /f39/f39/Pz8/v7+9vb2AAAAfHx8/v7++fn5/f39/f39/f39/f39/f39+/z8/v399P39MYKIAICIQe3y
+        yuXnAAAARaqvVP/+nfb64/v8//386OjoGxsbeXl5////+/v7/f39/f39/f39/f39/f39/f39/f39/f39
+        /f39/f39+/v7/v7+ICAgRERE////+fn5/f39/f39/f39+P39vPz+U+z0ALjDkP3/iM/SD0dKBm10iNjb
+        ////+fr6/f39/f39/f39/f39/Pz8/v7+9vb2AAAAfHx8/v7++fn5/f39/f39/f39/f39/Pz8+/z8/Pz8
+        SU5OADg8Ku/4Xvz+2OTlJyYmDWhtMvv+ZvT85fz9/fn5////TExMFhYW+/v7+/v7/f39/f39/f39/f39
+        /f39/f39/f39/f39/f39+/v7/v7+v7+/BQUFvr6+/v7++/v7/f39/f39/f39//7+5/v8GYiOG52ke+fr
+        iP//OtzjAKCpA0NHtLa2////+fn5/f39/f39/f39/Pz8/v7+9vb2AAAAfHx8/v7++fn5/f39/f39/f39
+        /Pz8/Pz8/f39S0tLAAAAiMPGqP3/cu/28///aWVlBD9DPv7/R/P89f39/fv7/v7+vb29AQEBxsbG/v7+
+        +/v7/f39/f39/f39/f39/f39/f39/f39/f39+vr6/v7+srKyAAAA09PT/v7++/v7/f39/f39/f39/v39
+        /vv7Fi4wOXp+af//R+73VP//K+TtD1NXAxoctK+v////+fn5/f39/f39/Pz8/v7+9vb2AAAAfHx8/v7+
+        +fn5/f39/f39/Pz8/Pz8/f39S0tLAAAAtLq6k///P/H7efX86P7+w9HSAFheZdzijPz+5fv8//z8/Pz8
+        6OjoGhoadHR0////+/v7/f39/f39/f39/f39/f39/f39/f39/f39+/v7////NjY2ODg4+Pj4+vr6/f39
+        /f39/f39+fn5/v7+tba2AwEApc3QW/3+N/H7ZPP7MPj+L9beACotAgAAtbW1////+fn5/f39/Pv8+vr8
+        9fX2AAAAfHx8/v7+9fX3/Pz9/Pz8/Pz8/f39S0tLAAAAvbu6/P//Y/H5K/P9qPn9+f393vPzGIGHQr3D
+        u///+Pz8/v39+fn5////S0tLFxcX+/v7+/v7/f39/f39/f39/f39/f39/f39/f39/f39+/v7/Pz8IiIi
+        RERE////+fn5/f39/f39/f39+/v7/f39ampqAwQE4OHhyP7+S/L7GPL9Fe/8Lf3/YcnOCQwMAgICtra2
+        ////+Pj5///+////+v36AAQFeX1+/v/+///////9+/r7/f39SkpKAAAAurq6////zPf5SfT9bPb9vvr9
+        9Pz87P//PMLJAMzYm/j8//7+/P39+/v7/f39wMDABgYGxsbG/v7++vr6/f39/f39/f39/f39/f39/f39
+        +/v7/v7+wMDABQUFwMDA/v7++/v7/f39/f39/v7+/v7+////Dw8PQEBA+/r67vn6qfn9UvX9RPX9Y/H6
+        tv//g7i7BwcHAwQEtbS1////5ubwl4/L39TlAwAAiXZz//P/jIrC5OT0////SkpKAAAAurq6////8/j5
+        s/r9K/P9NvP9xPv99fz9uPz+Ws/VAqSuls7R/v7++vv7+/v7/v7+1NTUAwMDenp6////+/v7/f39/f39
+        /f39/f39/f39/f39+vr6/v7+tLS0AAAAzMzM////+/v7/f39/f39+/v7/v7+19fXDw8PlJSU/////Pr6
+        6P39i/j9cPf9TvX9Ke/6ev//s7i4CQYGAAQFwbaw18vqAAB0SXK8Bnt1SLi5k8XrAwBwmIbFXGBWAAAA
+        urq6/////Pn52Pz9hvf9bvb9dfb98v39+v39pPn9M/3/AJOcn7S1/f39+fv7/f39+vr6+fn5MjIyHBwc
+        +vr6+/v7/f39/f39/f39/f39/f39/f39+/v7////PT09Hh4e4uLi/Pz8/Pz8/f39/f39+fn5/v7+m5ub
+        AAAA5OTk/v7+/Pv7+/39vPv9Zfb9GPL9L/P9P+/5vf//s7q6EAAAEDo7Suz0B6/cANTwAP//APv/AN7x
+        NMHoNGBxBAAAtbq7////+fn5+v39wfr9b/b9k/j9zfv9/P39+f39vvj7jfz9HZ6kLkVH/////P39/v7+
+        +vr6////i4uLBAQEx8fH/v7++vr6/f39/f39/f39/f39/f39+/v7+/v7IyMjNzc3////+fn5/f39/f39
+        /f39/Pz8////LCwsJSUl6enp/Pz8/Pz8//397P39rvr9QfT9UPX9L/P9QPD52v//fLi6ANvoAPn/APv/
+        Avb/AOv4Au77AfL+AP//ANfhgbm8/////fn5+P79xPv9p/n9HfL9T/X97f39/v79y/v9V/L7f/7+Ma2z
+        Dx8g09HR/f7++/v7/Pz8/v7+2traBAQEeHh4/f39+/v7/f39/f39/f39+fn59vb2+fn5wMDABAQEg4OD
+        +fn59fX1+Pj4+fn5+Pj4+Pj4/Pz8Dw8PWFhY/f399PT0+Pn5+fn54Pf5k/T5JO/6PfL8S/P8RvT9T/L7
+        D/z/AvT/A+/9AO78AO/9APD9APD9APD9Au38BPX/FPz/svf73Pv9wPn8hvb8RPL7PfD6rPf78vr7wvj7
+        bvT7GO34YPr6hs/TAAAAq6qq+vr69PT0+Pj49fX19PT0KysrISEh////9vb2+fn5+fn5+fn5////////
+        ////ubm5AAAA5ubm////////////////////////qampDQ0N5+fn////////////////////1v//Xf//
+        T/z/Xvz/aPj/EfH9AO77Ae/8APD9APD9APD9APD9APD9APD9APD9Ae/8AO37AvD9Qff/ffz/WPz/Lv//
+        sP//7v//uf//Xv7/LPz/ov//0v//9P//Li4uZmdn////////////////////l5eXFhYW7Ozs////////
+        ////////fHx8e3t7fHx8JSUlAQEBYmJifHx8enp6fHx8fHx8e3t7fHx8ERERIyMje3t7enp6e3t7fHx8
+        e3x8fXt7boODVKerMcnQIsfPFd/pAPT+AfD9APD9APD9APD9APD9APD9APD9APD9APD9APD9AfD9APP+
+        D9vlLNDZLMrTQK+0bJibWqyxN62zF7/HE8DJTZygaICCgX9/Li8vAAAAfHx8e3t7fHx8e3t7fHx8bm5u
+        AAAAVFRUfHx8enp6fHx8fHx8AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAQEAAAA
+        AgICAAAAAAAAAAAAAAAAAAAAAAAAAS4xAYWMALvFAOr2AfD8AO/8AO/8AO/8AO/8AO/8APD9APD9APD9
+        APD9AO/8AO/8AfH8AN7qAI+WBXN4AVhdAFhdAKSuAGVsB1ZaDEVJAQkJAAAAAAAAAAAADAwMAAAAAAAA
+        AAAAAAAAAAAAAAAAAQEBAAAAAAAAAAAAAAAAAAAA9vb29PT09fX11tbWFxcXRUVF+Pj48vLy9vb29vb2
+        8vLy9vb2p6enBAQEk5OT9vb28/Pz9vb29vb19vb29fX08fLy4fX2efX7Aer3BPr/APT/APX/APX/APX/
+        APP/AOz4AOz5AOv4AO77APX/APT/A/r/Af//Ve31bO30H+34QfP8M/z/f/f94fHx8vHx8fDw9vb2zc3N
+        AAAAmZmZ9/f38fHx9vb29PT09/f3v7+/AAAAra2t9/f38vLy9vb29vb2////////////////IyMjNzc3
+        /v7+/f39/////////////////f39EhISUVFR/////Pz8//////////////////7+////V6OnABsdA7jB
+        AOzxAOPvAOXxAOTwAOn2AP//AP//AP//APv/AOHtAOvxAb7JAJGZH/b/Svj/SPb/fvj/yPn89P7+////
+        /////f39////YmJiDg4O2NjY/////////////f39////Tk5OFxcX4ODg/////////////////Pz8/Pz8
+        +vr6/Pz8fX19AwMDz8/P/f39+/v7/Pz8/Pz8+/v7////LCwsKCgo6Ojo+/v7+/v7/Pz8/Pz8/Pz8/vr6
+        +/39ELS8ABESAgAAAAAAAAAAAAAAAAAAABscAGxyAGtxAHFyAE9TAAAAAAAAAQAAAAUGCe75nfn91Pr9
+        +fz9//39//39/P39/Pz8+fn5+vr6R0dHEBAQ////+/v7/f39/f39+Pj4////QEBAHh4e////+vr6/f39
+        /Pz8/Pz8/f39/f39+vr6////vb29AAAAw8PD/v7++/v7/f39/f39+fn5/v7+m5ubAAAA5OTk/v7++/v7
+        /f39/f39/f39/v7+8vz8Gvn/ANrmAomRAH6FAH6FAIGFAG50ABQVAAAAAAAAAAAAAAMDADxAAICFAX+G
+        A7C6DPL8w/n8//79/P39/P39/f39/f39+/v7/v7+39/fBAQEbW1t/f39+/v7/f39/Pz8/Pz84uLiHh4e
+        dXV1/f39+/v7/f39/f39/f39/f39/f39/Pz8/f393d3dFxcXTExM////+fn5/f39/f39+/v7/v7+19fX
+        Dw8PlJSU////+vr6/f39/f39+f39/v79lvn+AfT/Bfr/AP7/AP//AP//AP//APz/AO/8APP/APP/APP/
+        APL/APr/AP//AP//Bf//APT/ifv//f79+P39/f39/f39/f39+/v7/v7+0tLSAAAAqamp/v7++fn5/f39
+        +/v7////1tbWAAAAvLy8////+vr6/f39/f39/f39/f39/f39/v7++/v7////ISEhNzc3+fn5+vr6/f39
+        /f39/v7+/v7+////Dw8PQEBA+vr6+vr6/f39/f39+f39/v38j/T5AN3qBeTvAP//AP//AP//AP//AP//
+        AOv3AOHtAOLuAOHuAOHuAN/rANvnANvnBd7pAN/rj+3x/Pz7+f39/f39/f39/f39+fn5////Xl5eDg4O
+        1tbW/v7+/Pz8/f39+vr6/f39gICAGBgY3Nzc/f39/Pz8/f39/f39/f39/f39/f39/f39+/v7/f39gICA
+        AwMD0tLS/v7++/v7/f39/f39+/v7/f39ampqBAQE4eHh/v7++/v7/f39+Pr6////ncHCAAAABRITAGJn
+        AGRpAGNoAGNoAGVpABweAAAAAAAAAAAAAAAAAAAAAAAAAAAAAwAAAAAANDIy////+/v7/f39/f39/f39
+        +vr6+vr6SUlJDg4O/////v7+/v7+/f39+fn5////Ozs7HBwc////+/v7/v7+/f39/f39/f39/f39/f39
+        /f39+vr6////u7u7AAAAwsLC/v7++/v7/f39/f39+fn5/v7+tra2AgICzs7O/v7++/v7/Pz8/f39/fLw
+        UKKnAYuSAx4fAAUFAAQEAAMDAAEBAAABABMUAGtxAIeKAIKJAIOKAIOKAIWNAIaNAYOKA46OCj1Btqmo
+        ////+fn5/f39+/v7/v7+4ODgAgICb29v/f39+/v7/f39/Pz8/Pz84eHhHx8fd3d3/f39+/v7/f39/f39
+        /f39/f39/f39/f39/f39/Pz8/f393t7eFxcXS0tL////+fn5/f39/f39/f39/f39+/v7Dg4OX19f////
+        9/f3/f39/v//TTo5AEtRAf//AOj0APT/APj/APv/AP//AP//AP//AP//AP//AP//AP//AP//AP//AP//
+        AP//Af//AGFnAwAAtrq6////+fn5+/v7/v7+0dHRAAAApqam/v7++fn5/f39+/v7////19fXAAAAurq6
+        /v7++vr6/f39/f39/f39/f39/f39/f39/f39/f39+/v7////ICAgODg4+Pj4+vr6/f39/f39/f39/f39
+        ////Li4uIyMj5ubm+vr6/v7+TE5OAAAAi7e5Evb5AP//AebzAN/mAMHLAGVqAF1jAF5jAFleAFhdAFle
+        AFhdAHmAANXgANbhAdHcA/f9WLO4DwcGBAYGuLi4////9PT0////X19fDQ0N2NjY/v7+/Pz8/f39+vr6
+        /f39fX19GBgY3d3d/Pz8/Pz8/f39/f39/f39/f39/f39/f39/f39/f39+/v7/f39goKCAgIC09PT/v7+
+        +/v7/f39/f39+fn5/v7+mpqaAAAA7Ozs////TExMAAAAuLi4////F/H7AI2SAh0eAAAAAAAAAAAAAAsK
+        AAoKAAoKAAoLAAoLAAsLAAAAAAAAAQAAAAAAFGlu////urW1BAQEBgYGt7e3////9/f3SkpKDQ0N////
+        /v7+/v7+/f39+fn5////PT09Ghoa////+/v7/f39/f39/f39/f39/f39/f39/f39/f39/f39+vr6/v7+
+        ubm5AAAAwMDA/v7++/v7/f39/f39/Pz8/v7+2NjYDg4OjIyMV1dXAAAAtri4////9fn6I/P8ABQVAgoK
+        AHd7AJGUALK8APL9APD9APD9APD9APD9APP/ALW/AI2VAJaZAj5BAAAApKWl////tLS0AwMDAwMDvb29
+        8/PzAQEBcHBw/f39+/v7/f39/Pz8/Pz84eHhHh4eenp6/f39+/v7/f39/f39/f39/f39/f39/f39/f39
+        /f39/f39/Pz8/Pz84ODgFxcXS0tL////+fn5/f39/f39/v7+/Pz8////KSkpAAAADg4Ov8DB////2fb4
+        lff8Pvf9AsbRA9fjAP//AP//AP//AP//AP//AP//AP//AP//APz/AP//AP//BP//AeHuWqaq6unp9vn5
+        ////urq6CwsLDAwMmJiYAAAAoqKi/v7++fn5/f39+/v7////2dnZAAAAt7e3/v7++vr6/f39/f39/f39
+        /f39/f39/f39/f39/f39/f39/f39+/v7////Hh4eODg49/f3+vr6/f39/f39/Pz8/v7++/v7ICAgAAAA
+        ISEh19PTz+rrffv/SPj/MfP9APX/Af//ALS/AFhcAFFVAFRYAFNXAFNYAFNYAFpfALG6ANfdAM3YAvL/
+        Afz/mf///////////////v7+mJiYAAAAAAAACQkJtra2+/v7+vr6/f39+vr6/f39enp6FxcX39/f/Pz8
+        /Pz8/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39+/v7/f39hISEAAAA1dXV/v7+/Pz8/Pz8/Pz8
+        /v7+TExMAwMDJygoHhsbABUXDouSJdviWeXtavb9T///AGxxAgAAAAAAABISABESABERABARABMSAAAA
+        AAAAAAAAAQAAADc6GcXJVP7/t+rrz8vLV1dXFRUVAAAAFhYWCwsLDQ0NuLi4////+fn5/v7++fn5////
+        QEBAHR0d////+/v7/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39+vr6/v7+tra2AAAAv7+/
+        /v7++fn5/Pz8/v7+Tk5OAAAAtra2////+f3+XczSF9njD9LdAE9VGDg6MVtbAT1BA05QAL/IAPn/APf/
+        APf/APf/APv/AMLNAJmhAJ2iAlNXBR0fIpSbC8LHAFxhAAwOExMSaWlpn5+f4uLivb29AgICBgYGt7e3
+        ////9/f3/Pz84ODgHBwcPz8//f39+/v7/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/Pz8
+        /Pz84uLiFxcXS0tL/v7++Pj4/v7+Tk5OAAAAuLi4/////vv7t/r+M/z/dvr/n/X6mri5aWpqGBQUAI2U
+        AP//A/n/AfD9APD9APD9APD9AO/9APr/Af//Av//APv/ANTgAMrVBKmyIKSrdb2/8v//////////////
+        ////tra2AwMDBgYGt7e3/////Pz829vbAAAAsbGx/v7++vr6/f39/f39/f39/f39/f39/f39/f39/f39
+        /f39/f39/f39/f39+/v7////Hh4eOzs7/Pz8////TU1NAAAAuLi4////+fn5+/79nvj9PPH7ivf81vz+
+        ////8P//k/7/NtnhJO/5AO77APD9BPD9AvD9AO77Ae/8BO77AOz5AO/6EtznMdPbT+71U/n/HPv/cv//
+        yPv9/Pv7+fn5/Pz8+fn5////tra2AwMDBgYGtLS0////fHx8CAgIvr6+/v7++/v7/f39/f39/f39/f39
+        /f39/f39/f39/f39/f39/f39/f39/f39+vr6/f39fn5+AAAA2NjYWVlZAAAAtLS0////9/j4//790Pv9
+        pvn9jvf9kfj9+/395fr6evT7R/T9aPv/RvT+cvb9GvL9AO/9APD+APr/APX/APD9DfH9dff9vvr8V/r/
+        Tfb/NvL9LPH7XPL6qPn95fz9//39/f39/f39+fn5////tLS0AAAAAAAAxMTETU1NFhYW/////Pz8/f39
+        /f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/Pz8/f395+fnbW1tQkJCAAAAwcHB////
+        ////+/z8+/v6sfj7N/P9a/b9w/v9/v39nfn9HPL9NfP9o/f8qfn9+P393Pz9o/n9NfL8AMbRH93no/n9
+        1/v9//79/P39vvn8W/X9JvL9VPX9EPH9VvX9ofj95v39/v39+/v7+vr69/f3////xsbGFxcXFBQUHh4e
+        RERE+/v7/Pz8/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/Pz8/f39////WFhY
+        AAAABAQEQEBAd3d309PT////////r///IfP+WvT86fv84Pz9T/T9U/X9lPj93/z9/f39+/39//38///+
+        /vb2AAAAf3h4///+//r5+/39/v39//39gff9TvX9n/n9cfb9kff8ffb8v/n8/Pz8////////////0NDQ
+        iYmJFBQUAAAAAAAAn5+f////+Pj4/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/Pz8
+        /Pz8/Pz8UVFRAAAAubm5wcHBMzMzDAwMAAAAODg4eYKDndfZZfP7V/r/6v//qvj8E/H9a/X80Pz99f39
+        /v39/f39+vz8+/7+9fb2AAEBe3x8+/7+9/n5/f39/v398v39Y/b9KvL9ovj82fj6mfv/Tfj/lP//9v//
+        0tHReXp6ODg4AAAAAAAAKioqcHBwDQ0NCQkJtbW1////+fn5/f39/f39/f39/f39/f39/f39/f39/f39
+        /f39/f39/Pz8/Pz8+/v7U1NTAAAAbW1t////////////6urqsbGxODg4AAAAACwvCcHMMOHqy/Dy0v//
+        g/r/fvn/3fn5/Pv7+/z8/f39/Pz8/v7+9vb2AAAAfHx8/v7++fn5/f39/Pv78fv7qvf7j/n+iv7//v//
+        jvD1EOTuIsbMMVlcAAAADQ0OJCUlgoKCwMDA////////tra2AwMDBQUFtra2////+fn5/f39/f39/f39
+        /f39/f39/f39/f39/f39/Pz8/Pz8+vr6UlJSAAAAUVFR9PT0+fn5+vr6+/v7////////////v8HBUKqw
+        H5ifAGhuCTI1PqaqaOPqhvH2/v//////////+vr6+vr6/f399vb2AAAAe3t7/Pz89vb2+vv7/////v//
+        pf//YfP5ZdLYQ1BREkhKAGhuArS+LWlts7Gx6err////////////+/v7+Pj4////t7e3BAQEBgYGtra2
+        ////+fn5/f39/f39/f39/f39/f39/f39/Pz8/Pz8+vr6UVFRAAAAUVFR+vr6/f39/Pz8/f39/f39/Pz8
+        +vr6/Pv7////n///d/j+c8TGaISGAqWtAMDLD1tfQ0VFv76+6+vr////////////8/PzAAAAe3t7////
+        ////////z87NtcDAHJOYANXiAHmAICkpNExNQc7UIvT/uv//////////+/v7+/v7+vr6/f39/f39+fn5
+        ////t7e3BQUFBgYGtbW1////+fn5/f39/f39/f39/v7+/Pz8/Pz8+vr6UlJSAAAAUVFR+vr6/Pz8/Pz8
+        /f39/f39/f39/f39/f39/v399fr6mPb7HfL9cP//yP//hfz/OPL3QpaaKCYmAAAADg4OSkpKv7+/7e3t
+        ////AAAAfn5+1NTUfn5+Njc3AAAAAAYHInh8K8zVVePn/f//x///gf//jPj9x/n8+vr6+/z8/f39/f39
+        /f39/f39/f39/f39+fn5////t7e3BQUFBQUFtra2////+fn5/f39/f39+vr6/f39+vr6UlJSAAAAUVFR
+        +vr6/Pz8/Pz8/f39/f39/f39/f39/f39/f39/v39+P39e/f9OPT9mvb7tvf7lvf8LfT/p///////u7y8
+        PT4+CgoKAAAAERERenp6EhISGBgYAAAACwsLKysrfX19vcTEvP//N/X/ZPr/7fv8ufj7ZvT7fvf91Pv9
+        //39/P39/f39/f39/f39/f39/f39/f39/f39+fn5////tra2BQUFBQUFtra2////+fn5/v7+/v7++fn5
+        UlJSAAAAUVFR+vr6/Pz8+/v7/f39/f39/f39/f39/f39/f39/P39/v399P39ivj9VvX9sfn91vv9ePf9
+        MvP9lfb7/Pv7////////5+fntLS0Pz8/CgoKAAAAIiIisrKy5eXl////////////kvf8R/T9ZPT88f39
+        0vv9OfT9P/T9tfr99v39/v39/f39/f39/f39/f39/f39/f39/f39/f39+Pj4////tra2BQUFBQUFtra2
+        ////9/f35+fnTU1NAAAAUVFR+vr6/Pz8+/v7/f39/f39/f39/f39/f39/f39/f39/f39/f39/v39//79
+        //796P39wPr9cvb9mvj9xvv9/v39+/r6+/v7////////////4uLiAAAAhoaG////////+vv7+/v77fr6
+        nfn9sfr9zfv9/P391vz9PfT9Zfb9uPr98Pz9/v39/f39/f39/f39/f39/f39/f39/f39/f39/f39+fn5
+        ////t7e3BQUFAwMDtLS0////ICAgAAAAUVFR+fn5/Pz8+/v7/f39/f39/f39/f39/f39/f39/f39/f39
+        /f39/f39/f39/P39/P39//398P392/z93/z97fz9/f39/f39/f39/Pz8+fn5/Pz8+/v7AAAAenp6+/v7
+        +Pj4/f39/f39/v39//79//39//39/v397fz9ePb9l/j98/39+/39/f39/f39/f39/f39/f39/f39/f39
+        /f39/f39/f39/f39+fn5////tLS0Dg4OBgYGq6urAAAAJiYm9fX1/v7++vr6/v7+/f39/f39/f39/f39
+        /f39/f39/f39/f39/f39/f39/f39/f39/f39+/39//39//79//79//79/f39/f39/f39/f39/Pz8/v7+
+        8/PzAAAAfHx8/v7++fn5/f39/f39/f39+/39+/39+/39/f39//39//79//79//39/f39/f39/f39/f39
+        /f39/f39/f39/f39/f39/f39/f39/f39/v7+9fX1////i4uLAAAAAAAA
+</value>
   </data>
   <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -6237,14 +5524,5 @@
         AAAAAAAfAAAAez58//8QGP//ggH//8AD//+AQ///gAP//6AB//8AAP//AAD//4AB//+AAf//gAP//8AD
         //+AAf//EAj//zoM//8=
 </value>
-  </data>
-  <data name="$this.Text" xml:space="preserve">
-    <value>Configuration</value>
-  </data>
-  <data name="&gt;&gt;$this.Name" xml:space="preserve">
-    <value>ConfigurationForm</value>
-  </data>
-  <data name="&gt;&gt;$this.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Form, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
 </root>
