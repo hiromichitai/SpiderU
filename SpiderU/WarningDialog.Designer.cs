@@ -49,6 +49,7 @@
 			this.Controls.Add(this.okButton);
 			this.Controls.Add(this.messageTextBox);
 			this.Name = "WarningDialog";
+			this.TopMost = true;
 			this.ResumeLayout(false);
 			this.PerformLayout();
 

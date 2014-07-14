@@ -9,8 +9,8 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace SpiderU {
-	public partial class AboutForm : Form {
-		public AboutForm() {
+	public partial class VersionInfoForm : Form {
+		public VersionInfoForm() {
 			InitializeComponent();
 
 			System.Reflection.Assembly asm = System.Reflection.Assembly.GetExecutingAssembly();

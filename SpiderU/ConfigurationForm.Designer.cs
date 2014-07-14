@@ -31,16 +31,8 @@
 			this.outputFileFormatComboBox = new System.Windows.Forms.ComboBox();
 			this.label1 = new System.Windows.Forms.Label();
 			this.tabPage2 = new System.Windows.Forms.TabPage();
-			this.tabPage3 = new System.Windows.Forms.TabPage();
-			this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-			this.commentLineCheckBox = new System.Windows.Forms.CheckBox();
-			this.label7 = new System.Windows.Forms.Label();
-			this.includeModelNameCheckBox = new System.Windows.Forms.CheckBox();
-			this.includeDateTimeCheckBox = new System.Windows.Forms.CheckBox();
-			this.label8 = new System.Windows.Forms.Label();
-			this.headerLineCheckBox = new System.Windows.Forms.CheckBox();
-			this.label6 = new System.Windows.Forms.Label();
 			this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
+			this.label9 = new System.Windows.Forms.Label();
 			this.label2 = new System.Windows.Forms.Label();
 			this.useAutoFileNameCheckBox = new System.Windows.Forms.CheckBox();
 			this.label3 = new System.Windows.Forms.Label();
@@ -52,15 +44,23 @@
 			this.label5 = new System.Windows.Forms.Label();
 			this.autoFileNameSuffixTextBox = new System.Windows.Forms.TextBox();
 			this.autoFileNameSampleLabel = new System.Windows.Forms.Label();
-			this.label9 = new System.Windows.Forms.Label();
+			this.tabPage3 = new System.Windows.Forms.TabPage();
+			this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+			this.commentLineCheckBox = new System.Windows.Forms.CheckBox();
+			this.label7 = new System.Windows.Forms.Label();
+			this.includeModelNameCheckBox = new System.Windows.Forms.CheckBox();
+			this.includeDateTimeCheckBox = new System.Windows.Forms.CheckBox();
+			this.label8 = new System.Windows.Forms.Label();
+			this.headerLineCheckBox = new System.Windows.Forms.CheckBox();
+			this.label6 = new System.Windows.Forms.Label();
 			this.tabControl1.SuspendLayout();
 			this.tabPage1.SuspendLayout();
 			this.tabPage2.SuspendLayout();
-			this.tabPage3.SuspendLayout();
-			this.tableLayoutPanel1.SuspendLayout();
 			this.tableLayoutPanel2.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.autoFileNumberDigitsNumericUpDown)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.autoFileNumberValueNumericUpDown)).BeginInit();
+			this.tabPage3.SuspendLayout();
+			this.tableLayoutPanel1.SuspendLayout();
 			this.SuspendLayout();
 			// 
 			// OKButton
@@ -114,76 +114,6 @@
 			this.tabPage2.Name = "tabPage2";
 			this.tabPage2.UseVisualStyleBackColor = true;
 			// 
-			// tabPage3
-			// 
-			this.tabPage3.Controls.Add(this.tableLayoutPanel1);
-			resources.ApplyResources(this.tabPage3, "tabPage3");
-			this.tabPage3.Name = "tabPage3";
-			this.tabPage3.UseVisualStyleBackColor = true;
-			// 
-			// tableLayoutPanel1
-			// 
-			resources.ApplyResources(this.tableLayoutPanel1, "tableLayoutPanel1");
-			this.tableLayoutPanel1.Controls.Add(this.commentLineCheckBox, 1, 0);
-			this.tableLayoutPanel1.Controls.Add(this.label7, 0, 1);
-			this.tableLayoutPanel1.Controls.Add(this.includeModelNameCheckBox, 1, 1);
-			this.tableLayoutPanel1.Controls.Add(this.includeDateTimeCheckBox, 1, 2);
-			this.tableLayoutPanel1.Controls.Add(this.label8, 0, 3);
-			this.tableLayoutPanel1.Controls.Add(this.headerLineCheckBox, 1, 3);
-			this.tableLayoutPanel1.Controls.Add(this.label6, 0, 0);
-			this.tableLayoutPanel1.Name = "tableLayoutPanel1";
-			// 
-			// commentLineCheckBox
-			// 
-			resources.ApplyResources(this.commentLineCheckBox, "commentLineCheckBox");
-			this.commentLineCheckBox.Checked = global::SpiderU.Properties.Settings.Default.addComment;
-			this.commentLineCheckBox.CheckState = System.Windows.Forms.CheckState.Checked;
-			this.commentLineCheckBox.DataBindings.Add(new System.Windows.Forms.Binding("Checked", global::SpiderU.Properties.Settings.Default, "addComment", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
-			this.commentLineCheckBox.Name = "commentLineCheckBox";
-			this.commentLineCheckBox.UseVisualStyleBackColor = true;
-			// 
-			// label7
-			// 
-			resources.ApplyResources(this.label7, "label7");
-			this.label7.Name = "label7";
-			// 
-			// includeModelNameCheckBox
-			// 
-			resources.ApplyResources(this.includeModelNameCheckBox, "includeModelNameCheckBox");
-			this.includeModelNameCheckBox.Checked = global::SpiderU.Properties.Settings.Default.includeModelName;
-			this.includeModelNameCheckBox.CheckState = System.Windows.Forms.CheckState.Checked;
-			this.includeModelNameCheckBox.DataBindings.Add(new System.Windows.Forms.Binding("Checked", global::SpiderU.Properties.Settings.Default, "includeModelName", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
-			this.includeModelNameCheckBox.Name = "includeModelNameCheckBox";
-			this.includeModelNameCheckBox.UseVisualStyleBackColor = true;
-			// 
-			// includeDateTimeCheckBox
-			// 
-			resources.ApplyResources(this.includeDateTimeCheckBox, "includeDateTimeCheckBox");
-			this.includeDateTimeCheckBox.Checked = global::SpiderU.Properties.Settings.Default.includeDateTime;
-			this.includeDateTimeCheckBox.CheckState = System.Windows.Forms.CheckState.Checked;
-			this.includeDateTimeCheckBox.DataBindings.Add(new System.Windows.Forms.Binding("Checked", global::SpiderU.Properties.Settings.Default, "includeDateTime", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
-			this.includeDateTimeCheckBox.Name = "includeDateTimeCheckBox";
-			this.includeDateTimeCheckBox.UseVisualStyleBackColor = true;
-			// 
-			// label8
-			// 
-			resources.ApplyResources(this.label8, "label8");
-			this.label8.Name = "label8";
-			// 
-			// headerLineCheckBox
-			// 
-			resources.ApplyResources(this.headerLineCheckBox, "headerLineCheckBox");
-			this.headerLineCheckBox.Checked = global::SpiderU.Properties.Settings.Default.addHeader;
-			this.headerLineCheckBox.CheckState = System.Windows.Forms.CheckState.Checked;
-			this.headerLineCheckBox.DataBindings.Add(new System.Windows.Forms.Binding("Checked", global::SpiderU.Properties.Settings.Default, "addHeader", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
-			this.headerLineCheckBox.Name = "headerLineCheckBox";
-			this.headerLineCheckBox.UseVisualStyleBackColor = true;
-			// 
-			// label6
-			// 
-			resources.ApplyResources(this.label6, "label6");
-			this.label6.Name = "label6";
-			// 
 			// tableLayoutPanel2
 			// 
 			resources.ApplyResources(this.tableLayoutPanel2, "tableLayoutPanel2");
@@ -200,6 +130,11 @@
 			this.tableLayoutPanel2.Controls.Add(this.autoFileNameSuffixTextBox, 1, 4);
 			this.tableLayoutPanel2.Controls.Add(this.autoFileNameSampleLabel, 1, 5);
 			this.tableLayoutPanel2.Name = "tableLayoutPanel2";
+			// 
+			// label9
+			// 
+			resources.ApplyResources(this.label9, "label9");
+			this.label9.Name = "label9";
 			// 
 			// label2
 			// 
@@ -294,10 +229,75 @@
 			resources.ApplyResources(this.autoFileNameSampleLabel, "autoFileNameSampleLabel");
 			this.autoFileNameSampleLabel.Name = "autoFileNameSampleLabel";
 			// 
-			// label9
+			// tabPage3
 			// 
-			resources.ApplyResources(this.label9, "label9");
-			this.label9.Name = "label9";
+			this.tabPage3.Controls.Add(this.tableLayoutPanel1);
+			resources.ApplyResources(this.tabPage3, "tabPage3");
+			this.tabPage3.Name = "tabPage3";
+			this.tabPage3.UseVisualStyleBackColor = true;
+			// 
+			// tableLayoutPanel1
+			// 
+			resources.ApplyResources(this.tableLayoutPanel1, "tableLayoutPanel1");
+			this.tableLayoutPanel1.Controls.Add(this.commentLineCheckBox, 1, 0);
+			this.tableLayoutPanel1.Controls.Add(this.label7, 0, 1);
+			this.tableLayoutPanel1.Controls.Add(this.includeModelNameCheckBox, 1, 1);
+			this.tableLayoutPanel1.Controls.Add(this.includeDateTimeCheckBox, 1, 2);
+			this.tableLayoutPanel1.Controls.Add(this.label8, 0, 3);
+			this.tableLayoutPanel1.Controls.Add(this.headerLineCheckBox, 1, 3);
+			this.tableLayoutPanel1.Controls.Add(this.label6, 0, 0);
+			this.tableLayoutPanel1.Name = "tableLayoutPanel1";
+			// 
+			// commentLineCheckBox
+			// 
+			resources.ApplyResources(this.commentLineCheckBox, "commentLineCheckBox");
+			this.commentLineCheckBox.Checked = global::SpiderU.Properties.Settings.Default.addComment;
+			this.commentLineCheckBox.CheckState = System.Windows.Forms.CheckState.Checked;
+			this.commentLineCheckBox.DataBindings.Add(new System.Windows.Forms.Binding("Checked", global::SpiderU.Properties.Settings.Default, "addComment", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+			this.commentLineCheckBox.Name = "commentLineCheckBox";
+			this.commentLineCheckBox.UseVisualStyleBackColor = true;
+			// 
+			// label7
+			// 
+			resources.ApplyResources(this.label7, "label7");
+			this.label7.Name = "label7";
+			// 
+			// includeModelNameCheckBox
+			// 
+			resources.ApplyResources(this.includeModelNameCheckBox, "includeModelNameCheckBox");
+			this.includeModelNameCheckBox.Checked = global::SpiderU.Properties.Settings.Default.includeModelName;
+			this.includeModelNameCheckBox.CheckState = System.Windows.Forms.CheckState.Checked;
+			this.includeModelNameCheckBox.DataBindings.Add(new System.Windows.Forms.Binding("Checked", global::SpiderU.Properties.Settings.Default, "includeModelName", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+			this.includeModelNameCheckBox.Name = "includeModelNameCheckBox";
+			this.includeModelNameCheckBox.UseVisualStyleBackColor = true;
+			// 
+			// includeDateTimeCheckBox
+			// 
+			resources.ApplyResources(this.includeDateTimeCheckBox, "includeDateTimeCheckBox");
+			this.includeDateTimeCheckBox.Checked = global::SpiderU.Properties.Settings.Default.includeDateTime;
+			this.includeDateTimeCheckBox.CheckState = System.Windows.Forms.CheckState.Checked;
+			this.includeDateTimeCheckBox.DataBindings.Add(new System.Windows.Forms.Binding("Checked", global::SpiderU.Properties.Settings.Default, "includeDateTime", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+			this.includeDateTimeCheckBox.Name = "includeDateTimeCheckBox";
+			this.includeDateTimeCheckBox.UseVisualStyleBackColor = true;
+			// 
+			// label8
+			// 
+			resources.ApplyResources(this.label8, "label8");
+			this.label8.Name = "label8";
+			// 
+			// headerLineCheckBox
+			// 
+			resources.ApplyResources(this.headerLineCheckBox, "headerLineCheckBox");
+			this.headerLineCheckBox.Checked = global::SpiderU.Properties.Settings.Default.addHeader;
+			this.headerLineCheckBox.CheckState = System.Windows.Forms.CheckState.Checked;
+			this.headerLineCheckBox.DataBindings.Add(new System.Windows.Forms.Binding("Checked", global::SpiderU.Properties.Settings.Default, "addHeader", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+			this.headerLineCheckBox.Name = "headerLineCheckBox";
+			this.headerLineCheckBox.UseVisualStyleBackColor = true;
+			// 
+			// label6
+			// 
+			resources.ApplyResources(this.label6, "label6");
+			this.label6.Name = "label6";
 			// 
 			// ConfigurationForm
 			// 
@@ -314,14 +314,14 @@
 			this.tabPage1.PerformLayout();
 			this.tabPage2.ResumeLayout(false);
 			this.tabPage2.PerformLayout();
-			this.tabPage3.ResumeLayout(false);
-			this.tabPage3.PerformLayout();
-			this.tableLayoutPanel1.ResumeLayout(false);
-			this.tableLayoutPanel1.PerformLayout();
 			this.tableLayoutPanel2.ResumeLayout(false);
 			this.tableLayoutPanel2.PerformLayout();
 			((System.ComponentModel.ISupportInitialize)(this.autoFileNumberDigitsNumericUpDown)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.autoFileNumberValueNumericUpDown)).EndInit();
+			this.tabPage3.ResumeLayout(false);
+			this.tabPage3.PerformLayout();
+			this.tableLayoutPanel1.ResumeLayout(false);
+			this.tableLayoutPanel1.PerformLayout();
 			this.ResumeLayout(false);
 			this.PerformLayout();
 
