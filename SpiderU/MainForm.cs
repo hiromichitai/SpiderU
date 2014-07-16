@@ -17,7 +17,7 @@ namespace SpiderU {
 		public MainForm() {
 			InitializeComponent();
 			Properties.Settings.Default.autoFileNameSerialNumber = 1;	// reset serial number
-			Properties.Settings.Default.autoFileNamePrefix = DateTime.Now.ToString("yyMMdd-");
+			Properties.Settings.Default.autoFileNamePrefix = DateTime.Now.ToString("yyyyMMdd-");
 			Properties.Settings.Default.Save();
 			saveFileDialog1.Filter = FileWriterClass.ExtFilter();
 			rm = new ResourceManager("SpiderU.UIMessageResource", typeof(MainForm).Assembly);
@@ -61,6 +61,9 @@ namespace SpiderU {
 					NewScopePictureBox.Width = flowLayoutPanel1.Width / ScopeManager.ScopeList.Count;
 					NewScopePictureBox.Height = flowLayoutPanel1.Height;
 					flowLayoutPanel1.Controls.Add(NewScopePictureBox);
+					foreach (PictureBox ScopePictureBox in flowLayoutPanel1.Controls) {
+						ScopePictureBox.Width = flowLayoutPanel1.Width / flowLayoutPanel1.Controls.Count;
+					}
 					NewScopePictureBox.Paint += NewScope.DrawScope;
 				}
 				toolStripStatusLabel1.Text = GetUIString("UIMSGREADYSTATE");
@@ -89,9 +92,10 @@ namespace SpiderU {
 					FileWriterClass fWriter = FileWriterCreator.CreateFileWriter(saveFileDialog1.FileName);
 					fWriter.WriteFile();
 					fWriter.Close();
-					FileWriterCreator.incAutoFileNameNumber();
+					if (Properties.Settings.Default.useAutoFileName) {
+						FileWriterCreator.incAutoFileNameNumber();
+					}
 				}
-
 			} else {
 				WarningDialog WDialog = new WarningDialog("UIMSGNOSCOPECONNECT"," in acquisitionToolStripMenuItem_Click");
 			}
