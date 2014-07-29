@@ -88,19 +88,15 @@ namespace SpiderU {
 		}
 
 		private void outputFileFormatComboBox_SelectedIndexChanged(object sender, EventArgs e) {
-//			Properties.Settings.Default.outputFileFormatID = (int)FileFormat();
 		}
 
 		private void includeModelNameCheckBox_CheckedChanged(object sender, EventArgs e) {
-//			Properties.Settings.Default.includeModelName = includeModelNameCheckBox.Checked;
 		}
 
 		private void includeDateTimeCheckBox_CheckedChanged(object sender, EventArgs e) {
-//			Properties.Settings.Default.includeDateTime = includeDateTimeCheckBox.Checked;
 		}
 
 		private void headerLineCheckBox_CheckedChanged(object sender, EventArgs e) {
-//			Properties.Settings.Default.addHeader = headerLineCheckBox.Checked;
 		}
 
 		private void autoFileNumberDigitsNumericUpDown_ValueChanged(object sender, EventArgs e) {
@@ -109,17 +105,14 @@ namespace SpiderU {
 
 		private void autoFileNumberValueNumericUpDown_ValueChanged(object sender, EventArgs e) {
 			autoFileNameSampleLabel.Text = GetSampleAutoFileName();
-
 		}
 
 		private void autoFileNameSuffixTextBox_TextChanged(object sender, EventArgs e) {
 			autoFileNameSampleLabel.Text = GetSampleAutoFileName();
-
 		}
 
 		private void autoFileNamePrefixTextBox_TextChanged(object sender, EventArgs e) {
 			autoFileNameSampleLabel.Text = GetSampleAutoFileName();
-
 		}
 
 	}
