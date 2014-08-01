@@ -44,6 +44,11 @@ namespace SpiderU {
 				H5DataTypeId doubleTypeId = H5T.copy(H5T.H5Type.NATIVE_DOUBLE);
 				H5DataSetId dataSetID = H5D.create(fileID, "/" + "Oscilloscope1", doubleTypeId, dataSpaceId);
 
+				long[] labelDimension = new long[1];
+				labelDimension[0] = NumTrace;
+				H5DataSpaceId labelSpaceID = H5S.create_simple(1, dataDimension);
+				H5AttributeId label = H5A.create(dataSetID, "label", UCharTypeID, labelSpaceID);
+
 				if (Properties.Settings.Default.addComment) {
 					string GrooupComment = SList[0].Comment;
 					for (int SIndex = 1; SIndex < SList.Count; SIndex++) {
