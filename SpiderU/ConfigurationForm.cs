@@ -20,7 +20,6 @@ namespace SpiderU {
 			outputFileFormatComboBox.Items.Clear();
 			foreach(string outputFileFormat in FileWriterClass.FileFormatString){
 				outputFileFormatComboBox.Items.Add(outputFileFormat);
-
 			}
 			outputFileFormatComboBox.SelectedIndex = Properties.Settings.Default.outputFileFormatID;
 			useAutoFileNameCheckBox.Checked = Properties.Settings.Default.useAutoFileName;
@@ -37,17 +36,7 @@ namespace SpiderU {
 		}
 
 		private FileWriterClass.FileFormatEnum FileFormat() {
-			switch (outputFileFormatComboBox.SelectedIndex) {
-				case(-1) :
-					return FileWriterClass.FileFormatEnum.INVALID;
-				case(0):
-					return FileWriterClass.FileFormatEnum.CSVFILE;
-				case (1):
-					return FileWriterClass.FileFormatEnum.LD1FILE;
-				case (2):
-					return FileWriterClass.FileFormatEnum.HDF5FILE;
-			}
-			return FileWriterClass.FileFormatEnum.INVALID;
+			return (FileWriterClass.FileFormatEnum)(outputFileFormatComboBox.SelectedIndex);
 		}
 
 		private void OKButton_Click(object sender, EventArgs e) {

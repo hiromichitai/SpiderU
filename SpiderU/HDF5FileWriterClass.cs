@@ -9,6 +9,8 @@ namespace SpiderU {
 	class HDF5FileWriterClass: FileWriterClass {
 		private H5FileId fileID;
 
+
+
 		public HDF5FileWriterClass(string FileName) : base(FileName) {
 			try {
 				fileID = H5F.create(FileName, H5F.CreateMode.ACC_TRUNC);
@@ -21,6 +23,7 @@ namespace SpiderU {
 			}
 
 		}
+
 
 
 		public override void WriteFile() {
@@ -54,21 +57,11 @@ namespace SpiderU {
 					for (int SIndex = 1; SIndex < SList.Count; SIndex++) {
 						GrooupComment = GrooupComment + SList[SIndex].Comment;
 					}
+
 					long[] commentDimension = new long[1];
 					commentDimension[0] = GrooupComment.Length;
 					H5DataSpaceId commentSpaceID = H5S.create_simple(1, commentDimension);
 					H5AttributeId comment = H5A.create(dataSetID, "comment", UCharTypeID, commentSpaceID);
-					H5A.write<char>(comment, UCharTypeID, new H5Array<char>(Scope.OnTrace[TIndex].TraceLabel.ToCharArray()));
-					for (int SIndex = 1; SIndex < SList.Count; SIndex++) {
-						ScopeClass Scope = SList[SIndex];
-						for (int TIndex = 0; TIndex < Scope.OnTrace.Count; TIndex++) {
-							H5AttributeId label = H5A.create(dataSetID, "label", UCharTypeID, labelSpaceID);
-							H5A.write<char>(label, UCharTypeID, new H5Array<char>(Scope.OnTrace[TIndex].TraceLabel.ToCharArray()));
-							H5AttributeId unit = H5A.create(dataSetID, "unit", UCharTypeID, unitSpaceID);
-							H5A.write<char>(label, UCharTypeID, new H5Array<char>(Scope.OnTrace[TIndex].TraceUnit.ToCharArray()));
-							H5D.write<double>(dataSetID, doubleTypeId, new H5Array<double>(Scope.OnTrace[TIndex].Data));
-						}
-					}
 				}
 
 			} else {
