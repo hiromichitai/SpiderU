@@ -23,16 +23,20 @@ namespace SpiderU {
 			}
 			outputFileFormatComboBox.SelectedIndex = Properties.Settings.Default.outputFileFormatID;
 			useAutoFileNameCheckBox.Checked = Properties.Settings.Default.useAutoFileName;
+			autoFileNamePrefixInitialValueTextBox.Text = Properties.Settings.Default.autoFileNamePrefixInitialValue;
 			autoFileNamePrefixTextBox.Text = Properties.Settings.Default.autoFileNamePrefix;
 			autoFileNumberDigitsNumericUpDown.Value = Properties.Settings.Default.autoFileNameSerialDigits;
 			autoFileNumberValueNumericUpDown.Value = Properties.Settings.Default.autoFileNameSerialNumber;
-			autoFileNameSuffixTextBox.Text = Properties.Settings.Default.autoFileNamePrefix;
+			autoFileNameSuffixTextBox.Text = Properties.Settings.Default.autoFileNameSuffix;
+			addCommentLineCheckBox.Checked = Properties.Settings.Default.addComment;
 			includeModelNameCheckBox.Checked = Properties.Settings.Default.includeModelName;
 			includeDateTimeCheckBox.Checked = Properties.Settings.Default.includeDateTime;
 			headerLineCheckBox.Checked = Properties.Settings.Default.addHeader;
 			autoFileNamePrefixTextBox.Enabled = useAutoFileNameCheckBox.Checked;
 			autoFileNumberDigitsNumericUpDown.Enabled = useAutoFileNameCheckBox.Checked;
 			autoFileNameSuffixTextBox.Enabled = useAutoFileNameCheckBox.Checked;
+			refreshAutoFileName();
+			refreshCommentLine();
 		}
 
 		private FileWriterClass.FileFormatEnum FileFormat() {
@@ -42,10 +46,12 @@ namespace SpiderU {
 		private void OKButton_Click(object sender, EventArgs e) {
 			Properties.Settings.Default.outputFileFormatID = outputFileFormatComboBox.SelectedIndex;
 			Properties.Settings.Default.useAutoFileName = useAutoFileNameCheckBox.Checked;
+			Properties.Settings.Default.autoFileNamePrefixInitialValue = autoFileNamePrefixInitialValueTextBox.Text;
 			Properties.Settings.Default.autoFileNamePrefix = autoFileNamePrefixTextBox.Text;
 			Properties.Settings.Default.autoFileNameSerialDigits = (int)autoFileNumberDigitsNumericUpDown.Value;
 			Properties.Settings.Default.autoFileNameSuffix = autoFileNameSuffixTextBox.Text;
 			Properties.Settings.Default.autoFileNameSerialNumber = (int)autoFileNumberValueNumericUpDown.Value;
+			Properties.Settings.Default.addComment = addCommentLineCheckBox.Checked;
 			Properties.Settings.Default.includeModelName = includeModelNameCheckBox.Checked;
 			Properties.Settings.Default.includeDateTime = includeDateTimeCheckBox.Checked;
 			Properties.Settings.Default.addHeader = headerLineCheckBox.Checked;
@@ -60,20 +66,26 @@ namespace SpiderU {
 				+ autoFileNameSuffixTextBox.Text + FileWriterClass.DefaultExtention((int)FileFormat());
 		}
 
-		private void useAutoFileNameCheckBox_CheckedChanged(object sender, EventArgs e) {
+		private void refreshAutoFileName() {
 			if (useAutoFileNameCheckBox.Checked) {
+				autoFileNamePrefixInitialValueTextBox.Enabled = true;
 				autoFileNamePrefixTextBox.Enabled = true;
 				autoFileNumberDigitsNumericUpDown.Enabled = true;
 				autoFileNumberValueNumericUpDown.Enabled = true;
 				autoFileNameSuffixTextBox.Enabled = true;
 			} else {
-				Properties.Settings.Default.useAutoFileName = false;
+				autoFileNamePrefixInitialValueTextBox.Enabled = false;
 				autoFileNamePrefixTextBox.Enabled = false;
 				autoFileNumberDigitsNumericUpDown.Enabled = false;
 				autoFileNumberValueNumericUpDown.Enabled = false;
 				autoFileNameSuffixTextBox.Enabled = false;
 			}
 			autoFileNameSampleLabel.Text = GetSampleAutoFileName();
+
+		}
+
+		private void useAutoFileNameCheckBox_CheckedChanged(object sender, EventArgs e) {
+			refreshAutoFileName();
 		}
 
 		private void outputFileFormatComboBox_SelectedIndexChanged(object sender, EventArgs e) {
@@ -102,6 +114,30 @@ namespace SpiderU {
 
 		private void autoFileNamePrefixTextBox_TextChanged(object sender, EventArgs e) {
 			autoFileNameSampleLabel.Text = GetSampleAutoFileName();
+		}
+
+		private void label4_Click(object sender, EventArgs e) {
+		}
+
+		private void autoFileNumberDigitsNumericUpDown_ValueChanged_1(object sender, EventArgs e) {
+		}
+
+		private void refreshCommentLine() {
+			if (addCommentLineCheckBox.Checked) {
+				includeModelNameCheckBox.Enabled = true;
+				includeDateTimeCheckBox.Enabled = true;
+			} else {
+				includeModelNameCheckBox.Enabled = false;
+				includeDateTimeCheckBox.Enabled = false;			
+			}
+		}
+
+		private void commentLineCheckBox_CheckedChanged(object sender, EventArgs e) {
+			refreshCommentLine();
+		}
+
+		private void autoFileNamePrefixInitialValueTextBox_HelpRequested(object sender, HelpEventArgs hlpevent) {
+
 		}
 
 	}

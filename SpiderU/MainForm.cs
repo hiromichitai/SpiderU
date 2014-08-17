@@ -17,7 +17,13 @@ namespace SpiderU {
 		public MainForm() {
 			InitializeComponent();
 			Properties.Settings.Default.autoFileNameSerialNumber = 1;	// reset serial number
-			Properties.Settings.Default.autoFileNamePrefix = DateTime.Now.ToString("yyyyMMdd-");
+			try {
+				Properties.Settings.Default.autoFileNamePrefix = DateTime.Now.ToString(Properties.Settings.Default.autoFileNamePrefixInitialValue);
+			}
+			catch (System.FormatException) {
+				Properties.Settings.Default.autoFileNamePrefix = Properties.Settings.Default.autoFileNamePrefixInitialValue;
+			}
+
 			Properties.Settings.Default.Save();
 			saveFileDialog1.Filter = FileWriterClass.ExtFilter();
 			rm = new ResourceManager("SpiderU.UIMessageResource", typeof(MainForm).Assembly);
@@ -86,6 +92,7 @@ namespace SpiderU {
 				if (Properties.Settings.Default.useAutoFileName) {
 					FileName = FileWriterCreator.autoFileName;
 				}
+				saveFileDialog1.FilterIndex = Properties.Settings.Default.outputFileFormatID;
 				saveFileDialog1.DefaultExt = FileWriterClass.DefaultExtention(Properties.Settings.Default.outputFileFormatID);
 				saveFileDialog1.FileName = FileName;
 				if (saveFileDialog1.ShowDialog() == DialogResult.OK) {

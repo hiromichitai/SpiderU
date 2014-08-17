@@ -8,13 +8,84 @@ using System.IO;
 
 namespace SpiderU {
 	class MatFileWriterClass : FileWriterClass {
+		private enum miDataType:int { 
+			miINT8 = 1, 
+			miUINT8 = 2,
+			miINT16 = 3,
+			miUINT16 = 4,
+			miINT32 = 5,
+			miUINT32 = 6,
+			miSINGLE = 7,
+			miDOUBLE = 9,
+			miINT64 = 12,
+			miUINT64 = 13,
+			miMATRIX = 14,
+			miCOMPRESSED = 15,
+			miUTF8 = 16,
+			miUTF16 = 17,
+			miUTF32 = 18		
+		}
+
+		private enum mxArrayType : int {
+			mxCELL_CLASS = 1,
+			mxSTRUCT_CLASS = 2,
+			mxOBJECT_CLASS = 3,
+			mxCHAR_CLASS = 4,
+			mxSPARSE_CLASS = 5,
+			mxDOUBLE_CLASS = 6,
+			mxSINGLE_CLASS = 7,
+			mxINT8_CLASS = 8,
+			mxUINT8_CLASS = 9,
+			mxINT16_CLASS = 10
+		}
+
 		private FileStream FStream;
+
+		private class miMatrixClass {
+			private byte[] byteBuffer;
+
+			public miMatrixClass(mxArrayType ArrayType) {
+				byteBuffer = new byte[24]; // for miMATRIX tag and array flags, type
+				BitConverter.GetBytes((int)miDataType.miMATRIX).CopyTo(byteBuffer, 0);
+				BitConverter.GetBytes((int)miDataType.miUINT32).CopyTo(byteBuffer, 8);
+				byteBuffer[16] = 0;
+				byteBuffer[17] = 0;
+				byteBuffer[18] = 0;		// flags clear
+				byteBuffer[19] = (byte)ArrayType;
+				byteBuffer[20] = 0;
+				byteBuffer[21] = 0;
+				byteBuffer[22] = 0;
+				byteBuffer[23] = 0;
+			}
+
+			public void setDimension(int[] dimensionArray){
+				int numDimensions = dimensionArray.Length;
+				int numTagSize = numDimensions + (numDimensions % 2);
+				
+				Array.Resize(ref byteBuffer,byteBuffer.Length+numTagSize*4);
+				for (int Index = 0; Index < numDimensions; Index++) {
+					BitConverter.GetBytes(dimensionArray[Index]).CopyTo(byteBuffer, 24 + Index * 4);
+				}
+			
+			}
+
+			public void setArrayName(string arrayName) {
+/*
+				int numDimensions = dimensionArray.Length;
+				int numTagSize = numDimensions + (numDimensions % 2);
+
+				Array.Resize(ref byteBuffer, byteBuffer.Length + numTagSize * 4);
+				for (int Index = 0; Index < numDimensions; Index++) {
+					BitConverter.GetBytes(dimensionArray[Index]).CopyTo(byteBuffer, 24 + Index * 4);
+				}
+*/
+			}
+		}
 
 		public MatFileWriterClass(string FileName)
 			: base(FileName) {
 			try {
 				FStream = new FileStream(FileName, FileMode.Create);
-
 			}
 			catch (ArgumentException) {
 				WarningDialog WDialog = new WarningDialog("UIMSGARGEXCEPTION", "in MatFileWriter");
@@ -48,20 +119,23 @@ namespace SpiderU {
 
 		public override void WriteFile() {
 
+			UTF8Encoding U8Encoder = new UTF8Encoding();
 			WriteHeader();
 			List<ScopeClass> SList = ScopeManager.ScopeList;
 
 			try {
 				if (Properties.Settings.Default.syncAllScope) {
-
-					if (Properties.Settings.Default.addComment) {
+					int LabelByteCount = 0;
+					int UnitByteCount = 0;
+					for (int SIndex = 0; SIndex < SList.Count; SIndex++) {
+						List<TraceClass> TList = SList[SIndex].OnTrace;
+						for (int TIndex = 0; TIndex < TList.Count; TIndex++) {
+							LabelByteCount += U8Encoder.GetByteCount(TList[TIndex].TraceLabel);
+							UnitByteCount += U8Encoder.GetByteCount(TList[TIndex].TraceUnit);
+						}
 					}
 
-					if (Properties.Settings.Default.addHeader) {
-					}
-					double STime = 0.0;
-					for (int DIndex = 0; DIndex < SList[0].DataLength; DIndex++) {
-					}
+
 				} else {
 					for (int SIndex = 1; SIndex < SList.Count; SIndex++) {
 						ScopeClass Scope = SList[SIndex];

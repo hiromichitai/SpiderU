@@ -11,11 +11,11 @@ namespace SpiderU
     public abstract class FileWriterClass
     {
 		public enum FileFormatEnum {
-			INVALID = -1, CSVFILE = 0, MATFILE = 1, LD1FILE = 2
+			INVALID = -1, CSVFILE = 0, HDF5FILE = 1, LD1FILE = 2
 		}
 
 		public static string[] FileFormatString = {
-			"CSV file(*.csv)","MAT file(*.mat)","LD1 file(*.ld1)"
+			"CSV file(*.csv)","HDF5 file(*.h5)","LD1 file(*.ld1)"
 		};
 
 		public enum EncodingEnum {
@@ -29,11 +29,11 @@ namespace SpiderU
 				case 0:
 					return ".csv";
 				case 1:
-					return ".mat";
+					return ".h5";
 				case 2:
 					return ".ld1";
 				default:
-					return "";
+					return ".*";
 			}
 		}
 
@@ -65,7 +65,7 @@ namespace SpiderU
 		}
 
 		public static string ExtFilter() {
-			return "csv files (*.csv)|*.csv|MAT files (*.mat)|*.mat|LD1 file (*.ld1)|*.ld1| All files (*.*)|*.* ";
+			return "csv files (*.csv)|*.csv|HDF5 files (*.h5)|*.h5|LD1 file (*.ld1)|*.ld1| All files (*.*)|*.* ";
 		}
 
 
