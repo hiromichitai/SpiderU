@@ -27,9 +27,10 @@ namespace SpiderU {
 
 		public ComPortListClass() {
 			FreeDeviceList = new List<ComPortClass>();
+			ScanOscilloscope();
 		}
 
-		public async Task ScanOscilloscope() {
+		private async Task ScanOscilloscope() {
 			try {
 				GPIBBoard = new Board();
 				GPIBBoard.SendInterfaceClear();

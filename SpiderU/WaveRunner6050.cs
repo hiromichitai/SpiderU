@@ -33,6 +33,7 @@ namespace SpiderU {
 			ComPort.Write("COMM_ORDER LO");	// LSB first
 			ComPort.Write("COMM_FORMAT DEF9,BYTE,BIN");
 			ComPort.Write("WFSU SP,0,NP,0,FP,0,SN,0");
+			ComPort.GoToLocal();
 		}
 
 
@@ -54,6 +55,8 @@ namespace SpiderU {
 			double VGain = System.BitConverter.ToSingle(BlockData, 156);
 			double VOffset = System.BitConverter.ToSingle(BlockData, 160);
 			SamplingTime = System.BitConverter.ToSingle(BlockData, 176);
+			ComPort.GoToLocal();
+
 		}
 
 		protected override void GetData() {

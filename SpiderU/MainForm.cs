@@ -27,7 +27,6 @@ namespace SpiderU {
 			Properties.Settings.Default.Save();
 			saveFileDialog1.Filter = FileWriterClass.ExtFilter();
 			rm = new ResourceManager("SpiderU.UIMessageResource", typeof(MainForm).Assembly);
-
 		}
 
 		private string GetUIString(string KeyString) {
@@ -46,10 +45,11 @@ namespace SpiderU {
 		}
 
 		private async void scanToolStripMenuItem_Click(object sender, EventArgs e) {
-			ComPortList = new ComPortListClass();
+			if (ComPortList == null) {
+				ComPortList = new ComPortListClass();
+			}
 			try {
 				toolStripStatusLabel1.Text = GetUIString("UIMSGSCANSCOPE");
-				await ComPortList.ScanOscilloscope();
 
 				if (ComPortList == null) {
 					ErrorDialog EDialog = new ErrorDialog("UIMSGNOSCOPE");
@@ -73,7 +73,6 @@ namespace SpiderU {
 					NewScopePictureBox.Paint += NewScope.DrawScope;
 				}
 				toolStripStatusLabel1.Text = GetUIString("UIMSGREADYSTATE");
-
 			}
 			catch (System.Exception Ex) {
 				ErrorDialog Dialog = new ErrorDialog(Ex.ToString());
@@ -81,8 +80,7 @@ namespace SpiderU {
 		}
 
 
-		private async void acquisitionToolStripMenuItem_Click(object sender, EventArgs e)
-		{
+		private async void acquisitionToolStripMenuItem_Click(object sender, EventArgs e) {
 			toolStripStatusLabel1.Text = GetUIString("UIMSGCAPTURESTATE");
 			bool GWResult = await ScopeManager.GetWaveform();
 			if (GWResult) {
@@ -92,8 +90,7 @@ namespace SpiderU {
 				if (Properties.Settings.Default.useAutoFileName) {
 					FileName = FileWriterCreator.autoFileName;
 				}
-				saveFileDialog1.FilterIndex = Properties.Settings.Default.outputFileFormatID;
-				saveFileDialog1.DefaultExt = FileWriterClass.DefaultExtention(Properties.Settings.Default.outputFileFormatID);
+				saveFileDialog1.FilterIndex = Properties.Settings.Default.outputFileFormatID+1;		// FilterIndex starts from 1, not 0
 				saveFileDialog1.FileName = FileName;
 				if (saveFileDialog1.ShowDialog() == DialogResult.OK) {
 					FileWriterClass fWriter = FileWriterCreator.CreateFileWriter(saveFileDialog1.FileName);

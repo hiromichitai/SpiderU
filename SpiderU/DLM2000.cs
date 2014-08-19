@@ -46,6 +46,7 @@ namespace SpiderU {
 				string ResultString = ComPort.ReadString();
 				TraceList[TraceIndex].IsOn = (ResultString.Substring(0,1) == "1");
 			}
+			ComPort.GoToLocal();
 		}
 
 		protected override void GetData(){
