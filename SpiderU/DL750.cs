@@ -7,6 +7,10 @@ using NationalInstruments.NI4882;
 
 namespace SpiderU {
 	class DL750 : ScopeClass {
+		private enum ModuleTypeEnum {
+			NoModule, VoltageModule, TemperatureModule, StrainModule, AccelarationModule, FrequencyModule
+		}
+		private int[] ModuleTypeID;
 
 
 		public DL750(ComPortClass MyDevice,string ModelName,int NumChannel)	: base(MyDevice,ModelName,NumChannel) {
@@ -16,6 +20,7 @@ namespace SpiderU {
 				Exception Ex = new Exception("Internal Error");
 				throw(Ex);
 			}
+			ModuleTypeID = new int[NumChannel];
 			for (int Index = 0; Index < NumberOfChannel; Index++) {
 				int Channel = Index + 1;
 				TraceClass Trace = TraceList[Index];
@@ -39,10 +44,43 @@ namespace SpiderU {
 			SamplingTime = 1.0 / Convert.ToDouble(SamplingRateStr);
 			for (int TraceIndex = 0; TraceIndex < NumberOfChannel; TraceIndex++) {
 				int Channel = TraceIndex+1;
-				string CommandString = String.Format(":CHANNEL{0:D}:DISPLAY?",Channel);
+				string CommandString = String.Format(":CHANNEL{0:D}:MODULE?", Channel);
 				ComPort.Write(CommandString);
 				string ResultString = ComPort.ReadString();
-				TraceList[TraceIndex].IsOn = (ResultString.Substring(0,1) == "1");
+				switch (ResultString) {
+					case("NOMODULE"): 
+						ModuleTypeID[TraceIndex] = (int)ModuleTypeEnum.NoModule;
+						break;
+					case("M701250"):		// 701250(HS10M12)
+					case("M701251"):		//  701251(HS1M16)
+					case("M701255"): 		// 701255(NONISO_10M12)
+					case("M701260"): 		// 701260(HV(with RMS)
+						ModuleTypeID[TraceIndex] = (int)ModuleTypeEnum.VoltageModule;
+						break;
+					case ("M701261"): 		// 701261(UNIV)
+					case("M701262"): 		// 701262(UNIV_AAF)
+					case("M701265"): 		// 701265(TEMP/HPV)
+						ModuleTypeID[TraceIndex] = (int)ModuleTypeEnum.TemperatureModule;
+						break;
+					case ("M701270"): 		// 701270(STRAIN_NDIS)
+					case("M701271"): 		// 701271(STRAIN_DSUB)
+						ModuleTypeID[TraceIndex] = (int)ModuleTypeEnum.StrainModule;
+						break;
+					case ("M701275"): 		// 701275(ACCL/VOLT)
+						ModuleTypeID[TraceIndex] = (int)ModuleTypeEnum.AccelarationModule;
+						break;
+					case ("M701280"): 		// 701280(FREQ)
+						ModuleTypeID[TraceIndex] = (int)ModuleTypeEnum.FrequencyModule;
+						break;
+				}
+				if (ModuleTypeID[TraceIndex] != (int)ModuleTypeEnum.NoModule) {
+					CommandString = String.Format(":CHANNEL{0:D}:DISPLAY?", Channel);
+					ComPort.Write(CommandString);
+					ResultString = ComPort.ReadString();
+					TraceList[TraceIndex].IsOn = (ResultString.Substring(0, 1) == "1");
+				} else {
+					TraceList[TraceIndex].IsOn = false;
+				}
 			}
 			ComPort.GoToLocal();
 		}
@@ -65,6 +103,7 @@ namespace SpiderU {
 					ComPort.Write(":WAVEFORM:START 0");
 					CommandString = string.Format(":WAVEFORM:END {0:D}", RecordLength - 1);
 					ComPort.Write(CommandString);
+
 					ComPort.Write(":WAVEFORM:OFFSET?");
 					string Response = ComPort.ReadString();
 					double Offset = Convert.ToDouble(Response);
@@ -72,6 +111,18 @@ namespace SpiderU {
 					ComPort.Write(":WAVEFORM:RANGE?");
 					Response = ComPort.ReadString();
 					double Range = Convert.ToDouble(Response);
+
+					double Divider = 24000.0;
+					switch ((ModuleTypeEnum)ModuleTypeID[TraceIndex]) {
+						case (ModuleTypeEnum.TemperatureModule):
+							Offset = 0.0;
+							Divider = 10.0;
+							break;
+						case (ModuleTypeEnum.StrainModule):
+							Divider = 48000.0;
+							break;
+					}
+	
 
 					ComPort.Write(":WAVEFORM:SEND?");
 					byte[] HeaderLengthByte = ComPort.ReadByteArray(2);
@@ -100,15 +151,13 @@ namespace SpiderU {
 					}
 					byte[] Garbage = ComPort.ReadByteArray(1);	// read one byte of EOS
 
-
+	
+	
 					for (int Index = 0; Index < RecordLength; Index++) {
-						TraceList[TraceIndex][Index] = TraceList[TraceIndex].Multiplier*(Range*RawData[Index]/12.5+Offset);
+						TraceList[TraceIndex][Index] = TraceList[TraceIndex].Multiplier * (Range * RawData[Index] * 10.0 / Divider + Offset);
 					}
 				}
 			}
-//			if AqOptionForm.TrigSingleCheckBox.Checked then begin
-//				ComDevice.Write(":START");
-//			end;
 			ComPort.GoToLocal();
 		}
 

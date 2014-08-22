@@ -50,18 +50,12 @@ namespace SpiderU {
 				}
 				H5GroupId scopeGroupID = H5G.create(fileID, "Oscilloscope1");	// one group for one oscilloscope
 
-				string GrooupComment = SList[0].Comment;
+				string GroupComment = SList[0].Comment;
 				for (int SIndex = 1; SIndex < SList.Count; SIndex++) {
-					GrooupComment = GrooupComment + SList[SIndex].Comment;
+					GroupComment = GroupComment + SList[SIndex].Comment;
 				}
-				if (GrooupComment != null) {
-					char[] GroupCommentChar = AEncoding.GetChars(AEncoding.GetBytes(GrooupComment));
-					long[] commentDimension = new long[1];
-					commentDimension[0] = GroupCommentChar.Length;
-					H5DataSpaceId commentSpaceID = H5S.create_simple(1, commentDimension);
-					H5AttributeId commentAttrID = H5A.create(scopeGroupID, "comment", UCharTypeID, commentSpaceID);
-					H5A.write<char>(commentAttrID, UCharTypeID, new H5Array<char>((GroupCommentChar)));
-					H5A.close(commentAttrID);
+				if (GroupComment != null) {
+					WriteAttributeString("comment", GroupComment, scopeGroupID);
 				}
 
 				long[] dataDimension = new long[1];
@@ -80,22 +74,8 @@ namespace SpiderU {
 
 				H5DataSetId traceDataSetID = H5D.create(scopeGroupID,
 					"stime", doubleTypeId, traceDataSpaceId);
-
-				byte[] labelByte = AEncoding.GetBytes("stime"); 
-				long[] labelDimension = new long[1];
-				labelDimension[0] = labelByte.Length;
-				H5DataSpaceId labelSpaceID = H5S.create_simple(1, labelDimension);
-				H5AttributeId labelID = H5A.create(traceDataSetID, "label", UCharTypeID, labelSpaceID);
-				H5A.write<byte>(labelID, UCharTypeID, new H5Array<byte>((labelByte)));
-				H5A.close(labelID);
-
-				byte[] unitByte = AEncoding.GetBytes("s");
-				long[] unitDimension = new long[1];
-				unitDimension[0] = unitByte.Length;
-				H5DataSpaceId unitSpaceID = H5S.create_simple(1, unitDimension);
-				H5AttributeId unitID = H5A.create(traceDataSetID, "unit", UCharTypeID, unitSpaceID);
-				H5A.write<byte>(unitID, UCharTypeID, new H5Array<byte>((unitByte)));
-				H5A.close(unitID);
+				WriteAttributeString("label", "stime", traceDataSetID);
+				WriteAttributeString("unit", "s", traceDataSetID);
 
 				double [] stime = new double[SList[0].DataLength];
 				for(int DIndex=0; DIndex < stime.Length; DIndex++){
@@ -110,19 +90,8 @@ namespace SpiderU {
 						string traceIDString = String.Format(traceIDNumFormat, traceIDNum);
 						traceDataSetID = H5D.create(scopeGroupID,
 							traceIDString, doubleTypeId, traceDataSpaceId);
-						labelByte = AEncoding.GetBytes(SList[SIndex].OnTrace[TIndex].TraceLabel);
-						labelDimension[0] = labelByte.Length;
-						labelSpaceID = H5S.create_simple(1, labelDimension);
-						labelID = H5A.create(traceDataSetID, "label", UCharTypeID, labelSpaceID);
-						H5A.write<byte>(labelID, UCharTypeID, new H5Array<byte>((labelByte)));
-						H5A.close(labelID);
-
-						unitByte = AEncoding.GetBytes(SList[SIndex].OnTrace[TIndex].TraceUnit);
-						unitDimension[0] = unitByte.Length;
-						unitSpaceID = H5S.create_simple(1, unitDimension);
-						unitID = H5A.create(traceDataSetID, "unit", UCharTypeID, unitSpaceID);
-						H5A.write<byte>(unitID, UCharTypeID, new H5Array<byte>((unitByte)));
-						H5A.close(unitID);
+						WriteAttributeString("label", SList[SIndex].OnTrace[TIndex].TraceLabel, traceDataSetID);
+						WriteAttributeString("unit", SList[SIndex].OnTrace[TIndex].TraceUnit, traceDataSetID);
 
 						H5D.write<double>(traceDataSetID, doubleTypeId, new H5Array<double>(SList[SIndex].OnTrace[TIndex].Data));
 						H5D.close(traceDataSetID);
@@ -131,26 +100,19 @@ namespace SpiderU {
 				}
 				H5G.close(scopeGroupID);
 			} else {
-				for (int SIndex = 1; SIndex < SList.Count; SIndex++) {
+				for (int SIndex = 0; SIndex < SList.Count; SIndex++) {
 					ScopeClass Scope = SList[SIndex];
-					string groupIDString = string.Format("Oscilloscope{0:d}", SIndex + 1);
+					string groupIDString = string.Format("DSO{0:d}", SIndex + 1);
 					H5GroupId groupID = H5G.create(fileID, groupIDString);
 
 					if (Scope.Comment != null) {
-						char[] CommentChar = AEncoding.GetChars(AEncoding.GetBytes(Scope.Comment));
-						long[] commentDimension = new long[1];
-						commentDimension[0] = CommentChar.Length;
-						H5DataSpaceId commentSpaceID = H5S.create_simple(1, commentDimension);
-						H5AttributeId commentAttrID = H5A.create(groupID, "comment", UCharTypeID, commentSpaceID);
-						H5A.write<char>(commentAttrID, UCharTypeID, new H5Array<char>((CommentChar)));
-						H5A.close(commentAttrID);
+						WriteAttributeString("comment", Scope.Comment, groupID);
 					}
 
 					long[] dataDimension = new long[1];
 					dataDimension[0] = Scope.DataLength; 					// one dataset for one trace
 					H5DataSpaceId traceDataSpaceId = H5S.create_simple(1, dataDimension);
 
-					
 					H5DataSetId traceDataSetID = H5D.create(groupID,"stime", doubleTypeId, traceDataSpaceId);
 
 					WriteAttributeString("label", "stime", traceDataSetID);
