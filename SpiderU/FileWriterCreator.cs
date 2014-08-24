@@ -40,8 +40,6 @@ namespace SpiderU {
 					return new LD1FileWriterClass(FileName);
 				case (".h5"):
 					return new HDF5FileWriterClass(FileName);
-				case (".mat"):
-					return new MatFileWriterClass(FileName);
 				default:
 					return null;
 					
