@@ -1,6 +1,6 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Express 2013 for Windows Desktop
+# Visual Studio 2013
 VisualStudioVersion = 12.0.30110.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SpiderU", "SpiderU\SpiderU.csproj", "{681F0387-6846-4A77-9D9E-45C6A84F06DE}"
@@ -12,7 +12,11 @@ Project("{6141683F-8A12-4E36-9623-2EB02B2C2303}") = "SetupSpiderU", "SetupSpider
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{7EEB2FA1-D475-42C0-872C-AA4E18ADD2C0}"
 	ProjectSection(SolutionItems) = preProject
-		SpiderHelpTop.html = SpiderHelpTop.html
+		Documents\SpiderUHelp\Connection.htm = Documents\SpiderUHelp\Connection.htm
+		Documents\SpiderUHelp\index.htm = Documents\SpiderUHelp\index.htm
+		Documents\SpiderUHelp\Spider.png = Documents\SpiderUHelp\Spider.png
+		Documents\SpiderUHelp\SpiderUHelp.chm = Documents\SpiderUHelp\SpiderUHelp.chm
+		Documents\SpiderUHelp\SpiderUHelp.hhp = Documents\SpiderUHelp\SpiderUHelp.hhp
 	EndProjectSection
 EndProject
 Global
