@@ -3842,8 +3842,8 @@
 		<row><td>ID_STRING2</td><td>1033</td><td>Ryuusando</td><td>0</td><td/><td>211975062</td></row>
 		<row><td>ID_STRING3</td><td>1033</td><td>http://ryuusando.web.fc2.com/</td><td>0</td><td/><td>211975062</td></row>
 		<row><td>ID_STRING4</td><td>1033</td><td> </td><td>0</td><td/><td>211975062</td></row>
-		<row><td>ID_STRING5</td><td>1033</td><td>NEWSHO~1|NewShortcut1</td><td>0</td><td/><td>211975062</td></row>
-		<row><td>ID_STRING6</td><td>1033</td><td>NEWSHO~1|NewShortcut2</td><td>0</td><td/><td>211975062</td></row>
+		<row><td>ID_STRING5</td><td>1033</td><td>SpiderU</td><td>0</td><td/><td>346209623</td></row>
+		<row><td>ID_STRING6</td><td>1033</td><td>SPIDER~1|SpiderU Help</td><td>0</td><td/><td>346164599</td></row>
 		<row><td>IIDS_UITEXT_FeatureUninstalled</td><td>1033</td><td>This feature will remain uninstalled.</td><td>0</td><td/><td>211975062</td></row>
 	</table>
 
