@@ -120,21 +120,21 @@
   <data name="cancelButton.Text" xml:space="preserve">
     <value>キャンセル</value>
   </data>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="label1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>142, 15</value>
+  </data>
+  <data name="label1.Text" xml:space="preserve">
+    <value>出力ファイルフォーマット</value>
+  </data>
   <data name="tabPage1.Text" xml:space="preserve">
     <value>ファイルフォーマット</value>
   </data>
-  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="label2.Size" type="System.Drawing.Size, System.Drawing">
     <value>117, 15</value>
   </data>
   <data name="label2.Text" xml:space="preserve">
     <value>ファイル名オプション</value>
-  </data>
-  <data name="useAutoFileNameCheckBox.Location" type="System.Drawing.Point, System.Drawing">
-    <value>225, 3</value>
-  </data>
-  <data name="useAutoFileNameCheckBox.Size" type="System.Drawing.Size, System.Drawing">
-    <value>144, 19</value>
   </data>
   <data name="useAutoFileNameCheckBox.Text" xml:space="preserve">
     <value>自動ファイル名を使う</value>
@@ -145,17 +145,11 @@
   <data name="label11.Text" xml:space="preserve">
     <value>自動ファイル名プレフィックス初期値</value>
   </data>
-  <data name="autoFileNamePrefixInitialValueTextBox.Location" type="System.Drawing.Point, System.Drawing">
-    <value>225, 35</value>
-  </data>
   <data name="label3.Size" type="System.Drawing.Size, System.Drawing">
     <value>164, 15</value>
   </data>
   <data name="label3.Text" xml:space="preserve">
     <value>自動ファイル名プレフィックス</value>
-  </data>
-  <data name="autoFileNamePrefixTextBox.Location" type="System.Drawing.Point, System.Drawing">
-    <value>225, 67</value>
   </data>
   <data name="label4.Size" type="System.Drawing.Size, System.Drawing">
     <value>67, 15</value>
@@ -163,20 +157,11 @@
   <data name="label4.Text" xml:space="preserve">
     <value>連番桁数</value>
   </data>
-  <data name="autoFileNumberDigitsNumericUpDown.Location" type="System.Drawing.Point, System.Drawing">
-    <value>225, 99</value>
-  </data>
   <data name="label10.Size" type="System.Drawing.Size, System.Drawing">
     <value>124, 15</value>
   </data>
   <data name="label10.Text" xml:space="preserve">
     <value>自動ファイル名番号</value>
-  </data>
-  <data name="autoFileNameSuffixTextBox.Location" type="System.Drawing.Point, System.Drawing">
-    <value>225, 163</value>
-  </data>
-  <data name="autoFileNumberValueNumericUpDown.Location" type="System.Drawing.Point, System.Drawing">
-    <value>225, 131</value>
   </data>
   <data name="label5.Size" type="System.Drawing.Size, System.Drawing">
     <value>154, 15</value>
@@ -189,9 +174,6 @@
   </data>
   <data name="label9.Text" xml:space="preserve">
     <value>自動ファイル名サンプル</value>
-  </data>
-  <data name="autoFileNameSampleLabel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>225, 192</value>
   </data>
   <data name="tabPage2.Text" xml:space="preserve">
     <value>ファイル名</value>
@@ -241,11 +223,14 @@
   <data name="tabPage3.Text" xml:space="preserve">
     <value>CSVオプション</value>
   </data>
-  <data name="label1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>142, 15</value>
+  <data name="syncAllScopeCheckBox.Size" type="System.Drawing.Size, System.Drawing">
+    <value>298, 19</value>
   </data>
-  <data name="label1.Text" xml:space="preserve">
-    <value>出力ファイルフォーマット</value>
+  <data name="syncAllScopeCheckBox.Text" xml:space="preserve">
+    <value>全てのオシロが同期していると見なして取り込む</value>
+  </data>
+  <data name="$this.Font" type="System.Drawing.Font, System.Drawing">
+    <value>MS UI Gothic, 11.25pt</value>
   </data>
   <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -5443,10 +5428,6 @@
         AAAAAAAfAAAAez58//8QGP//ggH//8AD//+AQ///gAP//6AB//8AAP//AAD//4AB//+AAf//gAP//8AD
         //+AAf//EAj//zoM//8=
 </value>
-  </data>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="$this.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>設定</value>

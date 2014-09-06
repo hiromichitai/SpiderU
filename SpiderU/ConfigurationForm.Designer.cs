@@ -33,28 +33,30 @@
 			this.tabPage2 = new System.Windows.Forms.TabPage();
 			this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
 			this.label2 = new System.Windows.Forms.Label();
+			this.useAutoFileNameCheckBox = new System.Windows.Forms.CheckBox();
 			this.label11 = new System.Windows.Forms.Label();
 			this.autoFileNamePrefixInitialValueTextBox = new System.Windows.Forms.TextBox();
 			this.label3 = new System.Windows.Forms.Label();
+			this.autoFileNamePrefixTextBox = new System.Windows.Forms.TextBox();
 			this.label4 = new System.Windows.Forms.Label();
 			this.autoFileNumberDigitsNumericUpDown = new System.Windows.Forms.NumericUpDown();
 			this.label10 = new System.Windows.Forms.Label();
+			this.autoFileNameSuffixTextBox = new System.Windows.Forms.TextBox();
 			this.autoFileNumberValueNumericUpDown = new System.Windows.Forms.NumericUpDown();
 			this.label5 = new System.Windows.Forms.Label();
 			this.label9 = new System.Windows.Forms.Label();
 			this.autoFileNameSampleLabel = new System.Windows.Forms.Label();
 			this.tabPage3 = new System.Windows.Forms.TabPage();
 			this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-			this.label7 = new System.Windows.Forms.Label();
-			this.label8 = new System.Windows.Forms.Label();
-			this.label6 = new System.Windows.Forms.Label();
-			this.useAutoFileNameCheckBox = new System.Windows.Forms.CheckBox();
-			this.autoFileNamePrefixTextBox = new System.Windows.Forms.TextBox();
-			this.autoFileNameSuffixTextBox = new System.Windows.Forms.TextBox();
 			this.addCommentLineCheckBox = new System.Windows.Forms.CheckBox();
+			this.label7 = new System.Windows.Forms.Label();
 			this.includeModelNameCheckBox = new System.Windows.Forms.CheckBox();
 			this.includeDateTimeCheckBox = new System.Windows.Forms.CheckBox();
+			this.label8 = new System.Windows.Forms.Label();
 			this.headerLineCheckBox = new System.Windows.Forms.CheckBox();
+			this.label6 = new System.Windows.Forms.Label();
+			this.tabPage4 = new System.Windows.Forms.TabPage();
+			this.syncAllScopeCheckBox = new System.Windows.Forms.CheckBox();
 			this.tabControl1.SuspendLayout();
 			this.tabPage1.SuspendLayout();
 			this.tabPage2.SuspendLayout();
@@ -63,6 +65,7 @@
 			((System.ComponentModel.ISupportInitialize)(this.autoFileNumberValueNumericUpDown)).BeginInit();
 			this.tabPage3.SuspendLayout();
 			this.tableLayoutPanel1.SuspendLayout();
+			this.tabPage4.SuspendLayout();
 			this.SuspendLayout();
 			// 
 			// OKButton
@@ -86,6 +89,7 @@
 			this.tabControl1.Controls.Add(this.tabPage1);
 			this.tabControl1.Controls.Add(this.tabPage2);
 			this.tabControl1.Controls.Add(this.tabPage3);
+			this.tabControl1.Controls.Add(this.tabPage4);
 			this.tabControl1.Name = "tabControl1";
 			this.tabControl1.SelectedIndex = 0;
 			// 
@@ -140,6 +144,16 @@
 			resources.ApplyResources(this.label2, "label2");
 			this.label2.Name = "label2";
 			// 
+			// useAutoFileNameCheckBox
+			// 
+			resources.ApplyResources(this.useAutoFileNameCheckBox, "useAutoFileNameCheckBox");
+			this.useAutoFileNameCheckBox.Checked = global::SpiderU.Properties.Settings.Default.useAutoFileName;
+			this.useAutoFileNameCheckBox.CheckState = System.Windows.Forms.CheckState.Checked;
+			this.useAutoFileNameCheckBox.DataBindings.Add(new System.Windows.Forms.Binding("Checked", global::SpiderU.Properties.Settings.Default, "useAutoFileName", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+			this.useAutoFileNameCheckBox.Name = "useAutoFileNameCheckBox";
+			this.useAutoFileNameCheckBox.UseVisualStyleBackColor = true;
+			this.useAutoFileNameCheckBox.CheckedChanged += new System.EventHandler(this.useAutoFileNameCheckBox_CheckedChanged);
+			// 
 			// label11
 			// 
 			resources.ApplyResources(this.label11, "label11");
@@ -155,6 +169,13 @@
 			// 
 			resources.ApplyResources(this.label3, "label3");
 			this.label3.Name = "label3";
+			// 
+			// autoFileNamePrefixTextBox
+			// 
+			this.autoFileNamePrefixTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", global::SpiderU.Properties.Settings.Default, "autoFileNamePrefix", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+			resources.ApplyResources(this.autoFileNamePrefixTextBox, "autoFileNamePrefixTextBox");
+			this.autoFileNamePrefixTextBox.Name = "autoFileNamePrefixTextBox";
+			this.autoFileNamePrefixTextBox.Text = global::SpiderU.Properties.Settings.Default.autoFileNamePrefix;
 			// 
 			// label4
 			// 
@@ -187,6 +208,13 @@
 			// 
 			resources.ApplyResources(this.label10, "label10");
 			this.label10.Name = "label10";
+			// 
+			// autoFileNameSuffixTextBox
+			// 
+			this.autoFileNameSuffixTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", global::SpiderU.Properties.Settings.Default, "autoFileNameSuffix", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+			resources.ApplyResources(this.autoFileNameSuffixTextBox, "autoFileNameSuffixTextBox");
+			this.autoFileNameSuffixTextBox.Name = "autoFileNameSuffixTextBox";
+			this.autoFileNameSuffixTextBox.Text = global::SpiderU.Properties.Settings.Default.autoFileNameSuffix;
 			// 
 			// autoFileNumberValueNumericUpDown
 			// 
@@ -242,45 +270,6 @@
 			this.tableLayoutPanel1.Controls.Add(this.label6, 0, 0);
 			this.tableLayoutPanel1.Name = "tableLayoutPanel1";
 			// 
-			// label7
-			// 
-			resources.ApplyResources(this.label7, "label7");
-			this.label7.Name = "label7";
-			// 
-			// label8
-			// 
-			resources.ApplyResources(this.label8, "label8");
-			this.label8.Name = "label8";
-			// 
-			// label6
-			// 
-			resources.ApplyResources(this.label6, "label6");
-			this.label6.Name = "label6";
-			// 
-			// useAutoFileNameCheckBox
-			// 
-			resources.ApplyResources(this.useAutoFileNameCheckBox, "useAutoFileNameCheckBox");
-			this.useAutoFileNameCheckBox.Checked = global::SpiderU.Properties.Settings.Default.useAutoFileName;
-			this.useAutoFileNameCheckBox.CheckState = System.Windows.Forms.CheckState.Checked;
-			this.useAutoFileNameCheckBox.DataBindings.Add(new System.Windows.Forms.Binding("Checked", global::SpiderU.Properties.Settings.Default, "useAutoFileName", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
-			this.useAutoFileNameCheckBox.Name = "useAutoFileNameCheckBox";
-			this.useAutoFileNameCheckBox.UseVisualStyleBackColor = true;
-			this.useAutoFileNameCheckBox.CheckedChanged += new System.EventHandler(this.useAutoFileNameCheckBox_CheckedChanged);
-			// 
-			// autoFileNamePrefixTextBox
-			// 
-			this.autoFileNamePrefixTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", global::SpiderU.Properties.Settings.Default, "autoFileNamePrefix", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
-			resources.ApplyResources(this.autoFileNamePrefixTextBox, "autoFileNamePrefixTextBox");
-			this.autoFileNamePrefixTextBox.Name = "autoFileNamePrefixTextBox";
-			this.autoFileNamePrefixTextBox.Text = global::SpiderU.Properties.Settings.Default.autoFileNamePrefix;
-			// 
-			// autoFileNameSuffixTextBox
-			// 
-			this.autoFileNameSuffixTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", global::SpiderU.Properties.Settings.Default, "autoFileNameSuffix", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
-			resources.ApplyResources(this.autoFileNameSuffixTextBox, "autoFileNameSuffixTextBox");
-			this.autoFileNameSuffixTextBox.Name = "autoFileNameSuffixTextBox";
-			this.autoFileNameSuffixTextBox.Text = global::SpiderU.Properties.Settings.Default.autoFileNameSuffix;
-			// 
 			// addCommentLineCheckBox
 			// 
 			resources.ApplyResources(this.addCommentLineCheckBox, "addCommentLineCheckBox");
@@ -290,6 +279,11 @@
 			this.addCommentLineCheckBox.Name = "addCommentLineCheckBox";
 			this.addCommentLineCheckBox.UseVisualStyleBackColor = true;
 			this.addCommentLineCheckBox.CheckedChanged += new System.EventHandler(this.commentLineCheckBox_CheckedChanged);
+			// 
+			// label7
+			// 
+			resources.ApplyResources(this.label7, "label7");
+			this.label7.Name = "label7";
 			// 
 			// includeModelNameCheckBox
 			// 
@@ -309,6 +303,11 @@
 			this.includeDateTimeCheckBox.Name = "includeDateTimeCheckBox";
 			this.includeDateTimeCheckBox.UseVisualStyleBackColor = true;
 			// 
+			// label8
+			// 
+			resources.ApplyResources(this.label8, "label8");
+			this.label8.Name = "label8";
+			// 
 			// headerLineCheckBox
 			// 
 			resources.ApplyResources(this.headerLineCheckBox, "headerLineCheckBox");
@@ -317,6 +316,27 @@
 			this.headerLineCheckBox.DataBindings.Add(new System.Windows.Forms.Binding("Checked", global::SpiderU.Properties.Settings.Default, "addHeader", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
 			this.headerLineCheckBox.Name = "headerLineCheckBox";
 			this.headerLineCheckBox.UseVisualStyleBackColor = true;
+			// 
+			// label6
+			// 
+			resources.ApplyResources(this.label6, "label6");
+			this.label6.Name = "label6";
+			// 
+			// tabPage4
+			// 
+			this.tabPage4.Controls.Add(this.syncAllScopeCheckBox);
+			resources.ApplyResources(this.tabPage4, "tabPage4");
+			this.tabPage4.Name = "tabPage4";
+			this.tabPage4.UseVisualStyleBackColor = true;
+			// 
+			// syncAllScopeCheckBox
+			// 
+			resources.ApplyResources(this.syncAllScopeCheckBox, "syncAllScopeCheckBox");
+			this.syncAllScopeCheckBox.Checked = global::SpiderU.Properties.Settings.Default.syncAllScope;
+			this.syncAllScopeCheckBox.CheckState = System.Windows.Forms.CheckState.Checked;
+			this.syncAllScopeCheckBox.DataBindings.Add(new System.Windows.Forms.Binding("Checked", global::SpiderU.Properties.Settings.Default, "syncAllScope", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+			this.syncAllScopeCheckBox.Name = "syncAllScopeCheckBox";
+			this.syncAllScopeCheckBox.UseVisualStyleBackColor = true;
 			// 
 			// ConfigurationForm
 			// 
@@ -343,6 +363,8 @@
 			this.tabPage3.PerformLayout();
 			this.tableLayoutPanel1.ResumeLayout(false);
 			this.tableLayoutPanel1.PerformLayout();
+			this.tabPage4.ResumeLayout(false);
+			this.tabPage4.PerformLayout();
 			this.ResumeLayout(false);
 			this.PerformLayout();
 
@@ -381,5 +403,7 @@
 		private System.Windows.Forms.TextBox autoFileNamePrefixInitialValueTextBox;
 		private System.Windows.Forms.Label label9;
 		private System.Windows.Forms.Label autoFileNameSampleLabel;
+		private System.Windows.Forms.TabPage tabPage4;
+		private System.Windows.Forms.CheckBox syncAllScopeCheckBox;
 	}
 }
