@@ -13,6 +13,7 @@ namespace SpiderU {
 	public partial class MainForm : Form {
 		private ComPortListClass ComPortList;
 		private ResourceManager rm;
+		private string saveDialogInitialDir = "";
 
 		public MainForm() {
 			InitializeComponent();
@@ -92,6 +93,7 @@ namespace SpiderU {
 				}
 				saveFileDialog1.FilterIndex = Properties.Settings.Default.outputFileFormatID+1;		// FilterIndex starts from 1, not 0
 				saveFileDialog1.FileName = FileName;
+				saveFileDialog1.InitialDirectory = saveDialogInitialDir;
 				if (saveFileDialog1.ShowDialog() == DialogResult.OK) {
 					FileWriterClass fWriter = FileWriterCreator.CreateFileWriter(saveFileDialog1.FileName);
 					fWriter.WriteFile();
@@ -99,6 +101,7 @@ namespace SpiderU {
 					if (Properties.Settings.Default.useAutoFileName) {
 						FileWriterCreator.incAutoFileNameNumber();
 					}
+					saveDialogInitialDir = System.IO.Path.GetDirectoryName(saveFileDialog1.FileName);
 				}
 			} else {
 				WarningDialog WDialog = new WarningDialog("UIMSGNOSCOPECONNECT"," in acquisitionToolStripMenuItem_Click");
