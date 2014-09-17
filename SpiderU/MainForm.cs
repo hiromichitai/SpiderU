@@ -119,8 +119,20 @@ namespace SpiderU {
 			AForm.ShowDialog();
 		}
 
-		private void showHelpToolStripMenuItem_Click(object sender, EventArgs e) {
+		private void showHelp() {
+			ResourceManager rm = new ResourceManager("SpiderU.FileNames", typeof(MainForm).Assembly);
+			string HelpFileName = System.IO.Path.GetDirectoryName(Application.ExecutablePath) + "\\" + rm.GetString("HELPFOLDER") + "\\SpiderUHelp.htm";
+			Help.ShowHelp(this, HelpFileName);
 
+		}
+
+
+		private void showHelpToolStripMenuItem_Click(object sender, EventArgs e) {
+			showHelp();
+		}
+
+		private void MainForm_HelpRequested(object sender, HelpEventArgs hlpevent) {
+			showHelp();
 		}
 
 

@@ -131,6 +131,16 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="FileNames.ja-JP.Designer.cs">
+      <DependentUpon>FileNames.ja-JP.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="FileNames.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>FileNames.resx</DependentUpon>
+    </Compile>
     <Compile Include="VersionInfoForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -204,6 +214,14 @@
     <Compile Include="WarningDialog.Designer.cs">
       <DependentUpon>WarningDialog.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="FileNames.ja-JP.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>FileNames.ja-JP.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FileNames.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>FileNames.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="VersionInfoForm.resx">
       <DependentUpon>VersionInfoForm.cs</DependentUpon>
     </EmbeddedResource>

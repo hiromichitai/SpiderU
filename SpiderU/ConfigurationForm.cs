@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Resources;
+
 
 namespace SpiderU {
 	public partial class ConfigurationForm : Form {
@@ -137,6 +139,13 @@ namespace SpiderU {
 		}
 
 		private void autoFileNamePrefixInitialValueTextBox_HelpRequested(object sender, HelpEventArgs hlpevent) {
+
+		}
+
+		private void helpButton_Click(object sender, EventArgs e) {
+			ResourceManager rm = new ResourceManager("SpiderU.FileNames", typeof(MainForm).Assembly);
+			string HelpFileName = System.IO.Path.GetDirectoryName(Application.ExecutablePath) + "\\" + rm.GetString("HELPFOLDER") + "\\Configuration.htm";
+			Help.ShowHelp(this, HelpFileName);
 
 		}
 

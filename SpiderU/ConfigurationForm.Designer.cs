@@ -57,6 +57,7 @@
 			this.label6 = new System.Windows.Forms.Label();
 			this.tabPage4 = new System.Windows.Forms.TabPage();
 			this.syncAllScopeCheckBox = new System.Windows.Forms.CheckBox();
+			this.helpButton = new System.Windows.Forms.Button();
 			this.tabControl1.SuspendLayout();
 			this.tabPage1.SuspendLayout();
 			this.tabPage2.SuspendLayout();
@@ -338,16 +339,23 @@
 			this.syncAllScopeCheckBox.Name = "syncAllScopeCheckBox";
 			this.syncAllScopeCheckBox.UseVisualStyleBackColor = true;
 			// 
+			// helpButton
+			// 
+			resources.ApplyResources(this.helpButton, "helpButton");
+			this.helpButton.Name = "helpButton";
+			this.helpButton.UseVisualStyleBackColor = true;
+			this.helpButton.Click += new System.EventHandler(this.helpButton_Click);
+			// 
 			// ConfigurationForm
 			// 
 			this.AcceptButton = this.OKButton;
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
 			this.CancelButton = this.cancelButton;
 			resources.ApplyResources(this, "$this");
+			this.Controls.Add(this.helpButton);
 			this.Controls.Add(this.tabControl1);
 			this.Controls.Add(this.cancelButton);
 			this.Controls.Add(this.OKButton);
-			this.HelpButton = true;
 			this.Name = "ConfigurationForm";
 			this.TopMost = true;
 			this.tabControl1.ResumeLayout(false);
@@ -405,5 +413,6 @@
 		private System.Windows.Forms.Label autoFileNameSampleLabel;
 		private System.Windows.Forms.TabPage tabPage4;
 		private System.Windows.Forms.CheckBox syncAllScopeCheckBox;
+		private System.Windows.Forms.Button helpButton;
 	}
 }
