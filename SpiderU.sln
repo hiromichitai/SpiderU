@@ -12,8 +12,14 @@ Project("{6141683F-8A12-4E36-9623-2EB02B2C2303}") = "SetupSpiderU", "SetupSpider
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{7EEB2FA1-D475-42C0-872C-AA4E18ADD2C0}"
 	ProjectSection(SolutionItems) = preProject
+		Documents\SpiderUHelp\Configuration-CSVoption.png = Documents\SpiderUHelp\Configuration-CSVoption.png
+		Documents\SpiderUHelp\Configuration-FFilenamepng.png = Documents\SpiderUHelp\Configuration-FFilenamepng.png
+		Documents\SpiderUHelp\Configuration-Fileformat.png = Documents\SpiderUHelp\Configuration-Fileformat.png
+		Documents\SpiderUHelp\Configuration-Synchronize.png = Documents\SpiderUHelp\Configuration-Synchronize.png
 		ConfigurationForm.htm = ConfigurationForm.htm
 		Documents\SpiderUHelp\Connection.htm = Documents\SpiderUHelp\Connection.htm
+		Documents\SpiderUHelp\NewScope.png = Documents\SpiderUHelp\NewScope.png
+		Documents\SpiderUHelp\scopesettingform.png = Documents\SpiderUHelp\scopesettingform.png
 		Documents\SpiderUHelp\Spider.png = Documents\SpiderUHelp\Spider.png
 		Documents\SpiderUHelp\SpiderUHelp.htm = Documents\SpiderUHelp\SpiderUHelp.htm
 	EndProjectSection
