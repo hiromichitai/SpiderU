@@ -122,7 +122,8 @@ namespace SpiderU {
 		private void showHelp() {
 			ResourceManager rm = new ResourceManager("SpiderU.FileNames", typeof(MainForm).Assembly);
 			string HelpFileName = System.IO.Path.GetDirectoryName(Application.ExecutablePath) + "\\" + rm.GetString("HELPFOLDER") + "\\SpiderUHelp.htm";
-			Help.ShowHelp(this, HelpFileName);
+			string HelpURI = "file:///" + HelpFileName;
+			Help.ShowHelp(this, HelpURI);
 
 		}
 

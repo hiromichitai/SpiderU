@@ -18,10 +18,13 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		Documents\SpiderUHelp\Configuration-Synchronize.png = Documents\SpiderUHelp\Configuration-Synchronize.png
 		ConfigurationForm.htm = ConfigurationForm.htm
 		Documents\SpiderUHelp\Connection.htm = Documents\SpiderUHelp\Connection.htm
+		Documents\SpiderUHelp\ja-JP\Connection.htm = Documents\SpiderUHelp\ja-JP\Connection.htm
 		Documents\SpiderUHelp\NewScope.png = Documents\SpiderUHelp\NewScope.png
 		Documents\SpiderUHelp\scopesettingform.png = Documents\SpiderUHelp\scopesettingform.png
 		Documents\SpiderUHelp\Spider.png = Documents\SpiderUHelp\Spider.png
+		Documents\SpiderUHelp\ja-JP\Spider.png = Documents\SpiderUHelp\ja-JP\Spider.png
 		Documents\SpiderUHelp\SpiderUHelp.htm = Documents\SpiderUHelp\SpiderUHelp.htm
+		Documents\SpiderUHelp\ja-JP\SpiderUHelp.htm = Documents\SpiderUHelp\ja-JP\SpiderUHelp.htm
 	EndProjectSection
 EndProject
 Global

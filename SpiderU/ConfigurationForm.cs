@@ -145,7 +145,8 @@ namespace SpiderU {
 		private void helpButton_Click(object sender, EventArgs e) {
 			ResourceManager rm = new ResourceManager("SpiderU.FileNames", typeof(MainForm).Assembly);
 			string HelpFileName = System.IO.Path.GetDirectoryName(Application.ExecutablePath) + "\\" + rm.GetString("HELPFOLDER") + "\\Configuration.htm";
-			Help.ShowHelp(this, HelpFileName);
+			string HelpURI = "file:///" + HelpFileName;
+			Help.ShowHelp(this, HelpURI);
 
 		}
 
