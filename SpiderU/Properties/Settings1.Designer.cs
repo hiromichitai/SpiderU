@@ -26,24 +26,24 @@ namespace SpiderU.Properties {
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("True")]
-        public bool addComment {
+        public bool CSVAddComment {
             get {
-                return ((bool)(this["addComment"]));
+                return ((bool)(this["CSVAddComment"]));
             }
             set {
-                this["addComment"] = value;
+                this["CSVAddComment"] = value;
             }
         }
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("True")]
-        public bool addHeader {
+        public bool CSVAddHeader {
             get {
-                return ((bool)(this["addHeader"]));
+                return ((bool)(this["CSVAddHeader"]));
             }
             set {
-                this["addHeader"] = value;
+                this["CSVAddHeader"] = value;
             }
         }
         
@@ -122,12 +122,12 @@ namespace SpiderU.Properties {
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("0")]
-        public int outputEncodingID {
+        public int CSVEncodingID {
             get {
-                return ((int)(this["outputEncodingID"]));
+                return ((int)(this["CSVEncodingID"]));
             }
             set {
-                this["outputEncodingID"] = value;
+                this["CSVEncodingID"] = value;
             }
         }
         
@@ -158,24 +158,24 @@ namespace SpiderU.Properties {
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("True")]
-        public bool includeModelName {
+        public bool CSVCommentIncludeModelName {
             get {
-                return ((bool)(this["includeModelName"]));
+                return ((bool)(this["CSVCommentIncludeModelName"]));
             }
             set {
-                this["includeModelName"] = value;
+                this["CSVCommentIncludeModelName"] = value;
             }
         }
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("True")]
-        public bool includeDateTime {
+        public bool CSVCommentIncludeDateTime {
             get {
-                return ((bool)(this["includeDateTime"]));
+                return ((bool)(this["CSVCommentIncludeDateTime"]));
             }
             set {
-                this["includeDateTime"] = value;
+                this["CSVCommentIncludeDateTime"] = value;
             }
         }
         

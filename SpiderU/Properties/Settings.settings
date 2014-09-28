@@ -2,10 +2,10 @@
 <SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="SpiderU.Properties" GeneratedClassName="Settings">
   <Profiles />
   <Settings>
-    <Setting Name="addComment" Type="System.Boolean" Scope="User">
+    <Setting Name="CSVAddComment" Type="System.Boolean" Scope="User">
       <Value Profile="(Default)">True</Value>
     </Setting>
-    <Setting Name="addHeader" Type="System.Boolean" Scope="User">
+    <Setting Name="CSVAddHeader" Type="System.Boolean" Scope="User">
       <Value Profile="(Default)">True</Value>
     </Setting>
     <Setting Name="useAutoFileName" Type="System.Boolean" Scope="User">
@@ -26,7 +26,7 @@
     <Setting Name="outputFileFormatID" Type="System.Int32" Scope="User">
       <Value Profile="(Default)">0</Value>
     </Setting>
-    <Setting Name="outputEncodingID" Type="System.Int32" Scope="User">
+    <Setting Name="CSVEncodingID" Type="System.Int32" Scope="User">
       <Value Profile="(Default)">0</Value>
     </Setting>
     <Setting Name="syncAllScope" Type="System.Boolean" Scope="User">
@@ -35,10 +35,10 @@
     <Setting Name="defaultAutoFileNameSuffixFormat" Type="System.String" Scope="User">
       <Value Profile="(Default)" />
     </Setting>
-    <Setting Name="includeModelName" Type="System.Boolean" Scope="User">
+    <Setting Name="CSVCommentIncludeModelName" Type="System.Boolean" Scope="User">
       <Value Profile="(Default)">True</Value>
     </Setting>
-    <Setting Name="includeDateTime" Type="System.Boolean" Scope="User">
+    <Setting Name="CSVCommentIncludeDateTime" Type="System.Boolean" Scope="User">
       <Value Profile="(Default)">True</Value>
     </Setting>
     <Setting Name="fontSize" Type="System.Int32" Scope="User">

@@ -37,7 +37,7 @@ namespace SpiderU {
 			try { 
 				if (Properties.Settings.Default.syncAllScope) {
 
-					if (Properties.Settings.Default.addComment) {
+					if (Properties.Settings.Default.CSVAddComment) {
 						SWriter.Write("# ");
 						SWriter.Write(SList[0].Comment);
 						for (int SIndex = 1; SIndex < SList.Count; SIndex++) {
@@ -46,7 +46,7 @@ namespace SpiderU {
 						SWriter.WriteLine();
 					}
 
-					if (Properties.Settings.Default.addHeader) {
+					if (Properties.Settings.Default.CSVAddHeader) {
 						SWriter.Write("Time(s)");
 						for (int SIndex = 0; SIndex < SList.Count; SIndex++) {
 							ScopeClass Scope = SList[SIndex];
@@ -73,11 +73,11 @@ namespace SpiderU {
 					for (int SIndex = 1; SIndex < SList.Count; SIndex++) {
 						ScopeClass Scope = SList[SIndex];
 
-						if (Properties.Settings.Default.addComment) {
+						if (Properties.Settings.Default.CSVAddComment) {
 							SWriter.WriteLine("# " + Scope.Comment);
 						}
 
-						if (Properties.Settings.Default.addHeader) {
+						if (Properties.Settings.Default.CSVAddHeader) {
 							SWriter.Write("Time(s)");
 							for (int TIndex = 0; TIndex < Scope.OnTrace.Count; TIndex++) {
 								SWriter.Write("," + Scope.OnTrace[TIndex].TraceLabel + "(" + Scope.OnTrace[TIndex].TraceUnit + ")");

@@ -61,11 +61,11 @@ namespace SpiderU {
         }
         
         /// <summary>
-        ///   Documens\Help に類似しているローカライズされた文字列を検索します。
+        ///   Documents/Help/SpiderUHelp.chm に類似しているローカライズされた文字列を検索します。
         /// </summary>
-        internal static string HELPFOLDER {
+        internal static string HELPFILE {
             get {
-                return ResourceManager.GetString("HELPFOLDER", resourceCulture);
+                return ResourceManager.GetString("HELPFILE", resourceCulture);
             }
         }
     }

@@ -1,0 +1,42 @@
+﻿<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<HTML>
+<HEAD>
+<meta name="GENERATOR" content="Microsoft&reg; HTML Help Workshop 4.1">
+<Title>出力ファイルフォーマット</Title>
+</HEAD>
+<BODY>
+    <h1>SpiderUがサポートする出力ファイルフォーマット</h1>
+
+<h2>CSVファイル</h2>
+<P>
+CSV(カンマ区切り値)ファイルはシンプルなテキストファイルです。SpiderUは、以下のようなCSVファイルを出力します。
+<ul>
+<li><B>フィールド区切り文字</B>:  カンマ(",")</li>
+<li><B>レコード区切り文字</B>: (CR)(LF)(CR=0x0d)(LF=0x0A)</li>
+<li><B>文字列のダブルクオートくくり</B>: 行いません</li>
+<li><B>文字エンコーディング</B>:ASCII, UTF-8, Unicode(UTF-16) 
+<li><B>BOM(バイト順序マーク)</B>:付与しません</li> 
+</ul>
+</P>
+<P>
+ASCII文字だけを（コメントやラベルなどに）使うのであれば、UTF-8エンコーディングはASCIIと同じになります。 
+日本語文字列のようなマルチバイト文字を使う場合、 UTF-8がおそらくもっとも移植性が高い選択となります。
+</P>
+
+<h2>HDF5ファイル</h2>
+<P>
+HDF5(Hierarchical Data Format 5)は、HDFグループによって開発された、階層化されたデータファイルフォーマット
+（および関連する技術）を意味しています。
+SpiderUは、以下のような HDF5ファイルを出力します
+<ul>
+
+<li>Comments for each DSO: property "comment", ASCII char array</li>
+<li>Comments for each DSO: property "comment", ASCII char array</li>
+
+
+</ul>
+ 
+</P>
+
+</BODY>
+</HTML>

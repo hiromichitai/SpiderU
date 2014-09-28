@@ -24,16 +24,22 @@ namespace SpiderU {
 				outputFileFormatComboBox.Items.Add(outputFileFormat);
 			}
 			outputFileFormatComboBox.SelectedIndex = Properties.Settings.Default.outputFileFormatID;
+			CSVEncodingComboBox.Items.Clear();
+			foreach (string csvEncoding in FileWriterClass.EncodingString) {
+				CSVEncodingComboBox.Items.Add(csvEncoding);
+			}
+			CSVEncodingComboBox.SelectedIndex = Properties.Settings.Default.CSVEncodingID;
+
 			useAutoFileNameCheckBox.Checked = Properties.Settings.Default.useAutoFileName;
 			autoFileNamePrefixInitialValueTextBox.Text = Properties.Settings.Default.autoFileNamePrefixInitialValue;
 			autoFileNamePrefixTextBox.Text = Properties.Settings.Default.autoFileNamePrefix;
 			autoFileNumberDigitsNumericUpDown.Value = Properties.Settings.Default.autoFileNameSerialDigits;
 			autoFileNumberValueNumericUpDown.Value = Properties.Settings.Default.autoFileNameSerialNumber;
 			autoFileNameSuffixTextBox.Text = Properties.Settings.Default.autoFileNameSuffix;
-			addCommentLineCheckBox.Checked = Properties.Settings.Default.addComment;
-			includeModelNameCheckBox.Checked = Properties.Settings.Default.includeModelName;
-			includeDateTimeCheckBox.Checked = Properties.Settings.Default.includeDateTime;
-			headerLineCheckBox.Checked = Properties.Settings.Default.addHeader;
+			addCommentLineCheckBox.Checked = Properties.Settings.Default.CSVAddComment;
+			includeModelNameCheckBox.Checked = Properties.Settings.Default.CSVCommentIncludeModelName;
+			includeDateTimeCheckBox.Checked = Properties.Settings.Default.CSVCommentIncludeDateTime;
+			headerLineCheckBox.Checked = Properties.Settings.Default.CSVAddHeader;
 			autoFileNamePrefixTextBox.Enabled = useAutoFileNameCheckBox.Checked;
 			autoFileNumberDigitsNumericUpDown.Enabled = useAutoFileNameCheckBox.Checked;
 			autoFileNameSuffixTextBox.Enabled = useAutoFileNameCheckBox.Checked;
@@ -53,10 +59,11 @@ namespace SpiderU {
 			Properties.Settings.Default.autoFileNameSerialDigits = (int)autoFileNumberDigitsNumericUpDown.Value;
 			Properties.Settings.Default.autoFileNameSuffix = autoFileNameSuffixTextBox.Text;
 			Properties.Settings.Default.autoFileNameSerialNumber = (int)autoFileNumberValueNumericUpDown.Value;
-			Properties.Settings.Default.addComment = addCommentLineCheckBox.Checked;
-			Properties.Settings.Default.includeModelName = includeModelNameCheckBox.Checked;
-			Properties.Settings.Default.includeDateTime = includeDateTimeCheckBox.Checked;
-			Properties.Settings.Default.addHeader = headerLineCheckBox.Checked;
+			Properties.Settings.Default.CSVAddComment = addCommentLineCheckBox.Checked;
+			Properties.Settings.Default.CSVCommentIncludeModelName = includeModelNameCheckBox.Checked;
+			Properties.Settings.Default.CSVCommentIncludeDateTime = includeDateTimeCheckBox.Checked;
+			Properties.Settings.Default.CSVAddHeader = headerLineCheckBox.Checked;
+			Properties.Settings.Default.CSVEncodingID = CSVEncodingComboBox.SelectedIndex;
 
 			Properties.Settings.Default.Save();
 		}
@@ -144,8 +151,7 @@ namespace SpiderU {
 
 		private void helpButton_Click(object sender, EventArgs e) {
 			ResourceManager rm = new ResourceManager("SpiderU.FileNames", typeof(MainForm).Assembly);
-			string HelpFileName = System.IO.Path.GetDirectoryName(Application.ExecutablePath) + "\\" + rm.GetString("HELPFOLDER") + "\\Configuration.htm";
-			string HelpURI = "file:///" + HelpFileName;
+			string HelpURI = rm.GetString("HELPFILE");
 			Help.ShowHelp(this, HelpURI);
 
 		}

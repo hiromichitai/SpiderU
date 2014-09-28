@@ -42,9 +42,13 @@ namespace SpiderU {
 		}
 
 		private void PutString(string stringData) {
-			byte[] stringBuffer = Encoding.ASCII.GetBytes(stringData);
-			PutInt(stringBuffer.Length);
-			FStream.Write(stringBuffer, 0, stringBuffer.Length);
+			if (stringData != null) {
+				byte[] stringBuffer = Encoding.ASCII.GetBytes(stringData);
+				PutInt(stringBuffer.Length);
+				FStream.Write(stringBuffer, 0, stringBuffer.Length);
+			} else {
+				PutInt(0);
+			}
 		}
 
 		public override void WriteFile() {

@@ -76,6 +76,7 @@ namespace SpiderU {
 
 	public abstract class ScopeClass {
 // ScopeClass is the abstract base class of all scope
+		private Pen[] PenSet = { Pens.Black, Pens.Red, Pens.Blue, Pens.Yellow, Pens.Green, Pens.Purple, Pens.Maroon, Pens.Violet };
 
 		protected ComPortClass ComPort;
 		protected int NumberOfChannel;
@@ -113,10 +114,10 @@ namespace SpiderU {
 		public string Comment {
 			get {
  				string CommentString = this.ScopeCommentString;
-				if(Properties.Settings.Default.includeDateTime){
+				if(Properties.Settings.Default.CSVCommentIncludeDateTime){
 					CommentString += " " + AcquisitionDateTimeString;
 				}
-				if(Properties.Settings.Default.includeDateTime){
+				if(Properties.Settings.Default.CSVCommentIncludeDateTime){
 					CommentString += " " + this.ModelName;
 				}
 				return CommentString; 
@@ -188,7 +189,9 @@ namespace SpiderU {
 			if (DataValid) {
 				Rectangle ClipRectangle = e.ClipRectangle;
 				Graphics Graph = e.Graphics;
+				int PenIndex = 0;
 				foreach (TraceClass Trace in OnTrace) {
+					Pen drawPen = PenSet[PenIndex % PenSet.Length];
 					double MaxY = Trace[0];
 					double MinY = Trace[0];
 					for (int Index = 0; Index < Trace.DataLength; Index++) {
@@ -208,8 +211,9 @@ namespace SpiderU {
 					Graph.ScaleTransform(1.0f * ClipRectangle.Width / Trace.DataLength, -1.0f * ClipRectangle.Height / (float)(MaxY - MinY), MatrixOrder.Append);
 					Graph.TranslateTransform(0, (float)ClipRectangle.Height, MatrixOrder.Append);
 					for (int DIndex = 1; DIndex < Trace.DataLength; DIndex++) {
-						Graph.DrawLine(Pens.Black, (float)(DIndex-1), (float)Trace[DIndex-1], (float)(DIndex), (float)Trace[DIndex]);
+						Graph.DrawLine(drawPen, (float)(DIndex-1), (float)Trace[DIndex-1], (float)(DIndex), (float)Trace[DIndex]);
 					}
+					PenIndex++;
 				}
 			}
 

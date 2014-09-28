@@ -18,6 +18,10 @@ namespace SpiderU
 			"CSV file(*.csv)","HDF5 file(*.h5)","LD1 file(*.ld1)"
 		};
 
+		public static string[] EncodingString = {
+			"ASCII", "UTF-8", "Unicode"
+		};
+
 		public enum EncodingEnum {
 			INVALID = -1, ASCII = 0, UTF8 = 1, UNICODE = 2
 		}
@@ -37,22 +41,8 @@ namespace SpiderU
 			}
 		}
 
-		public static string EncodingString(int EncodingID) {
-			switch(EncodingID){
-				case 0:
-					return "ASCII";
-				case 1:
-					return "UTF-8";
-				case 2:
-					return "Unicode";
-				default:
-					return "";
-
-			}
-		}
-
 		public System.Text.Encoding GetEncoding() {
-			switch (Properties.Settings.Default.outputEncodingID) {
+			switch (Properties.Settings.Default.CSVEncodingID) {
 				case((int)EncodingEnum.ASCII):
 					return new System.Text.ASCIIEncoding();
 				case((int)EncodingEnum.UTF8):

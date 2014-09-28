@@ -36,7 +36,6 @@
 			this.deviceListBox.Items.AddRange(new object[] {
             resources.GetString("deviceListBox.Items")});
 			this.deviceListBox.Name = "deviceListBox";
-			this.deviceListBox.SelectionMode = System.Windows.Forms.SelectionMode.MultiSimple;
 			// 
 			// OKButton
 			// 

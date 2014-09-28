@@ -72,6 +72,10 @@ namespace SpiderU {
 						ScopePictureBox.Width = flowLayoutPanel1.Width / flowLayoutPanel1.Controls.Count;
 					}
 					NewScopePictureBox.Paint += NewScope.DrawScope;
+					foreach (PictureBox ScopePictureBox in flowLayoutPanel1.Controls) {
+						ScopePictureBox.Refresh();
+					}
+
 				}
 				toolStripStatusLabel1.Text = GetUIString("UIMSGREADYSTATE");
 			}
@@ -85,7 +89,9 @@ namespace SpiderU {
 			toolStripStatusLabel1.Text = GetUIString("UIMSGCAPTURESTATE");
 			bool GWResult = await ScopeManager.GetWaveform();
 			if (GWResult) {
-				flowLayoutPanel1.Refresh();
+				foreach (PictureBox ScopePictureBox in flowLayoutPanel1.Controls) {
+					ScopePictureBox.Refresh();
+				}
 				toolStripStatusLabel1.Text = GetUIString("UIMSGWRITESTATE");
 				string FileName = "";
 				if (Properties.Settings.Default.useAutoFileName) {
@@ -121,10 +127,8 @@ namespace SpiderU {
 
 		private void showHelp() {
 			ResourceManager rm = new ResourceManager("SpiderU.FileNames", typeof(MainForm).Assembly);
-			string HelpFileName = System.IO.Path.GetDirectoryName(Application.ExecutablePath) + "\\" + rm.GetString("HELPFOLDER") + "\\SpiderUHelp.htm";
-			string HelpURI = "file:///" + HelpFileName;
+			string HelpURI = rm.GetString("HELPFILE");
 			Help.ShowHelp(this, HelpURI);
-
 		}
 
 

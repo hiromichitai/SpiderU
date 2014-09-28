@@ -1,0 +1,42 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<HTML>
+<HEAD>
+<meta name="GENERATOR" content="Microsoft&reg; HTML Help Workshop 4.1">
+<Title>File format</Title>
+</HEAD>
+<BODY>
+    <h1>SpiderU supported output file format</h1>
+
+<h2>CSV file</h2>
+<P>
+CSV(Comma-Separated Value) file is a plain text file. SpiderU generates simple CSV file
+as follows:
+<ul>
+<li><B>field separator</B>:  comma(",")</li>
+<li><B>record separator</B>: (CR=0x0d)(LF=0x0A)</li>
+<li><B>double quotation for string</B>: NOT used</li>
+<li><B>character code</B>:ASCII, UTF-8, Unicode(UTF-16) 
+<li><B>BOM(Byte Order Mark)</B>:NOT used</li> 
+</ul>
+</P>
+<P>
+If you use only ASCII character for string data(comments, headers), UTF-8 encoding is just the same as ASCII encoding. When multi-byte encoding is required, UTF-8 will be the most portable choice. 
+</P>
+
+<h2>HDF5 file</h2>
+<P>
+HDF5(Hierarchical Data Format 5) is a file format (and related technology)  developed by HDF Group.
+SpiderU generates HDF5 file as follows:
+<ul>
+
+
+<li>Comments for each DSO: property "comment", ASCII char array</li>
+<li>Comments for each DSO: property "comment", ASCII char array</li>
+
+
+</ul>
+ 
+</P>
+
+</BODY>
+</HTML>

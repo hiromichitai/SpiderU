@@ -156,3 +156,5 @@ $RECYCLE.BIN/
 .DS_Store
 *.dll
 /Documents/SpiderUHelp/__HPB_Recycled
+*.chm
+*.hhc
