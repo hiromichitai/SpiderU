@@ -1,15 +1,18 @@
 [OPTIONS]
 Compatibility=1.1 or later
 Compiled file=SpiderUHelp.chm
-Default topic=SpiderUHelp.htm
+Contents file=SpiderUHelp.hhc
+Default topic=Overview.htm
 Display compile progress=No
-Language=0x409 ‰pŒê (•Ä‘)
+Language=0x411 “ú–{Œê (“ú–{)
 Title=SpiderU Help
 
 
 [FILES]
 Connection.htm
-SpiderUHelp.htm
+ConfigurationForm.htm
+FileFormat.htm
+Overview.htm
 
 [INFOTYPES]
 
