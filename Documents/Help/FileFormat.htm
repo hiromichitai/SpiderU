@@ -27,14 +27,21 @@ If you use only ASCII character for string data(comments, headers), UTF-8 encodi
 <P>
 HDF5(Hierarchical Data Format 5) is a file format (and related technology)  developed by HDF Group.
 SpiderU generates HDF5 file as follows:
+</P>
+
+    <p><img src="HDF5-structure.png"></p>
+ 
 <ul>
-
-
-<li>Comments for each DSO: property "comment", ASCII char array</li>
-<li>Comments for each DSO: property "comment", ASCII char array</li>
-
-
+<li>Each DSO is represented by one HDF5 Group</li>
+<li>Comments for each DSO is stored as property "comment"</li>
+<li>Every channel and sampling time is stored as dataset.
+Name of dataset is Trace1,2.. for channel data, stime for sampling time.</li>
+<li>Label and Unit of channel is stored as property "label" and "commen" of dataset.</li>
 </ul>
+ 
+<h2>LD1 file</h2>
+<P>
+LD1 is a locally defined binary data format. The structure of LD1 is as follows:
  
 </P>
 
