@@ -13,7 +13,7 @@
     </p>
 
     <h2>Choose file format</h2>
-    <p><img src="Configuration-Fileformat.png"></p>
+    <p><img src="Configuration-Fileformat.png" height="300" alt="Configuration form file format selection"></p>
     <p>
         There are three output file formats supported:
     </p>
@@ -24,13 +24,58 @@
 <li>LD1(Locally defined Data file)</li> 
 </ul>
 <p>
-Detail of output file format will be found <a href=FileFormat.htm">here</a>
+Detail of output file format will be found <a href="FileFormat.htm">here</a>
 
     <h2>Auto file name</h2>
-    <p><img src="Configuration-Filename.png" border="0"></p>
+    <p><img src="Configuration-Filename.png" height="300" alt="configuration form auto filename setting"></p>
 
     <p>
- 
+        SpiderU can generate output file name automatically. Auto file name
+consits of prefix, serial number and suffix. Auto file name prefix can be generated  according to current date and time
+from meta character, specified by auto file name initial value. Format of 
+meta character is the same as .NET framework's data and time custom format string.
+</p> 
+<p>
+You can learn more at <a href="http://msdn.microsoft.com/en-us/library/8kb3ddd4">MSDN: Custom Date and Time Format Strings</a>
+</p>
+<p>
+For example, yyyyMMdd will be converted into something like 20141005.<br>
+Arbitrary string can be include in initial value by quoting in double quotes. For example, when you are collecting data about <B>VISITORS</B> from other planets, you can set auto file name initial value like<br>
+"Roswell-Greys-"MMM-dd-yyyy-<br>
+This meta string would be converted into, say,<br>
+Roswell-Greys-Sep-19-1961-<br>
+</p>
+
+   <h2>CSV file option</h2>
+    <p><img src="Configuration-CSV.png" height="300" alt="Configuration form CSV option">
+</p>
+
+    <p>
+        CSV file can include comment line and header line. Comment line
+begins by "#" character. Character encoding can be selected from
+<ul>
+<li>ASCII</li>
+<li>UTF-8</li>
+<li>Unicode</li>
+</ul>
+Detailed information will be found at <a href="Fileformat.htm">File format</a>.
     </p>
+
+   <h2>Synchronize</h2>
+    <p><img src="Configuration-Synchronize.png" height="300" alt="Configuration form synchronize option">
+</p>
+
+    <p>
+SpiderU can treat multiple number of DSOs as one many channel DSO.
+Using this option checked, SpiderU assumes that all DSOs are
+triggered by same trigger source and all DSO channes has same
+record length, same sampling time. Plaease make sure that
+<b>YOU</b> have to set DSOs synchoronized. Especially, triggering 
+synchronization may be not that easy. Theoretically, 
+synchronization would be accomplished not by the same
+model of DSOs. But, in practical case, using same model of DSOs
+will make it easy.    
+    </p>
+
 </body>
 </html>

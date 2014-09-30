@@ -27,16 +27,33 @@ ASCII文字だけを（コメントやラベルなどに）使うのであれば
 <P>
 HDF5(Hierarchical Data Format 5)は、HDFグループによって開発された、階層化されたデータファイルフォーマット
 （および関連する技術）を意味しています。
+</P>
+
+<P>
+HDF5に関する、より詳細な情報は、 <a href="http://www.hdfgroup.org/HDF5/">HDF5 HOME PAGE</a>を参照してください。
+</P>
+
+<P>
 SpiderUは、以下のような HDF5ファイルを出力します
+</P>
+
+    <p><img src="HDF5-structure.png"></p>
+ 
 <ul>
-
-<li>Comments for each DSO: property "comment", ASCII char array</li>
-<li>Comments for each DSO: property "comment", ASCII char array</li>
-
-
+<li>各オシロスコープは一つのHDF5データグループであらわされます</li>
+<li>オシロスコープのコメントは、"comment"という名前のプロパティとして格納されます</li>
+<li>各チャンネルデータとサンプリングタイムはデータセットとして表されます。
+データセットの名前は、チャンネルデータは"Trace1","Trace2"...で、
+サンプリングタイムは"stime"となります。</li>
+<li>チャンネルのラベルと単位は、それぞれ"label"および "comment"という名前のプロパティとしてデータセットに格納されます</li>
 </ul>
  
+<h2>LD1ファイル</h2>
+<P>
+LD1は独自定義のバイナリデータファイルフォーマットです。LD1の構造は以下のとおりです。
+ 
 </P>
+
 
 </BODY>
 </HTML>

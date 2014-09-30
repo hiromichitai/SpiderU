@@ -1,6 +1,6 @@
 ﻿<!DOCTYPE html>
 
-<html lang="en-US" xmlns="http://www.w3.org/1999/xhtml">
+<html lang="ja-JP" xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="utf-8" />
     <title>設定</title>
@@ -17,20 +17,71 @@
     <p>
         3種類の出力ファイルフォーマットから選択できます
     </p>
-
 <ul>
 <li>CSV(カンマ区切り値)ファイル</li>
-<li>HDF5(Hierarchical Data File &rarr; <a href="FileFormat.htm">詳細はこちら</a></li> 
-<li>LD1(Locally defined Data file &rarr; <a href=FileFormat.htm">詳細はこちら</a></li> 
-
+<li>HDF5(Hierarchical Data File 5)</li> 
+<li>LD1(独自仕様のバイナリファイル)</li> 
 </ul>
-
+<p>
+各出力ファイルフォーマットの詳細は <a href="FileFormat.htm">こちら</a>を参照。
 
     <h2>自動ファイル名</h2>
-    <p><img src="Configuration-FileName.png" border="0"></p>
+    <p><img src="Configuration-Filename.png" height="300" alt="configuration form auto filename setting"></p>
 
     <p>
- 
+        SpiderUは、出力ファイル名を自動的に生成できます。自動ファイル名は、
+プレフィックス、シリアル番号、サフィックスから成り立っています。 
+自動ファイル名プレフィックスは、SpiderU起動時の日時に基づいて
+メタキャラクターから生成できます。メタキャラクターは「自動ファイル名プレフィックス初期値」で
+設定します。
+メタキャラクターのフォーマットは、.NET frameworkの日付と時間の
+書式指定文字列と同じです。
+</p> 
+<p>
+より詳細な情報は、 <a href="http://msdn.microsoft.com/ja-jp/library/8kb3ddd4">MSDN: カスタムの日付と時刻の書式指定文字列</a>を参照してください。
+</p>
+
+<p>
+例えば、 yyyyMMdd は、 20141005 などに変換されます。<br>
+任意の文字列を挿入するには、ダブルクオート(")で囲って設定します。例えば、他の惑星からの<B>来訪者</B>についてのデータを集めるときには、自動ファイル名の初期値を<br>
+"リトルグレイ-"yyyy-MM-dd-<br>
+などとすれば、このメタキャラクタは<br>
+リトルグレイ-1961-09-19-<br>
+などと変換されます。
+
+</p>
+
+   <h2>CSVファイルオプション</h2>
+    <p><img src="Configuration-CSV.png" height="300" alt="Configuration form CSV option">
+</p>
+
+    <p>
+        CSVファイルには、コメント行とヘッダ行を含めることができます。コメント行は
+"#"文字から始まります。文字エンコーディングは以下の3種類から選択できます。
+<ul>
+<li>ASCII</li>
+<li>UTF-8</li>
+<li>Unicode</li>
+</ul>
+より詳細な情報は、<a href="FileFormat.htm">ファイルフォーマット</a>を参照してください。
     </p>
+
+   <h2>同期</h2>
+    <p><img src="Configuration-Synchronize.png" height="300" alt="Configuration form synchronize option">
+</p>
+
+    <p>
+SpiderUは多数のオシロスコープを、一つの多くのチャンネルを持つオシロスコープと
+して扱うことができます。このオプションをチェックすると、SpiderUは、
+すべてのオシロスコープが同じトリガソースからトリガされ、同じレコード長と
+同じサンプリングタイムを持つものとみなします。注意してほしいのは、
+実際にオシロスコープを全て同期するのは<B>ユーザ</B>だということです。
+特に、トリガを同期させるのはそれほど容易ではないでしょう。
+理論的には、異なるモデルのオシロスコープを混在させて
+同期的に動作させることは可能です。しかし、実際的には
+複数のオシロスコープを同期させるときには、同一モデルを
+用いるほうが容易に行えます。
+    </p>
+
 </body>
 </html>
