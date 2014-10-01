@@ -193,7 +193,7 @@ namespace SpiderU.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("\"yyyyMMdd\"-")]
+        [global::System.Configuration.DefaultSettingValueAttribute("yyyyMMdd-")]
         public string autoFileNamePrefixInitialValue {
             get {
                 return ((string)(this["autoFileNamePrefixInitialValue"]));

@@ -45,7 +45,7 @@
       <Value Profile="(Default)">10</Value>
     </Setting>
     <Setting Name="autoFileNamePrefixInitialValue" Type="System.String" Scope="User">
-      <Value Profile="(Default)">"yyyyMMdd"-</Value>
+      <Value Profile="(Default)">yyyyMMdd-</Value>
     </Setting>
   </Settings>
 </SettingsFile>

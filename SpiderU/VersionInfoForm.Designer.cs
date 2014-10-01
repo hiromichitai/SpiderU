@@ -63,7 +63,6 @@
 			this.label1.Size = new System.Drawing.Size(61, 15);
 			this.label1.TabIndex = 2;
 			this.label1.Text = "SpiderU ";
-			this.label1.Click += new System.EventHandler(this.label1_Click);
 			// 
 			// label2
 			// 
@@ -91,7 +90,7 @@
 			this.label3.TabIndex = 5;
 			this.label3.Text = "version";
 			// 
-			// AboutForm
+			// VersionInfoForm
 			// 
 			this.AcceptButton = this.OKButton;
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -105,7 +104,7 @@
 			this.Font = new System.Drawing.Font("MS UI Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
 			this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
 			this.Margin = new System.Windows.Forms.Padding(4);
-			this.Name = "AboutForm";
+			this.Name = "VersionInfoForm";
 			this.Text = "About SpiderU";
 			((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
 			this.ResumeLayout(false);
