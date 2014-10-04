@@ -42,8 +42,8 @@
 			this.toolStripStatusLabel2 = new System.Windows.Forms.ToolStripStatusLabel();
 			this.toolStripProgressBar1 = new System.Windows.Forms.ToolStripProgressBar();
 			this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
-			this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
 			this.helpProvider1 = new System.Windows.Forms.HelpProvider();
+			this.scopePanel = new System.Windows.Forms.Panel();
 			this.menuStrip1.SuspendLayout();
 			this.statusStrip1.SuspendLayout();
 			this.SuspendLayout();
@@ -164,21 +164,20 @@
 			this.toolStripProgressBar1.Name = "toolStripProgressBar1";
 			this.toolStripProgressBar1.Value = 50;
 			// 
-			// flowLayoutPanel1
-			// 
-			resources.ApplyResources(this.flowLayoutPanel1, "flowLayoutPanel1");
-			this.flowLayoutPanel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-			this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-			// 
 			// helpProvider1
 			// 
 			resources.ApplyResources(this.helpProvider1, "helpProvider1");
+			// 
+			// scopePanel
+			// 
+			resources.ApplyResources(this.scopePanel, "scopePanel");
+			this.scopePanel.Name = "scopePanel";
 			// 
 			// MainForm
 			// 
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
 			resources.ApplyResources(this, "$this");
-			this.Controls.Add(this.flowLayoutPanel1);
+			this.Controls.Add(this.scopePanel);
 			this.Controls.Add(this.statusStrip1);
 			this.Controls.Add(this.menuStrip1);
 			this.MainMenuStrip = this.menuStrip1;
@@ -213,8 +212,8 @@
 		private System.Windows.Forms.ToolStripProgressBar toolStripProgressBar1;
 		private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel1;
 		private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel2;
-		private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
 		private System.Windows.Forms.HelpProvider helpProvider1;
+		private System.Windows.Forms.Panel scopePanel;
 	}
 }
 

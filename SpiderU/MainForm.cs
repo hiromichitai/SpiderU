@@ -65,17 +65,18 @@ namespace SpiderU {
 					newScopeSettingItem.Click += scopeSettingToolStripMenuItem_Click;
 					scopeToolStripMenuItem.DropDownItems.Add((newScopeSettingItem));
 					PictureBox NewScopePictureBox = new PictureBox();
-					NewScopePictureBox.Width = flowLayoutPanel1.Width / ScopeManager.ScopeList.Count;
-					NewScopePictureBox.Height = flowLayoutPanel1.Height;
-					flowLayoutPanel1.Controls.Add(NewScopePictureBox);
-					foreach (PictureBox ScopePictureBox in flowLayoutPanel1.Controls) {
-						ScopePictureBox.Width = flowLayoutPanel1.Width / flowLayoutPanel1.Controls.Count;
+					scopePanel.Controls.Add(NewScopePictureBox);
+					for (int Index = 0; Index < scopePanel.Controls.Count; Index++) {
+						PictureBox scopePictureBox = (PictureBox)scopePanel.Controls[Index];
+						scopePictureBox.Width = scopePanel.Width / scopePanel.Controls.Count;
+						scopePictureBox.Height = scopePanel.Height;
+						Point pBoxLocation = new Point((Index - 1) * scopePanel.Width / scopePanel.Controls.Count,0);
+						scopePictureBox.Location = pBoxLocation;
 					}
 					NewScopePictureBox.Paint += NewScope.DrawScope;
-					foreach (PictureBox ScopePictureBox in flowLayoutPanel1.Controls) {
+					foreach (PictureBox ScopePictureBox in scopePanel.Controls) {
 						ScopePictureBox.Refresh();
 					}
-
 				}
 				toolStripStatusLabel1.Text = GetUIString("UIMSGREADYSTATE");
 			}
@@ -89,7 +90,7 @@ namespace SpiderU {
 			toolStripStatusLabel1.Text = GetUIString("UIMSGCAPTURESTATE");
 			bool GWResult = await ScopeManager.GetWaveform();
 			if (GWResult) {
-				foreach (PictureBox ScopePictureBox in flowLayoutPanel1.Controls) {
+				foreach (PictureBox ScopePictureBox in scopePanel.Controls) {
 					ScopePictureBox.Refresh();
 				}
 				toolStripStatusLabel1.Text = GetUIString("UIMSGWRITESTATE");

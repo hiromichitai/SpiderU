@@ -131,6 +131,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DL850.cs" />
     <Compile Include="FileNames.ja-JP.Designer.cs">
       <DependentUpon>FileNames.ja-JP.resx</DependentUpon>
       <AutoGen>True</AutoGen>

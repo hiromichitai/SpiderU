@@ -43,38 +43,17 @@ namespace SpiderU {
 			switch(NewComPort.VendorString){
 				case("YOKOGAWA"):
 					switch(NewComPort.ModelString){
-						case("DL1540"):
-							NewScope = new DLM2000(NewComPort,"DL1540", 4);
-							break;
-						case("DL1520"):
-							NewScope = new DLM2000(NewComPort, "DL1520", 2);
-							break;
-						case("DL1620"):
-							NewScope = new DLM2000(NewComPort, "DL1620", 2);
-							break;
-						case("DL1640"):
-							NewScope = new DLM2000(NewComPort, "DL1640", 4);
-							break;
 						case("DL1720"):
 							NewScope = new DL1700(NewComPort, "DL1720", 2);
 							break;
 						case("DL1740"):
 							NewScope = new DL1700(NewComPort, "DL1740", 4);
 							break;
-						case("DL4080"):
-							NewScope = new DLM2000(NewComPort, "DL4080", 4);
-							break;
 						case("DL750"):
 							NewScope = new DL750(NewComPort, "DL750", 16);
 							break;
 						case("DL850"):
 							NewScope = new DLM2000(NewComPort, "DL850", 4);
-							break;
-						case("DL708"):
-							NewScope = new DLM2000(NewComPort, "DL708", 8);
-							break;
-						case("DL716"):
-							NewScope = new DLM2000(NewComPort, "DL716", 16);
 							break;
 						case("DLM2022"):		// DLM2022
 							NewScope = new DLM2000(NewComPort, "DLM2022", 2);

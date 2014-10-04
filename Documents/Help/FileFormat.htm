@@ -36,14 +36,15 @@ Detailed information about HDF5 will be available at <a href="http://www.hdfgrou
 SpiderU generates HDF5 file as follows:
 </P>
 
-    <p><img src="HDF5-structure.png"></p>
+    <p><img src="HDF5-structure.png" width="300" alt="HDF5 file structure"></p>
  
 <ul>
 <li>Each DSO is represented by one HDF5 Group</li>
-<li>Comments for each DSO is stored as property "comment"</li>
+<li>Comments for each DSO is stored as attribute "comment"</li>
 <li>Every channel and sampling time is stored as dataset.
 Name of dataset is Trace1,2.. for channel data, stime for sampling time.</li>
-<li>Label and Unit of channel is stored as property "label" and "commen" of dataset.</li>
+<li>Label and Unit of channel is stored as attribute "label" and "commen" of dataset.</li>
+<li>Every strings(Comments, labels, units) are encoded in ASCII</li>
 </ul>
  
 <h2>LD1 file</h2>
