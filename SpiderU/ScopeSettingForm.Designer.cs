@@ -40,8 +40,8 @@
 			// 
 			// chComboBox
 			// 
-			this.chComboBox.FormattingEnabled = true;
 			resources.ApplyResources(this.chComboBox, "chComboBox");
+			this.chComboBox.FormattingEnabled = true;
 			this.chComboBox.Name = "chComboBox";
 			this.chComboBox.SelectionChangeCommitted += new System.EventHandler(this.chComboBox_SelectionChangeCommitted);
 			// 
@@ -82,16 +82,16 @@
 			// 
 			// OKButton
 			// 
-			this.OKButton.DialogResult = System.Windows.Forms.DialogResult.OK;
 			resources.ApplyResources(this.OKButton, "OKButton");
+			this.OKButton.DialogResult = System.Windows.Forms.DialogResult.OK;
 			this.OKButton.Name = "OKButton";
 			this.OKButton.UseVisualStyleBackColor = true;
 			this.OKButton.Click += new System.EventHandler(this.OKButton_Click);
 			// 
 			// cancelButton
 			// 
-			this.cancelButton.DialogResult = System.Windows.Forms.DialogResult.Cancel;
 			resources.ApplyResources(this.cancelButton, "cancelButton");
+			this.cancelButton.DialogResult = System.Windows.Forms.DialogResult.Cancel;
 			this.cancelButton.Name = "cancelButton";
 			this.cancelButton.UseVisualStyleBackColor = true;
 			this.cancelButton.Click += new System.EventHandler(this.cancelButton_Click);

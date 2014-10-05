@@ -33,12 +33,15 @@
 			this.tabPage2 = new System.Windows.Forms.TabPage();
 			this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
 			this.label2 = new System.Windows.Forms.Label();
+			this.useAutoFileNameCheckBox = new System.Windows.Forms.CheckBox();
 			this.label11 = new System.Windows.Forms.Label();
 			this.autoFileNamePrefixInitialValueTextBox = new System.Windows.Forms.TextBox();
 			this.label3 = new System.Windows.Forms.Label();
+			this.autoFileNamePrefixTextBox = new System.Windows.Forms.TextBox();
 			this.label4 = new System.Windows.Forms.Label();
 			this.autoFileNumberDigitsNumericUpDown = new System.Windows.Forms.NumericUpDown();
 			this.label10 = new System.Windows.Forms.Label();
+			this.autoFileNameSuffixTextBox = new System.Windows.Forms.TextBox();
 			this.autoFileNumberValueNumericUpDown = new System.Windows.Forms.NumericUpDown();
 			this.label5 = new System.Windows.Forms.Label();
 			this.label9 = new System.Windows.Forms.Label();
@@ -46,20 +49,17 @@
 			this.tabPage3 = new System.Windows.Forms.TabPage();
 			this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
 			this.label12 = new System.Windows.Forms.Label();
+			this.addCommentLineCheckBox = new System.Windows.Forms.CheckBox();
 			this.label7 = new System.Windows.Forms.Label();
+			this.includeModelNameCheckBox = new System.Windows.Forms.CheckBox();
+			this.includeDateTimeCheckBox = new System.Windows.Forms.CheckBox();
 			this.label8 = new System.Windows.Forms.Label();
+			this.headerLineCheckBox = new System.Windows.Forms.CheckBox();
 			this.label6 = new System.Windows.Forms.Label();
 			this.CSVEncodingComboBox = new System.Windows.Forms.ComboBox();
 			this.tabPage4 = new System.Windows.Forms.TabPage();
-			this.helpButton = new System.Windows.Forms.Button();
-			this.useAutoFileNameCheckBox = new System.Windows.Forms.CheckBox();
-			this.autoFileNamePrefixTextBox = new System.Windows.Forms.TextBox();
-			this.autoFileNameSuffixTextBox = new System.Windows.Forms.TextBox();
-			this.addCommentLineCheckBox = new System.Windows.Forms.CheckBox();
-			this.includeModelNameCheckBox = new System.Windows.Forms.CheckBox();
-			this.includeDateTimeCheckBox = new System.Windows.Forms.CheckBox();
-			this.headerLineCheckBox = new System.Windows.Forms.CheckBox();
 			this.syncAllScopeCheckBox = new System.Windows.Forms.CheckBox();
+			this.helpButton = new System.Windows.Forms.Button();
 			this.tabControl1.SuspendLayout();
 			this.tabPage1.SuspendLayout();
 			this.tabPage2.SuspendLayout();
@@ -147,6 +147,16 @@
 			resources.ApplyResources(this.label2, "label2");
 			this.label2.Name = "label2";
 			// 
+			// useAutoFileNameCheckBox
+			// 
+			resources.ApplyResources(this.useAutoFileNameCheckBox, "useAutoFileNameCheckBox");
+			this.useAutoFileNameCheckBox.Checked = global::SpiderU.Properties.Settings.Default.useAutoFileName;
+			this.useAutoFileNameCheckBox.CheckState = System.Windows.Forms.CheckState.Checked;
+			this.useAutoFileNameCheckBox.DataBindings.Add(new System.Windows.Forms.Binding("Checked", global::SpiderU.Properties.Settings.Default, "useAutoFileName", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+			this.useAutoFileNameCheckBox.Name = "useAutoFileNameCheckBox";
+			this.useAutoFileNameCheckBox.UseVisualStyleBackColor = true;
+			this.useAutoFileNameCheckBox.CheckedChanged += new System.EventHandler(this.useAutoFileNameCheckBox_CheckedChanged);
+			// 
 			// label11
 			// 
 			resources.ApplyResources(this.label11, "label11");
@@ -162,6 +172,13 @@
 			// 
 			resources.ApplyResources(this.label3, "label3");
 			this.label3.Name = "label3";
+			// 
+			// autoFileNamePrefixTextBox
+			// 
+			this.autoFileNamePrefixTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", global::SpiderU.Properties.Settings.Default, "autoFileNamePrefix", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+			resources.ApplyResources(this.autoFileNamePrefixTextBox, "autoFileNamePrefixTextBox");
+			this.autoFileNamePrefixTextBox.Name = "autoFileNamePrefixTextBox";
+			this.autoFileNamePrefixTextBox.Text = global::SpiderU.Properties.Settings.Default.autoFileNamePrefix;
 			// 
 			// label4
 			// 
@@ -194,6 +211,13 @@
 			// 
 			resources.ApplyResources(this.label10, "label10");
 			this.label10.Name = "label10";
+			// 
+			// autoFileNameSuffixTextBox
+			// 
+			this.autoFileNameSuffixTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", global::SpiderU.Properties.Settings.Default, "autoFileNameSuffix", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+			resources.ApplyResources(this.autoFileNameSuffixTextBox, "autoFileNameSuffixTextBox");
+			this.autoFileNameSuffixTextBox.Name = "autoFileNameSuffixTextBox";
+			this.autoFileNameSuffixTextBox.Text = global::SpiderU.Properties.Settings.Default.autoFileNameSuffix;
 			// 
 			// autoFileNumberValueNumericUpDown
 			// 
@@ -256,15 +280,48 @@
 			resources.ApplyResources(this.label12, "label12");
 			this.label12.Name = "label12";
 			// 
+			// addCommentLineCheckBox
+			// 
+			resources.ApplyResources(this.addCommentLineCheckBox, "addCommentLineCheckBox");
+			this.addCommentLineCheckBox.Checked = global::SpiderU.Properties.Settings.Default.CSVAddComment;
+			this.addCommentLineCheckBox.CheckState = System.Windows.Forms.CheckState.Checked;
+			this.addCommentLineCheckBox.Name = "addCommentLineCheckBox";
+			this.addCommentLineCheckBox.UseVisualStyleBackColor = true;
+			this.addCommentLineCheckBox.CheckedChanged += new System.EventHandler(this.commentLineCheckBox_CheckedChanged);
+			// 
 			// label7
 			// 
 			resources.ApplyResources(this.label7, "label7");
 			this.label7.Name = "label7";
 			// 
+			// includeModelNameCheckBox
+			// 
+			resources.ApplyResources(this.includeModelNameCheckBox, "includeModelNameCheckBox");
+			this.includeModelNameCheckBox.Checked = global::SpiderU.Properties.Settings.Default.CSVCommentIncludeModelName;
+			this.includeModelNameCheckBox.CheckState = System.Windows.Forms.CheckState.Checked;
+			this.includeModelNameCheckBox.Name = "includeModelNameCheckBox";
+			this.includeModelNameCheckBox.UseVisualStyleBackColor = true;
+			// 
+			// includeDateTimeCheckBox
+			// 
+			resources.ApplyResources(this.includeDateTimeCheckBox, "includeDateTimeCheckBox");
+			this.includeDateTimeCheckBox.Checked = global::SpiderU.Properties.Settings.Default.CSVCommentIncludeDateTime;
+			this.includeDateTimeCheckBox.CheckState = System.Windows.Forms.CheckState.Checked;
+			this.includeDateTimeCheckBox.Name = "includeDateTimeCheckBox";
+			this.includeDateTimeCheckBox.UseVisualStyleBackColor = true;
+			// 
 			// label8
 			// 
 			resources.ApplyResources(this.label8, "label8");
 			this.label8.Name = "label8";
+			// 
+			// headerLineCheckBox
+			// 
+			resources.ApplyResources(this.headerLineCheckBox, "headerLineCheckBox");
+			this.headerLineCheckBox.Checked = global::SpiderU.Properties.Settings.Default.CSVAddHeader;
+			this.headerLineCheckBox.CheckState = System.Windows.Forms.CheckState.Checked;
+			this.headerLineCheckBox.Name = "headerLineCheckBox";
+			this.headerLineCheckBox.UseVisualStyleBackColor = true;
 			// 
 			// label6
 			// 
@@ -284,70 +341,6 @@
 			this.tabPage4.Name = "tabPage4";
 			this.tabPage4.UseVisualStyleBackColor = true;
 			// 
-			// helpButton
-			// 
-			resources.ApplyResources(this.helpButton, "helpButton");
-			this.helpButton.Name = "helpButton";
-			this.helpButton.UseVisualStyleBackColor = true;
-			this.helpButton.Click += new System.EventHandler(this.helpButton_Click);
-			// 
-			// useAutoFileNameCheckBox
-			// 
-			resources.ApplyResources(this.useAutoFileNameCheckBox, "useAutoFileNameCheckBox");
-			this.useAutoFileNameCheckBox.Checked = global::SpiderU.Properties.Settings.Default.useAutoFileName;
-			this.useAutoFileNameCheckBox.CheckState = System.Windows.Forms.CheckState.Checked;
-			this.useAutoFileNameCheckBox.DataBindings.Add(new System.Windows.Forms.Binding("Checked", global::SpiderU.Properties.Settings.Default, "useAutoFileName", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
-			this.useAutoFileNameCheckBox.Name = "useAutoFileNameCheckBox";
-			this.useAutoFileNameCheckBox.UseVisualStyleBackColor = true;
-			this.useAutoFileNameCheckBox.CheckedChanged += new System.EventHandler(this.useAutoFileNameCheckBox_CheckedChanged);
-			// 
-			// autoFileNamePrefixTextBox
-			// 
-			this.autoFileNamePrefixTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", global::SpiderU.Properties.Settings.Default, "autoFileNamePrefix", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
-			resources.ApplyResources(this.autoFileNamePrefixTextBox, "autoFileNamePrefixTextBox");
-			this.autoFileNamePrefixTextBox.Name = "autoFileNamePrefixTextBox";
-			this.autoFileNamePrefixTextBox.Text = global::SpiderU.Properties.Settings.Default.autoFileNamePrefix;
-			// 
-			// autoFileNameSuffixTextBox
-			// 
-			this.autoFileNameSuffixTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", global::SpiderU.Properties.Settings.Default, "autoFileNameSuffix", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
-			resources.ApplyResources(this.autoFileNameSuffixTextBox, "autoFileNameSuffixTextBox");
-			this.autoFileNameSuffixTextBox.Name = "autoFileNameSuffixTextBox";
-			this.autoFileNameSuffixTextBox.Text = global::SpiderU.Properties.Settings.Default.autoFileNameSuffix;
-			// 
-			// addCommentLineCheckBox
-			// 
-			resources.ApplyResources(this.addCommentLineCheckBox, "addCommentLineCheckBox");
-			this.addCommentLineCheckBox.Checked = global::SpiderU.Properties.Settings.Default.CSVAddComment;
-			this.addCommentLineCheckBox.CheckState = System.Windows.Forms.CheckState.Checked;
-			this.addCommentLineCheckBox.Name = "addCommentLineCheckBox";
-			this.addCommentLineCheckBox.UseVisualStyleBackColor = true;
-			this.addCommentLineCheckBox.CheckedChanged += new System.EventHandler(this.commentLineCheckBox_CheckedChanged);
-			// 
-			// includeModelNameCheckBox
-			// 
-			resources.ApplyResources(this.includeModelNameCheckBox, "includeModelNameCheckBox");
-			this.includeModelNameCheckBox.Checked = global::SpiderU.Properties.Settings.Default.CSVCommentIncludeModelName;
-			this.includeModelNameCheckBox.CheckState = System.Windows.Forms.CheckState.Checked;
-			this.includeModelNameCheckBox.Name = "includeModelNameCheckBox";
-			this.includeModelNameCheckBox.UseVisualStyleBackColor = true;
-			// 
-			// includeDateTimeCheckBox
-			// 
-			resources.ApplyResources(this.includeDateTimeCheckBox, "includeDateTimeCheckBox");
-			this.includeDateTimeCheckBox.Checked = global::SpiderU.Properties.Settings.Default.CSVCommentIncludeDateTime;
-			this.includeDateTimeCheckBox.CheckState = System.Windows.Forms.CheckState.Checked;
-			this.includeDateTimeCheckBox.Name = "includeDateTimeCheckBox";
-			this.includeDateTimeCheckBox.UseVisualStyleBackColor = true;
-			// 
-			// headerLineCheckBox
-			// 
-			resources.ApplyResources(this.headerLineCheckBox, "headerLineCheckBox");
-			this.headerLineCheckBox.Checked = global::SpiderU.Properties.Settings.Default.CSVAddHeader;
-			this.headerLineCheckBox.CheckState = System.Windows.Forms.CheckState.Checked;
-			this.headerLineCheckBox.Name = "headerLineCheckBox";
-			this.headerLineCheckBox.UseVisualStyleBackColor = true;
-			// 
 			// syncAllScopeCheckBox
 			// 
 			resources.ApplyResources(this.syncAllScopeCheckBox, "syncAllScopeCheckBox");
@@ -356,6 +349,13 @@
 			this.syncAllScopeCheckBox.DataBindings.Add(new System.Windows.Forms.Binding("Checked", global::SpiderU.Properties.Settings.Default, "syncAllScope", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
 			this.syncAllScopeCheckBox.Name = "syncAllScopeCheckBox";
 			this.syncAllScopeCheckBox.UseVisualStyleBackColor = true;
+			// 
+			// helpButton
+			// 
+			resources.ApplyResources(this.helpButton, "helpButton");
+			this.helpButton.Name = "helpButton";
+			this.helpButton.UseVisualStyleBackColor = true;
+			this.helpButton.Click += new System.EventHandler(this.helpButton_Click);
 			// 
 			// ConfigurationForm
 			// 

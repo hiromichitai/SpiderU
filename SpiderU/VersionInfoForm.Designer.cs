@@ -36,7 +36,7 @@
 			// OKButton
 			// 
 			this.OKButton.DialogResult = System.Windows.Forms.DialogResult.OK;
-			this.OKButton.Location = new System.Drawing.Point(137, 273);
+			this.OKButton.Location = new System.Drawing.Point(127, 188);
 			this.OKButton.Margin = new System.Windows.Forms.Padding(4);
 			this.OKButton.Name = "OKButton";
 			this.OKButton.Size = new System.Drawing.Size(100, 29);
@@ -48,7 +48,7 @@
 			// pictureBox1
 			// 
 			this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-			this.pictureBox1.Location = new System.Drawing.Point(60, 25);
+			this.pictureBox1.Location = new System.Drawing.Point(144, 24);
 			this.pictureBox1.Margin = new System.Windows.Forms.Padding(4);
 			this.pictureBox1.Name = "pictureBox1";
 			this.pictureBox1.Size = new System.Drawing.Size(64, 64);
@@ -58,18 +58,18 @@
 			// label1
 			// 
 			this.label1.AutoSize = true;
-			this.label1.Location = new System.Drawing.Point(57, 108);
+			this.label1.Location = new System.Drawing.Point(34, 108);
 			this.label1.Name = "label1";
-			this.label1.Size = new System.Drawing.Size(61, 15);
+			this.label1.Size = new System.Drawing.Size(66, 16);
 			this.label1.TabIndex = 2;
 			this.label1.Text = "SpiderU ";
 			// 
 			// label2
 			// 
 			this.label2.AutoSize = true;
-			this.label2.Location = new System.Drawing.Point(57, 134);
+			this.label2.Location = new System.Drawing.Point(34, 134);
 			this.label2.Name = "label2";
-			this.label2.Size = new System.Drawing.Size(294, 15);
+			this.label2.Size = new System.Drawing.Size(309, 16);
 			this.label2.TabIndex = 3;
 			this.label2.Text = "Copyright(C) 2014 Ryuusando,　Hiromichi Tai";
 			// 
@@ -78,7 +78,7 @@
 			this.versionLabel.AutoSize = true;
 			this.versionLabel.Location = new System.Drawing.Point(187, 108);
 			this.versionLabel.Name = "versionLabel";
-			this.versionLabel.Size = new System.Drawing.Size(0, 15);
+			this.versionLabel.Size = new System.Drawing.Size(0, 16);
 			this.versionLabel.TabIndex = 4;
 			// 
 			// label3
@@ -86,7 +86,7 @@
 			this.label3.AutoSize = true;
 			this.label3.Location = new System.Drawing.Point(124, 108);
 			this.label3.Name = "label3";
-			this.label3.Size = new System.Drawing.Size(53, 15);
+			this.label3.Size = new System.Drawing.Size(56, 16);
 			this.label3.TabIndex = 5;
 			this.label3.Text = "version";
 			// 
@@ -94,14 +94,14 @@
 			// 
 			this.AcceptButton = this.OKButton;
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
-			this.ClientSize = new System.Drawing.Size(379, 328);
+			this.ClientSize = new System.Drawing.Size(379, 245);
 			this.Controls.Add(this.label3);
 			this.Controls.Add(this.versionLabel);
 			this.Controls.Add(this.label2);
 			this.Controls.Add(this.label1);
 			this.Controls.Add(this.pictureBox1);
 			this.Controls.Add(this.OKButton);
-			this.Font = new System.Drawing.Font("MS UI Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+			this.Font = new System.Drawing.Font("MS UI Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
 			this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
 			this.Margin = new System.Windows.Forms.Padding(4);
 			this.Name = "VersionInfoForm";
