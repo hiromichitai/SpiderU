@@ -294,6 +294,9 @@
   <data name="scopePanel.Location" type="System.Drawing.Point, System.Drawing">
     <value>20, 37</value>
   </data>
+  <data name="scopePanel.MinimumSize" type="System.Drawing.Size, System.Drawing">
+    <value>20, 20</value>
+  </data>
   <data name="scopePanel.Size" type="System.Drawing.Size, System.Drawing">
     <value>657, 310</value>
   </data>

@@ -210,8 +210,13 @@ namespace SpiderU {
 					Graph.ResetTransform();
 					Graph.ScaleTransform(1.0f * ClipRectangle.Width / Trace.DataLength, -1.0f * ClipRectangle.Height / (float)(MaxY - MinY), MatrixOrder.Append);
 					Graph.TranslateTransform(0, (float)ClipRectangle.Height, MatrixOrder.Append);
-					for (int DIndex = 1; DIndex < Trace.DataLength; DIndex++) {
-						Graph.DrawLine(drawPen, (float)(DIndex-1), (float)Trace[DIndex-1], (float)(DIndex), (float)Trace[DIndex]);
+					int SkipStep = Trace.DataLength / ClipRectangle.Width;
+					if (SkipStep < 1) {
+						SkipStep = 1;
+					}
+					for (int DIndex = SkipStep; DIndex < Trace.DataLength; DIndex += SkipStep) {
+						Graph.DrawLine(drawPen, (float)(DIndex - SkipStep), (float)Trace[DIndex - SkipStep],
+						  (float)(DIndex), (float)Trace[DIndex]);
 					}
 					PenIndex++;
 				}

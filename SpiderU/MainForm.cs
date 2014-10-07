@@ -68,9 +68,9 @@ namespace SpiderU {
 					scopePanel.Controls.Add(NewScopePictureBox);
 					for (int Index = 0; Index < scopePanel.Controls.Count; Index++) {
 						PictureBox scopePictureBox = (PictureBox)scopePanel.Controls[Index];
-						scopePictureBox.Width = scopePanel.Width / scopePanel.Controls.Count;
-						scopePictureBox.Height = scopePanel.Height;
-						Point pBoxLocation = new Point((Index - 1) * scopePanel.Width / scopePanel.Controls.Count,0);
+						scopePictureBox.Width = scopePanel.Width / scopePanel.Controls.Count - 5;
+						scopePictureBox.Height = scopePanel.Height - 5;
+						Point pBoxLocation = new Point((Index * scopePanel.Width) / scopePanel.Controls.Count,2);
 						scopePictureBox.Location = pBoxLocation;
 					}
 					NewScopePictureBox.Paint += NewScope.DrawScope;
