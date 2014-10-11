@@ -98,6 +98,7 @@ namespace SpiderU {
 
 					for (int SIndex = 0; SIndex < SList.Count; SIndex++) {
 						ScopeClass Scope = SList[SIndex];
+						double[] SampleTime = new double[Scope.DataLength];
 						PutInt(Scope.DataLength);
 
 						PutInt(Scope.OnTrace.Count + 1);	// +1 for time axis
@@ -110,8 +111,8 @@ namespace SpiderU {
 
 						double STime = 0.0;
 						for (int DIndex = 0; DIndex < Scope.DataLength; DIndex++) {
-							PutFloat(STime);
 							STime += Scope.SampleTime;
+							PutFloat(STime);
 							for (int TIndex = 0; TIndex < Scope.OnTrace.Count; TIndex++) {
 								PutFloat(Scope.OnTrace[TIndex][DIndex]);
 							}

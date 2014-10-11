@@ -51,9 +51,50 @@ SpiderUは、以下のような HDF5ファイルを出力します
 <h2>LD1ファイル</h2>
 <P>
 LD1は独自定義のバイナリデータファイルフォーマットです。LD1の構造は以下のとおりです。
- 
 </P>
 
+<ul>
+<li>32ビット整数</li>
+<li>32ビット浮動小数点数（単精度）</li>
+<li>ASCII文字列</li>
+</ul>
+</li>
+<li>エンディアンはリトルエンディアンです</li>
+<li>文字列の前には、その長さ（バイト数）が置かれます</li>
+<li>LD1ファイルには以下の要素が含まれます</li>
+<ul>
+<li>一つのコメント文字列</li>
+<li>一つ以上のデータブロック。一つのデータブロックは一つのオシロスコープに対応します </li>
+</ul> 
+<p>
+ファイル構造は以下の通り
+</p>
+<p>
+CommentLength: ３２ビット整数<br>
+Comment: ASCII文字のアレイ<br>
+NumDatablock: ３２ビット整数<br>
+（以下一つ以上のデータブロック）
+</p>
+<li>各データブロックは２つ以上のチャンネルデータを含みます</li>
+<li>チャンネルデータは、ラベルと単位を表す文字列と一つの点が４バイトの浮動小数点で
+表されるデータから成り立ちます</li>
+</ul> 
+<p>
+データブロックの構造:
+</p>
+<ul> 
+<li>DataLength: ３２ビット整数</li>
+<li>NumChannel: ３２ビット整数</li>
+<li>LabelLength: ３２ビット整数</li>
+<li>Label: ASCII文字アレイ</li>
+<li>UnitLength: ３２ビット整数</li>
+<li>Unit: ASCII文字アレイ</li>
+<li>ChannelData: ３２ビット浮動小数点数の２次元アレイ</li>
+</ul> 
+<p>
+チャンネルデータの順序は以下の通り<br>
+Channel[0][time0] Channel[1][time0] .... Channel[Max][time0] Channel[0][time1]...
+</p>
 
 </BODY>
 </HTML>

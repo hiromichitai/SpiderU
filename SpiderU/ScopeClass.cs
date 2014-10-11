@@ -76,7 +76,8 @@ namespace SpiderU {
 
 	public abstract class ScopeClass {
 // ScopeClass is the abstract base class of all scope
-		private Pen[] PenSet = { Pens.Black, Pens.Red, Pens.Blue, Pens.Yellow, Pens.Green, Pens.Purple, Pens.Maroon, Pens.Violet };
+		private Color[] ColorSet = { Color.Black, Color.Red, Color.Blue, Color.Brown, 
+									 Color.Green, Color.Purple, Color.Violet, Color.Pink };
 
 		protected ComPortClass ComPort;
 		protected int NumberOfChannel;
@@ -189,9 +190,9 @@ namespace SpiderU {
 			if (DataValid) {
 				Rectangle ClipRectangle = e.ClipRectangle;
 				Graphics Graph = e.Graphics;
-				int PenIndex = 0;
+				int ColorIndex = 0;
 				foreach (TraceClass Trace in OnTrace) {
-					Pen drawPen = PenSet[PenIndex % PenSet.Length];
+					Pen drawPen = new Pen(ColorSet[ColorIndex],2);
 					double MaxY = Trace[0];
 					double MinY = Trace[0];
 					for (int Index = 0; Index < Trace.DataLength; Index++) {
@@ -218,7 +219,7 @@ namespace SpiderU {
 						Graph.DrawLine(drawPen, (float)(DIndex - SkipStep), (float)Trace[DIndex - SkipStep],
 						  (float)(DIndex), (float)Trace[DIndex]);
 					}
-					PenIndex++;
+					ColorIndex++;
 				}
 			}
 

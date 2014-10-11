@@ -50,8 +50,51 @@ Name of dataset is Trace1,2.. for channel data, stime for sampling time.</li>
 <h2>LD1 file</h2>
 <P>
 LD1 is a locally defined binary data format. The structure of LD1 is as follows:
- 
-</P>
+
+<ul>
+
+<li>LD1 is a binary file. Used data types are: </li>
+<ul>
+<li>32bit integer</li>
+<li>32bit floating point (single)</li>
+<li>ASCII string</li>
+</ul>
+</li>
+<li>Endian is little endian</li>
+<li>Strings are prefixed by its length</li>
+<li>LD1 file contains </li>
+<ul>
+<li>One comment string</li>
+<li>One or more data block which corresponds to DSO </li>
+</ul> 
+<p>
+File structure is as follows:
+</p>
+<p>
+CommentLength: Integer<br>
+Comment: array of ASCII char<br>
+NumDatablock: Integer<br>
+DataBlock....
+</p>
+<li>Each data block contains two or more trace data</li>
+<li>Trace data contains label and unit as string, data as byte of single(4byte).</li>
+</ul> 
+<p>
+Structure of a data block is as follows:
+</p>
+<ul> 
+<li>DataLength: Integer</li>
+<li>NumChannel: Integer</li>
+<li>LabelLength: Integer</li>
+<li>Label: array of ASCII char</li>
+<li>UnitLength: Integer</li>
+<li>Unit: array of ASCII char</li>
+<li>ChannelData: 2-dimensional array of single(32bit float)</li>
+</ul> 
+<p>
+Order of  channel data is as follows<br>
+Channel[0][time0] Channel[1][time0] .... Channel[Max][time0] Channel[0][time1]...
+</p>
 
 </BODY>
 </HTML>

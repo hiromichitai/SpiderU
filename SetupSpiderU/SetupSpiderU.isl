@@ -1093,6 +1093,7 @@
 		<row><td>ISSelfRegisterFinalize</td><td>1</td><td>ISSELFREG.DLL</td><td>ISSelfRegisterFinalize</td><td/><td/></row>
 		<row><td>ISUnSelfRegisterFiles</td><td>3073</td><td>ISSELFREG.DLL</td><td>ISUnSelfRegisterFiles</td><td/><td/></row>
 		<row><td>SetARPINSTALLLOCATION</td><td>51</td><td>ARPINSTALLLOCATION</td><td>[INSTALLDIR]</td><td/><td/></row>
+		<row><td>SetARPReadme</td><td>51</td><td>ARPREADME</td><td>C:\Users\hiromichi\Projects\Visual Studio\Projects\SpiderU\Documents\SpiderU\ReadMe.txt</td><td/><td/></row>
 		<row><td>SetAllUsersProfileNT</td><td>51</td><td>ALLUSERSPROFILE</td><td>[%SystemRoot]\Profiles\All Users</td><td/><td/></row>
 		<row><td>ShowMsiLog</td><td>226</td><td>SystemFolder</td><td>[SystemFolder]notepad.exe "[MsiLogFileLocation]"</td><td/><td>Shows Property-driven MSI Log</td></row>
 		<row><td>setAllUsersProfile2K</td><td>51</td><td>ALLUSERSPROFILE</td><td>[%ALLUSERSPROFILE]</td><td/><td/></row>
@@ -1945,6 +1946,8 @@
 		<row><td>hdf5dotnet.dll</td><td>HDF5DotNet.dll</td><td>HDF5DO~1.DLL|HDF5DotNet.dll</td><td>0</td><td/><td/><td/><td>1</td><td>C:\Users\hiromichi\Projects\Visual Studio\Projects\SpiderU\DLL\HDF5\HDF5DotNet.dll</td><td>1</td><td/></row>
 		<row><td>lgpl_3.0.txt</td><td>ISX_DEFAULTCOMPONENT5</td><td>LGPL-3~1.TXT|lgpl-3.0.txt</td><td>0</td><td/><td/><td/><td>1</td><td>C:\Users\Hiromichi\Projects\Visual Studio\Projects\SpiderU\Documents\LibUsbDotNet\lgpl-3.0.txt</td><td>1</td><td/></row>
 		<row><td>libusbdotnet.dll</td><td>LibUsbDotNet.dll</td><td>LIBUSB~1.DLL|LibUsbDotNet.dll</td><td>0</td><td/><td/><td/><td>1</td><td>C:\Users\hiromichi\Projects\Visual Studio\Projects\SpiderU\DLL\libusb\LibUsbDotNet.dll</td><td>1</td><td/></row>
+		<row><td>readme.ja_jp.txt</td><td>ISX_DEFAULTCOMPONENT2</td><td>README~1.TXT|ReadMe.ja-JP.txt</td><td>0</td><td/><td/><td/><td>1</td><td>C:\Users\hiromichi\Projects\Visual Studio\Projects\SpiderU\Documents\SpiderU\ReadMe.ja-JP.txt</td><td>1</td><td/></row>
+		<row><td>readme.txt</td><td>ISX_DEFAULTCOMPONENT2</td><td>ReadMe.txt</td><td>0</td><td/><td/><td/><td>1</td><td>C:\Users\hiromichi\Projects\Visual Studio\Projects\SpiderU\Documents\SpiderU\ReadMe.txt</td><td>1</td><td/></row>
 		<row><td>spideru.exe</td><td>SpiderU.exe</td><td>SpiderU.exe</td><td>0</td><td/><td/><td/><td>1</td><td>C:\Users\hiromichi\Projects\Visual Studio\Projects\SpiderU\SpiderU\bin\x86\Release\SpiderU.exe</td><td>1</td><td/></row>
 		<row><td>spideru.exe.config</td><td>ISX_DEFAULTCOMPONENT3</td><td>SPIDER~1.CON|SpiderU.exe.config</td><td>0</td><td/><td/><td>0</td><td>1</td><td>C:\Users\hiromichi\Projects\Visual Studio\Projects\SpiderU\SpiderU\bin\x86\Release\SpiderU.exe.config</td><td>1</td><td/></row>
 		<row><td>spideru.pdb</td><td>ISX_DEFAULTCOMPONENT3</td><td>SpiderU.pdb</td><td>0</td><td/><td/><td/><td>1</td><td>C:\Users\hiromichi\Projects\Visual Studio\Projects\SpiderU\SpiderU\bin\x86\Release\SpiderU.pdb</td><td>1</td><td/></row>
@@ -2469,7 +2472,7 @@
 		<col key="yes" def="s72">ISProductConfiguration_</col>
 		<col key="yes" def="s72">Property</col>
 		<col def="L255">Value</col>
-		<row><td>Express</td><td>SetupFileName</td><td>SpiderU1-0-0</td></row>
+		<row><td>Express</td><td>SetupFileName</td><td>SpiderU-1-0-0</td></row>
 	</table>
 
 	<table name="ISRelease">
@@ -3865,6 +3868,7 @@
 	<table name="ISSwidtagProperty">
 		<col key="yes" def="s72">Name</col>
 		<col def="s0">Value</col>
+		<row><td>TagCreatorName</td><td>Ryuusando</td></row>
 		<row><td>UniqueId</td><td>D87EFAD2-F240-4206-8AAA-BFDFB7991823</td></row>
 	</table>
 
@@ -4058,6 +4062,7 @@
 		<row><td>SelfRegModules</td><td/><td>5600</td><td>SelfRegModules</td><td/></row>
 		<row><td>SelfUnregModules</td><td/><td>2200</td><td>SelfUnregModules</td><td/></row>
 		<row><td>SetARPINSTALLLOCATION</td><td/><td>1100</td><td>SetARPINSTALLLOCATION</td><td/></row>
+		<row><td>SetARPReadme</td><td/><td>1001</td><td/><td/></row>
 		<row><td>SetAllUsersProfileNT</td><td>VersionNT = 400</td><td>970</td><td/><td/></row>
 		<row><td>SetODBCFolders</td><td/><td>1200</td><td>SetODBCFolders</td><td/></row>
 		<row><td>StartServices</td><td>VersionNT</td><td>5900</td><td>StartServices</td><td/></row>
@@ -4140,6 +4145,7 @@ UwBpAG4AZwBsAGUASQBtAGEAZwBlAAEARQB4AHAAcgBlAHMAcwA=
 		<row><td>PatchWelcome</td><td>Installed And PATCH And Not IS_MAJOR_UPGRADE</td><td>1205</td><td>Patch Panel</td><td/></row>
 		<row><td>RMCCPSearch</td><td>Not CCP_SUCCESS And CCP_TEST</td><td>600</td><td>RMCCPSearch</td><td/></row>
 		<row><td>ResolveSource</td><td>Not Installed</td><td>990</td><td>ResolveSource</td><td/></row>
+		<row><td>SetARPReadme</td><td/><td>1001</td><td/><td/></row>
 		<row><td>SetAllUsersProfileNT</td><td>VersionNT = 400</td><td>970</td><td/><td/></row>
 		<row><td>SetupCompleteError</td><td/><td>-3</td><td>SetupCompleteError</td><td/></row>
 		<row><td>SetupCompleteSuccess</td><td/><td>-1</td><td>SetupCompleteSuccess</td><td/></row>
@@ -4411,6 +4417,7 @@ UwBpAG4AZwBsAGUASQBtAGEAZwBlAAEARQB4AHAAcgBlAHMAcwA=
 		<row><td>ARPHELPTELEPHONE</td><td>##ID_STRING4##</td><td/></row>
 		<row><td>ARPINSTALLLOCATION</td><td/><td/></row>
 		<row><td>ARPPRODUCTICON</td><td>ARPPRODUCTICON.exe</td><td/></row>
+		<row><td>ARPREADME</td><td>C:\Users\hiromichi\Projects\Visual Studio\Projects\SpiderU\Documents\SpiderU\ReadMe.txt</td><td/></row>
 		<row><td>ARPSIZE</td><td/><td/></row>
 		<row><td>ARPURLINFOABOUT</td><td>##ID_STRING1##</td><td/></row>
 		<row><td>AgreeToLicense</td><td>No</td><td/></row>
@@ -4666,7 +4673,7 @@ UwBpAG4AZwBsAGUASQBtAGEAZwBlAAEARQB4AHAAcgBlAHMAcwA=
 		<row><td>ArialBlueStrike10</td><td>Arial</td><td>10</td><td>16711680</td><td>8</td></row>
 		<row><td>CourierNew8</td><td>Courier New</td><td>8</td><td/><td/></row>
 		<row><td>CourierNew9</td><td>Courier New</td><td>9</td><td/><td/></row>
-		<row><td>ExpressDefault</td><td>Tahoma</td><td>11</td><td>0</td><td>0</td></row>
+		<row><td>ExpressDefault</td><td>Tahoma</td><td>12</td><td>0</td><td>0</td></row>
 		<row><td>MSGothic9</td><td>MS Gothic</td><td>9</td><td/><td/></row>
 		<row><td>MSSGreySerif8</td><td>MS Sans Serif</td><td>8</td><td>8421504</td><td/></row>
 		<row><td>MSSWhiteSerif8</td><td>Tahoma</td><td>8</td><td>16777215</td><td/></row>
