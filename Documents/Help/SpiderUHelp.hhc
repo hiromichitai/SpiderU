@@ -28,5 +28,9 @@
 		<param name="Name" value="Scope Setting">
 		<param name="Local" value="ScopeSetting.htm">
 		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="Acknowledgements">
+		<param name="Local" value="Acknowledgements.htm">
+		</OBJECT>
 </UL>
 </BODY></HTML>
