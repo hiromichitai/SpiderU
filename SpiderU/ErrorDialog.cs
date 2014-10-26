@@ -18,6 +18,7 @@ namespace SpiderU {
 		public ErrorDialog(string messageString) {
 			InitializeComponent();
 			messageTextBox.Text = messageString;
+			ActiveControl = OKButton;
 			ShowDialog();
 		}
 
@@ -28,6 +29,7 @@ namespace SpiderU {
 				messageString = rm.GetString(messageString);
 			}
 			messageTextBox.Text = messageString;
+			ActiveControl = OKButton;
 			ShowDialog();
 		}
 
@@ -47,6 +49,7 @@ namespace SpiderU {
 				}
 			}
 			messageTextBox.Text = messageString1 + " " + messageString2;
+			ActiveControl = OKButton;
 			ShowDialog();
 		}
 

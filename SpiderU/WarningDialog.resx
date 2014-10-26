@@ -150,31 +150,31 @@
   <data name="&gt;&gt;messageTextBox.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
-  <data name="okButton.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+  <data name="OKButton.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Bottom, Left</value>
   </data>
-  <data name="okButton.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="OKButton.Location" type="System.Drawing.Point, System.Drawing">
     <value>150, 203</value>
   </data>
-  <data name="okButton.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="OKButton.Size" type="System.Drawing.Size, System.Drawing">
     <value>75, 31</value>
   </data>
-  <data name="okButton.TabIndex" type="System.Int32, mscorlib">
+  <data name="OKButton.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
   </data>
-  <data name="okButton.Text" xml:space="preserve">
+  <data name="OKButton.Text" xml:space="preserve">
     <value>OK</value>
   </data>
-  <data name="&gt;&gt;okButton.Name" xml:space="preserve">
-    <value>okButton</value>
+  <data name="&gt;&gt;OKButton.Name" xml:space="preserve">
+    <value>OKButton</value>
   </data>
-  <data name="&gt;&gt;okButton.Type" xml:space="preserve">
+  <data name="&gt;&gt;OKButton.Type" xml:space="preserve">
     <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;okButton.Parent" xml:space="preserve">
+  <data name="&gt;&gt;OKButton.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
-  <data name="&gt;&gt;okButton.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;OKButton.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
