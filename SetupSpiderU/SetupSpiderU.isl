@@ -342,10 +342,6 @@
 		<row><td>HDF5DotNet.dll</td><td>{97228E18-5C9D-4EB5-9342-7221F0B32749}</td><td>INSTALLDIR</td><td>2</td><td/><td>hdf5dotnet.dll</td><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
 		<row><td>ISX_DEFAULTCOMPONENT</td><td>{E92D3AB4-6C64-4963-93D0-43EB089F0209}</td><td>DOCUMENTS</td><td>2</td><td/><td/><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
 		<row><td>ISX_DEFAULTCOMPONENT1</td><td>{6139E83A-C6AD-41FC-972E-77B4EDAB0097}</td><td>HDF5</td><td>2</td><td/><td/><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
-		<row><td>ISX_DEFAULTCOMPONENT10</td><td>{16EBA272-D834-4E60-A5D4-D63F29A3AD3D}</td><td>NI_488.2_3.1.2_3.12.49152__766303A5_3C5D_440F_9577_3DE160F84F6F_</td><td>2</td><td/><td/><td>9</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
-		<row><td>ISX_DEFAULTCOMPONENT11</td><td>{52B7508F-8F06-4164-B839-C8AFF64E9862}</td><td>NI_488.2_3.1.2_DEVELOPMENT_SUPPORT_3.12.49152__90EB9FED_CBF7_40E2</td><td>2</td><td/><td/><td>9</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
-		<row><td>ISX_DEFAULTCOMPONENT12</td><td>{258F4974-9B6C-46DC-8C50-FD08CF58ECF3}</td><td>NI_488.2_SUPPORT__FOR_.NET_4.0_13.0.00159__60BE4941_DAB0_4E61_BCA</td><td>2</td><td/><td/><td>9</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
-		<row><td>ISX_DEFAULTCOMPONENT13</td><td>{617F5D86-DA14-44DC-90A2-EA36A6572696}</td><td>NI_488.2_SUPPORT__FOR_.NET_4.5_13.0.00159__67A7EE6D_B4FF_4BD6_8B8</td><td>2</td><td/><td/><td>9</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
 		<row><td>ISX_DEFAULTCOMPONENT2</td><td>{6DCDFEC3-3904-4BDB-BBB7-4FEC1BC2FF0F}</td><td>SPIDERU1</td><td>2</td><td/><td/><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
 		<row><td>ISX_DEFAULTCOMPONENT3</td><td>{193476F9-A542-442B-9FEF-E4F5F624B4ED}</td><td>INSTALLDIR</td><td>2</td><td/><td/><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
 		<row><td>ISX_DEFAULTCOMPONENT4</td><td>{D40492AA-DCB8-4906-9A3B-5126B9FD6EF4}</td><td>JA_JP</td><td>2</td><td/><td/><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
@@ -353,7 +349,6 @@
 		<row><td>ISX_DEFAULTCOMPONENT6</td><td>{20984C70-3056-43D3-B716-0E794D072E80}</td><td>TMCTL</td><td>2</td><td/><td/><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
 		<row><td>ISX_DEFAULTCOMPONENT7</td><td>{DE0C64F9-EB54-4B7B-A7B3-E8C8525A0DC1}</td><td>HELP</td><td>2</td><td/><td/><td>9</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
 		<row><td>ISX_DEFAULTCOMPONENT8</td><td>{5F7B3E6F-B8C1-4DA7-A5A6-D03CF164CE81}</td><td>JA_JP1</td><td>2</td><td/><td/><td>9</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
-		<row><td>ISX_DEFAULTCOMPONENT9</td><td>{233052CF-13E8-44AC-A455-ACAB71E6A1B1}</td><td>NI_488.2</td><td>2</td><td/><td/><td>9</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
 		<row><td>LibUsbDotNet.dll</td><td>{6AC30B76-4833-469E-9685-A918ECC21FEE}</td><td>INSTALLDIR</td><td>2</td><td/><td>libusbdotnet.dll</td><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
 		<row><td>SpiderU.exe</td><td>{280D05E5-7B80-49D0-A4CE-7C76551DE6DD}</td><td>INSTALLDIR</td><td>2</td><td/><td>spideru.exe</td><td>9</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
 		<row><td>SpiderU.resources.dll</td><td>{C75A9ED4-40C8-4C8F-8488-81A16EE0B988}</td><td>JA_JP</td><td>2</td><td/><td>spideru.resources.dll</td><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
@@ -1081,7 +1076,6 @@
 		<row><td>HELP</td><td>ISX_DEFAULTCOMPONENT7</td></row>
 		<row><td>JA_JP</td><td>ISX_DEFAULTCOMPONENT4</td></row>
 		<row><td>JA_JP1</td><td>ISX_DEFAULTCOMPONENT8</td></row>
-		<row><td>NI_488.2</td><td>ISX_DEFAULTCOMPONENT9</td></row>
 	</table>
 
 	<table name="CustomAction">
@@ -1186,11 +1180,6 @@
 		<row><td>LocalAppDataFolder</td><td>TARGETDIR</td><td>.:LocalA~1|LocalAppData</td><td/><td>0</td><td/></row>
 		<row><td>MY_PRODUCT_NAME</td><td>RYUUSANDO</td><td>MYPROD~1|My Product Name</td><td/><td>0</td><td/></row>
 		<row><td>MyPicturesFolder</td><td>TARGETDIR</td><td>.:MyPict~1|MyPictures</td><td/><td>0</td><td/></row>
-		<row><td>NI_488.2</td><td>DOCUMENTS</td><td>NI-488.2</td><td/><td>0</td><td/></row>
-		<row><td>NI_488.2_3.1.2_3.12.49152__766303A5_3C5D_440F_9577_3DE160F84F6F_</td><td>NI_488.2</td><td>NI-488~1|NI-488.2 3.1.2 3.12.49152 {766303A5-3C5D-440F-9577-3DE160F84F6F}</td><td/><td>0</td><td/></row>
-		<row><td>NI_488.2_3.1.2_DEVELOPMENT_SUPPORT_3.12.49152__90EB9FED_CBF7_40E2</td><td>NI_488.2</td><td>NI-488~1|NI-488.2 3.1.2 Development Support 3.12.49152 {90EB9FED-CBF7-40E2-BE27-E4E71E79CDD9}</td><td/><td>0</td><td/></row>
-		<row><td>NI_488.2_SUPPORT__FOR_.NET_4.0_13.0.00159__60BE4941_DAB0_4E61_BCA</td><td>NI_488.2</td><td>NI-488~1|NI-488.2 Support  for .NET 4.0 13.0.00159 {60BE4941-DAB0-4E61-BCA5-DD8B5F819016}</td><td/><td>0</td><td/></row>
-		<row><td>NI_488.2_SUPPORT__FOR_.NET_4.5_13.0.00159__67A7EE6D_B4FF_4BD6_8B8</td><td>NI_488.2</td><td>NI-488~1|NI-488.2 Support  for .NET 4.5 13.0.00159 {67A7EE6D-B4FF-4BD6-8B81-7731A6104CF8}</td><td/><td>0</td><td/></row>
 		<row><td>NetHoodFolder</td><td>TARGETDIR</td><td>.:NetHood</td><td/><td>0</td><td/></row>
 		<row><td>PersonalFolder</td><td>TARGETDIR</td><td>.:Personal</td><td/><td>0</td><td/></row>
 		<row><td>PrimaryVolumePath</td><td>TARGETDIR</td><td>.:Primar~1|PrimaryVolumePath</td><td/><td>0</td><td/></row>
@@ -1911,10 +1900,6 @@
 		<row><td>AlwaysInstall</td><td>HDF5DotNet.dll</td></row>
 		<row><td>AlwaysInstall</td><td>ISX_DEFAULTCOMPONENT</td></row>
 		<row><td>AlwaysInstall</td><td>ISX_DEFAULTCOMPONENT1</td></row>
-		<row><td>AlwaysInstall</td><td>ISX_DEFAULTCOMPONENT10</td></row>
-		<row><td>AlwaysInstall</td><td>ISX_DEFAULTCOMPONENT11</td></row>
-		<row><td>AlwaysInstall</td><td>ISX_DEFAULTCOMPONENT12</td></row>
-		<row><td>AlwaysInstall</td><td>ISX_DEFAULTCOMPONENT13</td></row>
 		<row><td>AlwaysInstall</td><td>ISX_DEFAULTCOMPONENT2</td></row>
 		<row><td>AlwaysInstall</td><td>ISX_DEFAULTCOMPONENT3</td></row>
 		<row><td>AlwaysInstall</td><td>ISX_DEFAULTCOMPONENT4</td></row>
@@ -1922,7 +1907,6 @@
 		<row><td>AlwaysInstall</td><td>ISX_DEFAULTCOMPONENT6</td></row>
 		<row><td>AlwaysInstall</td><td>ISX_DEFAULTCOMPONENT7</td></row>
 		<row><td>AlwaysInstall</td><td>ISX_DEFAULTCOMPONENT8</td></row>
-		<row><td>AlwaysInstall</td><td>ISX_DEFAULTCOMPONENT9</td></row>
 		<row><td>AlwaysInstall</td><td>LibUsbDotNet.dll</td></row>
 		<row><td>AlwaysInstall</td><td>SpiderU.exe</td></row>
 		<row><td>AlwaysInstall</td><td>SpiderU.resources.dll</td></row>
@@ -1962,10 +1946,6 @@
 		<row><td>hdf5dotnet.dll</td><td>HDF5DotNet.dll</td><td>HDF5DO~1.DLL|HDF5DotNet.dll</td><td>0</td><td/><td/><td/><td>1</td><td>C:\Users\hiromichi\Projects\Visual Studio\Projects\SpiderU\DLL\HDF5\HDF5DotNet.dll</td><td>1</td><td/></row>
 		<row><td>lgpl_3.0.txt</td><td>ISX_DEFAULTCOMPONENT5</td><td>LGPL-3~1.TXT|lgpl-3.0.txt</td><td>0</td><td/><td/><td/><td>1</td><td>C:\Users\Hiromichi\Projects\Visual Studio\Projects\SpiderU\Documents\LibUsbDotNet\lgpl-3.0.txt</td><td>1</td><td/></row>
 		<row><td>libusbdotnet.dll</td><td>LibUsbDotNet.dll</td><td>LIBUSB~1.DLL|LibUsbDotNet.dll</td><td>0</td><td/><td/><td/><td>1</td><td>C:\Users\hiromichi\Projects\Visual Studio\Projects\SpiderU\DLL\libusb\LibUsbDotNet.dll</td><td>1</td><td/></row>
-		<row><td>notice.txt</td><td>ISX_DEFAULTCOMPONENT10</td><td>notice.txt</td><td>0</td><td/><td/><td/><td>1</td><td>C:\Users\hiromichi\Projects\Visual Studio\Projects\SpiderU\Documents\NI-488.2\NI-488.2 3.1.2 3.12.49152 {766303A5-3C5D-440F-9577-3DE160F84F6F}\notice.txt</td><td>1</td><td/></row>
-		<row><td>notice.txt1</td><td>ISX_DEFAULTCOMPONENT11</td><td>notice.txt</td><td>0</td><td/><td/><td/><td>1</td><td>C:\Users\hiromichi\Projects\Visual Studio\Projects\SpiderU\Documents\NI-488.2\NI-488.2 3.1.2 Development Support 3.12.49152 {90EB9FED-CBF7-40E2-BE27-E4E71E79CDD9}\notice.txt</td><td>1</td><td/></row>
-		<row><td>notice.txt2</td><td>ISX_DEFAULTCOMPONENT12</td><td>notice.txt</td><td>0</td><td/><td/><td/><td>1</td><td>C:\Users\hiromichi\Projects\Visual Studio\Projects\SpiderU\Documents\NI-488.2\NI-488.2 Support  for .NET 4.0 13.0.00159 {60BE4941-DAB0-4E61-BCA5-DD8B5F819016}\notice.txt</td><td>1</td><td/></row>
-		<row><td>notice.txt3</td><td>ISX_DEFAULTCOMPONENT13</td><td>notice.txt</td><td>0</td><td/><td/><td/><td>1</td><td>C:\Users\hiromichi\Projects\Visual Studio\Projects\SpiderU\Documents\NI-488.2\NI-488.2 Support  for .NET 4.5 13.0.00159 {67A7EE6D-B4FF-4BD6-8B81-7731A6104CF8}\notice.txt</td><td>1</td><td/></row>
 		<row><td>readme.ja_jp.txt</td><td>ISX_DEFAULTCOMPONENT2</td><td>README~1.TXT|ReadMe.ja-JP.txt</td><td>0</td><td/><td/><td/><td>1</td><td>C:\Users\hiromichi\Projects\Visual Studio\Projects\SpiderU\Documents\SpiderU\ReadMe.ja-JP.txt</td><td>1</td><td/></row>
 		<row><td>readme.txt</td><td>ISX_DEFAULTCOMPONENT2</td><td>ReadMe.txt</td><td>0</td><td/><td/><td/><td>1</td><td>C:\Users\hiromichi\Projects\Visual Studio\Projects\SpiderU\Documents\SpiderU\ReadMe.txt</td><td>1</td><td/></row>
 		<row><td>spideru.exe</td><td>SpiderU.exe</td><td>SpiderU.exe</td><td>0</td><td/><td/><td/><td>1</td><td>C:\Users\hiromichi\Projects\Visual Studio\Projects\SpiderU\SpiderU\bin\x86\Release\SpiderU.exe</td><td>1</td><td/></row>
@@ -2134,10 +2114,6 @@
 		<row><td>HDF5DotNet.dll</td><td/><td/><td>_642C8149_927D_426F_8681_C18C39C63736_FILTER</td><td/><td/><td/><td/></row>
 		<row><td>ISX_DEFAULTCOMPONENT</td><td/><td/><td>_2BE052A5_ECAE_4530_ACC1_1B36B2393124_FILTER</td><td/><td/><td/><td/></row>
 		<row><td>ISX_DEFAULTCOMPONENT1</td><td/><td/><td>_0A067028_C4AF_453E_9691_D74D0E41FC76_FILTER</td><td/><td/><td/><td/></row>
-		<row><td>ISX_DEFAULTCOMPONENT10</td><td/><td/><td>_6B8E3F93_81BE_41F0_8EEA_553B912FD971_FILTER</td><td/><td/><td/><td/></row>
-		<row><td>ISX_DEFAULTCOMPONENT11</td><td/><td/><td>_0E0E1931_28CB_45AA_BF86_0601561B2F2A_FILTER</td><td/><td/><td/><td/></row>
-		<row><td>ISX_DEFAULTCOMPONENT12</td><td/><td/><td>_5E47A8F6_170A_46C5_AF91_C8F7B28E8DB0_FILTER</td><td/><td/><td/><td/></row>
-		<row><td>ISX_DEFAULTCOMPONENT13</td><td/><td/><td>_9958F72C_F08A_48A2_B87F_B16B9EB2DE04_FILTER</td><td/><td/><td/><td/></row>
 		<row><td>ISX_DEFAULTCOMPONENT2</td><td/><td/><td>_8A90B7B3_AF9D_458A_8670_CEA41F502C4D_FILTER</td><td/><td/><td/><td/></row>
 		<row><td>ISX_DEFAULTCOMPONENT3</td><td/><td/><td>_608AD72A_F485_4AAD_9375_4E59B7E24B6E_FILTER</td><td/><td/><td/><td/></row>
 		<row><td>ISX_DEFAULTCOMPONENT4</td><td/><td/><td>_CA67C1A8_65B6_428E_B8D1_7CDE47354FF3_FILTER</td><td/><td/><td/><td/></row>
@@ -2145,7 +2121,6 @@
 		<row><td>ISX_DEFAULTCOMPONENT6</td><td/><td/><td>_D28D9621_CCF7_4AD1_A372_4A2A018BAC95_FILTER</td><td/><td/><td/><td/></row>
 		<row><td>ISX_DEFAULTCOMPONENT7</td><td/><td/><td>_FF5E9960_DFDA_4964_9B38_2F377C61FAF1_FILTER</td><td/><td/><td/><td/></row>
 		<row><td>ISX_DEFAULTCOMPONENT8</td><td/><td/><td>_BA8FB0D9_0182_41FB_9D08_B7D700CA929C_FILTER</td><td/><td/><td/><td/></row>
-		<row><td>ISX_DEFAULTCOMPONENT9</td><td/><td/><td>_F965FFB6_96F7_4744_B600_7A4D46C7639C_FILTER</td><td/><td/><td/><td/></row>
 		<row><td>LibUsbDotNet.dll</td><td/><td/><td>_104E87EA_FE14_4275_802A_DEFFFCC71410_FILTER</td><td/><td/><td/><td/></row>
 		<row><td>SpiderU.exe</td><td/><td/><td>_F2034F10_C1DF_4A56_8BF6_48FECE8F2E0E_FILTER</td><td/><td/><td/><td/></row>
 		<row><td>SpiderU.resources.dll</td><td/><td/><td>_A50E8AF7_3070_472E_A9C9_DD22F6FA0D39_FILTER</td><td/><td/><td/><td/></row>
@@ -2497,7 +2472,7 @@
 		<col key="yes" def="s72">ISProductConfiguration_</col>
 		<col key="yes" def="s72">Property</col>
 		<col def="L255">Value</col>
-		<row><td>Express</td><td>SetupFileName</td><td>SpiderU-1-0-0</td></row>
+		<row><td>Express</td><td>SetupFileName</td><td>SpiderU-1-1-0</td></row>
 	</table>
 
 	<table name="ISRelease">
@@ -3887,6 +3862,8 @@
 		<row><td>ID_STRING4</td><td>1033</td><td> </td><td>0</td><td/><td>211975062</td></row>
 		<row><td>ID_STRING5</td><td>1033</td><td>SpiderU</td><td>0</td><td/><td>346209623</td></row>
 		<row><td>ID_STRING6</td><td>1033</td><td>SPIDER~1|SpiderU Help</td><td>0</td><td/><td>346164599</td></row>
+		<row><td>ID_STRING7</td><td>1033</td><td>SPIDER~1|SpiderU Help</td><td>0</td><td/><td>1512270863</td></row>
+		<row><td>ID_STRING7</td><td>1041</td><td>NEWSHO~1|NewShortcut2</td><td>0</td><td/><td>1512252431</td></row>
 		<row><td>IIDS_UITEXT_FeatureUninstalled</td><td>1033</td><td>This feature will remain uninstalled.</td><td>0</td><td/><td>211975062</td></row>
 	</table>
 
@@ -3998,6 +3975,7 @@
 		<row><td>ARPPRODUCTICON.exe</td><td/><td>&lt;ISProductFolder&gt;\redist\Language Independent\OS Independent\setupicon.ico</td><td>0</td></row>
 		<row><td>NewShortcut1_B4E38A44927745C38B255A4D65D9F9B7.exe</td><td/><td>&lt;VSSolutionFolder&gt;\SpiderU\Spider24.ico</td><td>0</td></row>
 		<row><td>NewShortcut2_C5AD62D91BF44CD6AC4BB2C22E9CD93D.exe</td><td/><td>&lt;VSSolutionFolder&gt;\SpiderU\Spider24.ico</td><td>0</td></row>
+		<row><td>NewShortcut2_D116788B9D654E61AA8FCCAF0DB34116.exe</td><td/><td>&lt;VSSolutionFolder&gt;\Graphic\Spider24.ico</td><td>0</td></row>
 		<row><td>SpiderU.exe_0843B896DE8E44CBB1EB19BB9E09EC65.exe</td><td/><td>&lt;ISProductFolder&gt;\redist\Language Independent\OS Independent\GenericExe.ico</td><td>0</td></row>
 	</table>
 
@@ -4510,7 +4488,7 @@ UwBpAG4AZwBsAGUASQBtAGEAZwBlAAEARQB4AHAAcgBlAHMAcwA=
 		<row><td>PROGMSG_IIS_ROLLBACKWEBSERVICEEXTENSIONS</td><td>##IDS_PROGMSG_IIS_ROLLBACKWEBSERVICEEXTENSIONS##</td><td/></row>
 		<row><td>ProductCode</td><td>{F8640286-93C5-49A9-B129-7F1FC816EC2F}</td><td/></row>
 		<row><td>ProductName</td><td>SpiderU</td><td/></row>
-		<row><td>ProductVersion</td><td>1.00.0000</td><td/></row>
+		<row><td>ProductVersion</td><td>1.0.1</td><td/></row>
 		<row><td>ProgressType0</td><td>install</td><td/></row>
 		<row><td>ProgressType1</td><td>Installing</td><td/></row>
 		<row><td>ProgressType2</td><td>installed</td><td/></row>
@@ -4586,6 +4564,7 @@ UwBpAG4AZwBsAGUASQBtAGEAZwBlAAEARQB4AHAAcgBlAHMAcwA=
 		<col def="s72">DirProperty</col>
 		<col def="i2">InstallMode</col>
 		<row><td>NewShortcut1</td><td>SpiderU.exe</td><td/><td>spideru</td><td>2</td></row>
+		<row><td>NewShortcut2</td><td>SpiderUHelp.chm</td><td/><td>spideru</td><td>2</td></row>
 	</table>
 
 	<table name="RemoveIniFile">
@@ -4672,6 +4651,7 @@ UwBpAG4AZwBsAGUASQBtAGEAZwBlAAEARQB4AHAAcgBlAHMAcwA=
 		<col def="S255">ISShortcutName</col>
 		<col def="I4">ISAttributes</col>
 		<row><td>NewShortcut1</td><td>spideru</td><td>##ID_STRING5##</td><td>SpiderU.exe</td><td>[INSTALLDIR]SpiderU.exe</td><td/><td/><td/><td>NewShortcut1_B4E38A44927745C38B255A4D65D9F9B7.exe</td><td>0</td><td>1</td><td/><td/><td/><td/><td/><td/><td/><td/></row>
+		<row><td>NewShortcut2</td><td>spideru</td><td>##ID_STRING7##</td><td>SpiderUHelp.chm</td><td>[INSTALLDIR]Documents\Help\SpiderUHelp.chm</td><td/><td/><td/><td>NewShortcut2_D116788B9D654E61AA8FCCAF0DB34116.exe</td><td>0</td><td>1</td><td/><td/><td/><td/><td/><td/><td/><td/></row>
 	</table>
 
 	<table name="Signature">

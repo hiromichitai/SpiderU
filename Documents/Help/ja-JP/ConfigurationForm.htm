@@ -1,87 +1,86 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 
 <html lang="ja-JP" xmlns="http://www.w3.org/1999/xhtml">
 <head>
-    <meta charset="utf-8" />
-    <title>設定</title>
+    <title>�ݒ�</title>
 </head>
 
 <body>
-    <h1>設定</h1>
+    <h1>�ݒ�</h1>
     <p>
-        設定ウィンドウによって、SpiderU全体の設定を変更できます。その中には、出力ファイルフォーマットや自動ファイル名などが含まれます。
+        �ݒ�E�B���h�E�ɂ���āASpiderU�S�̂̐ݒ��ύX�ł��܂��B���̒��ɂ́A�o�̓t�@�C���t�H�[�}�b�g�⎩���t�@�C�����Ȃǂ��܂܂�܂��B
     </p>
 
-    <h2>出力ファイルフォーマットの選択</h2>
+    <h2>�o�̓t�@�C���t�H�[�}�b�g�̑I��</h2>
     <p><img src="Configuration-Fileformat.png" height="300" alt="configuration form"></p>
     <p>
-        3種類の出力ファイルフォーマットから選択できます
+        3��ނ̏o�̓t�@�C���t�H�[�}�b�g����I���ł��܂�
     </p>
 <ul>
-<li>CSV(カンマ区切り値)ファイル</li>
+<li>CSV(�J���}��؂�l)�t�@�C��</li>
 <li>HDF5(Hierarchical Data File 5)</li> 
-<li>LD1(独自仕様のバイナリファイル)</li> 
+<li>LD1(�Ǝ��d�l�̃o�C�i���t�@�C��)</li> 
 </ul>
 <p>
-各出力ファイルフォーマットの詳細は <a href="FileFormat.htm">こちら</a>を参照。
+�e�o�̓t�@�C���t�H�[�}�b�g�̏ڍׂ� <a href="FileFormat.htm">������</a>���Q�ƁB
 
-    <h2>自動ファイル名</h2>
+    <h2>�����t�@�C����</h2>
     <p><img src="Configuration-Filename.png" height="300" alt="configuration form auto filename setting"></p>
 
     <p>
-        SpiderUは、出力ファイル名を自動的に生成できます。自動ファイル名は、
-プレフィックス、シリアル番号、サフィックスから成り立っています。 
-自動ファイル名プレフィックスは、SpiderU起動時の日時に基づいて
-メタキャラクターから生成できます。メタキャラクターは「自動ファイル名プレフィックス初期値」で
-設定します。
-メタキャラクターのフォーマットは、.NET frameworkの日付と時間の
-書式指定文字列と同じです。
+        SpiderU�́A�o�̓t�@�C�����������I�ɐ����ł��܂��B�����t�@�C�����́A
+�v���t�B�b�N�X�A�V���A���ԍ��A�T�t�B�b�N�X���琬�藧���Ă��܂��B 
+�����t�@�C�����v���t�B�b�N�X�́ASpiderU�N�����̓����Ɋ�Â���
+���^�L�����N�^�[���琶���ł��܂��B���^�L�����N�^�[�́u�����t�@�C�����v���t�B�b�N�X�����l�v��
+�ݒ肵�܂��B
+���^�L�����N�^�[�̃t�H�[�}�b�g�́A.NET framework�̓��t�Ǝ��Ԃ�
+�����w�蕶����Ɠ����ł��B
 </p> 
 <p>
-より詳細な情報は、 <a href="http://msdn.microsoft.com/ja-jp/library/8kb3ddd4">MSDN: カスタムの日付と時刻の書式指定文字列</a>を参照してください。
+���ڍׂȏ��́A <a href="http://msdn.microsoft.com/ja-jp/library/8kb3ddd4">MSDN: �J�X�^���̓��t�Ǝ����̏����w�蕶����</a>���Q�Ƃ��Ă��������B
 </p>
 
 <p>
-例えば、 yyyyMMdd は、 20141005 などに変換されます。<br>
-任意の文字列を挿入するには、ダブルクオート(")で囲って設定します。例えば、他の惑星からの<B>来訪者</B>についてのデータを集めるときには、自動ファイル名の初期値を<br>
-"リトルグレイ-"yyyy-MM-dd-<br>
-などとすれば、このメタキャラクタは<br>
-リトルグレイ-1961-09-19-<br>
-などと変換されます。
+�Ⴆ�΁A yyyyMMdd �́A 20141005 �Ȃǂɕϊ�����܂��B<br>
+�C�ӂ̕������}������ɂ́A�_�u���N�I�[�g(")�ň͂��Đݒ肵�܂��B�Ⴆ�΁A���̘f�������<B>���K��</B>�ɂ��Ẵf�[�^���W�߂�Ƃ��ɂ́A�����t�@�C�����̏����l��<br>
+"���g���O���C-"yyyy-MM-dd-<br>
+�ȂǂƂ���΁A���̃��^�L�����N�^��<br>
+���g���O���C-1961-09-19-<br>
+�Ȃǂƕϊ�����܂��B
 
 </p>
 
-   <h2>CSVファイルオプション</h2>
+   <h2>CSV�t�@�C���I�v�V����</h2>
     <p><img src="Configuration-CSV.png" height="300" alt="Configuration form CSV option">
 </p>
 
     <p>
-        CSVファイルには、コメント行とヘッダ行を含めることができます。コメント行は
-"#"文字から始まります。文字エンコーディングは以下の3種類から選択できます。
+        CSV�t�@�C���ɂ́A�R�����g�s�ƃw�b�_�s���܂߂邱�Ƃ��ł��܂��B�R�����g�s��
+"#"��������n�܂�܂��B�����G���R�[�f�B���O�͈ȉ���3��ނ���I���ł��܂��B
 <ul>
 <li>ASCII</li>
 <li>UTF-8</li>
 <li>Unicode</li>
 </ul>
-より詳細な情報は、<a href="FileFormat.htm">ファイルフォーマット</a>を参照してください。
+���ڍׂȏ��́A<a href="FileFormat.htm">�t�@�C���t�H�[�}�b�g</a>���Q�Ƃ��Ă��������B
     </p>
 
-   <h2>同期</h2>
+   <h2>����</h2>
     <p>
 <img src="Configuration-Synchronize.png" height="300" alt="Configuration form synchronize option">
 </p>
 
     <p>
-SpiderUは多数のオシロスコープを、一つの多くのチャンネルを持つオシロスコープと
-して扱うことができます。このオプションをチェックすると、SpiderUは、
-すべてのオシロスコープが同じトリガソースからトリガされ、同じレコード長と
-同じサンプリングタイムを持つものとみなします。注意してほしいのは、
-実際にオシロスコープを全て同期するのは<B>ユーザ</B>だということです。
-特に、トリガを同期させるのはそれほど容易ではないでしょう。
-理論的には、異なるモデルのオシロスコープを混在させて
-同期的に動作させることは可能です。しかし、実際的には
-複数のオシロスコープを同期させるときには、同一モデルを
-用いるほうが容易に行えます。
+SpiderU�͑����̃I�V���X�R�[�v���A��̑����̃`�����l�������I�V���X�R�[�v��
+���Ĉ������Ƃ��ł��܂��B���̃I�v�V�������`�F�b�N����ƁASpiderU�́A
+���ׂẴI�V���X�R�[�v�������g���K�\�[�X����g���K����A�������R�[�h����
+�����T���v�����O�^�C���������̂Ƃ݂Ȃ��܂��B���ӂ��Ăق����̂́A
+���ۂɃI�V���X�R�[�v��S�ē�������̂�<B>���[�U</B>���Ƃ������Ƃł��B
+���ɁA�g���K�𓯊�������̂͂���قǗe�Ղł͂Ȃ��ł��傤�B
+���_�I�ɂ́A�قȂ郂�f���̃I�V���X�R�[�v�����݂�����
+�����I�ɓ��삳���邱�Ƃ͉\�ł��B�������A���ۓI�ɂ�
+�����̃I�V���X�R�[�v�𓯊�������Ƃ��ɂ́A���ꃂ�f����
+�p����ق����e�Ղɍs���܂��B
     </p>
 
 </body>

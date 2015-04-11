@@ -1,98 +1,98 @@
-﻿<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
 <HTML>
 <HEAD>
 <meta name="GENERATOR" content="Microsoft&reg; HTML Help Workshop 4.1">
-<Title>出力ファイルフォーマット</Title>
+<Title>�o�̓t�@�C���t�H�[�}�b�g</Title>
 </HEAD>
 <BODY>
-    <h1>SpiderUがサポートする出力ファイルフォーマット</h1>
+    <h1>SpiderU���T�|�[�g����o�̓t�@�C���t�H�[�}�b�g</h1>
 
-<h2>CSVファイル</h2>
+<h2>CSV�t�@�C��</h2>
 <P>
-CSV(カンマ区切り値)ファイルはシンプルなテキストファイルです。SpiderUは、以下のようなCSVファイルを出力します。
+CSV(�J���}��؂�l)�t�@�C���̓V���v���ȃe�L�X�g�t�@�C���ł��BSpiderU�́A�ȉ��̂悤��CSV�t�@�C�����o�͂��܂��B
 <ul>
-<li><B>フィールド区切り文字</B>:  カンマ(",")</li>
-<li><B>レコード区切り文字</B>: (CR)(LF)(CR=0x0d)(LF=0x0A)</li>
-<li><B>文字列のダブルクオートくくり</B>: 行いません</li>
-<li><B>文字エンコーディング</B>:ASCII, UTF-8, Unicode(UTF-16) 
-<li><B>BOM(バイト順序マーク)</B>:付与しません</li> 
+<li><B>�t�B�[���h��؂蕶��</B>:  �J���}(",")</li>
+<li><B>���R�[�h��؂蕶��</B>: (CR)(LF)(CR=0x0d)(LF=0x0A)</li>
+<li><B>������̃_�u���N�I�[�g������</B>: �s���܂���</li>
+<li><B>�����G���R�[�f�B���O</B>:ASCII, UTF-8, Unicode(UTF-16) 
+<li><B>BOM(�o�C�g�����}�[�N)</B>:�t�^���܂���</li> 
 </ul>
 </P>
 <P>
-ASCII文字だけを（コメントやラベルなどに）使うのであれば、UTF-8エンコーディングはASCIIと同じになります。 
-日本語文字列のようなマルチバイト文字を使う場合、 UTF-8がおそらくもっとも移植性が高い選択となります。
+ASCII�����������i�R�����g�⃉�x���ȂǂɁj�g���̂ł���΁AUTF-8�G���R�[�f�B���O��ASCII�Ɠ����ɂȂ�܂��B 
+���{�ꕶ����̂悤�ȃ}���`�o�C�g�������g���ꍇ�A UTF-8�������炭�����Ƃ��ڐA���������I���ƂȂ�܂��B
 </P>
 
-<h2>HDF5ファイル</h2>
+<h2>HDF5�t�@�C��</h2>
 <P>
-HDF5(Hierarchical Data Format 5)は、HDFグループによって開発された、階層化されたデータファイルフォーマット
-（および関連する技術）を意味しています。
-</P>
-
-<P>
-HDF5に関する、より詳細な情報は、 <a href="http://www.hdfgroup.org/HDF5/">HDF5 HOME PAGE</a>を参照してください。
+HDF5(Hierarchical Data Format 5)�́AHDF�O���[�v�ɂ���ĊJ�����ꂽ�A�K�w�����ꂽ�f�[�^�t�@�C���t�H�[�}�b�g
+�i����ъ֘A����Z�p�j���Ӗ����Ă��܂��B
 </P>
 
 <P>
-SpiderUは、以下のような HDF5ファイルを出力します
+HDF5�Ɋւ���A���ڍׂȏ��́A <a href="http://www.hdfgroup.org/HDF5/">HDF5 HOME PAGE</a>���Q�Ƃ��Ă��������B
+</P>
+
+<P>
+SpiderU�́A�ȉ��̂悤�� HDF5�t�@�C�����o�͂��܂�
 </P>
 
     <p><img src="HDF5-structure.png"></p>
  
 <ul>
-<li>各オシロスコープは一つのHDF5データグループであらわされます</li>
-<li>オシロスコープのコメントは、"comment"という名前のプロパティとして格納されます</li>
-<li>各チャンネルデータとサンプリングタイムはデータセットとして表されます。
-データセットの名前は、チャンネルデータは"Trace1","Trace2"...で、
-サンプリングタイムは"stime"となります。</li>
-<li>チャンネルのラベルと単位は、それぞれ"label"および "comment"という名前のプロパティとしてデータセットに格納されます</li>
+<li>�e�I�V���X�R�[�v�͈��HDF5�f�[�^�O���[�v�ł���킳��܂�</li>
+<li>�I�V���X�R�[�v�̃R�����g�́A"comment"�Ƃ������O�̃v���p�e�B�Ƃ��Ċi�[����܂�</li>
+<li>�e�`�����l���f�[�^�ƃT���v�����O�^�C���̓f�[�^�Z�b�g�Ƃ��ĕ\����܂��B
+�f�[�^�Z�b�g�̖��O�́A�`�����l���f�[�^��"Trace1","Trace2"...�ŁA
+�T���v�����O�^�C����"stime"�ƂȂ�܂��B</li>
+<li>�`�����l���̃��x���ƒP�ʂ́A���ꂼ��"label"����� "comment"�Ƃ������O�̃v���p�e�B�Ƃ��ăf�[�^�Z�b�g�Ɋi�[����܂�</li>
 </ul>
  
-<h2>LD1ファイル</h2>
+<h2>LD1�t�@�C��</h2>
 <P>
-LD1は独自定義のバイナリデータファイルフォーマットです。LD1の構造は以下のとおりです。
+LD1�͓Ǝ���`�̃o�C�i���f�[�^�t�@�C���t�H�[�}�b�g�ł��BLD1�̍\���͈ȉ��̂Ƃ���ł��B
 </P>
 
 <ul>
-<li>32ビット整数</li>
-<li>32ビット浮動小数点数（単精度）</li>
-<li>ASCII文字列</li>
+<li>32�r�b�g����</li>
+<li>32�r�b�g���������_���i�P���x�j</li>
+<li>ASCII������</li>
 </ul>
 </li>
-<li>エンディアンはリトルエンディアンです</li>
-<li>文字列の前には、その長さ（バイト数）が置かれます</li>
-<li>LD1ファイルには以下の要素が含まれます</li>
+<li>�G���f�B�A���̓��g���G���f�B�A���ł�</li>
+<li>������̑O�ɂ́A���̒����i�o�C�g���j���u����܂�</li>
+<li>LD1�t�@�C���ɂ͈ȉ��̗v�f���܂܂�܂�</li>
 <ul>
-<li>一つのコメント文字列</li>
-<li>一つ以上のデータブロック。一つのデータブロックは一つのオシロスコープに対応します </li>
+<li>��̃R�����g������</li>
+<li>��ȏ�̃f�[�^�u���b�N�B��̃f�[�^�u���b�N�͈�̃I�V���X�R�[�v�ɑΉ����܂� </li>
 </ul> 
 <p>
-ファイル構造は以下の通り
+�t�@�C���\���͈ȉ��̒ʂ�
 </p>
 <p>
-CommentLength: ３２ビット整数<br>
-Comment: ASCII文字のアレイ<br>
-NumDatablock: ３２ビット整数<br>
-（以下一つ以上のデータブロック）
+CommentLength: �R�Q�r�b�g����<br>
+Comment: ASCII�����̃A���C<br>
+NumDatablock: �R�Q�r�b�g����<br>
+�i�ȉ���ȏ�̃f�[�^�u���b�N�j
 </p>
-<li>各データブロックは２つ以上のチャンネルデータを含みます</li>
-<li>チャンネルデータは、ラベルと単位を表す文字列と一つの点が４バイトの浮動小数点で
-表されるデータから成り立ちます</li>
+<li>�e�f�[�^�u���b�N�͂Q�ȏ�̃`�����l���f�[�^���܂݂܂�</li>
+<li>�`�����l���f�[�^�́A���x���ƒP�ʂ�\��������ƈ�̓_���S�o�C�g�̕��������_��
+�\�����f�[�^���琬�藧���܂�</li>
 </ul> 
 <p>
-データブロックの構造:
+�f�[�^�u���b�N�̍\��:
 </p>
 <ul> 
-<li>DataLength: ３２ビット整数</li>
-<li>NumChannel: ３２ビット整数</li>
-<li>LabelLength: ３２ビット整数</li>
-<li>Label: ASCII文字アレイ</li>
-<li>UnitLength: ３２ビット整数</li>
-<li>Unit: ASCII文字アレイ</li>
-<li>ChannelData: ３２ビット浮動小数点数の２次元アレイ</li>
+<li>DataLength: �R�Q�r�b�g����</li>
+<li>NumChannel: �R�Q�r�b�g����</li>
+<li>LabelLength: �R�Q�r�b�g����</li>
+<li>Label: ASCII�����A���C</li>
+<li>UnitLength: �R�Q�r�b�g����</li>
+<li>Unit: ASCII�����A���C</li>
+<li>ChannelData: �R�Q�r�b�g���������_���̂Q�����A���C</li>
 </ul> 
 <p>
-チャンネルデータの順序は以下の通り<br>
+�`�����l���f�[�^�̏����͈ȉ��̒ʂ�<br>
 Channel[0][time0] Channel[1][time0] .... Channel[Max][time0] Channel[0][time1]...
 </p>
 
