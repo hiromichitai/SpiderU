@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2013
-VisualStudioVersion = 12.0.30723.0
+VisualStudioVersion = 12.0.31101.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SpiderU", "SpiderU\SpiderU.csproj", "{681F0387-6846-4A77-9D9E-45C6A84F06DE}"
 EndProject
@@ -41,6 +41,11 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		Documents\Help\ja-JP\SpiderUHelp.hhc = Documents\Help\ja-JP\SpiderUHelp.hhc
 		Documents\Help\SpiderUHelp.hhp = Documents\Help\SpiderUHelp.hhp
 		Documents\Help\ja-JP\SpiderUHelp.hhp = Documents\Help\ja-JP\SpiderUHelp.hhp
+	EndProjectSection
+EndProject
+Project("{6141683F-8A12-4E36-9623-2EB02B2C2303}") = "SetupSpiderU-ja", "SetupSpiderU-ja\SetupSpiderU-ja.isproj", "{51169320-C751-41F5-B59E-979B68AAA127}"
+	ProjectSection(ProjectDependencies) = postProject
+		{681F0387-6846-4A77-9D9E-45C6A84F06DE} = {681F0387-6846-4A77-9D9E-45C6A84F06DE}
 	EndProjectSection
 EndProject
 Global
@@ -97,6 +102,26 @@ Global
 		{6C41DFF1-3985-42D1-9A6B-523462ED7D4F}.SingleImage|Any CPU.Build.0 = SingleImage
 		{6C41DFF1-3985-42D1-9A6B-523462ED7D4F}.SingleImage|x86.ActiveCfg = SingleImage
 		{6C41DFF1-3985-42D1-9A6B-523462ED7D4F}.SingleImage|x86.Build.0 = SingleImage
+		{51169320-C751-41F5-B59E-979B68AAA127}.CD_ROM|Any CPU.ActiveCfg = CD_ROM
+		{51169320-C751-41F5-B59E-979B68AAA127}.CD_ROM|Any CPU.Build.0 = CD_ROM
+		{51169320-C751-41F5-B59E-979B68AAA127}.CD_ROM|x86.ActiveCfg = CD_ROM
+		{51169320-C751-41F5-B59E-979B68AAA127}.CD_ROM|x86.Build.0 = CD_ROM
+		{51169320-C751-41F5-B59E-979B68AAA127}.Debug|Any CPU.ActiveCfg = DVD-5
+		{51169320-C751-41F5-B59E-979B68AAA127}.Debug|Any CPU.Build.0 = DVD-5
+		{51169320-C751-41F5-B59E-979B68AAA127}.Debug|x86.ActiveCfg = DVD-5
+		{51169320-C751-41F5-B59E-979B68AAA127}.Debug|x86.Build.0 = DVD-5
+		{51169320-C751-41F5-B59E-979B68AAA127}.DVD-5|Any CPU.ActiveCfg = DVD-5
+		{51169320-C751-41F5-B59E-979B68AAA127}.DVD-5|Any CPU.Build.0 = DVD-5
+		{51169320-C751-41F5-B59E-979B68AAA127}.DVD-5|x86.ActiveCfg = DVD-5
+		{51169320-C751-41F5-B59E-979B68AAA127}.DVD-5|x86.Build.0 = DVD-5
+		{51169320-C751-41F5-B59E-979B68AAA127}.Release|Any CPU.ActiveCfg = SingleImage
+		{51169320-C751-41F5-B59E-979B68AAA127}.Release|Any CPU.Build.0 = SingleImage
+		{51169320-C751-41F5-B59E-979B68AAA127}.Release|x86.ActiveCfg = SingleImage
+		{51169320-C751-41F5-B59E-979B68AAA127}.Release|x86.Build.0 = SingleImage
+		{51169320-C751-41F5-B59E-979B68AAA127}.SingleImage|Any CPU.ActiveCfg = SingleImage
+		{51169320-C751-41F5-B59E-979B68AAA127}.SingleImage|Any CPU.Build.0 = SingleImage
+		{51169320-C751-41F5-B59E-979B68AAA127}.SingleImage|x86.ActiveCfg = SingleImage
+		{51169320-C751-41F5-B59E-979B68AAA127}.SingleImage|x86.Build.0 = SingleImage
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

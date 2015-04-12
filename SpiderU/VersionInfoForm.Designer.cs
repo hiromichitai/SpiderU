@@ -27,16 +27,15 @@
 			this.OKButton = new System.Windows.Forms.Button();
 			this.pictureBox1 = new System.Windows.Forms.PictureBox();
 			this.label1 = new System.Windows.Forms.Label();
-			this.label2 = new System.Windows.Forms.Label();
+			this.copyrightLabel = new System.Windows.Forms.Label();
 			this.versionLabel = new System.Windows.Forms.Label();
-			this.label3 = new System.Windows.Forms.Label();
 			((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
 			this.SuspendLayout();
 			// 
 			// OKButton
 			// 
 			this.OKButton.DialogResult = System.Windows.Forms.DialogResult.OK;
-			this.OKButton.Location = new System.Drawing.Point(127, 188);
+			this.OKButton.Location = new System.Drawing.Point(205, 173);
 			this.OKButton.Margin = new System.Windows.Forms.Padding(4);
 			this.OKButton.Name = "OKButton";
 			this.OKButton.Size = new System.Drawing.Size(100, 29);
@@ -48,7 +47,7 @@
 			// pictureBox1
 			// 
 			this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-			this.pictureBox1.Location = new System.Drawing.Point(144, 24);
+			this.pictureBox1.Location = new System.Drawing.Point(222, 26);
 			this.pictureBox1.Margin = new System.Windows.Forms.Padding(4);
 			this.pictureBox1.Name = "pictureBox1";
 			this.pictureBox1.Size = new System.Drawing.Size(64, 64);
@@ -60,44 +59,36 @@
 			this.label1.AutoSize = true;
 			this.label1.Location = new System.Drawing.Point(34, 108);
 			this.label1.Name = "label1";
-			this.label1.Size = new System.Drawing.Size(66, 16);
+			this.label1.Size = new System.Drawing.Size(81, 20);
 			this.label1.TabIndex = 2;
 			this.label1.Text = "SpiderU ";
 			// 
-			// label2
+			// copyrightLabel
 			// 
-			this.label2.AutoSize = true;
-			this.label2.Location = new System.Drawing.Point(34, 134);
-			this.label2.Name = "label2";
-			this.label2.Size = new System.Drawing.Size(309, 16);
-			this.label2.TabIndex = 3;
-			this.label2.Text = "Copyright(C) 2014 Ryuusando,　Hiromichi Tai";
+			this.copyrightLabel.AutoSize = true;
+			this.copyrightLabel.Location = new System.Drawing.Point(34, 138);
+			this.copyrightLabel.Name = "copyrightLabel";
+			this.copyrightLabel.Size = new System.Drawing.Size(384, 20);
+			this.copyrightLabel.TabIndex = 3;
+			this.copyrightLabel.Text = "Copyright(C) 2014 Ryuusando,　Hiromichi Tai";
 			// 
 			// versionLabel
 			// 
 			this.versionLabel.AutoSize = true;
-			this.versionLabel.Location = new System.Drawing.Point(187, 108);
+			this.versionLabel.Location = new System.Drawing.Point(118, 108);
 			this.versionLabel.Name = "versionLabel";
-			this.versionLabel.Size = new System.Drawing.Size(0, 16);
-			this.versionLabel.TabIndex = 4;
-			// 
-			// label3
-			// 
-			this.label3.AutoSize = true;
-			this.label3.Location = new System.Drawing.Point(124, 108);
-			this.label3.Name = "label3";
-			this.label3.Size = new System.Drawing.Size(56, 16);
-			this.label3.TabIndex = 5;
-			this.label3.Text = "version";
+			this.versionLabel.Size = new System.Drawing.Size(69, 20);
+			this.versionLabel.TabIndex = 5;
+			this.versionLabel.Text = "version";
+			this.versionLabel.Click += new System.EventHandler(this.label3_Click);
 			// 
 			// VersionInfoForm
 			// 
 			this.AcceptButton = this.OKButton;
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
-			this.ClientSize = new System.Drawing.Size(379, 245);
-			this.Controls.Add(this.label3);
+			this.ClientSize = new System.Drawing.Size(503, 226);
 			this.Controls.Add(this.versionLabel);
-			this.Controls.Add(this.label2);
+			this.Controls.Add(this.copyrightLabel);
 			this.Controls.Add(this.label1);
 			this.Controls.Add(this.pictureBox1);
 			this.Controls.Add(this.OKButton);
@@ -117,8 +108,7 @@
 		private System.Windows.Forms.Button OKButton;
 		private System.Windows.Forms.PictureBox pictureBox1;
 		private System.Windows.Forms.Label label1;
-		private System.Windows.Forms.Label label2;
+		private System.Windows.Forms.Label copyrightLabel;
 		private System.Windows.Forms.Label versionLabel;
-		private System.Windows.Forms.Label label3;
 	}
 }
